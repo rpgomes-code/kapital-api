@@ -873,6 +873,8 @@ def get_cache_stats():
 
     try:
         stats = redis_manager.client.info()
+
+        # Base stats
         cache_stats = {
             "used_memory": stats.get("used_memory_human", "Unknown"),
             "used_memory_peak": stats.get("used_memory_peak_human", "Unknown"),
@@ -881,9 +883,37 @@ def get_cache_stats():
             "hits": stats.get("keyspace_hits", 0),
             "misses": stats.get("keyspace_misses", 0),
             "hit_rate": stats.get("keyspace_hits", 0) / max(1, (
-                        stats.get("keyspace_hits", 0) + stats.get("keyspace_misses", 0))) * 100,
-            "keys": {db: int(info.split(",")[0].split("=")[1]) for db, info in stats.items() if db.startswith("db")}
+                    stats.get("keyspace_hits", 0) + stats.get("keyspace_misses", 0))) * 100,
         }
+
+        # Handle keys count more flexibly
+        key_counts = {}
+        for key, value in stats.items():
+            if not key.startswith("db"):
+                continue
+
+            try:
+                if isinstance(value, dict):
+                    # Newer Redis clients return parsed dictionaries
+                    key_counts[key] = value.get("keys", 0)
+                elif isinstance(value, str):
+                    # Older format returns strings
+                    parts = value.split(",")
+                    for part in parts:
+                        if part.startswith("keys="):
+                            key_counts[key] = int(part.split("=")[1])
+                            break
+                    else:
+                        key_counts[key] = 0
+                else:
+                    # Fallback
+                    key_counts[key] = 0
+            except Exception as e:
+                # Debug any parsing issues
+                logger.debug(f"Error parsing Redis info for {key}: {e}")
+                key_counts[key] = 0
+
+        cache_stats["keys"] = key_counts
         return cache_stats
     except Exception as e:
         logger.error(f"Error getting cache stats: {str(e)}")
