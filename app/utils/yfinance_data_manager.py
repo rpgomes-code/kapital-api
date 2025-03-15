@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import datetime
 import json
@@ -20,7 +21,7 @@ def _sanitize_for_json(obj):
         return {str(key): _sanitize_for_json(value) for key, value in obj.items()}
     elif isinstance(obj, (list, tuple)):
         return [_sanitize_for_json(item) for item in obj]
-    elif isinstance(obj, (float, pd.np.float64, pd.np.float32)):
+    elif isinstance(obj, (float, np.float64, np.float32)):
         # Handle special float values
         if math.isnan(obj):
             return None  # Convert NaN to None (null in JSON)
