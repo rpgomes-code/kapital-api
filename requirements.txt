@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+yfinance
+pandas
+python-dotenv
+pydantic
+httpx
+aiofiles
+requests
+numpy
+redis
+orjson
+scipy
