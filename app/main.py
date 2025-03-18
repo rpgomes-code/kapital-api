@@ -85,7 +85,7 @@ def read_root():
 
 @app.get("/v1/ticker/{ticker}/image")
 @handle_yf_request
-@redis_cache(ttl="1 day", invalidate_at_midnight=True)
+@redis_cache(ttl="3 months")
 @clean_yfinance_data
 async def get_ticker_image(ticker: str):
     """
@@ -649,6 +649,7 @@ async def get_ticker_quarterly_income_stmt(ticker: str):
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
 @clean_yfinance_data
+@clean_yfinance_data
 async def get_ticker_quarterly_incomestmt(ticker: str):
     return yf.Ticker(ticker).quarterly_incomestmt
 
@@ -963,17 +964,6 @@ async def get_industry_top_growth_companies(industry: str):
 @clean_yfinance_data
 async def get_industry_top_performing_companies(industry: str):
     return yf.Industry(industry).top_performing_companies
-
-
-# Resolve duplicated endpoint
-@app.get("/v1/industry/{industry}/overview-duplicate")
-@handle_yf_request
-@redis_cache(ttl="1 week")
-@clean_yfinance_data
-async def get_industry_overview_duplicate(industry: str):
-    """Duplicate endpoint added to handle the duplicate in the original code"""
-    return yf.Industry(industry).overview
-
 
 # Add multi-ticker endpoint from my original implementation
 @app.get("/v1/multi-ticker")
