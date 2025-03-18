@@ -548,7 +548,6 @@ async def get_ticker_insider_transactions(ticker: str):
 async def get_ticker_institutional_holders(ticker: str):
     return yf.Ticker(ticker).institutional_holders
 
-
 @app.get("/v1/ticker/{ticker}/isin")
 @handle_yf_request
 @redis_cache(ttl="3 months")
