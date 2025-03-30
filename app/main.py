@@ -1,4 +1,5 @@
 import httpx
+import asyncio
 from fastapi import FastAPI, HTTPException, Query, Depends
 from fastapi.middleware.cors import CORSMiddleware
 import yfinance as yf
@@ -91,6 +92,7 @@ async def get_ticker_image(ticker: str):
     """
     Get a company logo image URL for the specified ticker symbol.
     Dynamically determines the market/exchange and tries multiple sources for company logos.
+    Uses parallel requests and image validation for improved reliability.
 
     Args:
         ticker: Stock ticker symbol (e.g., AAPL, MSFT)
@@ -117,7 +119,6 @@ async def get_ticker_image(ticker: str):
         # Create URL-friendly version of company name for MarketBeat
         company_name_url = company_name.lower()
         # Replace special characters and spaces with dashes
-        import re
         company_name_url = re.sub(r'[^a-z0-9]+', '-', company_name_url)
         # Remove leading/trailing dashes
         company_name_url = company_name_url.strip('-')
@@ -222,7 +223,7 @@ async def get_ticker_image(ticker: str):
     except Exception as e:
         logger.debug(f"Failed to get exchange info for {ticker}: {str(e)}")
         market = 'US'  # Default to US market if we can't determine
-        exchange_code = 'NASDAQ'  # Default exchange - THIS WAS MISSING
+        exchange_code = 'NASDAQ'
         currency = 'USD'  # Default to USD if we can't determine
         company_name_url = ticker.lower()  # Default to lowercase ticker if we can't get company name
         display_name_dashed = ticker.lower()  # Default to lowercase ticker for TradingView URLs
@@ -271,16 +272,56 @@ async def get_ticker_image(ticker: str):
         f"https://github.com/davidepalazzo/ticker-logos/blob/main/ticker_icons/{ticker_upper}.png",
     ]
 
-    # Check each URL sequentially to find a valid one
-    for url in urls:
+    # Define a function to validate an image URL
+    async def validate_image_url(url: str, client: httpx.AsyncClient) -> Optional[str]:
+        """
+        Validates if a URL contains an actual image by checking Content-Type and status code.
+
+        Args:
+            url: URL to check
+            client: httpx.AsyncClient instance to use for the request
+
+        Returns:
+            The URL if it's a valid image, None otherwise
+        """
         try:
-            async with httpx.AsyncClient() as client:
-                response = await client.head(url, timeout=3.0)
-                if response.status_code == 200:
-                    return {"imageUrl": url}
+            # Use GET instead of HEAD to get headers including Content-Type
+            response = await client.get(url, timeout=3.0, follow_redirects=True)
+
+            # Check status code first
+            if response.status_code != 200:
+                return None
+
+            # Check for image content type
+            content_type = response.headers.get('Content-Type', '')
+            if not content_type.startswith('image/'):
+                logger.debug(f"URL {url} returned non-image Content-Type: {content_type}")
+                return None
+
+            # Check for minimum content length to avoid empty images or tiny placeholders
+            content_length = int(response.headers.get('Content-Length', '0'))
+            if content_length < 100:  # Arbitrary minimum size for a real logo
+                logger.debug(f"URL {url} has suspiciously small image size: {content_length} bytes")
+                return None
+
+            # If all checks pass, return the URL
+            logger.debug(f"Valid image found at {url} ({content_type}, {content_length} bytes)")
+            return url
+
         except Exception as e:
-            logger.debug(f"Failed to fetch image from {url}: {str(e)}")
-            continue
+            logger.debug(f"Failed to validate image from {url}: {str(e)}")
+            return None
+
+    # Check all URLs in parallel
+    async with httpx.AsyncClient() as client:
+        # Create tasks for all URLs
+        tasks = [validate_image_url(url, client) for url in urls]
+
+        # Wait for all tasks to complete (will complete in the order they finish)
+        for result in asyncio.as_completed(tasks):
+            valid_url = await result
+            if valid_url:
+                return {"imageUrl": valid_url}
 
     # If no valid URL is found, return null
     return {"imageUrl": None}
