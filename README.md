@@ -1,6 +1,6 @@
-# YFinance API with Redis Caching
+# Kapital API
 
-A comprehensive FastAPI wrapper for the yfinance package that provides a complete RESTful API to access Yahoo Finance data, with Redis caching for improved performance.
+A comprehensive financial data API that provides RESTful access to market data, with intelligent Redis caching for improved performance.
 
 ## Features
 

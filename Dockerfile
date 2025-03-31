@@ -1,5 +1,6 @@
 FROM python:3.11-slim
 LABEL authors="rpgomes"
+LABEL project="kapital-api"
 
 # Set working directory
 WORKDIR /app

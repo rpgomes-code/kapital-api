@@ -3,8 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: yfinance-api:latest
-    container_name: yfinance-api
+    image: kapital-api:latest
+    container_name: kapital-api
     restart: unless-stopped
     ports:
       - "8000:8000"
@@ -19,11 +19,11 @@ services:
     depends_on:
       - redis
     networks:
-      - yfinance-network
+      - kapital-network
 
   redis:
     image: redis:7-alpine
-    container_name: yfinance-redis
+    container_name: kapital-redis
     restart: unless-stopped
     ports:
       - "6379:6379"
@@ -31,10 +31,10 @@ services:
       - redis-data:/data
     command: ["redis-server", "--appendonly", "yes"]
     networks:
-      - yfinance-network
+      - kapital-network
 
 networks:
-  yfinance-network:
+  kapital-network:
     driver: bridge
 
 volumes:

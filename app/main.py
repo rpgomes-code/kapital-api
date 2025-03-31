@@ -21,8 +21,8 @@ from app.core.settings import API_PORT, API_HOST, logger
 
 # Create FastAPI app
 app = FastAPI(
-    title="yFinance API",
-    description="Comprehensive API wrapper for yfinance package to access Yahoo Finance data",
+    title="Kapital API",
+    description="Comprehensive financial data API providing access to market data and analytics",
     version="1.0.0",
 )
 
@@ -74,7 +74,7 @@ def handle_yf_request(func):
 def read_root():
     redis_status = "connected" if redis_manager.is_connected() else "disconnected"
     return {
-        "message": "Welcome to yFinance API",
+        "message": "Welcome to Kapital API",
         "version": "1.0.0",
         "cache_status": redis_status
     }
