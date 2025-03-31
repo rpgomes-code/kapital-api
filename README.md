@@ -86,7 +86,7 @@ The API implements intelligent caching based on how frequently the data changes:
 
 The system automatically handles cache invalidation and updates.
 
-## Cache Management
+## Cache Management (Redis)
 
 Special endpoints are available for cache management:
 
