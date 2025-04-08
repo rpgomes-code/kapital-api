@@ -12,6 +12,7 @@ from app.api.v1.yfinance.search import router as search_router
 from app.api.v1.yfinance.sector import router as sector_router
 from app.api.v1.yfinance.industry import router as industry_router
 from app.api.v1.yfinance.download import router as download_router
+from app.api.v1.yfinance.screener import router as screener_router
 from app.api.v1.kapital.image import router as image_router
 from app.api.v1.redis.cache import router as cache_router
 
@@ -59,5 +60,6 @@ app.include_router(search_router)
 app.include_router(sector_router)
 app.include_router(industry_router)
 app.include_router(download_router)
+app.include_router(screener_router)
 app.include_router(image_router)
 app.include_router(cache_router)

@@ -95,7 +95,14 @@ CACHE_STRATEGIES = {
         "top-growth-companies": {"ttl": "1 week", "invalidates": "never"},
         "top-performing-companies": {"ttl": "1 week", "invalidates": "never"}
     },
-    "multi-ticker": {"ttl": "3 months", "invalidates": "never"}
+    "multi-ticker": {"ttl": "3 months", "invalidates": "never"},
+    "screener": {
+        "predefined-list": {"ttl": "1 day", "invalidates": "never"},
+        "predefined": {"ttl": "30 minutes", "invalidates": "never"},
+        "fields": {"ttl": "3 months", "invalidates": "never"},
+        "values": {"ttl": "3 months", "invalidates": "never"},
+        "custom": {"ttl": "30 minutes", "invalidates": "never"},
+    }
 }
 
 
