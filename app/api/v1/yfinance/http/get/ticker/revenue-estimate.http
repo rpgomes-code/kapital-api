@@ -1,0 +1,54 @@
+### Request ###
+
+GET /v1/ticker/AAPL/revenue-estimate HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 563 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:51:56 GMT 
+server: uvicorn 
+
+[
+  {
+    "period": "0q",
+    "avg": 94044283100,
+    "low": 89400000000,
+    "high": 95903397000,
+    "numberOfAnalysts": 26,
+    "yearAgoRevenue": 90753000000,
+    "growth": 0.0363
+  },
+  {
+    "period": "+1q",
+    "avg": 89406365360,
+    "low": 80688000000,
+    "high": 92610000000,
+    "numberOfAnalysts": 25,
+    "yearAgoRevenue": 85777000000,
+    "growth": 0.0423
+  },
+  {
+    "period": "0y",
+    "avg": 409208080910,
+    "low": 392903000000,
+    "high": 431783000000,
+    "numberOfAnalysts": 39,
+    "yearAgoRevenue": 391035000000,
+    "growth": 0.0465
+  },
+  {
+    "period": "+1y",
+    "avg": 441990372410,
+    "low": 415100000000,
+    "high": 477463000000,
+    "numberOfAnalysts": 40,
+    "yearAgoRevenue": 409208080910,
+    "growth": 0.0801
+  }
+]

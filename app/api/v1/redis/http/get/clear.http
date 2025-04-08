@@ -1,0 +1,22 @@
+### Request ###
+
+GET /v1/cache/clear HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+access-control-allow-credentials: true 
+access-control-allow-origin: http://localhost:8000 
+content-length: 40 
+content-type: application/json 
+date: Sat,05 Apr 2025 23:07:34 GMT 
+server: uvicorn 
+vary: Origin 
+
+{
+  "message": "Cache cleared successfully"
+}

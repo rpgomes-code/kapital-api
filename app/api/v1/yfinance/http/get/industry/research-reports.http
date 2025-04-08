@@ -1,0 +1,62 @@
+### Request ###
+
+GET /v1/industry/gold/research-reports HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 3969 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:37:16 GMT 
+server: uvicorn 
+
+[
+  {
+    "id": "MS_0P000003WE_AnalystReport_1743566400000",
+    "headHtml": "Analyst Report: Newmont Corporation",
+    "provider": "Morningstar",
+    "targetPrice": 55,
+    "targetPriceStatus": "Increased",
+    "investmentRating": "Bullish",
+    "reportDate": "2025-04-02T04:00:00Z",
+    "reportTitle": "Newmont is the world's largest gold miner. It bought Goldcorp in 2019, combined its Nevada mines in a joint venture with competitor Barrick later that year, and also purchased competitor Newcrest in November 2023. Its portfolio includes 17 wholly or majority owned mines and interests in two joint ventures in the Americas, Africa, Australia and Papua New Guinea. The company is expected to sell roughly 5.5 million ounces of gold in 2025 from its core mines after selling six higher-cost, smaller mines, likely effective mid-2025. Newmont also produces material amounts of copper, silver, zinc, and lead as byproducts. It had about two decades of gold reserves along with significant byproduct reserves at the end of December 2024.  ",
+    "reportType": "Analyst Report"
+  },
+  {
+    "id": "MS_0P0000035H_AnalystReport_1743566361000",
+    "headHtml": "Analyst Report: Kinross Gold Corporation",
+    "provider": "Morningstar",
+    "targetPrice": 7,
+    "targetPriceStatus": "Increased",
+    "investmentRating": "Bearish",
+    "reportDate": "2025-04-02T03:59:21Z",
+    "reportTitle": "Kinross Gold is a Canada-based gold producer, producing roughly 2.1 million gold equivalent ounces in 2024. The company had about a decade of gold reserves at the end of 2024. It operates mines in the Americas and West Africa after selling its low-cost Russian operations in 2022 in response to the invasion of Ukraine. The company has historically used acquisitions to fuel expansion into new regions and production growth. In 2022, Kinross purchased the Great Bear project in Canada. If developed as we think likely, it could produce an average of more than 500,000 ounces of gold per year for at least a decade, with its unit cash costs likely in the first quartile of the industry cost curve.  ",
+    "reportType": "Analyst Report"
+  },
+  {
+    "id": "MS_0P000000Q5_AnalystReport_1743566333000",
+    "headHtml": "Analyst Report: Barrick Gold Corporation",
+    "provider": "Morningstar",
+    "targetPrice": 23.5,
+    "targetPriceStatus": "Increased",
+    "investmentRating": "Bullish",
+    "reportDate": "2025-04-02T03:58:53Z",
+    "reportTitle": "Based in Toronto, Barrick Gold is one of the world's largest gold miners. In 2024, the firm produced nearly 3.9 million attributable ounces of gold and about 430 million pounds of copper. At year-end 2024, Barrick had about two decades of gold reserves along with significant copper reserves. After buying Randgold in 2019 and combining its Nevada mines in a joint venture with competitor Newmont later that year, it operates mines in 19 countries in the Americas, Africa, the Middle East, and Asia. The company also has growing copper exposure. Its potential Reko Diq project in Pakistan, if developed, could double copper production by the end of the decade.  ",
+    "reportType": "Analyst Report"
+  },
+  {
+    "id": "MS_0P0000007G_AnalystReport_1743566306000",
+    "headHtml": "Analyst Report: Agnico Eagle Mines Limited",
+    "provider": "Morningstar",
+    "targetPrice": 62,
+    "targetPriceStatus": "Increased",
+    "investmentRating": "Bearish",
+    "reportDate": "2025-04-02T03:58:26Z",
+    "reportTitle": "Agnico Eagle is a gold miner with mines in Canada, Mexico, Finland, and Australia. Agnico operated just one mine, LaRonde, as recently as 2008 before bringing its other mines online in rapid succession in the following years. It merged with Kirkland Lake Gold in 2022, acquiring the Detour Lake and Macassa mines in Canada along with the high-grade, low-cost Fosterville mine in Australia. It sold around 3.4 million gold ounces in 2024 and had about 15 years of gold reserves at end 2024. Agnico Eagle is focused on increasing gold production in lower-risk jurisdictions and bought the remaining 50% of its Canadian Malartic mine along with the Wasamac project and other assets from Yamana Gold in 2023.  ",
+    "reportType": "Analyst Report"
+  }
+]

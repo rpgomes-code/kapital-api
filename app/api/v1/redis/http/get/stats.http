@@ -1,0 +1,28 @@
+### Request ###
+
+GET /v1/cache/stats HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 145 
+content-type: application/json 
+date: Sat,05 Apr 2025 23:06:29 GMT 
+server: uvicorn 
+
+{
+  "used_memory": "1.58M",
+  "used_memory_peak": "1.84M",
+  "clients_connected": 1,
+  "uptime_days": 0,
+  "hits": 1,
+  "misses": 63,
+  "hit_rate": 1.5625,
+  "keys": {
+    "db0": 61
+  }
+}

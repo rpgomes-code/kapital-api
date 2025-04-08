@@ -1,0 +1,108 @@
+### Request ###
+
+GET /v1/ticker/AAPL/mutualfund-holders HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 1846 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:40:00 GMT 
+server: uvicorn 
+
+[
+  {
+    "index": 0,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "VANGUARD INDEX FUNDS-Vanguard Total Stock Market Index Fund",
+    "pctHeld": 0.0315,
+    "Shares": 473591874,
+    "Value": 89215239536,
+    "pctChange": 0.0344
+  },
+  {
+    "index": 1,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "VANGUARD INDEX FUNDS-Vanguard 500 Index Fund",
+    "pctHeld": 0.0272,
+    "Shares": 409170316,
+    "Value": 77079506125,
+    "pctChange": 0.0279
+  },
+  {
+    "index": 2,
+    "Date Reported": "2025-02-28 00:00:00",
+    "Holder": "Fidelity Concord Street Trust-Fidelity 500 Index Fund",
+    "pctHeld": 0.0126,
+    "Shares": 189316298,
+    "Value": 35663405141,
+    "pctChange": 0.0045
+  },
+  {
+    "index": 3,
+    "Date Reported": "2025-02-28 00:00:00",
+    "Holder": "SPDR S&P 500 ETF TRUST",
+    "pctHeld": 0.0124,
+    "Shares": 186864109,
+    "Value": 35201461765,
+    "pctChange": 0.0138
+  },
+  {
+    "index": 4,
+    "Date Reported": "2025-02-28 00:00:00",
+    "Holder": "iShares Trust-iShares Core S&P 500 ETF",
+    "pctHeld": 0.0117999995,
+    "Shares": 177551321,
+    "Value": 33447118716,
+    "pctChange": 0.0016
+  },
+  {
+    "index": 5,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "VANGUARD INDEX FUNDS-Vanguard Growth Index Fund",
+    "pctHeld": 0.0101,
+    "Shares": 152087687,
+    "Value": 28650279219,
+    "pctChange": 0.124
+  },
+  {
+    "index": 6,
+    "Date Reported": "2025-02-28 00:00:00",
+    "Holder": "Invesco QQQ Trust, Series 1",
+    "pctHeld": 0.0084,
+    "Shares": 126167385,
+    "Value": 23767412602,
+    "pctChange": 0.0114
+  },
+  {
+    "index": 7,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "VANGUARD INSTITUTIONAL INDEX FUNDS-Vanguard Institutional Index Fund",
+    "pctHeld": 0.0064,
+    "Shares": 95471977,
+    "Value": 17985011493,
+    "pctChange": -0.0127
+  },
+  {
+    "index": 8,
+    "Date Reported": "2024-11-30 00:00:00",
+    "Holder": "VANGUARD WORLD FUND-Vanguard Information Technology Index Fund",
+    "pctHeld": 0.0045,
+    "Shares": 66889141,
+    "Value": 12600576708,
+    "pctChange": -0.0577
+  },
+  {
+    "index": 9,
+    "Date Reported": "2025-02-28 00:00:00",
+    "Holder": "iShares Trust-iShares Russell 1000 Growth ETF",
+    "pctHeld": 0.0034,
+    "Shares": 50848704,
+    "Value": 9578879107,
+    "pctChange": 0.00059999997
+  }
+]

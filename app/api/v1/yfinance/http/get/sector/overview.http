@@ -1,0 +1,25 @@
+### Request ###
+
+GET /v1/sector/energy/overview HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 450 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:27:47 GMT 
+server: uvicorn 
+
+{
+  "companies_count": 255,
+  "market_cap": 2640019980288,
+  "message_board_id": "INDEXYH309",
+  "description": "Companies that produce or refine oil and gas, oilfield-services and equipment companies, and pipeline operators. This sector also includes companies that mine thermal coal and uranium. Companies in this sector include BP, ExxonMobil, Royal Dutch Shell, and China Shenhua Energy.",
+  "industries_count": 8,
+  "market_weight": 0.046283696,
+  "employee_count": 979991
+}

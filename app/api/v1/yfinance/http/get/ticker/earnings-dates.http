@@ -1,0 +1,90 @@
+### Request ###
+
+GET /v1/ticker/AAPL/earnings-dates HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 1183 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:19:20 GMT 
+server: uvicorn 
+
+[
+  {
+    "Earnings Date": "2026-01-27 19:00:00",
+    "EPS Estimate": null,
+    "Reported EPS": null,
+    "Surprise(%)": null
+  },
+  {
+    "Earnings Date": "2025-10-28 20:00:00",
+    "EPS Estimate": null,
+    "Reported EPS": null,
+    "Surprise(%)": null
+  },
+  {
+    "Earnings Date": "2025-07-29 20:00:00",
+    "EPS Estimate": null,
+    "Reported EPS": null,
+    "Surprise(%)": null
+  },
+  {
+    "Earnings Date": "2025-04-29 20:00:00",
+    "EPS Estimate": null,
+    "Reported EPS": null,
+    "Surprise(%)": null
+  },
+  {
+    "Earnings Date": "2025-01-29 19:00:00",
+    "EPS Estimate": 2.35,
+    "Reported EPS": 2.4,
+    "Surprise(%)": 2.15
+  },
+  {
+    "Earnings Date": "2024-10-30 20:00:00",
+    "EPS Estimate": 1.6,
+    "Reported EPS": 1.64,
+    "Surprise(%)": 2.35
+  },
+  {
+    "Earnings Date": "2024-07-31 20:00:00",
+    "EPS Estimate": 1.35,
+    "Reported EPS": 1.4,
+    "Surprise(%)": 3.99
+  },
+  {
+    "Earnings Date": "2024-05-01 20:00:00",
+    "EPS Estimate": 1.5,
+    "Reported EPS": 1.53,
+    "Surprise(%)": 1.97
+  },
+  {
+    "Earnings Date": "2024-01-31 19:00:00",
+    "EPS Estimate": 2.1,
+    "Reported EPS": 2.18,
+    "Surprise(%)": 3.9
+  },
+  {
+    "Earnings Date": "2023-11-01 20:00:00",
+    "EPS Estimate": 1.39,
+    "Reported EPS": 1.46,
+    "Surprise(%)": 4.92
+  },
+  {
+    "Earnings Date": "2023-08-02 20:00:00",
+    "EPS Estimate": 1.19,
+    "Reported EPS": 1.26,
+    "Surprise(%)": 5.49
+  },
+  {
+    "Earnings Date": "2023-05-03 20:00:00",
+    "EPS Estimate": 1.43,
+    "Reported EPS": 1.52,
+    "Surprise(%)": 6.03
+  }
+]

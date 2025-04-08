@@ -1,0 +1,25 @@
+### Request ###
+
+GET /v1/industry/gold/overview HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 272 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:36:25 GMT 
+server: uvicorn 
+
+{
+  "companies_count": 48,
+  "market_cap": 292726702080,
+  "message_board_id": "INDEXYH10150040",
+  "description": "Companies principally engaged in gold exploration, mining, processing, extraction, and smelting.",
+  "industries_count": null,
+  "market_weight": 0.2017494,
+  "employee_count": 154111
+}

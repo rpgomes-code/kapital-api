@@ -1,0 +1,118 @@
+### Request ###
+
+GET /v1/ticker/AAPL/insider-roster-holders HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 2524 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:34:39 GMT 
+server: uvicorn 
+
+[
+  {
+    "index": 0,
+    "Name": "ADAMS KATHERINE L",
+    "Position": "General Counsel",
+    "URL": "",
+    "Most Recent Transaction": "Sale",
+    "Latest Transaction Date": "2025-04-02 00:00:00",
+    "Shares Owned Directly": 179158,
+    "Position Direct Date": "2025-04-02 00:00:00"
+  },
+  {
+    "index": 1,
+    "Name": "AUSTIN WANDA M",
+    "Position": "Director",
+    "URL": "",
+    "Most Recent Transaction": "Conversion of Exercise of derivative security",
+    "Latest Transaction Date": "2025-01-31 00:00:00",
+    "Shares Owned Directly": 1588,
+    "Position Direct Date": "2025-01-31 00:00:00"
+  },
+  {
+    "index": 2,
+    "Name": "COOK TIMOTHY D",
+    "Position": "Chief Executive Officer",
+    "URL": "",
+    "Most Recent Transaction": "Sale",
+    "Latest Transaction Date": "2025-04-02 00:00:00",
+    "Shares Owned Directly": 3280300,
+    "Position Direct Date": "2025-04-02 00:00:00"
+  },
+  {
+    "index": 3,
+    "Name": "GORSKY ALEX",
+    "Position": "Director",
+    "URL": "",
+    "Most Recent Transaction": "Conversion of Exercise of derivative security",
+    "Latest Transaction Date": "2025-01-31 00:00:00",
+    "Shares Owned Directly": 5539,
+    "Position Direct Date": "2025-01-31 00:00:00"
+  },
+  {
+    "index": 4,
+    "Name": "JUNG ANDREA",
+    "Position": "Director",
+    "URL": "",
+    "Most Recent Transaction": "Conversion of Exercise of derivative security",
+    "Latest Transaction Date": "2025-01-31 00:00:00",
+    "Shares Owned Directly": 76005,
+    "Position Direct Date": "2025-01-31 00:00:00"
+  },
+  {
+    "index": 5,
+    "Name": "LEVINSON ARTHUR D",
+    "Position": "Director",
+    "URL": "",
+    "Most Recent Transaction": "Sale",
+    "Latest Transaction Date": "2025-02-03 00:00:00",
+    "Shares Owned Directly": 4215580,
+    "Position Direct Date": "2025-02-03 00:00:00"
+  },
+  {
+    "index": 6,
+    "Name": "LOZANO MONICA C.",
+    "Position": "Director",
+    "URL": "",
+    "Most Recent Transaction": "Conversion of Exercise of derivative security",
+    "Latest Transaction Date": "2025-01-31 00:00:00",
+    "Shares Owned Directly": 8607,
+    "Position Direct Date": "2025-01-31 00:00:00"
+  },
+  {
+    "index": 7,
+    "Name": "SUGAR RONALD D",
+    "Position": "Director",
+    "URL": "",
+    "Most Recent Transaction": "Conversion of Exercise of derivative security",
+    "Latest Transaction Date": "2025-01-31 00:00:00",
+    "Shares Owned Directly": 109311,
+    "Position Direct Date": "2025-01-31 00:00:00"
+  },
+  {
+    "index": 8,
+    "Name": "WAGNER SUSAN L",
+    "Position": "Director",
+    "URL": "",
+    "Most Recent Transaction": "Conversion of Exercise of derivative security",
+    "Latest Transaction Date": "2025-01-31 00:00:00",
+    "Shares Owned Directly": 68533,
+    "Position Direct Date": "2025-01-31 00:00:00"
+  },
+  {
+    "index": 9,
+    "Name": "WILLIAMS JEFFREY E",
+    "Position": "Chief Operating Officer",
+    "URL": "",
+    "Most Recent Transaction": "Sale",
+    "Latest Transaction Date": "2025-04-02 00:00:00",
+    "Shares Owned Directly": 390059,
+    "Position Direct Date": "2025-04-02 00:00:00"
+  }
+]

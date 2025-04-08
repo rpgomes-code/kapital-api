@@ -1,0 +1,189 @@
+### Request ###
+
+GET /v1/ticker/VOO/funds-data HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 4429 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:27:26 GMT 
+server: uvicorn 
+
+{
+  "_data": {
+    "_crumb": "yrjf867aEkm",
+    "_cookie": {
+      "version": 0,
+      "name": "A3",
+      "value": "d=AQABBBGW8WcCEB59bpbBvSxTLlTcwEGnYO8FEgEBAQHn8mf7Z_BRziMA_eMAAA&S=AQAAAm9l2nRFJK6B8T6DUqm4R38",
+      "port": null,
+      "port_specified": false,
+      "domain": ".yahoo.com",
+      "domain_specified": true,
+      "domain_initial_dot": true,
+      "path": "/",
+      "path_specified": true,
+      "secure": true,
+      "expires": 1775443441,
+      "discard": false,
+      "comment": null,
+      "comment_url": null,
+      "rfc2109": false,
+      "_rest": {
+        "SameSite": "None",
+        "HttpOnly": null
+      }
+    },
+    "_cookie_strategy": "basic",
+    "_cookie_lock": "<unlocked _thread.lock object at 0xffff6c226880>",
+    "_session": {
+      "headers": {
+        "_store": {
+          "user-agent": [
+            "User-Agent",
+            "python-requests/2.32.3"
+          ],
+          "accept-encoding": [
+            "Accept-Encoding",
+            "gzip, deflate"
+          ],
+          "accept": [
+            "Accept",
+            "*/*"
+          ],
+          "connection": [
+            "Connection",
+            "keep-alive"
+          ]
+        }
+      },
+      "auth": null,
+      "proxies": {},
+      "hooks": {
+        "response": []
+      },
+      "params": {},
+      "stream": false,
+      "verify": true,
+      "cert": null,
+      "max_redirects": 30,
+      "trust_env": true,
+      "cookies": {
+        "_policy": {
+          "netscape": true,
+          "rfc2965": false,
+          "rfc2109_as_netscape": null,
+          "hide_cookie2": false,
+          "strict_domain": false,
+          "strict_rfc2965_unverifiable": true,
+          "strict_ns_unverifiable": false,
+          "strict_ns_domain": 0,
+          "strict_ns_set_initial_dollar": false,
+          "strict_ns_set_path": false,
+          "secure_protocols": [
+            "https",
+            "wss"
+          ],
+          "_blocked_domains": [],
+          "_allowed_domains": null,
+          "_now": 1743891972
+        },
+        "_cookies_lock": "<unlocked _thread.RLock object owner=0 count=0 at 0xffff85b9bd40>",
+        "_cookies": {
+          ".yahoo.com": {
+            "/": {
+              "A3": "<Cookie A3=d=AQABBBGW8WcCEB59bpbBvSxTLlTcwEGnYO8FEgEBAQHn8mf7Z_BRziMA_eMAAA&S=AQAAAm9l2nRFJK6B8T6DUqm4R38 for .yahoo.com/>",
+              "A1": "<Cookie A1=d=AQABBBGW8WcCEB59bpbBvSxTLlTcwEGnYO8FEgEBAQHn8mf7Z_BRziMA_eMAAA&S=AQAAAm9l2nRFJK6B8T6DUqm4R38 for .yahoo.com/>",
+              "A1S": "<Cookie A1S=d=AQABBBGW8WcCEB59bpbBvSxTLlTcwEGnYO8FEgEBAQHn8mf7Z_BRziMA_eMAAA&S=AQAAAm9l2nRFJK6B8T6DUqm4R38 for .yahoo.com/>"
+            }
+          }
+        },
+        "_now": 1743891972
+      },
+      "adapters": {
+        "https://": {
+          "max_retries": {
+            "total": "0",
+            "connect": "None",
+            "read": "False",
+            "status": "None",
+            "other": "None",
+            "redirect": "None",
+            "status_forcelist": "set()",
+            "allowed_methods": "frozenset({'GET', 'HEAD', 'OPTIONS', 'PUT', 'DELETE', 'TRACE'})",
+            "backoff_factor": "0",
+            "backoff_max": "120",
+            "raise_on_redirect": "True",
+            "raise_on_status": "True",
+            "history": "()",
+            "respect_retry_after_header": "True",
+            "remove_headers_on_redirect": "frozenset({'proxy-authorization', 'authorization', 'cookie'})",
+            "backoff_jitter": "0.0"
+          },
+          "config": {},
+          "proxy_manager": {},
+          "_pool_connections": 10,
+          "_pool_maxsize": 10,
+          "_pool_block": false,
+          "poolmanager": {
+            "headers": "{}",
+            "connection_pool_kw": "{'maxsize': 10, 'block': False}",
+            "pools": "<urllib3._collections.RecentlyUsedContainer object at 0xffff6c226590>",
+            "pool_classes_by_scheme": "{'http': <class 'urllib3.connectionpool.HTTPConnectionPool'>, 'https': <class 'urllib3.connectionpool.HTTPSConnectionPool'>}",
+            "key_fn_by_scheme": "{'http': functools.partial(<function _default_key_normalizer at 0xffff6cf30d60>, <class 'urllib3.poolmanager.PoolKey'>), 'https': functools.partial(<function _default_key_normalizer at 0xffff6cf30d60>, <class 'urllib3.poolmanager.PoolKey'>)}"
+          }
+        },
+        "http://": {
+          "max_retries": {
+            "total": "0",
+            "connect": "None",
+            "read": "False",
+            "status": "None",
+            "other": "None",
+            "redirect": "None",
+            "status_forcelist": "set()",
+            "allowed_methods": "frozenset({'GET', 'HEAD', 'OPTIONS', 'PUT', 'DELETE', 'TRACE'})",
+            "backoff_factor": "0",
+            "backoff_max": "120",
+            "raise_on_redirect": "True",
+            "raise_on_status": "True",
+            "history": "()",
+            "respect_retry_after_header": "True",
+            "remove_headers_on_redirect": "frozenset({'proxy-authorization', 'authorization', 'cookie'})",
+            "backoff_jitter": "0.0"
+          },
+          "config": {},
+          "proxy_manager": {},
+          "_pool_connections": 10,
+          "_pool_maxsize": 10,
+          "_pool_block": false,
+          "poolmanager": {
+            "headers": "{}",
+            "connection_pool_kw": "{'maxsize': 10, 'block': False}",
+            "pools": "<urllib3._collections.RecentlyUsedContainer object at 0xffff6c2251d0>",
+            "pool_classes_by_scheme": "{'http': <class 'urllib3.connectionpool.HTTPConnectionPool'>, 'https': <class 'urllib3.connectionpool.HTTPSConnectionPool'>}",
+            "key_fn_by_scheme": "{'http': functools.partial(<function _default_key_normalizer at 0xffff6cf30d60>, <class 'urllib3.poolmanager.PoolKey'>), 'https': functools.partial(<function _default_key_normalizer at 0xffff6cf30d60>, <class 'urllib3.poolmanager.PoolKey'>)}"
+          }
+        }
+      }
+    },
+    "_session_is_caching": false
+  },
+  "_symbol": "VOO",
+  "proxy": null,
+  "_quote_type": null,
+  "_description": null,
+  "_fund_overview": null,
+  "_fund_operations": null,
+  "_asset_classes": null,
+  "_top_holdings": null,
+  "_equity_holdings": null,
+  "_bond_holdings": null,
+  "_bond_ratings": null,
+  "_sector_weightings": null
+}

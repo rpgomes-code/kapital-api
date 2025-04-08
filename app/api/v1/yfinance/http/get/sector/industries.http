@@ -1,0 +1,66 @@
+### Request ###
+
+GET /v1/sector/energy/industries HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 856 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:24:12 GMT 
+server: uvicorn 
+
+[
+  {
+    "key": "oil-gas-integrated",
+    "name": "Oil & Gas Integrated",
+    "symbol": "^YH30910030",
+    "market weight": 0.37792873
+  },
+  {
+    "key": "oil-gas-midstream",
+    "name": "Oil & Gas Midstream",
+    "symbol": "^YH30910040",
+    "market weight": 0.2757882
+  },
+  {
+    "key": "oil-gas-e-p",
+    "name": "Oil & Gas E&P",
+    "symbol": "^YH30910020",
+    "market weight": 0.21427363
+  },
+  {
+    "key": "oil-gas-equipment-services",
+    "name": "Oil & Gas Equipment & Services",
+    "symbol": "^YH30910060",
+    "market weight": 0.062060595
+  },
+  {
+    "key": "oil-gas-refining-marketing",
+    "name": "Oil & Gas Refining & Marketing",
+    "symbol": "^YH30910050",
+    "market weight": 0.051954135
+  },
+  {
+    "key": "uranium",
+    "name": "Uranium",
+    "symbol": "^YH30920020",
+    "market weight": 0.009127511
+  },
+  {
+    "key": "oil-gas-drilling",
+    "name": "Oil & Gas Drilling",
+    "symbol": "^YH30910010",
+    "market weight": 0.005150865
+  },
+  {
+    "key": "thermal-coal",
+    "name": "Thermal Coal",
+    "symbol": "^YH30920010",
+    "market weight": 0.0037163084
+  }
+]

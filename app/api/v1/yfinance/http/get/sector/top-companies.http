@@ -1,0 +1,318 @@
+### Request ###
+
+GET /v1/sector/energy/top-companies HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 4656 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:31:51 GMT 
+server: uvicorn 
+
+[
+  {
+    "symbol": "XOM",
+    "name": "Exxon Mobil Corporation",
+    "rating": "Buy",
+    "market weight": 0.21964656
+  },
+  {
+    "symbol": "CVX",
+    "name": "Chevron Corporation",
+    "rating": "Buy",
+    "market weight": 0.12180491
+  },
+  {
+    "symbol": "COP",
+    "name": "ConocoPhillips",
+    "rating": "Buy",
+    "market weight": 0.053622343
+  },
+  {
+    "symbol": "WMB",
+    "name": "The Williams Companies, Inc.",
+    "rating": "Buy",
+    "market weight": 0.032535624
+  },
+  {
+    "symbol": "EPD",
+    "name": "Enterprise Products Partners L.P.",
+    "rating": "Buy",
+    "market weight": 0.031410992
+  },
+  {
+    "symbol": "EOG",
+    "name": "EOG Resources, Inc.",
+    "rating": "Buy",
+    "market weight": 0.029902918
+  },
+  {
+    "symbol": "KMI",
+    "name": "Kinder Morgan, Inc.",
+    "rating": "Buy",
+    "market weight": 0.027397646
+  },
+  {
+    "symbol": "ET",
+    "name": "Energy Transfer LP",
+    "rating": "Strong Buy",
+    "market weight": 0.026351102
+  },
+  {
+    "symbol": "MPLX",
+    "name": "MPLX LP",
+    "rating": "Buy",
+    "market weight": 0.023528036
+  },
+  {
+    "symbol": "OKE",
+    "name": "ONEOK, Inc.",
+    "rating": "Buy",
+    "market weight": 0.02280852
+  },
+  {
+    "symbol": "SLB",
+    "name": "Schlumberger Limited",
+    "rating": "Buy",
+    "market weight": 0.02276432
+  },
+  {
+    "symbol": "LNG",
+    "name": "Cheniere Energy, Inc.",
+    "rating": "Strong Buy",
+    "market weight": 0.022026155
+  },
+  {
+    "symbol": "HES",
+    "name": "Hess Corporation",
+    "rating": "Buy",
+    "market weight": 0.019619128
+  },
+  {
+    "symbol": "PSX",
+    "name": "Phillips 66",
+    "rating": "Buy",
+    "market weight": 0.019440353
+  },
+  {
+    "symbol": "MPC",
+    "name": "Marathon Petroleum Corporation",
+    "rating": "Buy",
+    "market weight": 0.018937228
+  },
+  {
+    "symbol": "OXY",
+    "name": "Occidental Petroleum Corporation",
+    "rating": "Hold",
+    "market weight": 0.017715907
+  },
+  {
+    "symbol": "FANG",
+    "name": "Diamondback Energy, Inc.",
+    "rating": "Buy",
+    "market weight": 0.017691914
+  },
+  {
+    "symbol": "TRGP",
+    "name": "Targa Resources Corp.",
+    "rating": "Buy",
+    "market weight": 0.01738536
+  },
+  {
+    "symbol": "BKR",
+    "name": "Baker Hughes Company",
+    "rating": "Buy",
+    "market weight": 0.017127994
+  },
+  {
+    "symbol": "VLO",
+    "name": "Valero Energy Corporation",
+    "rating": "Buy",
+    "market weight": 0.01637839
+  },
+  {
+    "symbol": "EQT",
+    "name": "EQT Corporation",
+    "rating": "Buy",
+    "market weight": 0.013822406
+  },
+  {
+    "symbol": "CQP",
+    "name": "Cheniere Energy Partners, L.P.",
+    "rating": "Underperform",
+    "market weight": 0.013345782
+  },
+  {
+    "symbol": "TPL",
+    "name": "Texas Pacific Land Corporation",
+    "rating": "Hold",
+    "market weight": 0.012854496
+  },
+  {
+    "symbol": "EXE",
+    "name": "Expand Energy Corporation",
+    "rating": "Buy",
+    "market weight": 0.011413398
+  },
+  {
+    "symbol": "DVN",
+    "name": "Devon Energy Corporation",
+    "rating": "Buy",
+    "market weight": 0.009133338
+  },
+  {
+    "symbol": "CTRA",
+    "name": "Coterra Energy Inc.",
+    "rating": "Buy",
+    "market weight": 0.008981692
+  },
+  {
+    "symbol": "HAL",
+    "name": "Halliburton Company",
+    "rating": "Buy",
+    "market weight": 0.008469275
+  },
+  {
+    "symbol": "WES",
+    "name": "Western Midstream Partners, LP",
+    "rating": "Hold",
+    "market weight": 0.0065824925
+  },
+  {
+    "symbol": "PAA",
+    "name": "Plains All American Pipeline, L.P.",
+    "rating": "Buy",
+    "market weight": 0.005652867
+  },
+  {
+    "symbol": "AR",
+    "name": "Antero Resources Corporation",
+    "rating": "Buy",
+    "market weight": 0.005194616
+  },
+  {
+    "symbol": "FTI",
+    "name": "TechnipFMC plc",
+    "rating": "Buy",
+    "market weight": 0.0049359817
+  },
+  {
+    "symbol": "DTM",
+    "name": "DT Midstream, Inc.",
+    "rating": "Buy",
+    "market weight": 0.004362364
+  },
+  {
+    "symbol": "PR",
+    "name": "Permian Resources Corporation",
+    "rating": "Strong Buy",
+    "market weight": 0.0041918173
+  },
+  {
+    "symbol": "OVV",
+    "name": "Ovintiv Inc.",
+    "rating": "Buy",
+    "market weight": 0.004100298
+  },
+  {
+    "symbol": "RRC",
+    "name": "Range Resources Corporation",
+    "rating": "Buy",
+    "market weight": 0.0039375206
+  },
+  {
+    "symbol": "HESM",
+    "name": "Hess Midstream LP",
+    "rating": "Buy",
+    "market weight": 0.0038099813
+  },
+  {
+    "symbol": "AM",
+    "name": "Antero Midstream Corporation",
+    "rating": "Hold",
+    "market weight": 0.003790607
+  },
+  {
+    "symbol": "SUN",
+    "name": "Sunoco LP",
+    "rating": "Buy",
+    "market weight": 0.003468153
+  },
+  {
+    "symbol": "VNOM",
+    "name": "Viper Energy, Inc.",
+    "rating": "Strong Buy",
+    "market weight": 0.0034165229
+  },
+  {
+    "symbol": "NFG",
+    "name": "National Fuel Gas Company",
+    "rating": "Hold",
+    "market weight": 0.0032562271
+  },
+  {
+    "symbol": "APA",
+    "name": "APA Corporation",
+    "rating": "Hold",
+    "market weight": 0.0026769035
+  },
+  {
+    "symbol": "CRK",
+    "name": "Comstock Resources, Inc.",
+    "rating": "Hold",
+    "market weight": 0.002570986
+  },
+  {
+    "symbol": "CHRD",
+    "name": "Chord Energy Corporation",
+    "rating": "Buy",
+    "market weight": 0.0025551675
+  },
+  {
+    "symbol": "DINO",
+    "name": "HF Sinclair Corporation",
+    "rating": "Buy",
+    "market weight": 0.0025161228
+  },
+  {
+    "symbol": "NOV",
+    "name": "NOV Inc.",
+    "rating": "Buy",
+    "market weight": 0.0022856018
+  },
+  {
+    "symbol": "MTDR",
+    "name": "Matador Resources Company",
+    "rating": "Strong Buy",
+    "market weight": 0.0022833578
+  },
+  {
+    "symbol": "LB",
+    "name": "LandBridge Company LLC",
+    "rating": "Buy",
+    "market weight": 0.0021978456
+  },
+  {
+    "symbol": "CHX",
+    "name": "ChampionX Corporation",
+    "rating": "Strong Buy",
+    "market weight": 0.0021640044
+  },
+  {
+    "symbol": "CNX",
+    "name": "CNX Resources Corporation",
+    "rating": "Underperform",
+    "market weight": 0.0021210257
+  },
+  {
+    "symbol": "PAGP",
+    "name": "Plains GP Holdings, L.P.",
+    "rating": "Buy",
+    "market weight": 0.0020008488
+  }
+]

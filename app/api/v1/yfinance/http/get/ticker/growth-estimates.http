@@ -1,0 +1,43 @@
+### Request ###
+
+GET /v1/ticker/AAPL/growth-estimates HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 285 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:28:41 GMT 
+server: uvicorn 
+
+[
+  {
+    "period": "0q",
+    "stockTrend": 0.0529,
+    "indexTrend": 0.0659
+  },
+  {
+    "period": "+1q",
+    "stockTrend": 0.0682,
+    "indexTrend": 0.0664
+  },
+  {
+    "period": "0y",
+    "stockTrend": 0.0832,
+    "indexTrend": 0.09810001
+  },
+  {
+    "period": "+1y",
+    "stockTrend": 0.1204,
+    "indexTrend": 0.1608
+  },
+  {
+    "period": "LTG",
+    "stockTrend": null,
+    "indexTrend": 0.095
+  }
+]

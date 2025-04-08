@@ -1,0 +1,108 @@
+### Request ###
+
+GET /v1/ticker/AAPL/institutional-holders HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 1577 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:36:57 GMT 
+server: uvicorn 
+
+[
+  {
+    "index": 0,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "Vanguard Group Inc",
+    "pctHeld": 0.0929,
+    "Shares": 1395785512,
+    "Value": 262938081565,
+    "pctChange": 0.0365
+  },
+  {
+    "index": 1,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "Blackrock Inc.",
+    "pctHeld": 0.0748,
+    "Shares": 1123417607,
+    "Value": 211629414292,
+    "pctChange": 0.0272
+  },
+  {
+    "index": 2,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "State Street Corporation",
+    "pctHeld": 0.0396,
+    "Shares": 595501507,
+    "Value": 112180576796,
+    "pctChange": 0.0197
+  },
+  {
+    "index": 3,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "FMR, LLC",
+    "pctHeld": 0.0227,
+    "Shares": 341640974,
+    "Value": 64358328350,
+    "pctChange": -0.061100002
+  },
+  {
+    "index": 4,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "Geode Capital Management, LLC",
+    "pctHeld": 0.0226,
+    "Shares": 340164913,
+    "Value": 64080267971,
+    "pctChange": 0.0189
+  },
+  {
+    "index": 5,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "Berkshire Hathaway, Inc",
+    "pctHeld": 0.02,
+    "Shares": 300000000,
+    "Value": 56514001464,
+    "pctChange": 0
+  },
+  {
+    "index": 6,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "Morgan Stanley",
+    "pctHeld": 0.0159,
+    "Shares": 238264141,
+    "Value": 44884200044,
+    "pctChange": 0.0294
+  },
+  {
+    "index": 7,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "Price (T.Rowe) Associates Inc",
+    "pctHeld": 0.0147,
+    "Shares": 220107535,
+    "Value": 41463858518,
+    "pctChange": -0.0657
+  },
+  {
+    "index": 8,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "NORGES BANK",
+    "pctHeld": 0.0125,
+    "Shares": 187160162,
+    "Value": 35257232231,
+    "pctChange": 0.0542
+  },
+  {
+    "index": 9,
+    "Date Reported": "2024-12-31 00:00:00",
+    "Holder": "JPMORGAN CHASE & CO",
+    "pctHeld": 0.012200001,
+    "Shares": 183008151,
+    "Value": 34475076378,
+    "pctChange": 0.020599999
+  }
+]

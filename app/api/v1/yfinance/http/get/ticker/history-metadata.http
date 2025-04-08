@@ -1,0 +1,77 @@
+### Request ###
+
+GET /v1/ticker/AAPL/history-metadata HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 1581 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:29:42 GMT 
+server: uvicorn 
+
+{
+  "currency": "USD",
+  "symbol": "AAPL",
+  "exchangeName": "NMS",
+  "fullExchangeName": "NasdaqGS",
+  "instrumentType": "EQUITY",
+  "firstTradeDate": 345479400,
+  "regularMarketTime": 1743796802,
+  "hasPrePostMarketData": true,
+  "gmtoffset": -14400,
+  "timezone": "EDT",
+  "exchangeTimezoneName": "America/New_York",
+  "regularMarketPrice": 188.38,
+  "fiftyTwoWeekHigh": 260.1,
+  "fiftyTwoWeekLow": 164.08,
+  "regularMarketDayHigh": 199.88,
+  "regularMarketDayLow": 187.345,
+  "regularMarketVolume": 124921508,
+  "longName": "Apple Inc.",
+  "shortName": "Apple Inc.",
+  "chartPreviousClose": 217.9,
+  "previousClose": 203.19,
+  "scale": 3,
+  "priceHint": 2,
+  "currentTradingPeriod": {
+    "pre": {
+      "timezone": "EDT",
+      "start": 1743753600,
+      "end": 1743773400,
+      "gmtoffset": -14400
+    },
+    "regular": {
+      "timezone": "EDT",
+      "start": 1743773400,
+      "end": 1743796800,
+      "gmtoffset": -14400
+    },
+    "post": {
+      "timezone": "EDT",
+      "start": 1743796800,
+      "end": 1743811200,
+      "gmtoffset": -14400
+    }
+  },
+  "tradingPeriods": "                                          pre_start  ...                  post_end\nDate                                                 ...                          \n2025-03-31 00:00:00-04:00 2025-03-31 04:00:00-04:00  ... 2025-03-31 20:00:00-04:00\n2025-04-01 00:00:00-04:00 2025-04-01 04:00:00-04:00  ... 2025-04-01 20:00:00-04:00\n2025-04-02 00:00:00-04:00 2025-04-02 04:00:00-04:00  ... 2025-04-02 20:00:00-04:00\n2025-04-03 00:00:00-04:00 2025-04-03 04:00:00-04:00  ... 2025-04-03 20:00:00-04:00\n2025-04-04 00:00:00-04:00 2025-04-04 04:00:00-04:00  ... 2025-04-04 20:00:00-04:00\n\n[5 rows x 6 columns]",
+  "dataGranularity": "1h",
+  "range": "5d",
+  "validRanges": [
+    "1d",
+    "5d",
+    "1mo",
+    "3mo",
+    "6mo",
+    "1y",
+    "2y",
+    "5y",
+    "10y",
+    "ytd",
+    "max"
+  ]
+}

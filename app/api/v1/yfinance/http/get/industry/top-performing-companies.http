@@ -1,0 +1,53 @@
+### Request ###
+
+GET /v1/industry/gold/top-performing-companies HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 556 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:42:43 GMT 
+server: uvicorn 
+
+[
+  {
+    "symbol": "IDR",
+    "name": "Idaho Strategic Resources, Inc.",
+    "ytd return": 0.4652,
+    " last price": 14.93,
+    "target price": 17.5
+  },
+  {
+    "symbol": "AU",
+    "name": "AngloGold Ashanti plc",
+    "ytd return": 0.4567,
+    " last price": 33.62,
+    "target price": 35.2
+  },
+  {
+    "symbol": "USAU",
+    "name": "U.S. Gold Corp.",
+    "ytd return": 0.3328,
+    " last price": 8.17,
+    "target price": 16.9
+  },
+  {
+    "symbol": "CMCL",
+    "name": "Caledonia Mining Corporation Plc",
+    "ytd return": 0.212,
+    " last price": 11.405,
+    "target price": 17.5
+  },
+  {
+    "symbol": "NEM",
+    "name": "Newmont Corporation",
+    "ytd return": 0.2117,
+    " last price": 45.1,
+    "target price": 56.1253
+  }
+]

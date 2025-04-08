@@ -1,0 +1,6822 @@
+### Request ###
+
+GET /v1/ticker/AAPL/upgrades-downgrades HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 109262 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:56:37 GMT 
+server: uvicorn 
+
+[
+  {
+    "GradeDate": "2025-04-04 10:24:43",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2025-04-03 12:33:16",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-04-03 11:17:14",
+    "Firm": "Tigress Financial",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "Strong Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-04-03 11:12:23",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-03-18 11:12:50",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-03-14 13:51:36",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2025-03-12 12:12:22",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-03-03 13:56:49",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2025-01-31 19:45:59",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-31 12:31:06",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2025-01-31 12:09:41",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-31 12:06:20",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-31 12:04:11",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-31 11:27:47",
+    "Firm": "Barclays",
+    "ToGrade": "Underweight",
+    "FromGrade": "Underweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-31 11:24:37",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-31 11:18:38",
+    "Firm": "Jefferies",
+    "ToGrade": "Underperform",
+    "FromGrade": "Underperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-31 11:04:50",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-29 12:25:37",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Perform",
+    "FromGrade": "Outperform",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2025-01-27 12:00:04",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-24 11:49:46",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-23 16:21:27",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2025-01-23 11:11:15",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-22 12:16:48",
+    "Firm": "Barclays",
+    "ToGrade": "Underweight",
+    "FromGrade": "Underweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-21 14:39:51",
+    "Firm": "Loop Capital",
+    "ToGrade": "Hold",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2025-01-21 13:22:46",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-21 11:58:59",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2025-01-21 11:37:01",
+    "Firm": "Jefferies",
+    "ToGrade": "Underperform",
+    "FromGrade": "Hold",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2025-01-07 11:59:22",
+    "Firm": "MoffettNathanson",
+    "ToGrade": "Sell",
+    "FromGrade": "Neutral",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2025-01-03 15:29:26",
+    "Firm": "Bernstein",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2025-01-03 13:56:11",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-12-26 17:03:32",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-12-13 14:28:55",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-12-10 11:11:52",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-11-29 15:34:06",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-11-25 14:22:56",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-11-01 18:16:16",
+    "Firm": "Maxim Group",
+    "ToGrade": "Hold",
+    "FromGrade": "Hold",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-11-01 13:47:23",
+    "Firm": "Barclays",
+    "ToGrade": "Underweight",
+    "FromGrade": "Underweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-11-01 11:30:34",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-11-01 10:30:19",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-10-25 16:17:57",
+    "Firm": "Keybanc",
+    "ToGrade": "Underweight",
+    "FromGrade": "Sector Weight",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2024-10-09 11:56:32",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-10-03 17:20:35",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-10-01 15:58:30",
+    "Firm": "Barclays",
+    "ToGrade": "Underweight",
+    "FromGrade": "Underweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-09-25 14:27:12",
+    "Firm": "New Street Research",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-09-24 09:42:31",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-09-19 10:41:39",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-09-16 16:00:10",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-09-10 15:48:17",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-09-10 15:30:03",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-09-10 14:34:57",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-09-10 13:10:16",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-09-10 13:07:33",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-09-10 13:01:55",
+    "Firm": "Maxim Group",
+    "ToGrade": "Hold",
+    "FromGrade": "Hold",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-09-10 12:59:45",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-09-10 12:45:54",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-09-10 10:18:32",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-09-09 12:39:52",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-09-05 16:27:20",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-09-04 14:02:31",
+    "Firm": "UBS",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-08-28 18:00:21",
+    "Firm": "Tigress Financial",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "Strong Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-08-27 14:24:49",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-08-27 12:30:19",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-08-27 12:21:40",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-08-27 12:03:39",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-08-27 11:39:43",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-08-27 10:32:52",
+    "Firm": "Melius Research",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-08-19 14:26:39",
+    "Firm": "MoffettNathanson",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2024-08-06 16:12:26",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-08-05 19:33:19",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-08-02 17:44:09",
+    "Firm": "Maxim Group",
+    "ToGrade": "Hold",
+    "FromGrade": "Hold",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-08-02 15:57:25",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-08-02 13:04:02",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-08-02 12:01:24",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-08-02 11:19:02",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-08-02 11:14:53",
+    "Firm": "Barclays",
+    "ToGrade": "Underweight",
+    "FromGrade": "Underweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-29 17:04:14",
+    "Firm": "TD Cowen",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-26 17:27:02",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-25 09:11:34",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-24 16:06:57",
+    "Firm": "Barclays",
+    "ToGrade": "Underweight",
+    "FromGrade": "Underweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-24 12:25:40",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-18 14:37:54",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-17 18:19:22",
+    "Firm": "CFRA",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-15 12:08:21",
+    "Firm": "Loop Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "Hold",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2024-07-15 09:41:27",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-11 14:00:37",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-07-11 13:41:42",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-10 10:37:55",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-09 17:17:35",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-09 10:43:44",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-01 13:35:35",
+    "Firm": "UBS",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-07-01 10:47:53",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-06-28 11:53:54",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-06-26 16:55:14",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-06-26 12:12:19",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2024-06-25 14:31:50",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-06-24 17:24:31",
+    "Firm": "Melius Research",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-06-21 09:46:10",
+    "Firm": "Bernstein",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-06-18 13:44:54",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-06-14 16:16:23",
+    "Firm": "Erste Group",
+    "ToGrade": "Buy",
+    "FromGrade": "Hold",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2024-06-12 11:35:48",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-06-11 14:11:41",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2024-06-11 13:29:16",
+    "Firm": "Barclays",
+    "ToGrade": "Underweight",
+    "FromGrade": "Underweight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-06-11 11:22:24",
+    "Firm": "UBS",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-06-11 11:20:46",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-06-11 11:08:47",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-06-11 10:22:57",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-06-11 10:20:01",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-06-04 16:27:59",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-05-30 12:17:23",
+    "Firm": "Tigress Financial",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "Strong Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-05-29 17:28:38",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-05-24 12:04:58",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-05-13 12:21:45",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-05-03 21:11:46",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-05-03 18:06:29",
+    "Firm": "Itau BBA",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Underperform",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2024-05-03 16:57:18",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-05-03 16:42:22",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-05-03 15:15:49",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-05-03 14:14:36",
+    "Firm": "Barclays",
+    "ToGrade": "Underweight",
+    "FromGrade": "Underweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-05-03 14:06:43",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-05-03 12:42:10",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-05-03 10:46:59",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-04-29 13:25:14",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-04-29 09:39:15",
+    "Firm": "Bernstein",
+    "ToGrade": "Outperform",
+    "FromGrade": "Market Perform",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2024-04-22 12:23:34",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-04-17 15:04:18",
+    "Firm": "Maxim Group",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2024-04-16 09:57:38",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-04-11 12:00:59",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-04-09 12:14:30",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-04-01 15:05:32",
+    "Firm": "Loop Capital",
+    "ToGrade": "Hold",
+    "FromGrade": "Hold",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-03-28 10:30:35",
+    "Firm": "DZ Bank",
+    "ToGrade": "Hold",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2024-03-25 18:50:14",
+    "Firm": "UBS",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-03-22 18:42:14",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-03-21 19:09:58",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-03-21 13:38:44",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-03-12 16:00:38",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-03-08 16:27:10",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-03-05 12:36:42",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-02-28 13:18:58",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-02-12 13:31:54",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-02-07 16:34:00",
+    "Firm": "DA Davidson",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-02-05 18:15:07",
+    "Firm": "Loop Capital",
+    "ToGrade": "Hold",
+    "FromGrade": "Hold",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-02-02 20:29:37",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-02-02 20:00:53",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-02-02 18:02:06",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-02-02 13:49:30",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-02-02 12:44:37",
+    "Firm": "Barclays",
+    "ToGrade": "Underweight",
+    "FromGrade": "Underweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2024-02-02 12:14:28",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-01-31 19:15:23",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-01-31 10:04:14",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-01-30 16:12:20",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2024-01-18 11:11:05",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2024-01-10 11:51:15",
+    "Firm": "Redburn Atlantic",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2024-01-04 10:27:17",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Neutral",
+    "FromGrade": "Overweight",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2024-01-03 10:18:35",
+    "Firm": "DA Davidson",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2024-01-02 10:22:36",
+    "Firm": "Barclays",
+    "ToGrade": "Underweight",
+    "FromGrade": "Equal-Weight",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2023-12-20 13:59:18",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-12-11 16:12:10",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-12-08 13:00:16",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-11-24 15:51:16",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-11-16 15:59:22",
+    "Firm": "Tigress Financial",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "Strong Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-11-03 21:45:17",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-11-03 14:39:05",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-11-03 13:55:05",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-11-01 13:17:03",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-10-31 10:56:54",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-10-30 18:47:18",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-10-30 13:15:27",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-10-30 11:25:58",
+    "Firm": "Keybanc",
+    "ToGrade": "Sector Weight",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-10-24 18:58:21",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-10-16 12:19:17",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-10-09 14:20:52",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-10-09 10:23:58",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-10-04 08:42:33",
+    "Firm": "Keybanc",
+    "ToGrade": "Sector Weight",
+    "FromGrade": "Overweight",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2023-09-28 11:20:06",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-27 15:58:26",
+    "Firm": "UBS",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-26 13:45:33",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-25 12:41:40",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-22 15:47:08",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-21 16:22:34",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-19 14:13:42",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-09-19 10:36:05",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-18 12:52:48",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-15 17:09:08",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-14 08:34:02",
+    "Firm": "Keybanc",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-13 16:36:57",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-09-13 13:42:25",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-09-13 10:43:02",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-12 20:35:10",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-12 11:22:01",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-08 17:00:45",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-09-07 13:11:50",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-09-07 09:39:44",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-08-17 12:33:17",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-08-04 16:51:36",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-08-04 12:18:19",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-08-04 11:49:46",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-08-04 11:25:38",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2023-08-04 10:51:04",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-08-04 10:45:21",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-08-04 10:43:18",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-08-02 16:15:46",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-08-01 13:20:47",
+    "Firm": "TD Cowen",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-08-01 12:21:11",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-07-31 09:51:48",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-07-27 12:55:57",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-07-25 12:19:57",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-07-24 10:20:56",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-07-24 10:18:10",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-07-20 11:43:16",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-07-20 10:36:31",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-07-19 13:19:17",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-07-17 15:33:52",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-07-11 08:01:02",
+    "Firm": "Keybanc",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-07-05 11:08:55",
+    "Firm": "UBS",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-06-30 08:31:05",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2023-06-23 14:38:57",
+    "Firm": "Tigress Financial",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "Strong Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-06-14 15:40:37",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-06-13 08:32:38",
+    "Firm": "UBS",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2023-06-07 12:26:58",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-06-06 18:40:55",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-06-06 11:48:21",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-06-06 10:55:07",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-06-06 10:30:46",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-06-06 10:07:10",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-06-06 08:44:59",
+    "Firm": "DA Davidson",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2023-06-05 12:49:03",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-06-05 11:05:58",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-06-05 09:35:06",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-06-02 11:53:52",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-06-02 11:31:13",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-31 11:50:30",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-05-22 15:42:29",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-22 10:40:53",
+    "Firm": "Loop Capital",
+    "ToGrade": "Hold",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2023-05-12 15:43:55",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 18:42:27",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 15:45:04",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 14:18:32",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 12:01:31",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 11:45:16",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 11:04:09",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 10:59:33",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 09:57:07",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 09:34:59",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 09:33:25",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 09:32:27",
+    "Firm": "Atlantic Equities",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-05 08:41:30",
+    "Firm": "Keybanc",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-04 16:42:22",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-04 11:48:44",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-05-02 10:54:31",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-05-01 11:22:14",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-04-30 18:43:59",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-04-28 18:06:13",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-04-27 15:46:58",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-04-26 10:23:06",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-04-26 09:56:59",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-04-19 09:59:44",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-04-17 11:47:24",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-04-13 11:27:12",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-04-13 10:39:16",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-04-05 15:38:50",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-04-05 11:22:40",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-03-30 10:44:10",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-03-10 13:08:48",
+    "Firm": "LightShed Partners",
+    "ToGrade": "Sell",
+    "FromGrade": "Neutral",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2023-03-10 11:53:13",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-03-08 13:37:42",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-03-06 10:03:54",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2023-03-02 14:16:19",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-02-06 10:30:28",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-02-03 19:46:53",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-02-03 16:48:54",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-02-03 15:30:28",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-02-03 14:30:12",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-02-03 13:29:29",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-02-03 13:28:12",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-02-03 12:42:04",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-02-03 12:37:21",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-02-03 12:20:08",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-02-03 12:04:41",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-02-03 11:58:46",
+    "Firm": "New Street Research",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-02-03 11:56:52",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-02-03 11:28:21",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2023-01-27 15:27:31",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-01-23 11:27:42",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-01-19 11:27:09",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-01-18 19:48:43",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-01-18 13:21:32",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-01-13 14:17:50",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-01-11 11:56:03",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-01-09 16:50:16",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-01-04 13:58:03",
+    "Firm": "Tigress Financial",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "Strong Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-01-04 12:29:15",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2023-01-03 10:24:43",
+    "Firm": "Exane BNP Paribas",
+    "ToGrade": "Neutral",
+    "FromGrade": "Outperform",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2022-12-20 11:46:53",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-12-12 12:44:04",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-11-08 12:16:18",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-11-08 12:09:47",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-11-07 13:07:37",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-11-07 12:38:45",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-28 18:50:51",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-28 18:09:00",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-28 13:18:22",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-28 11:58:49",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-28 11:31:02",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-28 10:39:07",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-28 10:34:48",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-28 08:26:40",
+    "Firm": "Keybanc",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-21 18:52:37",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-17 10:25:50",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-13 11:56:21",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-10-11 11:10:25",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-09-29 10:47:54",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2022-09-29 10:10:54",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2022-09-20 12:48:37",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-09-06 18:54:29",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-09-06 15:54:51",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-08-22 13:08:28",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-08-19 08:27:55",
+    "Firm": "Keybanc",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-08-17 10:21:47",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-08-17 08:12:59",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2022-08-15 15:57:24",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-08-02 08:28:24",
+    "Firm": "Keybanc",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-29 15:36:21",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-29 14:38:07",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-29 13:06:31",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-29 11:53:54",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-29 11:27:46",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-29 11:20:58",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-29 10:46:30",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-26 14:23:04",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-20 13:08:13",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-20 12:15:13",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-19 14:42:51",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-13 11:30:21",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-13 10:42:23",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-12 14:17:37",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-12 08:32:42",
+    "Firm": "Keybanc",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-07-10 18:57:57",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-06-30 12:54:36",
+    "Firm": "Tigress Financial",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "Strong Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-06-28 14:13:01",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-06-15 10:40:48",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-06-14 11:09:14",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-06-07 18:58:46",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-06-07 14:15:50",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-05-19 12:07:31",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-05-17 13:10:28",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-05-10 15:17:06",
+    "Firm": "HSBC",
+    "ToGrade": "Hold",
+    "FromGrade": "Hold",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-05-02 11:08:15",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-04-29 12:46:35",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-04-29 11:59:09",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-04-29 11:11:53",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-04-29 10:51:03",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-04-29 10:24:28",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-04-24 17:37:03",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-04-19 12:33:08",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2022-03-31 13:25:13",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-03-24 14:08:04",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-03-11 11:56:12",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-03-09 15:11:24",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-02-15 15:29:57",
+    "Firm": "Tigress Financial",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-31 15:43:22",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-28 19:11:55",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-28 17:46:03",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-28 16:34:37",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-28 15:14:26",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-28 15:09:49",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-28 14:18:04",
+    "Firm": "New Street Research",
+    "ToGrade": "Neutral",
+    "FromGrade": "Sell",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2022-01-28 12:59:43",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-28 12:44:09",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-28 12:17:10",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-28 11:41:08",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-28 11:36:41",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-24 15:14:28",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-21 13:58:48",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-19 15:12:39",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-18 13:09:28",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-14 12:04:52",
+    "Firm": "Loop Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-07 14:22:32",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2022-01-05 14:20:05",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-12-22 14:51:07",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-12-14 13:12:14",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-12-14 11:24:40",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2021-12-13 14:33:52",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-12-07 13:03:59",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-12-06 09:40:11",
+    "Firm": "Keybanc",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2021-12-03 15:10:55",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-12-02 11:31:28",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-11-23 17:06:29",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-11-17 12:02:55",
+    "Firm": "New Street Research",
+    "ToGrade": "Sell",
+    "FromGrade": "Sell",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-11-09 13:51:26",
+    "Firm": "Tigress Financial",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "Strong Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-10-29 11:40:22",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-10-29 11:15:54",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-10-29 10:56:04",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-10-28 16:04:49",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-10-27 13:08:46",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-10-11 16:03:02",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-09-22 16:06:36",
+    "Firm": "Tigress Financial",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-09-09 13:48:34",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-09-08 15:03:31",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-09-01 13:04:22",
+    "Firm": "Wolfe Research",
+    "ToGrade": "Peer Perform",
+    "FromGrade": "Underperform",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2021-08-13 13:53:47",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-28 18:16:18",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-28 14:15:58",
+    "Firm": "Loop Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-28 14:05:47",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-28 14:01:34",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-28 13:26:28",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-28 13:18:19",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-28 12:30:22",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-28 12:02:49",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-28 11:09:57",
+    "Firm": "Wolfe Research",
+    "ToGrade": "Underperform",
+    "FromGrade": "Underperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-28 11:02:55",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-22 12:23:16",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-20 10:53:02",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-15 11:41:41",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-14 14:10:18",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-07-06 12:26:54",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-06-30 13:24:23",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-06-24 11:36:05",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-05-28 11:21:08",
+    "Firm": "New Street Research",
+    "ToGrade": "Sell",
+    "FromGrade": "Neutral",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2021-05-19 10:58:13",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 15:59:31",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 14:45:11",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 14:01:05",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 13:39:55",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 13:19:49",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 13:19:24",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 13:14:45",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 12:35:37",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 12:14:40",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 11:43:48",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 11:43:09",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 11:16:19",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 11:14:00",
+    "Firm": "Wolfe Research",
+    "ToGrade": "Underperform",
+    "FromGrade": "Underperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-29 10:19:33",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Neutral",
+    "FromGrade": "Sell",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2021-04-27 15:57:43",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-21 12:36:52",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-21 11:15:32",
+    "Firm": "Wolfe Research",
+    "ToGrade": "Underperform",
+    "FromGrade": "Underperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-16 11:53:49",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-08 13:17:52",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-04-06 12:33:27",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-03-31 10:26:27",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2021-03-24 13:31:59",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-03-16 12:54:21",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-03-10 12:43:05",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 19:25:05",
+    "Firm": "Loop Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 19:08:42",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 19:07:39",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 19:02:46",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 18:59:19",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 18:26:03",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 16:31:14",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 16:22:00",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 16:19:21",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 14:24:43",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 13:36:48",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 12:25:31",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 11:36:26",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-28 10:59:36",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-26 15:36:29",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-26 14:27:26",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-26 13:35:19",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-25 16:00:13",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-25 12:58:13",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-25 11:56:14",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-22 16:23:19",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-21 13:18:07",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-15 19:23:33",
+    "Firm": "Loop Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-14 17:55:27",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-12 16:05:30",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-11 12:16:55",
+    "Firm": "Wolfe Research",
+    "ToGrade": "Underperform",
+    "FromGrade": "Underperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-06 17:03:04",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-05 15:31:08",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2021-01-05 13:06:22",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-12-16 17:10:20",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-12-15 16:48:16",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-12-14 16:04:20",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-12-09 09:49:15",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-11-30 11:46:47",
+    "Firm": "Loop Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "Hold",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2020-10-30 18:23:49",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-10-30 13:06:24",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-10-30 11:40:23",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-10-26 18:16:57",
+    "Firm": "Loop Capital",
+    "ToGrade": "Hold",
+    "FromGrade": "Hold",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-10-22 15:48:25",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-10-21 13:01:58",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-10-14 15:28:49",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-10-14 12:54:22",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-10-14 12:06:15",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-10-13 12:04:18",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-10-12 11:22:42",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-09-22 11:22:08",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-09-21 16:58:46",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-09-21 16:01:56",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-09-17 14:54:47",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-09-16 10:32:51",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-09-10 14:42:07",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-09-01 19:42:40",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-09-01 13:36:25",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-09-01 12:50:05",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-08-31 19:10:50",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-08-31 16:24:00",
+    "Firm": "Argus Research",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-08-31 12:07:08",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-08-25 17:06:53",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-08-25 11:19:51",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-08-24 11:53:55",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-08-14 16:05:22",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-08-10 08:57:26",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-08-05 16:07:01",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-08-05 15:23:24",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-08-05 15:21:19",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2020-07-31 18:28:18",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 18:14:56",
+    "Firm": "Loop Capital",
+    "ToGrade": "Hold",
+    "FromGrade": "Hold",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 16:08:56",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 15:26:01",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 15:14:12",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 14:59:27",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 13:41:34",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 12:57:13",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 12:24:57",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 12:20:36",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 12:19:42",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 12:02:19",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 11:45:08",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 11:39:47",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 11:26:07",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 11:08:10",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-31 10:58:02",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-29 14:36:40",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-28 19:08:44",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-24 16:10:33",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-24 15:53:30",
+    "Firm": "Wolfe Research",
+    "ToGrade": "Underperform",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2020-07-24 14:29:52",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-16 11:08:50",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-15 12:53:33",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-15 10:21:42",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-13 12:31:34",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-13 11:46:39",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-08 12:37:14",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-07 15:03:48",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-07-07 11:38:43",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-06-25 15:12:33",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-25 08:59:51",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-23 18:13:23",
+    "Firm": "Loop Capital",
+    "ToGrade": "Hold",
+    "FromGrade": "Hold",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-23 15:51:08",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-23 15:49:02",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-23 15:44:10",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-23 14:57:39",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Sell",
+    "FromGrade": "Sell",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-23 11:56:34",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-22 14:06:35",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-17 11:22:07",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-16 11:08:13",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-11 12:15:36",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-11 12:06:09",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-11 11:04:03",
+    "Firm": "HSBC",
+    "ToGrade": "Hold",
+    "FromGrade": "Reduce",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2020-06-10 11:18:38",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-05 12:42:30",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-05 12:26:09",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-06-03 12:20:45",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-27 15:21:30",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-27 11:36:55",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-12 12:42:35",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-07 16:21:23",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-06 11:42:30",
+    "Firm": "Daiwa Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 15:09:23",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 14:33:37",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 14:32:47",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 14:30:23",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 13:02:47",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 12:44:28",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 12:07:58",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-05-01 11:39:51",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 11:30:29",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 11:22:02",
+    "Firm": "Nomura Instinet",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 10:46:25",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 10:44:54",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-05-01 10:44:33",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-04-27 15:21:27",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-04-23 10:10:27",
+    "Firm": "Daiwa Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2020-04-21 11:24:34",
+    "Firm": "Nomura Instinet",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-04-17 09:31:16",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Sell",
+    "FromGrade": "Neutral",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2020-04-16 14:37:34",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-04-16 14:02:50",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-04-13 16:24:49",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-04-13 12:25:33",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-04-09 14:40:56",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-04-09 11:26:16",
+    "Firm": "Nomura Instinet",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-04-08 10:43:49",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-04-03 13:48:31",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-04-03 12:46:37",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-04-01 12:11:54",
+    "Firm": "Argus Research",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-30 13:19:00",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-26 16:26:23",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-25 09:00:32",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Buy",
+    "FromGrade": "Hold",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2020-03-24 12:00:03",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-23 14:11:37",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-23 11:27:56",
+    "Firm": "Nomura Instinet",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-20 12:43:30",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-03-19 12:48:08",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-18 14:55:31",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-18 14:23:49",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-17 14:50:47",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-17 14:22:30",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-03-17 11:38:19",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-13 09:32:08",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Overweight",
+    "FromGrade": "Equal-Weight",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2020-03-11 13:01:49",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-03-10 11:06:05",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-08 14:22:17",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-06 14:23:26",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-06 13:41:17",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-03-04 12:31:58",
+    "Firm": "Nomura Instinet",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-03 15:20:14",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-03-02 16:00:57",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-03-02 11:18:28",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Outperform",
+    "FromGrade": "Perform",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2020-02-18 19:33:16",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-02-18 17:28:10",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-02-18 15:48:07",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-02-18 15:01:28",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-02-18 13:52:12",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-30 11:12:37",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Hold",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2020-01-29 20:53:38",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-01-29 19:11:12",
+    "Firm": "Loop Capital",
+    "ToGrade": "Hold",
+    "FromGrade": "Hold",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 17:29:57",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 14:38:36",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 14:33:14",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 14:20:25",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 13:59:14",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 13:34:23",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 13:31:01",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 13:17:05",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 13:03:40",
+    "Firm": "Maxim Group",
+    "ToGrade": "Hold",
+    "FromGrade": "Sell",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2020-01-29 12:26:09",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-01-29 12:00:37",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 11:59:16",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 11:56:57",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 11:55:12",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 11:53:15",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 11:47:41",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 11:42:59",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-29 11:09:47",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-27 15:40:35",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-24 20:02:39",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-24 13:57:11",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-24 13:25:55",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-24 13:21:24",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Sell",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-23 12:12:13",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-17 13:01:42",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-17 12:58:37",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-17 12:29:44",
+    "Firm": "Nomura Instinet",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-15 14:14:05",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-14 13:34:43",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-14 10:55:17",
+    "Firm": "Atlantic Equities",
+    "ToGrade": "Underweight",
+    "FromGrade": "Neutral",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2020-01-13 18:49:42",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-13 12:42:19",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-10 17:31:50",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-10 13:22:04",
+    "Firm": "Argus Research",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-09 16:24:40",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-06 17:52:15",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2020-01-06 11:14:48",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Strong Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2020-01-03 12:55:50",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2020-01-03 11:56:51",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-12-23 12:04:10",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-12-20 12:44:50",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-12-17 14:33:01",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-12-11 16:42:02",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-12-09 12:21:20",
+    "Firm": "China Renaissance",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2019-12-02 13:32:35",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-11-26 14:42:46",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2019-11-15 13:21:11",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-11-15 12:39:10",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-11-15 12:36:39",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-11-14 13:00:02",
+    "Firm": "Maxim Group",
+    "ToGrade": "Sell",
+    "FromGrade": "Hold",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2019-11-13 11:37:12",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2019-10-31 12:39:56",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-31 12:38:22",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-31 12:37:13",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-31 12:35:11",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-31 12:32:47",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-31 12:30:11",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-31 12:02:16",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-31 11:59:09",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Market Perform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-31 11:48:47",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-31 11:42:02",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-31 11:35:39",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-28 17:46:00",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-28 14:48:41",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-28 12:55:15",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-28 12:34:26",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-25 11:34:11",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2019-10-24 10:52:58",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-23 11:47:17",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-22 12:43:44",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-21 11:32:24",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-17 11:15:29",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-11 12:57:57",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-10 10:11:40",
+    "Firm": "Longbow Research",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2019-10-09 12:14:12",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-10-07 11:08:25",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-09-30 12:18:17",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-09-20 11:58:03",
+    "Firm": "Cascend",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2019-09-13 12:51:22",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-09-11 12:21:01",
+    "Firm": "Needham",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-09-11 12:12:15",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-09-11 11:57:28",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2019-08-08 11:26:29",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2019-07-31 13:54:52",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-31 13:38:41",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-31 13:36:52",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-31 13:32:43",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-31 13:31:20",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-31 13:20:23",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-31 12:49:30",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-31 12:45:58",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-29 11:40:59",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-22 13:09:58",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-19 12:47:24",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-18 10:24:58",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "Market Perform",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2019-07-17 13:07:06",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-09 11:20:18",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-07-08 10:53:11",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Sell",
+    "FromGrade": "Neutral",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2019-06-20 10:18:49",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2019-06-06 11:41:22",
+    "Firm": "Evercore ISI Group",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2019-06-04 11:08:59",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-05-30 13:33:56",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-05-30 11:23:32",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-05-28 12:46:08",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-05-23 13:23:48",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-05-17 12:01:21",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-05-01 12:37:00",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-05-01 12:34:43",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-05-01 12:31:20",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-05-01 12:21:30",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-05-01 12:12:10",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-04-25 13:54:31",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-04-24 11:31:12",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-04-11 12:07:54",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2019-04-10 15:46:17",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2019-04-10 10:26:39",
+    "Firm": "HSBC",
+    "ToGrade": "Reduce",
+    "FromGrade": "Hold",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2019-03-26 12:26:52",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-03-26 11:59:33",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-03-26 11:58:47",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-03-26 11:03:45",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-03-21 12:19:17",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2019-03-21 11:51:03",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-03-21 11:47:39",
+    "Firm": "Needham",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "Buy",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2019-03-14 11:27:29",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2019-03-11 10:47:52",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2019-01-30 14:13:54",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2019-01-30 12:54:24",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2019-01-30 12:52:11",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-01-30 12:52:01",
+    "Firm": "BMO Capital",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-01-30 12:45:26",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-01-30 12:41:57",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-01-30 12:35:39",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-01-04 12:26:41",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-01-03 15:33:11",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-01-03 14:57:24",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-01-03 14:34:04",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-01-03 13:39:54",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-01-03 13:24:46",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2019-01-03 13:11:46",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2019-01-03 12:59:27",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2019-01-03 12:25:37",
+    "Firm": "Macquarie",
+    "ToGrade": "Neutral",
+    "FromGrade": "Outperform",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2019-01-03 12:07:27",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-12-14 11:37:29",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2018-12-10 15:35:38",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-12-07 12:24:56",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-12-06 12:53:37",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-12-04 10:39:28",
+    "Firm": "HSBC",
+    "ToGrade": "Hold",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2018-11-29 14:22:18",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-11-20 12:01:31",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "reit"
+  },
+  {
+    "GradeDate": "2018-11-14 14:19:17",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-11-14 11:14:11",
+    "Firm": "Guggenheim",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2018-11-08 17:16:23",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-11-02 17:33:54",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-11-02 16:36:41",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-11-02 16:01:55",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-11-02 15:05:30",
+    "Firm": "BMO Capital",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-11-02 14:38:00",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-11-02 12:08:29",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2018-10-29 09:51:32",
+    "Firm": "Jefferies",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2018-10-19 09:52:29",
+    "Firm": "Wedbush",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2018-09-28 11:48:42",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-09-27 10:42:07",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2018-09-13 16:55:04",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-09-13 12:05:24",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-09-05 11:41:34",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-09-05 11:19:57",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-09-04 11:30:22",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-08-31 11:47:29",
+    "Firm": "Nomura",
+    "ToGrade": "Neutral",
+    "FromGrade": "Neutral",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-08-21 11:22:06",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-08-02 13:54:06",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-08-01 13:42:04",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-08-01 13:02:17",
+    "Firm": "BMO Capital",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-08-01 12:31:54",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Hold",
+    "FromGrade": "Hold",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-07-24 11:56:03",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-07-23 11:56:29",
+    "Firm": "BMO Capital",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-06-08 12:27:50",
+    "Firm": "Argus Research",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-05-30 12:24:17",
+    "Firm": "Maxim Group",
+    "ToGrade": "Hold",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2018-05-24 12:13:55",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-05-02 13:07:18",
+    "Firm": "BMO Capital",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-05-02 12:10:58",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-04-30 20:51:59",
+    "Firm": "DA Davidson",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2018-04-30 11:29:27",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-04-20 11:40:27",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-04-11 13:09:58",
+    "Firm": "Monness, Crespi, Hardt",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2018-03-16 16:42:31",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-02-07 13:49:59",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Neutral",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2018-02-05 18:06:14",
+    "Firm": "Hilliard Lyons",
+    "ToGrade": "Buy",
+    "FromGrade": "Long-Term Buy",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2018-02-02 15:56:25",
+    "Firm": "Maxim Group",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-02-02 15:02:10",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Equal-Weight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-02-02 14:35:12",
+    "Firm": "BMO Capital",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Market Perform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-02-02 14:03:11",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-02-02 12:37:29",
+    "Firm": "Bernstein",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Outperform",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2018-02-02 11:16:19",
+    "Firm": "Keybanc",
+    "ToGrade": "Sector Weight",
+    "FromGrade": "Overweight",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2018-01-31 13:20:37",
+    "Firm": "Loop Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-01-31 11:55:03",
+    "Firm": "BMO Capital",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Outperform",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2018-01-25 14:19:08",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-01-23 11:35:14",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2018-01-22 12:17:56",
+    "Firm": "Atlantic Equities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Overweight",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2018-01-17 11:15:32",
+    "Firm": "Longbow Research",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2017-12-19 11:32:03",
+    "Firm": "Nomura Instinet",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2017-11-06 12:15:09",
+    "Firm": "Argus Research",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-11-03 18:58:16",
+    "Firm": "Bernstein",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-11-03 18:29:26",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-11-03 18:24:21",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-11-03 17:57:34",
+    "Firm": "BMO Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-11-03 17:41:41",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-11-03 17:07:17",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-11-03 16:11:52",
+    "Firm": "Loop Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-11-03 15:43:06",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-11-03 12:50:28",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2017-10-25 12:14:50",
+    "Firm": "HSBC",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2017-10-16 10:42:52",
+    "Firm": "Keybanc",
+    "ToGrade": "Overweight",
+    "FromGrade": "Sector Weight",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2017-10-13 16:46:09",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-09-22 13:29:08",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-09-19 12:35:52",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-09-06 15:28:01",
+    "Firm": "Nomura",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-08-03 16:40:28",
+    "Firm": "Nomura",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-08-02 19:24:11",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-08-02 17:06:42",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-08-02 16:25:36",
+    "Firm": "BMO Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-08-02 14:38:08",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-07-24 21:30:14",
+    "Firm": "Loop Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2017-07-17 16:06:02",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-06-12 10:15:50",
+    "Firm": "Mizuho",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2017-06-05 10:46:20",
+    "Firm": "Pacific Crest",
+    "ToGrade": "Sector Weight",
+    "FromGrade": "Overweight",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2017-04-19 21:13:02",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "Overweight",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-04-18 11:24:34",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-04-04 10:42:38",
+    "Firm": "Pacific Crest",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-03-24 12:03:30",
+    "Firm": "Nomura",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-03-24 11:50:39",
+    "Firm": "Needham",
+    "ToGrade": "Buy",
+    "FromGrade": "Strong Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2017-03-21 12:08:03",
+    "Firm": "Bernstein",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-03-06 12:17:23",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-03-01 13:29:50",
+    "Firm": "BTIG",
+    "ToGrade": "Buy",
+    "FromGrade": "Buy",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2017-01-24 10:57:30",
+    "Firm": "Barclays",
+    "ToGrade": "Equal-Weight",
+    "FromGrade": "Overweight",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2017-01-19 14:05:17",
+    "Firm": "OTR Global",
+    "ToGrade": "Negative",
+    "FromGrade": "",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2017-01-04 14:28:35",
+    "Firm": "Guggenheim",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2016-10-26 04:00:00",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-10-12 04:00:00",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-30 10:13:43",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-29 08:17:49",
+    "Firm": "Barclays",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-22 10:55:24",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-22 10:22:56",
+    "Firm": "Nomura",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-16 11:12:49",
+    "Firm": "CLSA",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-15 12:10:08",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-15 12:08:11",
+    "Firm": "BTIG",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-14 12:11:45",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-13 12:11:02",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 13:13:03",
+    "Firm": "Macquarie",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 13:12:03",
+    "Firm": "Pacific Crest",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 13:09:53",
+    "Firm": "William Blair",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 12:38:40",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 11:41:58",
+    "Firm": "Stifel",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 11:41:31",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 11:38:30",
+    "Firm": "Nomura",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 11:38:21",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Perform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 11:38:07",
+    "Firm": "Bernstein",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 10:18:26",
+    "Firm": "Drexel Hamilton",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 10:16:25",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 10:15:49",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 10:15:32",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 10:15:16",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-09-08 08:53:08",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Outperform",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2016-08-11 16:29:48",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-08-02 10:36:59",
+    "Firm": "Daiwa Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2016-07-28 10:14:58",
+    "Firm": "Hilliard Lyons",
+    "ToGrade": "Buy",
+    "FromGrade": "Long-Term Buy",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2016-07-27 18:01:49",
+    "Firm": "JP Morgan",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-27 16:06:12",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-27 12:02:35",
+    "Firm": "BMO Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-27 11:51:02",
+    "Firm": "Drexel Hamilton",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-27 11:48:56",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-27 10:36:37",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-27 10:34:00",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-27 10:25:53",
+    "Firm": "Raymond James",
+    "ToGrade": "Outperform",
+    "FromGrade": "Market Perform",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2016-07-27 09:55:00",
+    "Firm": "Brean Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-27 09:54:14",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-27 08:28:35",
+    "Firm": "BTIG",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-26 10:04:59",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-15 11:01:44",
+    "Firm": "Barclays",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-07-06 12:10:08",
+    "Firm": "Longbow Research",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2016-06-02 07:58:13",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-05-11 10:50:28",
+    "Firm": "UBS",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 14:24:33",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 14:17:12",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 14:16:15",
+    "Firm": "Nomura",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 14:11:40",
+    "Firm": "FBN Securities",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 13:02:45",
+    "Firm": "CLSA",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 12:26:14",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 12:25:30",
+    "Firm": "Pacific Crest",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 12:24:53",
+    "Firm": "Baird",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 12:14:39",
+    "Firm": "Maxim Group",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 11:29:54",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 11:17:22",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 11:17:02",
+    "Firm": "Macquarie",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 11:16:24",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Perform",
+    "FromGrade": "Outperform",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2016-04-27 10:14:46",
+    "Firm": "Citigroup",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 10:14:02",
+    "Firm": "Barclays",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 09:56:26",
+    "Firm": "Brean Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 03:15:30",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-27 03:03:24",
+    "Firm": "BTIG",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-20 08:24:21",
+    "Firm": "Barclays",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-07 11:09:24",
+    "Firm": "BTIG",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-06 10:30:46",
+    "Firm": "Needham",
+    "ToGrade": "Strong Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2016-04-04 10:46:39",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-04-04 09:46:52",
+    "Firm": "Brean Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-03-30 10:10:00",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "Market Perform",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2016-03-10 14:49:39",
+    "Firm": "CLSA",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-03-07 10:22:37",
+    "Firm": "Pacific Crest",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-02-12 13:14:25",
+    "Firm": "FBR Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-01-27 11:23:33",
+    "Firm": "Piper Sandler",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-01-27 10:41:03",
+    "Firm": "FBR Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-01-27 10:31:59",
+    "Firm": "Barclays",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-01-12 11:28:03",
+    "Firm": "B of A Securities",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2016-01-11 19:19:25",
+    "Firm": "Deutsche Bank",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-01-11 14:57:45",
+    "Firm": "Oppenheimer",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-01-11 11:10:00",
+    "Firm": "Mizuho",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2016-01-08 13:28:11",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-01-08 12:27:30",
+    "Firm": "Pacific Crest",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2016-01-07 17:25:19",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-12-22 15:28:54",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Market Perform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-12-14 11:06:30",
+    "Firm": "Barclays",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-12-11 12:19:24",
+    "Firm": "BMO Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2015-11-18 11:39:39",
+    "Firm": "Goldman Sachs",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-10-28 11:58:05",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-10-28 09:42:59",
+    "Firm": "Pacific Crest",
+    "ToGrade": "Overweight",
+    "FromGrade": "Sector Weight",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2015-10-28 08:36:53",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-10-28 08:19:00",
+    "Firm": "Barclays",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-10-23 11:30:25",
+    "Firm": "Maxim Group",
+    "ToGrade": "Buy",
+    "FromGrade": "Neutral",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2015-10-14 20:25:56",
+    "Firm": "Barclays",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2015-10-11 20:54:21",
+    "Firm": "Morgan Stanley",
+    "ToGrade": "Overweight",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-10-01 22:52:45",
+    "Firm": "Drexel Hamilton",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2015-09-28 20:26:28",
+    "Firm": "Sterne Agee",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2015-09-21 10:07:17",
+    "Firm": "Canaccord Genuity",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-09-16 09:53:57",
+    "Firm": "JMP Securities",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-09-09 13:16:46",
+    "Firm": "Rosenblatt",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2015-08-25 10:22:58",
+    "Firm": "Wells Fargo",
+    "ToGrade": "Outperform",
+    "FromGrade": "Market Perform",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2015-08-05 10:22:49",
+    "Firm": "B of A Securities",
+    "ToGrade": "Neutral",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2015-07-30 22:09:33",
+    "Firm": "Nomura",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2015-07-22 10:25:34",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Outperform",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2015-07-13 08:07:11",
+    "Firm": "Societe Generale",
+    "ToGrade": "Buy",
+    "FromGrade": "Hold",
+    "Action": "up"
+  },
+  {
+    "GradeDate": "2015-04-28 13:00:00",
+    "Firm": "Susquehanna",
+    "ToGrade": "Positive",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-04-27 13:00:00",
+    "Firm": "Jefferies",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-04-27 09:19:47",
+    "Firm": "Jefferies",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-04-27 09:18:51",
+    "Firm": "Brean Capital",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2015-04-17 21:06:35",
+    "Firm": "FBR Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2015-04-16 09:56:50",
+    "Firm": "Maxim Group",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "init"
+  },
+  {
+    "GradeDate": "2015-04-10 10:09:07",
+    "Firm": "Raymond James",
+    "ToGrade": "Market Perform",
+    "FromGrade": "Outperform",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2015-04-08 08:51:42",
+    "Firm": "Societe Generale",
+    "ToGrade": "Hold",
+    "FromGrade": "Buy",
+    "Action": "down"
+  },
+  {
+    "GradeDate": "2015-03-31 13:00:00",
+    "Firm": "RBC Capital",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-03-26 08:51:33",
+    "Firm": "Credit Suisse",
+    "ToGrade": "Outperform",
+    "FromGrade": "Outperform",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-03-24 13:00:00",
+    "Firm": "Cantor Fitzgerald",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-03-23 09:32:37",
+    "Firm": "Cowen & Co.",
+    "ToGrade": "Outperform",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2015-03-18 09:04:04",
+    "Firm": "Jefferies",
+    "ToGrade": "Hold",
+    "FromGrade": "",
+    "Action": "main"
+  },
+  {
+    "GradeDate": "2012-09-12 11:51:00",
+    "Firm": "Hudson Square",
+    "ToGrade": "Buy",
+    "FromGrade": "",
+    "Action": "main"
+  }
+]

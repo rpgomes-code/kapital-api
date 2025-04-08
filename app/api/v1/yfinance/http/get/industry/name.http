@@ -1,0 +1,17 @@
+### Request ###
+
+GET /v1/industry/gold/name HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 6 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:35:32 GMT 
+server: uvicorn 
+
+"Gold"

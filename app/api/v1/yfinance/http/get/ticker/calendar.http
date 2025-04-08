@@ -1,0 +1,30 @@
+### Request ###
+
+GET /v1/ticker/AAPL/calendar HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 257 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:10:22 GMT 
+server: uvicorn 
+
+{
+  "Dividend Date": "2025-02-13",
+  "Ex-Dividend Date": "2025-02-10",
+  "Earnings Date": [
+    "2025-04-30",
+    "2025-05-05"
+  ],
+  "Earnings High": 1.67,
+  "Earnings Low": 1.47,
+  "Earnings Average": 1.61089,
+  "Revenue High": 95903397000,
+  "Revenue Low": 89400000000,
+  "Revenue Average": 94044283100
+}

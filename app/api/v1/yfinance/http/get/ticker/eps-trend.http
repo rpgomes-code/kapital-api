@@ -1,0 +1,50 @@
+### Request ###
+
+GET /v1/ticker/AAPL/eps-trend HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 454 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:24:19 GMT 
+server: uvicorn 
+
+[
+  {
+    "period": "0q",
+    "current": 1.60557,
+    "7daysAgo": 1.60672,
+    "30daysAgo": 1.60788,
+    "60daysAgo": 1.60579,
+    "90daysAgo": 1.67928
+  },
+  {
+    "period": "+1q",
+    "current": 1.49007,
+    "7daysAgo": 1.49287,
+    "30daysAgo": 1.49618,
+    "60daysAgo": 1.49644,
+    "90daysAgo": 1.54898
+  },
+  {
+    "period": "0y",
+    "current": 7.30038,
+    "7daysAgo": 7.31539,
+    "30daysAgo": 7.31585,
+    "60daysAgo": 7.33427,
+    "90daysAgo": 7.38751
+  },
+  {
+    "period": "+1y",
+    "current": 8.17041,
+    "7daysAgo": 8.1812,
+    "30daysAgo": 8.19912,
+    "60daysAgo": 8.21633,
+    "90daysAgo": 8.27612
+  }
+]

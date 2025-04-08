@@ -1,0 +1,72 @@
+### Request ###
+
+GET /v1/industry/gold/top-companies HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 828 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:41:16 GMT 
+server: uvicorn 
+
+[
+  {
+    "symbol": "NEM",
+    "name": "Newmont Corporation",
+    "rating": "Buy",
+    "market weight": 0.62588793
+  },
+  {
+    "symbol": "AU",
+    "name": "AngloGold Ashanti plc",
+    "rating": "Buy",
+    "market weight": 0.20541586
+  },
+  {
+    "symbol": "RGLD",
+    "name": "Royal Gold, Inc.",
+    "rating": "Buy",
+    "market weight": 0.12531258
+  },
+  {
+    "symbol": "CDE",
+    "name": "Coeur Mining, Inc.",
+    "rating": "Buy",
+    "market weight": 0.02471467
+  },
+  {
+    "symbol": "SA",
+    "name": "Seabridge Gold Inc.",
+    "rating": "Strong Buy",
+    "market weight": 0.01100412
+  },
+  {
+    "symbol": "CMCL",
+    "name": "Caledonia Mining Corporation Plc",
+    "rating": "Buy",
+    "market weight": 0.0026631344
+  },
+  {
+    "symbol": "IDR",
+    "name": "Idaho Strategic Resources, Inc.",
+    "rating": "Buy",
+    "market weight": 0.0024896378
+  },
+  {
+    "symbol": "CTGO",
+    "name": "Contango Ore, Inc.",
+    "rating": "Buy",
+    "market weight": 0.0014313676
+  },
+  {
+    "symbol": "USAU",
+    "name": "U.S. Gold Corp.",
+    "rating": "Buy",
+    "market weight": 0.0010806784
+  }
+]

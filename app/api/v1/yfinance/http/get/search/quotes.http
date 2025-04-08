@@ -1,0 +1,99 @@
+### Request ###
+
+GET /v1/search/AAPL/quotes HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 1635 
+content-type: application/json 
+date: Mon,07 Apr 2025 08:18:47 GMT 
+server: uvicorn 
+
+[
+  {
+    "exchange": "NMS",
+    "shortname": "Apple Inc.",
+    "quoteType": "EQUITY",
+    "symbol": "AAPL",
+    "index": "quotes",
+    "score": 13343500,
+    "typeDisp": "Equity",
+    "longname": "Apple Inc.",
+    "exchDisp": "NASDAQ",
+    "sector": "Technology",
+    "sectorDisp": "Technology",
+    "industry": "Consumer Electronics",
+    "industryDisp": "Consumer Electronics",
+    "dispSecIndFlag": true,
+    "isYahooFinance": true
+  },
+  {
+    "exchange": "MEX",
+    "shortname": "APPLE INC",
+    "quoteType": "EQUITY",
+    "symbol": "AAPL.MX",
+    "index": "quotes",
+    "score": 20071,
+    "typeDisp": "Equity",
+    "longname": "Apple Inc.",
+    "exchDisp": "Mexico",
+    "sector": "Technology",
+    "sectorDisp": "Technology",
+    "industry": "Consumer Electronics",
+    "industryDisp": "Consumer Electronics",
+    "isYahooFinance": true
+  },
+  {
+    "exchange": "NGM",
+    "shortname": "Direxion Daily AAPL Bull 2X Sha",
+    "quoteType": "ETF",
+    "symbol": "AAPU",
+    "index": "quotes",
+    "score": 20014,
+    "typeDisp": "ETF",
+    "longname": "Direxion Daily AAPL Bull 2X Shares",
+    "exchDisp": "NASDAQ",
+    "isYahooFinance": true
+  },
+  {
+    "exchange": "OPR",
+    "shortname": "AAPL Jan 2026 55.000 put",
+    "quoteType": "OPTION",
+    "symbol": "AAPL260116P00055000",
+    "index": "quotes",
+    "score": 20004,
+    "typeDisp": "Option",
+    "longname": "AAPL Jan 2026 55.000 put",
+    "exchDisp": "OPR",
+    "isYahooFinance": true
+  },
+  {
+    "exchange": "OPR",
+    "shortname": "AAPL Jan 2026 125.000 call",
+    "quoteType": "OPTION",
+    "symbol": "AAPL260116C00125000",
+    "index": "quotes",
+    "score": 20004,
+    "typeDisp": "Option",
+    "longname": "AAPL Jan 2026 125.000 call",
+    "exchDisp": "OPR",
+    "isYahooFinance": true
+  },
+  {
+    "exchange": "OPR",
+    "shortname": "AAPL Jun 2026 140.000 call",
+    "quoteType": "OPTION",
+    "symbol": "AAPL260618C00140000",
+    "index": "quotes",
+    "score": 20004,
+    "typeDisp": "Option",
+    "longname": "AAPL Jun 2026 140.000 call",
+    "exchDisp": "OPR",
+    "isYahooFinance": true
+  }
+]

@@ -1,0 +1,597 @@
+### Request ###
+
+GET /v1/industry/gold/ticker HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 16804 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:40:34 GMT 
+server: uvicorn 
+
+{
+  "ticker": "^YH10150040",
+  "proxy": null,
+  "session": null,
+  "_tz": null,
+  "_isin": null,
+  "_news": [],
+  "_shares": null,
+  "_earnings_dates": {},
+  "_earnings": null,
+  "_financials": null,
+  "_data": {
+    "_crumb": "aOYN1zQlEOj",
+    "_cookie": {
+      "version": 0,
+      "name": "A3",
+      "value": "d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M",
+      "port": null,
+      "port_specified": false,
+      "domain": ".yahoo.com",
+      "domain_specified": true,
+      "domain_initial_dot": true,
+      "path": "/",
+      "path_specified": true,
+      "secure": true,
+      "expires": 1775608003,
+      "discard": false,
+      "comment": null,
+      "comment_url": null,
+      "rfc2109": false,
+      "_rest": {
+        "SameSite": "None",
+        "HttpOnly": null
+      }
+    },
+    "_cookie_strategy": "basic",
+    "_cookie_lock": "<unlocked _thread.lock object at 0xffff6c226880>",
+    "_session": {
+      "headers": {
+        "_store": {
+          "user-agent": [
+            "User-Agent",
+            "python-requests/2.32.3"
+          ],
+          "accept-encoding": [
+            "Accept-Encoding",
+            "gzip, deflate"
+          ],
+          "accept": [
+            "Accept",
+            "*/*"
+          ],
+          "connection": [
+            "Connection",
+            "keep-alive"
+          ]
+        }
+      },
+      "auth": null,
+      "proxies": {},
+      "hooks": {
+        "response": []
+      },
+      "params": {},
+      "stream": false,
+      "verify": true,
+      "cert": null,
+      "max_redirects": 30,
+      "trust_env": true,
+      "cookies": {
+        "_policy": {
+          "netscape": true,
+          "rfc2965": false,
+          "rfc2109_as_netscape": null,
+          "hide_cookie2": false,
+          "strict_domain": false,
+          "strict_rfc2965_unverifiable": true,
+          "strict_ns_unverifiable": false,
+          "strict_ns_domain": 0,
+          "strict_ns_set_initial_dollar": false,
+          "strict_ns_set_path": false,
+          "secure_protocols": [
+            "https",
+            "wss"
+          ],
+          "_blocked_domains": [],
+          "_allowed_domains": null,
+          "_now": 1744051235
+        },
+        "_cookies_lock": "<unlocked _thread.RLock object owner=0 count=0 at 0xffff85b9bd40>",
+        "_cookies": {
+          ".yahoo.com": {
+            "/": {
+              "A3": "<Cookie A3=d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M for .yahoo.com/>"
+            }
+          }
+        },
+        "_now": 1744051235
+      },
+      "adapters": {
+        "https://": {
+          "max_retries": {
+            "total": "0",
+            "connect": "None",
+            "read": "False",
+            "status": "None",
+            "other": "None",
+            "redirect": "None",
+            "status_forcelist": "set()",
+            "allowed_methods": "frozenset({'GET', 'HEAD', 'OPTIONS', 'PUT', 'DELETE', 'TRACE'})",
+            "backoff_factor": "0",
+            "backoff_max": "120",
+            "raise_on_redirect": "True",
+            "raise_on_status": "True",
+            "history": "()",
+            "respect_retry_after_header": "True",
+            "remove_headers_on_redirect": "frozenset({'proxy-authorization', 'authorization', 'cookie'})",
+            "backoff_jitter": "0.0"
+          },
+          "config": {},
+          "proxy_manager": {},
+          "_pool_connections": 10,
+          "_pool_maxsize": 10,
+          "_pool_block": false,
+          "poolmanager": {
+            "headers": "{}",
+            "connection_pool_kw": "{'maxsize': 10, 'block': False}",
+            "pools": "<urllib3._collections.RecentlyUsedContainer object at 0xffff6c226590>",
+            "pool_classes_by_scheme": "{'http': <class 'urllib3.connectionpool.HTTPConnectionPool'>, 'https': <class 'urllib3.connectionpool.HTTPSConnectionPool'>}",
+            "key_fn_by_scheme": "{'http': functools.partial(<function _default_key_normalizer at 0xffff6cf30d60>, <class 'urllib3.poolmanager.PoolKey'>), 'https': functools.partial(<function _default_key_normalizer at 0xffff6cf30d60>, <class 'urllib3.poolmanager.PoolKey'>)}"
+          }
+        },
+        "http://": {
+          "max_retries": {
+            "total": "0",
+            "connect": "None",
+            "read": "False",
+            "status": "None",
+            "other": "None",
+            "redirect": "None",
+            "status_forcelist": "set()",
+            "allowed_methods": "frozenset({'GET', 'HEAD', 'OPTIONS', 'PUT', 'DELETE', 'TRACE'})",
+            "backoff_factor": "0",
+            "backoff_max": "120",
+            "raise_on_redirect": "True",
+            "raise_on_status": "True",
+            "history": "()",
+            "respect_retry_after_header": "True",
+            "remove_headers_on_redirect": "frozenset({'proxy-authorization', 'authorization', 'cookie'})",
+            "backoff_jitter": "0.0"
+          },
+          "config": {},
+          "proxy_manager": {},
+          "_pool_connections": 10,
+          "_pool_maxsize": 10,
+          "_pool_block": false,
+          "poolmanager": {
+            "headers": "{}",
+            "connection_pool_kw": "{'maxsize': 10, 'block': False}",
+            "pools": "<urllib3._collections.RecentlyUsedContainer object at 0xffff6c2251d0>",
+            "pool_classes_by_scheme": "{'http': <class 'urllib3.connectionpool.HTTPConnectionPool'>, 'https': <class 'urllib3.connectionpool.HTTPSConnectionPool'>}",
+            "key_fn_by_scheme": "{'http': functools.partial(<function _default_key_normalizer at 0xffff6cf30d60>, <class 'urllib3.poolmanager.PoolKey'>), 'https': functools.partial(<function _default_key_normalizer at 0xffff6cf30d60>, <class 'urllib3.poolmanager.PoolKey'>)}"
+          }
+        }
+      }
+    },
+    "_session_is_caching": false
+  },
+  "_price_history": null,
+  "_analysis": {
+    "_data": {
+      "_crumb": "aOYN1zQlEOj",
+      "_cookie": {
+        "version": 0,
+        "name": "A3",
+        "value": "d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M",
+        "port": null,
+        "port_specified": false,
+        "domain": ".yahoo.com",
+        "domain_specified": true,
+        "domain_initial_dot": true,
+        "path": "/",
+        "path_specified": true,
+        "secure": true,
+        "expires": 1775608003,
+        "discard": false,
+        "comment": null,
+        "comment_url": null,
+        "rfc2109": false,
+        "_rest": {
+          "SameSite": "None",
+          "HttpOnly": null
+        }
+      },
+      "_cookie_strategy": "basic",
+      "_cookie_lock": "<unlocked _thread.lock object at 0xffff6c226880>",
+      "_session": {
+        "headers": {
+          "_store": {
+            "user-agent": "('User-Agent', 'python-requests/2.32.3')",
+            "accept-encoding": "('Accept-Encoding', 'gzip, deflate')",
+            "accept": "('Accept', '*/*')",
+            "connection": "('Connection', 'keep-alive')"
+          }
+        },
+        "auth": null,
+        "proxies": {},
+        "hooks": {
+          "response": []
+        },
+        "params": {},
+        "stream": false,
+        "verify": true,
+        "cert": null,
+        "max_redirects": 30,
+        "trust_env": true,
+        "cookies": {
+          "_policy": "{'netscape': True, 'rfc2965': False, 'rfc2109_as_netscape': None, 'hide_cookie2': False, 'strict_domain': False, 'strict_rfc2965_unverifiable': True, 'strict_ns_unverifiable': False, 'strict_ns_domain': 0, 'strict_ns_set_initial_dollar': False, 'strict_ns_set_path': False, 'secure_protocols': ('https', 'wss'), '_blocked_domains': (), '_allowed_domains': None, '_now': 1744051235}",
+          "_cookies_lock": "<unlocked _thread.RLock object owner=0 count=0 at 0xffff85b9bd40>",
+          "_cookies": {
+            ".yahoo.com": "{'/': {'A3': Cookie(version=0, name='A3', value='d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M', port=None, port_specified=False, domain='.yahoo.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=True, expires=1775608003, discard=False, comment=None, comment_url=None, rest={'SameSite': 'None', 'HttpOnly': None}, rfc2109=False)}}"
+          },
+          "_now": 1744051235
+        },
+        "adapters": {
+          "https://": {
+            "max_retries": "Retry(total=0, connect=None, read=False, redirect=None, status=None)",
+            "config": "{}",
+            "proxy_manager": "{}",
+            "_pool_connections": "10",
+            "_pool_maxsize": "10",
+            "_pool_block": "False",
+            "poolmanager": "<urllib3.poolmanager.PoolManager object at 0xffff6c226410>"
+          },
+          "http://": {
+            "max_retries": "Retry(total=0, connect=None, read=False, redirect=None, status=None)",
+            "config": "{}",
+            "proxy_manager": "{}",
+            "_pool_connections": "10",
+            "_pool_maxsize": "10",
+            "_pool_block": "False",
+            "poolmanager": "<urllib3.poolmanager.PoolManager object at 0xffff6c2265d0>"
+          }
+        }
+      },
+      "_session_is_caching": false
+    },
+    "_symbol": "^YH10150040",
+    "proxy": null,
+    "_earnings_trend": null,
+    "_analyst_price_targets": null,
+    "_earnings_estimate": null,
+    "_revenue_estimate": null,
+    "_earnings_history": null,
+    "_eps_trend": null,
+    "_eps_revisions": null,
+    "_growth_estimates": null
+  },
+  "_holders": {
+    "_data": {
+      "_crumb": "aOYN1zQlEOj",
+      "_cookie": {
+        "version": 0,
+        "name": "A3",
+        "value": "d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M",
+        "port": null,
+        "port_specified": false,
+        "domain": ".yahoo.com",
+        "domain_specified": true,
+        "domain_initial_dot": true,
+        "path": "/",
+        "path_specified": true,
+        "secure": true,
+        "expires": 1775608003,
+        "discard": false,
+        "comment": null,
+        "comment_url": null,
+        "rfc2109": false,
+        "_rest": {
+          "SameSite": "None",
+          "HttpOnly": null
+        }
+      },
+      "_cookie_strategy": "basic",
+      "_cookie_lock": "<unlocked _thread.lock object at 0xffff6c226880>",
+      "_session": {
+        "headers": {
+          "_store": {
+            "user-agent": "('User-Agent', 'python-requests/2.32.3')",
+            "accept-encoding": "('Accept-Encoding', 'gzip, deflate')",
+            "accept": "('Accept', '*/*')",
+            "connection": "('Connection', 'keep-alive')"
+          }
+        },
+        "auth": null,
+        "proxies": {},
+        "hooks": {
+          "response": []
+        },
+        "params": {},
+        "stream": false,
+        "verify": true,
+        "cert": null,
+        "max_redirects": 30,
+        "trust_env": true,
+        "cookies": {
+          "_policy": "{'netscape': True, 'rfc2965': False, 'rfc2109_as_netscape': None, 'hide_cookie2': False, 'strict_domain': False, 'strict_rfc2965_unverifiable': True, 'strict_ns_unverifiable': False, 'strict_ns_domain': 0, 'strict_ns_set_initial_dollar': False, 'strict_ns_set_path': False, 'secure_protocols': ('https', 'wss'), '_blocked_domains': (), '_allowed_domains': None, '_now': 1744051235}",
+          "_cookies_lock": "<unlocked _thread.RLock object owner=0 count=0 at 0xffff85b9bd40>",
+          "_cookies": {
+            ".yahoo.com": "{'/': {'A3': Cookie(version=0, name='A3', value='d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M', port=None, port_specified=False, domain='.yahoo.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=True, expires=1775608003, discard=False, comment=None, comment_url=None, rest={'SameSite': 'None', 'HttpOnly': None}, rfc2109=False)}}"
+          },
+          "_now": 1744051235
+        },
+        "adapters": {
+          "https://": {
+            "max_retries": "Retry(total=0, connect=None, read=False, redirect=None, status=None)",
+            "config": "{}",
+            "proxy_manager": "{}",
+            "_pool_connections": "10",
+            "_pool_maxsize": "10",
+            "_pool_block": "False",
+            "poolmanager": "<urllib3.poolmanager.PoolManager object at 0xffff6c226410>"
+          },
+          "http://": {
+            "max_retries": "Retry(total=0, connect=None, read=False, redirect=None, status=None)",
+            "config": "{}",
+            "proxy_manager": "{}",
+            "_pool_connections": "10",
+            "_pool_maxsize": "10",
+            "_pool_block": "False",
+            "poolmanager": "<urllib3.poolmanager.PoolManager object at 0xffff6c2265d0>"
+          }
+        }
+      },
+      "_session_is_caching": false
+    },
+    "_symbol": "^YH10150040",
+    "proxy": null,
+    "_major": null,
+    "_major_direct_holders": null,
+    "_institutional": null,
+    "_mutualfund": null,
+    "_insider_transactions": null,
+    "_insider_purchases": null,
+    "_insider_roster": null
+  },
+  "_quote": {
+    "_data": {
+      "_crumb": "aOYN1zQlEOj",
+      "_cookie": {
+        "version": 0,
+        "name": "A3",
+        "value": "d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M",
+        "port": null,
+        "port_specified": false,
+        "domain": ".yahoo.com",
+        "domain_specified": true,
+        "domain_initial_dot": true,
+        "path": "/",
+        "path_specified": true,
+        "secure": true,
+        "expires": 1775608003,
+        "discard": false,
+        "comment": null,
+        "comment_url": null,
+        "rfc2109": false,
+        "_rest": {
+          "SameSite": "None",
+          "HttpOnly": null
+        }
+      },
+      "_cookie_strategy": "basic",
+      "_cookie_lock": "<unlocked _thread.lock object at 0xffff6c226880>",
+      "_session": {
+        "headers": {
+          "_store": {
+            "user-agent": "('User-Agent', 'python-requests/2.32.3')",
+            "accept-encoding": "('Accept-Encoding', 'gzip, deflate')",
+            "accept": "('Accept', '*/*')",
+            "connection": "('Connection', 'keep-alive')"
+          }
+        },
+        "auth": null,
+        "proxies": {},
+        "hooks": {
+          "response": []
+        },
+        "params": {},
+        "stream": false,
+        "verify": true,
+        "cert": null,
+        "max_redirects": 30,
+        "trust_env": true,
+        "cookies": {
+          "_policy": "{'netscape': True, 'rfc2965': False, 'rfc2109_as_netscape': None, 'hide_cookie2': False, 'strict_domain': False, 'strict_rfc2965_unverifiable': True, 'strict_ns_unverifiable': False, 'strict_ns_domain': 0, 'strict_ns_set_initial_dollar': False, 'strict_ns_set_path': False, 'secure_protocols': ('https', 'wss'), '_blocked_domains': (), '_allowed_domains': None, '_now': 1744051235}",
+          "_cookies_lock": "<unlocked _thread.RLock object owner=0 count=0 at 0xffff85b9bd40>",
+          "_cookies": {
+            ".yahoo.com": "{'/': {'A3': Cookie(version=0, name='A3', value='d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M', port=None, port_specified=False, domain='.yahoo.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=True, expires=1775608003, discard=False, comment=None, comment_url=None, rest={'SameSite': 'None', 'HttpOnly': None}, rfc2109=False)}}"
+          },
+          "_now": 1744051235
+        },
+        "adapters": {
+          "https://": {
+            "max_retries": "Retry(total=0, connect=None, read=False, redirect=None, status=None)",
+            "config": "{}",
+            "proxy_manager": "{}",
+            "_pool_connections": "10",
+            "_pool_maxsize": "10",
+            "_pool_block": "False",
+            "poolmanager": "<urllib3.poolmanager.PoolManager object at 0xffff6c226410>"
+          },
+          "http://": {
+            "max_retries": "Retry(total=0, connect=None, read=False, redirect=None, status=None)",
+            "config": "{}",
+            "proxy_manager": "{}",
+            "_pool_connections": "10",
+            "_pool_maxsize": "10",
+            "_pool_block": "False",
+            "poolmanager": "<urllib3.poolmanager.PoolManager object at 0xffff6c2265d0>"
+          }
+        }
+      },
+      "_session_is_caching": false
+    },
+    "_symbol": "^YH10150040",
+    "proxy": null,
+    "_info": null,
+    "_retired_info": null,
+    "_sustainability": null,
+    "_recommendations": null,
+    "_upgrades_downgrades": null,
+    "_calendar": null,
+    "_sec_filings": null,
+    "_already_scraped": false,
+    "_already_fetched": false,
+    "_already_fetched_complementary": false
+  },
+  "_fundamentals": {
+    "_data": {
+      "_crumb": "aOYN1zQlEOj",
+      "_cookie": {
+        "version": 0,
+        "name": "A3",
+        "value": "d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M",
+        "port": null,
+        "port_specified": false,
+        "domain": ".yahoo.com",
+        "domain_specified": true,
+        "domain_initial_dot": true,
+        "path": "/",
+        "path_specified": true,
+        "secure": true,
+        "expires": 1775608003,
+        "discard": false,
+        "comment": null,
+        "comment_url": null,
+        "rfc2109": false,
+        "_rest": {
+          "SameSite": "None",
+          "HttpOnly": null
+        }
+      },
+      "_cookie_strategy": "basic",
+      "_cookie_lock": "<unlocked _thread.lock object at 0xffff6c226880>",
+      "_session": {
+        "headers": {
+          "_store": {
+            "user-agent": "('User-Agent', 'python-requests/2.32.3')",
+            "accept-encoding": "('Accept-Encoding', 'gzip, deflate')",
+            "accept": "('Accept', '*/*')",
+            "connection": "('Connection', 'keep-alive')"
+          }
+        },
+        "auth": null,
+        "proxies": {},
+        "hooks": {
+          "response": []
+        },
+        "params": {},
+        "stream": false,
+        "verify": true,
+        "cert": null,
+        "max_redirects": 30,
+        "trust_env": true,
+        "cookies": {
+          "_policy": "{'netscape': True, 'rfc2965': False, 'rfc2109_as_netscape': None, 'hide_cookie2': False, 'strict_domain': False, 'strict_rfc2965_unverifiable': True, 'strict_ns_unverifiable': False, 'strict_ns_domain': 0, 'strict_ns_set_initial_dollar': False, 'strict_ns_set_path': False, 'secure_protocols': ('https', 'wss'), '_blocked_domains': (), '_allowed_domains': None, '_now': 1744051235}",
+          "_cookies_lock": "<unlocked _thread.RLock object owner=0 count=0 at 0xffff85b9bd40>",
+          "_cookies": {
+            ".yahoo.com": "{'/': {'A3': Cookie(version=0, name='A3', value='d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M', port=None, port_specified=False, domain='.yahoo.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=True, expires=1775608003, discard=False, comment=None, comment_url=None, rest={'SameSite': 'None', 'HttpOnly': None}, rfc2109=False)}}"
+          },
+          "_now": 1744051235
+        },
+        "adapters": {
+          "https://": {
+            "max_retries": "Retry(total=0, connect=None, read=False, redirect=None, status=None)",
+            "config": "{}",
+            "proxy_manager": "{}",
+            "_pool_connections": "10",
+            "_pool_maxsize": "10",
+            "_pool_block": "False",
+            "poolmanager": "<urllib3.poolmanager.PoolManager object at 0xffff6c226410>"
+          },
+          "http://": {
+            "max_retries": "Retry(total=0, connect=None, read=False, redirect=None, status=None)",
+            "config": "{}",
+            "proxy_manager": "{}",
+            "_pool_connections": "10",
+            "_pool_maxsize": "10",
+            "_pool_block": "False",
+            "poolmanager": "<urllib3.poolmanager.PoolManager object at 0xffff6c2265d0>"
+          }
+        }
+      },
+      "_session_is_caching": false
+    },
+    "_symbol": "^YH10150040",
+    "proxy": null,
+    "_earnings": null,
+    "_financials": {
+      "_data": {
+        "_crumb": "aOYN1zQlEOj",
+        "_cookie": {
+          "version": 0,
+          "name": "A3",
+          "value": "d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M",
+          "port": null,
+          "port_specified": false,
+          "domain": ".yahoo.com",
+          "domain_specified": true,
+          "domain_initial_dot": true,
+          "path": "/",
+          "path_specified": true,
+          "secure": true,
+          "expires": 1775608003,
+          "discard": false,
+          "comment": null,
+          "comment_url": null,
+          "rfc2109": false,
+          "_rest": {
+            "SameSite": "None",
+            "HttpOnly": "None"
+          }
+        },
+        "_cookie_strategy": "basic",
+        "_cookie_lock": "<unlocked _thread.lock object at 0xffff6c226880>",
+        "_session": {
+          "headers": "{'_store': OrderedDict([('user-agent', ('User-Agent', 'python-requests/2.32.3')), ('accept-encoding', ('Accept-Encoding', 'gzip, deflate')), ('accept', ('Accept', '*/*')), ('connection', ('Connection', 'keep-alive'))])}",
+          "auth": null,
+          "proxies": {},
+          "hooks": {
+            "response": "[]"
+          },
+          "params": {},
+          "stream": false,
+          "verify": true,
+          "cert": null,
+          "max_redirects": 30,
+          "trust_env": true,
+          "cookies": "{'_policy': <http.cookiejar.DefaultCookiePolicy object at 0xffff6c57ae50>, '_cookies_lock': <unlocked _thread.RLock object owner=0 count=0 at 0xffff85b9bd40>, '_cookies': {'.yahoo.com': {'/': {'A3': Cookie(version=0, name='A3', value='d=AQABBOMY9GcCEEC3MkbyI6AA2gGuMd__e5MFEgEBAQFq9Wf9Z_BRziMA_eMAAA&S=AQAAAlA0Qoa6irO0t5e5CxJVT1M', port=None, port_specified=False, domain='.yahoo.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=True, expires=1775608003, discard=False, comment=None, comment_url=None, rest={'SameSite': 'None', 'HttpOnly': None}, rfc2109=False)}}}, '_now': 1744051235}",
+          "adapters": {
+            "https://": "<requests.adapters.HTTPAdapter object at 0xffff6c225dd0>",
+            "http://": "<requests.adapters.HTTPAdapter object at 0xffff6c2263d0>"
+          }
+        },
+        "_session_is_caching": false
+      },
+      "_symbol": "^YH10150040",
+      "_income_time_series": {},
+      "_balance_sheet_time_series": {},
+      "_cash_flow_time_series": {}
+    },
+    "_shares": null,
+    "_financials_data": null,
+    "_fin_data_quote": null,
+    "_basics_already_scraped": false
+  },
+  "_funds_data": null,
+  "_fast_info": null,
+  "_expirations": {},
+  "_underlying": {}
+}

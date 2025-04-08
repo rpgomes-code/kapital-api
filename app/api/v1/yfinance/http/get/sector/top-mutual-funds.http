@@ -1,0 +1,28 @@
+### Request ###
+
+GET /v1/sector/energy/top-mutual-funds HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 426 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:33:50 GMT 
+server: uvicorn 
+
+{
+  "VENAX": "Vanguard Energy Index Fund Admi",
+  "VGELX": "Vanguard Energy Fund Admiral Sh",
+  "VGENX": "Vanguard Specialized Portfolios",
+  "SPNNX": "Invesco SteelPath MLP Income Fu",
+  "SPMQX": "Invesco SteelPath MLP Income Fu",
+  "MLPZX": "Invesco SteelPath MLP Income Fu",
+  "OSPMX": "Invesco SteelPath MLP Income Fu",
+  "MLPDX": "Invesco SteelPath MLP Income Fu",
+  "MLPRX": "Invesco SteelPath MLP Income Fu",
+  "0P0001EY9V": "Invesco SteelPath MLP Income Fu"
+}

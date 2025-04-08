@@ -1,0 +1,48 @@
+### Request ###
+
+GET /v1/industry/gold/top-growth-companies HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 541 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:41:55 GMT 
+server: uvicorn 
+
+[
+  {
+    "symbol": "IDR",
+    "name": "Idaho Strategic Resources, Inc.",
+    "ytd return": 0.4691,
+    " growth estimate": 6.888888888888889
+  },
+  {
+    "symbol": "CMCL",
+    "name": "Caledonia Mining Corporation Plc",
+    "ytd return": 0.2136,
+    " growth estimate": 6.0175438596491215
+  },
+  {
+    "symbol": "NEM",
+    "name": "Newmont Corporation",
+    "ytd return": 0.2117,
+    " growth estimate": 0.9565217391304346
+  },
+  {
+    "symbol": "USAU",
+    "name": "U.S. Gold Corp.",
+    "ytd return": 0.3328,
+    " growth estimate": 0.5675675675675674
+  },
+  {
+    "symbol": "RGLD",
+    "name": "Royal Gold, Inc.",
+    "ytd return": 0.1887,
+    " growth estimate": 0.4192634560906516
+  }
+]

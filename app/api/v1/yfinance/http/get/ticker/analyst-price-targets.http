@@ -1,0 +1,23 @@
+### Request ###
+
+GET /v1/ticker/AAPL/analyst-price-targets HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 75
+content-type: application/json
+date: Sat,05 Apr 2025 20:56:51 GMT
+server: uvicorn
+
+{
+  "current": 188.38,
+  "high": 325,
+  "low": 175,
+  "mean": 250.40076,
+  "median": 253
+}

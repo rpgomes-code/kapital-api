@@ -1,0 +1,211 @@
+### Request ###
+
+GET /v1/search/AAPL/news HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 6193 
+content-type: application/json 
+date: Mon,07 Apr 2025 08:16:25 GMT 
+server: uvicorn 
+
+[
+  {
+    "uuid": "8479724d-2736-384d-aa57-3acc6b75ee1f",
+    "title": "Is Apple Inc. (AAPL) the Best Beginner Stock?",
+    "publisher": "Insider Monkey",
+    "link": "https://finance.yahoo.com/news/apple-inc-aapl-best-beginner-204819576.html",
+    "providerPublishTime": 1743972499,
+    "type": "STORY",
+    "thumbnail": {
+      "resolutions": [
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/fTPNobtT0bdcSxj2xXAamw--~B/aD04MTY7dz0xNDU2O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/insidermonkey.com/bd47dc2e86b4a3086f845d200d9daf1f",
+          "width": 1456,
+          "height": 816,
+          "tag": "original"
+        },
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/nIyTyNRglKMNfFFMGli.7A--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/insidermonkey.com/bd47dc2e86b4a3086f845d200d9daf1f",
+          "width": 140,
+          "height": 140,
+          "tag": "140x140"
+        }
+      ]
+    },
+    "relatedTickers": [
+      "AAPL"
+    ]
+  },
+  {
+    "uuid": "bd17caba-42fd-3278-82a5-22758094e334",
+    "title": "Apple (NasdaqGS:AAPL) Dips 14% In One Week As Trade Tensions Impact Market",
+    "publisher": "Simply Wall St.",
+    "link": "https://finance.yahoo.com/news/apple-nasdaqgs-aapl-dips-14-171927288.html",
+    "providerPublishTime": 1743959967,
+    "type": "STORY",
+    "thumbnail": {
+      "resolutions": [
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/.m1ghW2JIKMrn_021vRckQ--~B/aD00MzI7dz0xMTk0O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/simply_wall_st__316/13f69b02f49f819df1dcc276114d4a99",
+          "width": 1194,
+          "height": 432,
+          "tag": "original"
+        },
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/vJzlo.hO4lsED1bc1JFKuA--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/simply_wall_st__316/13f69b02f49f819df1dcc276114d4a99",
+          "width": 140,
+          "height": 140,
+          "tag": "140x140"
+        }
+      ]
+    },
+    "relatedTickers": [
+      "AAPL"
+    ]
+  },
+  {
+    "uuid": "3b3b7033-6787-34b2-a7b9-87007f41fbc4",
+    "title": "Up 17% in 2025, Has Warren Buffett-Led Berkshire Hathaway Run Up Too Far, Too Fast?",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/m/3b3b7033-6787-34b2-a7b9-87007f41fbc4/up-17%25-in-2025%2C-has-warren.html",
+    "providerPublishTime": 1743977100,
+    "type": "STORY",
+    "thumbnail": {
+      "resolutions": [
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/Dtfl2GMy97Htr6TRjTJUHQ--~B/aD02NzU7dz0xMjAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/motleyfool.com/5231111e841bdb598abbdcbcc0d384f4",
+          "width": 1200,
+          "height": 675,
+          "tag": "original"
+        },
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/OmgD9D.qC4Jp4IGnJ28S4g--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/motleyfool.com/5231111e841bdb598abbdcbcc0d384f4",
+          "width": 140,
+          "height": 140,
+          "tag": "140x140"
+        }
+      ]
+    },
+    "relatedTickers": [
+      "BRK-B",
+      "^GSPC",
+      "AAPL"
+    ]
+  },
+  {
+    "uuid": "d4ee9df1-0632-3f95-a453-6b73b4fdbef7",
+    "title": "Chinese Tech Stocks Plunge on Escalating Trade War",
+    "publisher": "The Wall Street Journal",
+    "link": "https://finance.yahoo.com/m/d4ee9df1-0632-3f95-a453-6b73b4fdbef7/chinese-tech-stocks-plunge-on.html",
+    "providerPublishTime": 1744002420,
+    "type": "STORY",
+    "thumbnail": {
+      "resolutions": [
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/zwGBnQ_FoAnEeZgZ4Z85jg--~B/aD02NDA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/wsj.com/20f5519c02a402abf778a3be39eda05c",
+          "width": 1280,
+          "height": 640,
+          "tag": "original"
+        },
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/8kyUf_YFxlktkbbGep4f3A--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/wsj.com/20f5519c02a402abf778a3be39eda05c",
+          "width": 140,
+          "height": 140,
+          "tag": "140x140"
+        }
+      ]
+    }
+  },
+  {
+    "uuid": "9f94da8a-2ebc-3b84-ad4c-82bb7d3182e3",
+    "title": "Tesla Bull Slashes Price Target 43%, Citing Trump Tariffs, Elon Musk; Apple PT Sliced 23%",
+    "publisher": "Investor's Business Daily",
+    "link": "https://finance.yahoo.com/m/9f94da8a-2ebc-3b84-ad4c-82bb7d3182e3/tesla-bull-slashes-price.html",
+    "providerPublishTime": 1743984186,
+    "type": "STORY",
+    "thumbnail": {
+      "resolutions": [
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/N7raPRrdWb_SBNJQcYE6FQ--~B/aD01NjM7dz0xMDAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/ibd.com/2786d8508b3169cd9205cba0c0198bbe",
+          "width": 1000,
+          "height": 563,
+          "tag": "original"
+        },
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/G5dPl7H3BlBAU8mZscl9HQ--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/ibd.com/2786d8508b3169cd9205cba0c0198bbe",
+          "width": 140,
+          "height": 140,
+          "tag": "140x140"
+        }
+      ]
+    }
+  },
+  {
+    "uuid": "35064681-fd28-3855-a23a-35f02e2f5aba",
+    "title": "Dow Jones Futures Dive, But Pare Losses In Trump Tariff Bear Market",
+    "publisher": "Investor's Business Daily",
+    "link": "https://finance.yahoo.com/m/35064681-fd28-3855-a23a-35f02e2f5aba/dow-jones-futures-dive%2C-but.html",
+    "providerPublishTime": 1743995355,
+    "type": "STORY",
+    "thumbnail": {
+      "resolutions": [
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/ssh.WEGJxn.BjJt8vkW8NQ--~B/aD01NjM7dz0xMDAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/ibd.com/7c872b1c86aed6df221369cd0dda7c4d",
+          "width": 1000,
+          "height": 563,
+          "tag": "original"
+        },
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/RXl1R8dKygqSLkiWzxW3zQ--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/ibd.com/7c872b1c86aed6df221369cd0dda7c4d",
+          "width": 140,
+          "height": 140,
+          "tag": "140x140"
+        }
+      ]
+    }
+  },
+  {
+    "uuid": "652a3b1c-4d41-3b03-8849-38500697245a",
+    "title": "Trump's \"Liberation Day\" Tariffs Pummel the \"Magnificent Seven.\" Are These Stalwarts Still a Prudent Long-Term Investment?",
+    "publisher": "Motley Fool",
+    "link": "https://finance.yahoo.com/m/652a3b1c-4d41-3b03-8849-38500697245a/trump%27s-%22liberation-day%22.html",
+    "providerPublishTime": 1743978000,
+    "type": "STORY",
+    "thumbnail": {
+      "resolutions": [
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/UzEbMgedxzjhyUk9ZS_wMw--~B/aD03NjA7dz0xMTk5O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/motleyfool.com/648373b6e7b493d07792f504e1688f66",
+          "width": 1199,
+          "height": 760,
+          "tag": "original"
+        },
+        {
+          "url": "https://s.yimg.com/uu/api/res/1.2/GO4goIwlQm3PZgLs58Utfw--~B/Zmk9ZmlsbDtoPTE0MDtweW9mZj0wO3c9MTQwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/motleyfool.com/648373b6e7b493d07792f504e1688f66",
+          "width": 140,
+          "height": 140,
+          "tag": "140x140"
+        }
+      ]
+    },
+    "relatedTickers": [
+      "NVDA"
+    ]
+  },
+  {
+    "uuid": "c6b54aea-ac5e-359b-b968-368c1be8f2d5",
+    "title": "Reddit Erupts Over 34-Year-Old's Plan: 'My Strategy Is To Add $2K Monthly' – Is His Mix Of ETFs And Dividends A Genius Move Or A Bad One?",
+    "publisher": "Benzinga",
+    "link": "https://finance.yahoo.com/news/reddit-erupts-over-34-olds-020047068.html",
+    "providerPublishTime": 1743991247,
+    "type": "STORY",
+    "relatedTickers": [
+      "RDDT"
+    ]
+  }
+]

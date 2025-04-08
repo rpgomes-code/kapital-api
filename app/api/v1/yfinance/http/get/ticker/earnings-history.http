@@ -1,0 +1,46 @@
+### Request ###
+
+GET /v1/ticker/AAPL/earnings-history HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 480 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:22:22 GMT 
+server: uvicorn 
+
+[
+  {
+    "quarter": "2024-03-31 00:00:00",
+    "epsActual": 1.53,
+    "epsEstimate": 1.49923,
+    "epsDifference": 0.03,
+    "surprisePercent": 0.020499999
+  },
+  {
+    "quarter": "2024-06-30 00:00:00",
+    "epsActual": 1.4,
+    "epsEstimate": 1.34155,
+    "epsDifference": 0.06,
+    "surprisePercent": 0.0436
+  },
+  {
+    "quarter": "2024-09-30 00:00:00",
+    "epsActual": 0.97,
+    "epsEstimate": 0.94654,
+    "epsDifference": 0.02,
+    "surprisePercent": 0.0248
+  },
+  {
+    "quarter": "2024-12-31 00:00:00",
+    "epsActual": 2.4,
+    "epsEstimate": 2.34102,
+    "epsDifference": 0.06,
+    "surprisePercent": 0.0252
+  }
+]

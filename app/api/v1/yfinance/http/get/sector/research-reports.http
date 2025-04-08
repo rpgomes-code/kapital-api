@@ -1,0 +1,56 @@
+### Request ###
+
+GET /v1/sector/energy/research-reports HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 4168 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:28:37 GMT 
+server: uvicorn 
+
+[
+  {
+    "id": "ARGUS_43160_StockPicks_1744026551000",
+    "headHtml": "Weekly Stock List",
+    "provider": "Argus Research",
+    "reportDate": "2025-04-07T11:49:11Z",
+    "reportTitle": "With the current stock turmoil, global stocks, and especially stocks that pay dividends, are a potential option for investors. While the S&P 500 has fallen 12% year to date, the EAFE Index of large- and mid-cap stocks based in countries other than the U.S. and Canada has gained 1%. That's quite a change from the recent record. Over the past five years, the S&P 500 has advanced 109% compared to a 50% gain in EAFE. But the underperformance has given global stocks a valuation advantage, particularly in the area of dividends. Consider that the EAFE dividend yield of 3.0% is roughly 175 basis points higher than the comparable S&P 500 dividend yield. We think global dividend stocks continue to offer opportunity, particularly given the endless speculation over the direction of interest rates in the U.S., which has created market-timing headaches for equity income investors. These investors have endured recent wide swings in prices for rate-sensitive equity groups such as utilities, REITs and MLPs. In our view, investing in international income stocks is one way to increase portfolio diversification while reducing sensitivity to volatile U.S interest rates. Investing in overseas stocks carries its own set of risks, including the impact of currency exchange and geopolitical turmoil. But there are also a number of positives in this asset class for U.S. investors, including a wide selection of companies that pay dividends, robust industry diversification, and, as we have mentioned, higher yields and lower valuations. Argus has recently boosted its global coverage, and recommends the following international dividend stocks, each of which has at least a long-term BUY rating from an Argus analyst. This list of approximately 25-30 companies offers exposure to eight of the 11 major industrial sectors, and includes companies from 10 countries.",
+    "reportType": "Stock Picks"
+  },
+  {
+    "id": "ARGUS_43151_InsiderActivity_1744023390000",
+    "headHtml": "Daily – Vickers Top Insider Picks for 04/07/2025",
+    "provider": "Argus Research",
+    "reportDate": "2025-04-07T10:56:30Z",
+    "reportTitle": "The Vickers Top Insider Picks is a daily report that utilizes a proprietary algorithm to identify 25 companies with compelling insider purchase histories based on transactions over the past three months.",
+    "reportType": "Insider Activity"
+  },
+  {
+    "id": "MS_0P0000054G_AnalystReport_1743813533000",
+    "headHtml": "Analyst Report: Equinor ASA",
+    "provider": "Morningstar",
+    "targetPrice": 30.5,
+    "targetPriceStatus": "Maintained",
+    "investmentRating": "Bullish",
+    "reportDate": "2025-04-05T00:38:53Z",
+    "reportTitle": "Equinor is a Norway-based integrated oil and gas company. It has been publicly listed since 2001, but the government retains a 67% stake. Operating primarily on the Norwegian Continental Shelf, the firm produced 2.1 million barrels of oil equivalent per day in 2023 (53% liquids) and ended 2023 with 5.2 billion barrels of proven reserves (49% liquids). Operations also include offshore wind, solar, oil refineries and natural gas processing, marketing, and trading. ",
+    "reportType": "Analyst Report"
+  },
+  {
+    "id": "MS_0P000004UK_AnalystReport_1743813177000",
+    "headHtml": "Analyst Report: Schlumberger Limited",
+    "provider": "Morningstar",
+    "targetPrice": 52,
+    "targetPriceStatus": "Maintained",
+    "investmentRating": "Bullish",
+    "reportDate": "2025-04-05T00:32:57Z",
+    "reportTitle": "SLB is the world’s premier oilfield-services company as measured by market share. While the industry is mostly fragmented, SLB holds the first or second competitive position in many of the differentiated oligopolies it operates in. Also known as Schlumberger, the company was founded in 1926 by two brothers bearing the same last name. Today it’s most known as a global industry leader in innovation, while it focuses its strategy on its three growth engines: its core, digital, and new energy businesses. Over three fourths of its revenue base is tied to international markets, while the company boasts roughly $3 billion in digital-related revenue. ",
+    "reportType": "Analyst Report"
+  }
+]

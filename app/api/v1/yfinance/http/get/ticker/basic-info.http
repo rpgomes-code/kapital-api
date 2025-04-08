@@ -1,0 +1,38 @@
+### Request ###
+
+GET /v1/ticker/AAPL/basic-info HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 574
+content-type: application/json
+date: Sat,05 Apr 2025 22:09:38 GMT
+server: uvicorn
+
+{
+  "currency": "USD",
+  "dayHigh": 199.8800048828125,
+  "dayLow": 187.33999633789062,
+  "exchange": "NMS",
+  "fiftyDayAverage": 229.0204000854492,
+  "lastPrice": 188.3800048828125,
+  "lastVolume": 125569000,
+  "marketCap": 2829863361772.5,
+  "open": 193.88999938964844,
+  "previousClose": 203.25,
+  "quoteType": "EQUITY",
+  "regularMarketPreviousClose": 203.19000244140625,
+  "shares": 15022100480,
+  "tenDayAverageVolume": 55677850,
+  "threeMonthAverageVolume": 54566537,
+  "timezone": "America/New_York",
+  "twoHundredDayAverage": 229.0059999847412,
+  "yearChange": 0.11831408902128975,
+  "yearHigh": 260.1000061035156,
+  "yearLow": 164.0800018310547
+}

@@ -1,0 +1,28 @@
+### Request ###
+
+GET /v1/sector/energy/top-etfs HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 339 
+content-type: application/json 
+date: Mon,07 Apr 2025 18:32:57 GMT 
+server: uvicorn 
+
+{
+  "XLE": "SPDR Select Sector Fund - Energ",
+  "AMLP": "Alerian MLP ETF",
+  "VDE": "Vanguard Energy ETF",
+  "MLPX": "Global X MLP & Energy Infrastru",
+  "XOP": "SPDR S&P Oil & Gas Explor & Pro",
+  "MLPA": "Global X MLP ETF",
+  "IXC": "iShares Global Energy ETF",
+  "FENY": "Fidelity MSCI Energy Index ETF",
+  "IYE": "iShares U.S. Energy ETF",
+  "OIH": "VanEck Oil Services ETF"
+}

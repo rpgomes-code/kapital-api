@@ -1,0 +1,628 @@
+### Request ###
+
+GET /v1/ticker/AAPL/news HTTP/1.1
+Host: localhost:8000
+accept: application/json
+
+### Response ###
+
+## HTTP CODE - 200 ##
+
+HTTP/1.1 200 OK
+content-length: 19173 
+content-type: application/json 
+date: Sat,05 Apr 2025 22:41:12 GMT 
+server: uvicorn 
+
+[
+  {
+    "id": "84205b4e-13e8-3e63-9c5a-5121379e3472",
+    "content": {
+      "id": "84205b4e-13e8-3e63-9c5a-5121379e3472",
+      "contentType": "STORY",
+      "title": "3 Top Buffett Stocks to Buy and Hold for the Next 20 Years",
+      "description": "",
+      "summary": "Warren Buffett has built a fortune for Berkshire Hathaway shareholders.  Buffett's success at buying stocks of great businesses and holding them for the long term has inspired many investors to follow his style.  Berkshire held a stock portfolio worth $271 billion at the end of 2024.",
+      "pubDate": "2025-04-05T22:03:00Z",
+      "displayTime": "2025-04-05T22:03:00Z",
+      "isHosted": true,
+      "bypassModal": false,
+      "previewUrl": null,
+      "thumbnail": {
+        "originalUrl": "https://media.zenfs.com/en/motleyfool.com/797760d4a4e54723529062dc7b10917d",
+        "originalWidth": 2048,
+        "originalHeight": 1365,
+        "caption": "",
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/ZK59ETr_y_oFWxcmBEgEng--~B/aD0xMzY1O3c9MjA0ODthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/motleyfool.com/797760d4a4e54723529062dc7b10917d",
+            "width": 2048,
+            "height": 1365,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/PQEytYupPHUDVmJLr8o7Rw--~B/Zmk9c3RyaW07aD0xMjg7dz0xNzA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/motleyfool.com/797760d4a4e54723529062dc7b10917d",
+            "width": 170,
+            "height": 128,
+            "tag": "170x128"
+          }
+        ]
+      },
+      "provider": {
+        "displayName": "Motley Fool",
+        "url": "http://www.fool.com/"
+      },
+      "canonicalUrl": {
+        "url": "https://www.fool.com/investing/2025/04/05/3-top-buffett-stocks-buy-hold-next-20-years/?source=eptyholnk0000202&utm_source=yahoo-host-full&utm_medium=feed&utm_campaign=article&referring_guid=f16430c8-e86a-4497-a98d-9bbd04fb57bb",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "clickThroughUrl": {
+        "url": "https://finance.yahoo.com/news/3-top-buffett-stocks-buy-220300105.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "metadata": {
+        "editorsPick": false
+      },
+      "finance": {
+        "premiumFinance": {
+          "isPremiumNews": false,
+          "isPremiumFreeNews": false
+        }
+      },
+      "storyline": null
+    }
+  },
+  {
+    "id": "b9fd0c7e-a263-31f4-af9d-a9d9d3c870d6",
+    "content": {
+      "id": "b9fd0c7e-a263-31f4-af9d-a9d9d3c870d6",
+      "contentType": "STORY",
+      "title": "Warren Buffett keeps taking investors to school as stock meltdown reveals the uncanny wisdom of his recent moves",
+      "description": "",
+      "summary": "His decision last year to shed most of Berkshire Hathaway's Apple stock now looks especially well timed.",
+      "pubDate": "2025-04-05T18:15:21Z",
+      "displayTime": "2025-04-05T18:15:21Z",
+      "isHosted": true,
+      "bypassModal": false,
+      "previewUrl": null,
+      "thumbnail": {
+        "originalUrl": "https://media.zenfs.com/en/fortune_175/7a380792bc80ffcab7af114fce4245e9",
+        "originalWidth": 2048,
+        "originalHeight": 1348,
+        "caption": "Warren Buffett at the 2019 Berkshire shareholders meeting in Omaha, Nebraska.",
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/3W__sazfOC08c.LJnc.GSQ--~B/aD0xMzQ4O3c9MjA0ODthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/fortune_175/7a380792bc80ffcab7af114fce4245e9",
+            "width": 2048,
+            "height": 1348,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/8xYej4P_q7GdXWKDW8f0WA--~B/Zmk9c3RyaW07aD0xMjg7dz0xNzA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/fortune_175/7a380792bc80ffcab7af114fce4245e9",
+            "width": 170,
+            "height": 128,
+            "tag": "170x128"
+          }
+        ]
+      },
+      "provider": {
+        "displayName": "Fortune",
+        "url": "http://fortune.com/"
+      },
+      "canonicalUrl": {
+        "url": "https://finance.yahoo.com/news/warren-buffett-keeps-taking-investors-181521283.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "clickThroughUrl": {
+        "url": "https://finance.yahoo.com/news/warren-buffett-keeps-taking-investors-181521283.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "metadata": {
+        "editorsPick": false
+      },
+      "finance": {
+        "premiumFinance": {
+          "isPremiumNews": false,
+          "isPremiumFreeNews": false
+        }
+      },
+      "storyline": null
+    }
+  },
+  {
+    "id": "88c52c19-d078-380a-b910-13fc9ee59d78",
+    "content": {
+      "id": "88c52c19-d078-380a-b910-13fc9ee59d78",
+      "contentType": "STORY",
+      "title": "Apple (NasdaqGS:AAPL) Faces 14% Price Drop in a Week as China Tariffs Impact Stock",
+      "description": "",
+      "summary": "Apple (NasdaqGS:AAPL) experienced a 14% price decline over the past week, coinciding with broader market downturns amid escalating trade tensions. President Trump's recent tariff announcements triggered a severe market reaction, with the Dow Jones and S&P 500 suffering substantial losses, while the Nasdaq entered bear market territory. Apple's significant presence in China likely exposed it to heightened vulnerabilities due to imposed tariffs. Despite developments in digital health...",
+      "pubDate": "2025-04-05T17:28:14Z",
+      "displayTime": "2025-04-05T17:28:14Z",
+      "isHosted": true,
+      "bypassModal": false,
+      "previewUrl": null,
+      "thumbnail": {
+        "originalUrl": "https://media.zenfs.com/en/simply_wall_st__316/13f69b02f49f819df1dcc276114d4a99",
+        "originalWidth": 1194,
+        "originalHeight": 432,
+        "caption": "",
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/.m1ghW2JIKMrn_021vRckQ--~B/aD00MzI7dz0xMTk0O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/simply_wall_st__316/13f69b02f49f819df1dcc276114d4a99",
+            "width": 1194,
+            "height": 432,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/v2JXrvDC2SwXU9VOf.KlrA--~B/Zmk9c3RyaW07aD0xMjg7dz0xNzA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/simply_wall_st__316/13f69b02f49f819df1dcc276114d4a99",
+            "width": 170,
+            "height": 128,
+            "tag": "170x128"
+          }
+        ]
+      },
+      "provider": {
+        "displayName": "Simply Wall St.",
+        "url": "https://simplywall.st/"
+      },
+      "canonicalUrl": {
+        "url": "https://finance.yahoo.com/news/apple-nasdaqgs-aapl-faces-14-172814576.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "clickThroughUrl": {
+        "url": "https://finance.yahoo.com/news/apple-nasdaqgs-aapl-faces-14-172814576.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "metadata": {
+        "editorsPick": false
+      },
+      "finance": {
+        "premiumFinance": {
+          "isPremiumNews": false,
+          "isPremiumFreeNews": false
+        }
+      },
+      "storyline": null
+    }
+  },
+  {
+    "id": "8fc4e78b-318a-353e-bab6-97d0bd80c639",
+    "content": {
+      "id": "8fc4e78b-318a-353e-bab6-97d0bd80c639",
+      "contentType": "STORY",
+      "title": "Trump Promised a Manufacturing Boom. Industries Are Not So Sure",
+      "description": "",
+      "summary": "(Bloomberg) -- Supply Lines is a daily newsletter that tracks global trade. Sign up here.Most Read from BloombergHousing Agency Aims to Relocate Its DC HeadquartersLocal Governments Vie for Fired Federal WorkersMetro-North Is Faster Than Acela on NYC-New Haven Route After Signal UpdatesWhat Would ‘Transportation Abundance’ Look Like?Boston Mayor Wu Embraces Trump Resistance as Campaign Heats UpPresident Donald Trump has vowed his historic tariff blitz would revive domestic manufacturing, but ind",
+      "pubDate": "2025-04-05T14:00:00Z",
+      "displayTime": "2025-04-05T14:00:00Z",
+      "isHosted": true,
+      "bypassModal": false,
+      "previewUrl": null,
+      "thumbnail": {
+        "originalUrl": "https://media.zenfs.com/en/bloomberg_holding_pen_162/354473e0ab7c5c45511a392d33d2613f",
+        "originalWidth": 2000,
+        "originalHeight": 1334,
+        "caption": "",
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/HOKkoTOIS3fFsef3dJi7fw--~B/aD0xMzM0O3c9MjAwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/bloomberg_holding_pen_162/354473e0ab7c5c45511a392d33d2613f",
+            "width": 2000,
+            "height": 1334,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/Eo5iBIzKFEjVkwNGNV_4lQ--~B/Zmk9c3RyaW07aD0xMjg7dz0xNzA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/bloomberg_holding_pen_162/354473e0ab7c5c45511a392d33d2613f",
+            "width": 170,
+            "height": 128,
+            "tag": "170x128"
+          }
+        ]
+      },
+      "provider": {
+        "displayName": "Bloomberg",
+        "url": "https://www.bloomberg.com/company"
+      },
+      "canonicalUrl": {
+        "url": "https://finance.yahoo.com/news/trump-promised-manufacturing-boom-industries-140000933.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "clickThroughUrl": {
+        "url": "https://finance.yahoo.com/news/trump-promised-manufacturing-boom-industries-140000933.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "metadata": {
+        "editorsPick": false
+      },
+      "finance": {
+        "premiumFinance": {
+          "isPremiumNews": false,
+          "isPremiumFreeNews": false
+        }
+      },
+      "storyline": null
+    }
+  },
+  {
+    "id": "7c0f6746-0847-3c81-88c6-4e5854b3a63a",
+    "content": {
+      "id": "7c0f6746-0847-3c81-88c6-4e5854b3a63a",
+      "contentType": "STORY",
+      "title": "Warren Buffett-led Berkshire Hathaway Owns $67 Billion of This AI Stock",
+      "description": "",
+      "summary": "Warren Buffett has been the CEO of Berkshire Hathaway (NYSE: BRK.A)(NYSE: BRK.B) for decades.  Berkshire Hathaway has a huge public equities portfolio.  Given Buffett's history of avoiding investments at the cutting edge of technology, it might be surprising to learn that he owns $67 billion of this artificial intelligence (AI)-related stock (as of April 1).",
+      "pubDate": "2025-04-05T13:25:00Z",
+      "displayTime": "2025-04-05T13:25:00Z",
+      "isHosted": true,
+      "bypassModal": false,
+      "previewUrl": null,
+      "thumbnail": {
+        "originalUrl": "https://media.zenfs.com/en/motleyfool.com/45282f4e5243c714cf5f5be649350393",
+        "originalWidth": 1200,
+        "originalHeight": 816,
+        "caption": "",
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/XY9gHXG7660iww98MXtj3A--~B/aD04MTY7dz0xMjAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/motleyfool.com/45282f4e5243c714cf5f5be649350393",
+            "width": 1200,
+            "height": 816,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/ucOrw3sJuCiXjakWJjO11g--~B/Zmk9c3RyaW07aD0xMjg7dz0xNzA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/motleyfool.com/45282f4e5243c714cf5f5be649350393",
+            "width": 170,
+            "height": 128,
+            "tag": "170x128"
+          }
+        ]
+      },
+      "provider": {
+        "displayName": "Motley Fool",
+        "url": "http://www.fool.com/"
+      },
+      "canonicalUrl": {
+        "url": "https://www.fool.com/investing/2025/04/05/warren-buffett-berkshire-67-billion-ai-stock/?source=eptyholnk0000202&utm_source=yahoo-host-full&utm_medium=feed&utm_campaign=article&referring_guid=50b0d846-8f53-4934-9471-21269b17e2ef",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "clickThroughUrl": {
+        "url": "https://finance.yahoo.com/news/warren-buffett-led-berkshire-hathaway-132500180.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "metadata": {
+        "editorsPick": false
+      },
+      "finance": {
+        "premiumFinance": {
+          "isPremiumNews": false,
+          "isPremiumFreeNews": false
+        }
+      },
+      "storyline": null
+    }
+  },
+  {
+    "id": "df2ee29d-8fa8-32ef-978c-accf355df5d8",
+    "content": {
+      "id": "df2ee29d-8fa8-32ef-978c-accf355df5d8",
+      "contentType": "STORY",
+      "title": "Nvidia Partner Hon Hai’s Sales Jump 24% on AI Demand",
+      "description": "",
+      "summary": "(Bloomberg) -- Hon Hai Precision Industry Co.’s first-quarter sales rose at their fastest clip since 2022 on resilient data center demand, a bright sign for the artificial intelligence sector amid tariff-induced fears.Most Read from BloombergHousing Agency Aims to Relocate Its DC HeadquartersLocal Governments Vie for Fired Federal WorkersMetro-North Is Faster Than Acela on NYC-New Haven Route After Signal UpdatesWhat Would ‘Transportation Abundance’ Look Like?Boston Mayor Wu Embraces Trump Resis",
+      "pubDate": "2025-04-05T13:03:02Z",
+      "displayTime": "2025-04-05T13:03:02Z",
+      "isHosted": true,
+      "bypassModal": false,
+      "previewUrl": null,
+      "thumbnail": {
+        "originalUrl": "https://media.zenfs.com/en/bloomberg_holding_pen_162/3497bf1354feecce6889d44ec897a8a3",
+        "originalWidth": 2000,
+        "originalHeight": 1334,
+        "caption": "",
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/vt_B3A1LcdznqjDw2shpJw--~B/aD0xMzM0O3c9MjAwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/bloomberg_holding_pen_162/3497bf1354feecce6889d44ec897a8a3",
+            "width": 2000,
+            "height": 1334,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/SjI.yLSWwvnUlKd2GZ3l6Q--~B/Zmk9c3RyaW07aD0xMjg7dz0xNzA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/bloomberg_holding_pen_162/3497bf1354feecce6889d44ec897a8a3",
+            "width": 170,
+            "height": 128,
+            "tag": "170x128"
+          }
+        ]
+      },
+      "provider": {
+        "displayName": "Bloomberg",
+        "url": "https://www.bloomberg.com/company"
+      },
+      "canonicalUrl": {
+        "url": "https://finance.yahoo.com/news/nvidia-partner-hon-hai-sales-082958346.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "clickThroughUrl": {
+        "url": "https://finance.yahoo.com/news/nvidia-partner-hon-hai-sales-082958346.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "metadata": {
+        "editorsPick": false
+      },
+      "finance": {
+        "premiumFinance": {
+          "isPremiumNews": false,
+          "isPremiumFreeNews": false
+        }
+      },
+      "storyline": null
+    }
+  },
+  {
+    "id": "4713f72b-5de1-3023-a18f-eeb41d70145a",
+    "content": {
+      "id": "4713f72b-5de1-3023-a18f-eeb41d70145a",
+      "contentType": "STORY",
+      "title": "BBC accuses Apple of putting licence fee at risk",
+      "description": "",
+      "summary": "The BBC has accused Apple of putting the licence fee at risk by destroying the value of its content, escalating tensions between the broadcaster and America’s biggest tech giant.",
+      "pubDate": "2025-04-05T12:00:00Z",
+      "displayTime": "2025-04-05T12:00:00Z",
+      "isHosted": true,
+      "bypassModal": false,
+      "previewUrl": null,
+      "thumbnail": {
+        "originalUrl": "https://media.zenfs.com/en/the_telegraph_258/56ac2b7670e82f545257ab65f7fb51d4",
+        "originalWidth": 2500,
+        "originalHeight": 1563,
+        "caption": "bbc",
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/L6Dhsyc3BDqr.uz6.hoq_A--~B/aD0xNTYzO3c9MjUwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/the_telegraph_258/56ac2b7670e82f545257ab65f7fb51d4",
+            "width": 2500,
+            "height": 1563,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/PD4wO.wptR8vplwxdymXDA--~B/Zmk9c3RyaW07aD0xMjg7dz0xNzA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/the_telegraph_258/56ac2b7670e82f545257ab65f7fb51d4",
+            "width": 170,
+            "height": 128,
+            "tag": "170x128"
+          }
+        ]
+      },
+      "provider": {
+        "displayName": "The Telegraph",
+        "url": "http://www.telegraph.co.uk/"
+      },
+      "canonicalUrl": {
+        "url": "https://www.telegraph.co.uk/business/2025/04/05/bbc-accuses-apple-of-putting-licence-fee-at-risk/",
+        "site": "news",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "clickThroughUrl": {
+        "url": "https://www.yahoo.com/news/bbc-accuses-apple-putting-licence-120000701.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "metadata": {
+        "editorsPick": false
+      },
+      "finance": {
+        "premiumFinance": {
+          "isPremiumNews": false,
+          "isPremiumFreeNews": false
+        }
+      },
+      "storyline": null
+    }
+  },
+  {
+    "id": "e067307a-6a85-3c57-8ffc-b0b2412cf719",
+    "content": {
+      "id": "e067307a-6a85-3c57-8ffc-b0b2412cf719",
+      "contentType": "STORY",
+      "title": "'Nowhere to hide.'  How Apple and others in Silicon Valley are bracing for Trump tariffs",
+      "description": "",
+      "summary": "The Trump administration's tariffs will significantly hurt Silicon Valley tech companies like Apple, which has manufacturing operations in China, Vietnam and India.",
+      "pubDate": "2025-04-05T10:00:24Z",
+      "displayTime": "2025-04-05T10:00:24Z",
+      "isHosted": true,
+      "bypassModal": false,
+      "previewUrl": null,
+      "thumbnail": {
+        "originalUrl": "https://media.zenfs.com/en/la_times_articles_853/b4ba11fde82bc89cdab02ae76b116015",
+        "originalWidth": 840,
+        "originalHeight": 560,
+        "caption": "FILE - In this Saturday, March 14, 2020 file photo, an Apple logo adorns the facade of the downtown Brooklyn Apple store in New York. Apple is heading into a trial that threatens to upend the app store that brings in billions of dollars each year while feeding the more than 1.6 billion iPhones, iPads, and other devices at the core of its digital empire. The federal court case is being brought by Epic Games, the maker of the popular video Fortnite video game, in an attempt to topple the so-called \"walled garden\" that Apple has painstakingly built around its products. (AP Photo/Kathy Willens, File)",
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/XFBl6GAtrEP_ZrY3P7I7rQ--~B/aD01NjA7dz04NDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/la_times_articles_853/b4ba11fde82bc89cdab02ae76b116015",
+            "width": 840,
+            "height": 560,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/bDT.4sWaS2Ns0J5h5Kx_gA--~B/Zmk9c3RyaW07aD0xMjg7dz0xNzA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/la_times_articles_853/b4ba11fde82bc89cdab02ae76b116015",
+            "width": 170,
+            "height": 128,
+            "tag": "170x128"
+          }
+        ]
+      },
+      "provider": {
+        "displayName": "LA Times",
+        "url": "https://www.latimes.com/"
+      },
+      "canonicalUrl": {
+        "url": "https://finance.yahoo.com/news/nowhere-hide-apple-others-silicon-100024554.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "clickThroughUrl": {
+        "url": "https://finance.yahoo.com/news/nowhere-hide-apple-others-silicon-100024554.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "metadata": {
+        "editorsPick": false
+      },
+      "finance": {
+        "premiumFinance": {
+          "isPremiumNews": false,
+          "isPremiumFreeNews": false
+        }
+      },
+      "storyline": null
+    }
+  },
+  {
+    "id": "7c6c5531-407a-415d-ab19-cdf7d1a725bd",
+    "content": {
+      "id": "7c6c5531-407a-415d-ab19-cdf7d1a725bd",
+      "contentType": "STORY",
+      "title": "The Weekend: When Trump hit reset on global trade, sending markets into a tailspin",
+      "description": "",
+      "summary": "Key moments from the last seven days, plus a glimpse at the week ahead",
+      "pubDate": "2025-04-05T09:59:24Z",
+      "displayTime": "2025-04-05T09:59:24Z",
+      "isHosted": true,
+      "bypassModal": false,
+      "previewUrl": null,
+      "thumbnail": {
+        "originalUrl": "https://s.yimg.com/os/creatr-uploaded-images/2025-04/97e32f00-1003-11f0-abf7-ff47ea18585f",
+        "originalWidth": 4290,
+        "originalHeight": 2860,
+        "caption": "",
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/D5X5p30ZrpVZ3EiPdM5OVw--~B/aD0yODYwO3c9NDI5MDthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2025-04/97e32f00-1003-11f0-abf7-ff47ea18585f",
+            "width": 4290,
+            "height": 2860,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/jc24vl5aMcTWr5J0m.Oozg--~B/Zmk9c3RyaW07aD0xMjg7dz0xNzA7YXBwaWQ9eXRhY2h5b24-/https://s.yimg.com/os/creatr-uploaded-images/2025-04/97e32f00-1003-11f0-abf7-ff47ea18585f",
+            "width": 170,
+            "height": 128,
+            "tag": "170x128"
+          }
+        ]
+      },
+      "provider": {
+        "displayName": "Yahoo Finance UK",
+        "url": "http://uk.finance.yahoo.com/"
+      },
+      "canonicalUrl": {
+        "url": "https://uk.finance.yahoo.com/news/weekend-trump-tariffs-markets-trade-095924299.html",
+        "site": "finance",
+        "region": "GB",
+        "lang": "en-GB"
+      },
+      "clickThroughUrl": {
+        "url": "https://finance.yahoo.com/news/weekend-trump-tariffs-markets-trade-095924299.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "metadata": {
+        "editorsPick": false
+      },
+      "finance": {
+        "premiumFinance": {
+          "isPremiumNews": false,
+          "isPremiumFreeNews": false
+        }
+      },
+      "storyline": null
+    }
+  },
+  {
+    "id": "d34fbd0b-152d-3935-8552-d9748466292e",
+    "content": {
+      "id": "d34fbd0b-152d-3935-8552-d9748466292e",
+      "contentType": "STORY",
+      "title": "'Trump Tariffs Could Blow Up Apple': Analyst Estimates $39.5 Billion Impact",
+      "description": "",
+      "summary": "Analysts weigh in on the impact newly imposed reciprocal tariffs by President Donald Trump on other countries and the effect it could have on Apple Inc (NASDAQ:AAPL) and its products, such as the iPhone. The Apple Analysts: Rosenblatt analyst Barton ...",
+      "pubDate": "2025-04-05T09:45:14Z",
+      "displayTime": "2025-04-05T09:45:14Z",
+      "isHosted": true,
+      "bypassModal": false,
+      "previewUrl": null,
+      "thumbnail": {
+        "originalUrl": "https://media.zenfs.com/en/benzinga_79/5f10720b3cfe17d1f031d44dd2daf8ea",
+        "originalWidth": 720,
+        "originalHeight": 480,
+        "caption": "",
+        "resolutions": [
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/ce7NfzH_iDBbu1qbInHiRQ--~B/aD00ODA7dz03MjA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/benzinga_79/5f10720b3cfe17d1f031d44dd2daf8ea",
+            "width": 720,
+            "height": 480,
+            "tag": "original"
+          },
+          {
+            "url": "https://s.yimg.com/uu/api/res/1.2/afRQXhf0MccWaYaW2Ssdcg--~B/Zmk9c3RyaW07aD0xMjg7dz0xNzA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/benzinga_79/5f10720b3cfe17d1f031d44dd2daf8ea",
+            "width": 170,
+            "height": 128,
+            "tag": "170x128"
+          }
+        ]
+      },
+      "provider": {
+        "displayName": "Benzinga",
+        "url": "https://www.benzinga.com/"
+      },
+      "canonicalUrl": {
+        "url": "https://finance.yahoo.com/news/trump-tariffs-could-blow-apple-094514913.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "clickThroughUrl": {
+        "url": "https://finance.yahoo.com/news/trump-tariffs-could-blow-apple-094514913.html",
+        "site": "finance",
+        "region": "US",
+        "lang": "en-US"
+      },
+      "metadata": {
+        "editorsPick": false
+      },
+      "finance": {
+        "premiumFinance": {
+          "isPremiumNews": false,
+          "isPremiumFreeNews": false
+        }
+      },
+      "storyline": null
+    }
+  }
+]
