@@ -44,6 +44,24 @@ async def get_multi_ticker(symbols: str = Query(..., description="Comma-separate
     return result
 
 
+@router.get("/multi/{symbols}/news")
+@handle_yf_request
+@redis_cache(ttl="1 day", invalidate_at_midnight=True)
+@clean_yfinance_data
+async def get_multiple_tickers_news(symbols: str = Query(..., description="Comma-separated list of ticker symbols")):
+    """
+    Get news for multiple ticker symbols at once.
+
+    Args:
+        symbols: Comma-separated list of ticker symbols
+
+    Returns:
+        Dictionary with ticker symbols as keys and their news as values
+    """
+    symbol_list = [s.strip() for s in symbols.split(",")]
+    tickers = yf.Tickers(" ".join(symbol_list))
+    return tickers.news()
+
 # Ticker history endpoint (with custom parameters)
 @router.get("/{ticker}/history")
 @handle_yf_request
@@ -100,51 +118,46 @@ async def get_ticker_history(
     return hist
 
 
-# Option chain endpoint with more details
 @router.get("/{ticker}/option-chain")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
 @clean_yfinance_data
 async def get_ticker_option_chain(
         ticker: str,
-        date: Optional[str] = Query(None, description="Options expiration date in YYYY-MM-DD format")
+        date: Optional[str] = Query(None, description="Options expiration date in YYYY-MM-DD format"),
+        tz: Optional[str] = Query(None, description="Timezone for option dates (e.g., 'America/New_York')")
 ):
     """
-    Get the option chain for a ticker symbol.
+    Get the option chain for a ticker symbol with timezone support.
 
     Args:
-        ticker: Stock ticker symbol (e.g., AAPL, MSFT)
-        date: Options expiration date in YYYY-MM-DD format. If not provided, first available date is used.
+        ticker: Stock ticker symbol
+        date: Options expiration date in YYYY-MM-DD format
+        tz: Timezone for option dates
 
     Returns:
-        Option chain with calls and puts for the specified date, as well as all available expiration dates
+        Option chain with calls and puts for the specified date
     """
     ticker_obj = yf.Ticker(ticker)
-
-    # Get available expiration dates
     exp_dates = ticker_obj.options
 
     if not exp_dates:
-        return {
-            "expiration_dates": [],
-            "options": {}
-        }
+        return {"expiration_dates": [], "options": {}}
 
-    # If no date provided, use the first available date
     if date is None:
         date = exp_dates[0]
     elif date not in exp_dates:
         raise HTTPException(status_code=404, detail=f"Expiration date {date} not found. Available dates: {exp_dates}")
 
-    # Get options data for the specified date
-    options_chain = ticker_obj.option_chain(date)
+    options_chain = ticker_obj.option_chain(date, tz=tz)
 
     return {
         "expiration_dates": exp_dates,
         "options": {
             "date": date,
             "calls": options_chain.calls,
-            "puts": options_chain.puts
+            "puts": options_chain.puts,
+            "underlying": options_chain.underlying
         }
     }
 
@@ -643,6 +656,55 @@ async def get_ticker_isin(ticker: str):
     """
     return yf.Ticker(ticker).isin
 
+@router.get("/isin/{isin}/ticker")
+@handle_yf_request
+@redis_cache(ttl="3 months")
+@clean_yfinance_data
+async def get_ticker_by_isin(isin: str):
+    """
+    Get the ticker symbol for a given ISIN.
+
+    Args:
+        isin: International Securities Identification Number
+
+    Returns:
+        Corresponding ticker symbol
+    """
+    return yf.utils.get_ticker_by_isin(isin)
+
+
+@router.get("/isin/{isin}/info")
+@handle_yf_request
+@redis_cache(ttl="3 months")
+@clean_yfinance_data
+async def get_info_by_isin(isin: str):
+    """
+    Get basic information for a given ISIN.
+
+    Args:
+        isin: International Securities Identification Number
+
+    Returns:
+        Basic information for the corresponding ticker
+    """
+    return yf.utils.get_info_by_isin(isin)
+
+
+@router.get("/isin/{isin}/news")
+@handle_yf_request
+@redis_cache(ttl="1 day", invalidate_at_midnight=True)
+@clean_yfinance_data
+async def get_news_by_isin(isin: str):
+    """
+    Get news for a given ISIN.
+
+    Args:
+        isin: International Securities Identification Number
+
+    Returns:
+        News for the corresponding ticker
+    """
+    return yf.utils.get_news_by_isin(isin)
 
 @router.get("/{ticker}/major-holders")
 @handle_yf_request
@@ -932,6 +994,34 @@ async def get_ticker_shares(ticker: str):
     """
     return yf.Ticker(ticker).shares
 
+@router.get("/{ticker}/shares-full")
+@handle_yf_request
+@redis_cache(ttl="1 day", invalidate_at_midnight=True)
+@clean_yfinance_data
+async def get_ticker_shares_full(
+        ticker: str,
+        start: Optional[str] = Query(None, description="Start date in YYYY-MM-DD format"),
+        end: Optional[str] = Query(None, description="End date in YYYY-MM-DD format")
+):
+    """
+    Get the full share count history for a ticker within the specified date range.
+
+    This endpoint provides detailed historical share count data, which is useful
+    for analyzing dilution, buybacks, and calculating accurate market cap history.
+
+    Args:
+        ticker: Stock ticker symbol
+        start: Start date for share count data (default: 18 months ago)
+        end: End date for share count data (default: today)
+
+    Returns:
+        Time series of share count data for the specified ticker
+    """
+    # Convert string dates to datetime if provided
+    start_date = datetime.strptime(start, "%Y-%m-%d") if start else None
+    end_date = datetime.strptime(end, "%Y-%m-%d") if end else None
+
+    return yf.Ticker(ticker).get_shares_full(start=start_date, end=end_date)
 
 @router.get("/{ticker}/splits")
 @handle_yf_request
