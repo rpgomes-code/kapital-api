@@ -57,16 +57,36 @@ async def startup_event():
         logger.warning("Redis connection failed - caching is disabled")
 
 # Root endpoint
-@app.get("/", response_model=RootResponse, summary="API Welcome Endpoint", 
-        description="Basic information about the Kapital API")
+@app.get("/", response_model=RootResponse, summary="API Welcome Endpoint",
+         description="Basic information about the Kapital API")
 def read_root():
     """
-    Root endpoint that provides basic information about the API.
-    
+    Root endpoint that provides essential information about the Kapital API status and version.
+
+    This endpoint serves as the primary entry point for the API and can be used to verify
+    connectivity, check the current version, and determine if the caching layer is operational.
+    It's particularly useful for simple health checks and version verification during deployments.
+
     Returns:
-        - **message**: Welcome message
-        - **version**: Current API version
-        - **cache_status**: Redis connection status
+    - **RootResponse**: Object containing API information
+      - **message**: Welcome message confirming successful connection
+      - **version**: Current API version number for compatibility verification
+      - **cache_status**: Redis connection status ('connected' or 'disconnected')
+
+    Example response:
+    ```json
+    {
+        "message": "Welcome to Kapital API",
+        "version": "1.0.0",
+        "cache_status": "connected"
+    }
+    ```
+
+    Notes:
+    - A 'connected' cache_status indicates Redis is operational and caching is enabled
+    - A 'disconnected' cache_status means the API is functioning without caching
+    - This endpoint does not require authentication and can be used for basic connectivity tests
+    - Version information should be checked when integrating with client applications to ensure compatibility
     """
     redis_status = "connected" if redis_manager.is_connected() else "disconnected"
     return RootResponse(
