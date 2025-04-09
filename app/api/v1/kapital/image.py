@@ -3,8 +3,11 @@ import asyncio
 import re
 import yfinance as yf
 import logging
-from typing import Optional
+from typing import Optional, List
 from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel, Field
+
+from app.models.kapital.image import TickerImageResponse
 
 from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
 from app.utils.redis.cache_decorator import redis_cache
@@ -16,21 +19,36 @@ router = APIRouter(prefix="/v1/ticker", tags=["Kapital"])
 # Logger for this module
 logger = logging.getLogger(__name__)
 
-@router.get("/{ticker}/image")
+@router.get("/{ticker}/image", response_model=TickerImageResponse)
 @handle_yf_request
 @redis_cache(ttl="3 months")
 @clean_yfinance_data
 async def get_ticker_image(ticker: str):
     """
     Get a company logo image URL for the specified ticker symbol.
-    Dynamically determines the market/exchange and tries multiple sources for company logos.
-    Uses parallel requests and image validation for improved reliability.
-
-    Args:
-        ticker: Stock ticker symbol (e.g., AAPL, MSFT)
-
+    
+    This endpoint dynamically determines the market/exchange and tries multiple 
+    sources for company logos, using parallel requests and image validation
+    for improved reliability.
+    
+    Parameters:
+    - **ticker**: The stock ticker symbol (e.g., AAPL, MSFT)
+    
     Returns:
-        Dictionary with imageUrl containing the first valid logo URL found, or null if none found
+    - **TickerImageResponse**: Object containing the image URL or null if no image is found
+    
+    Example response:
+    ```json
+    {
+        "imageUrl": "https://example.com/images/AAPL.png"
+    }
+    ```
+    
+    Notes:
+    - The endpoint attempts to locate images from over 15 different sources
+    - Each image is validated to ensure it's a proper image file (not a 404 page or placeholder)
+    - The algorithm uses market/exchange information to find the best match
+    - If no valid image is found after trying all sources, imageUrl will be null
     """
     # First, try to get the exchange information from yfinance
     try:

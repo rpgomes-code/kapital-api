@@ -2,10 +2,12 @@ import yfinance as yf
 import pandas as pd
 import numpy as np
 from fastapi import APIRouter, HTTPException, Query
-from typing import Optional
+from typing import List, Optional
 from datetime import datetime, timedelta
 import logging
+from pydantic import BaseModel, Field
 
+from app.models.kapital.indicators import RSIResponse
 from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yfinance.error_handler import handle_yf_request
@@ -16,14 +18,13 @@ router = APIRouter(prefix="/v1/kapital/indicators", tags=["Kapital Indicators"])
 # Logger for this module
 logger = logging.getLogger(__name__)
 
-
 def calculate_rsi(close_prices, period=14):
     """
-    Calculate RSI indicator based on Wilder's formula.
+    Calculate RSI indicator based on Wilder's smoothing method.
 
     Args:
         close_prices: Pandas Series of closing prices
-        period: RSI calculation period
+        period: RSI calculation period (typically 14 days)
 
     Returns:
         Pandas Series of RSI values
@@ -66,7 +67,7 @@ def calculate_rsi(close_prices, period=14):
     return rsi_values
 
 
-@router.get("/rsi")
+@router.get("/rsi", response_model=RSIResponse)
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
 @clean_yfinance_data
@@ -79,18 +80,47 @@ async def get_rsi(
     """
     Calculate Relative Strength Index (RSI) for a specific ticker.
 
-    RSI is a momentum oscillator that measures the speed and change of price movements.
-    It ranges from 0 to 100, with readings above 70 indicating overbought conditions
-    and readings below 30 indicating oversold conditions.
+    The RSI is a momentum oscillator developed by J. Welles Wilder that measures the speed and
+    change of price movements. It oscillates between 0 and 100 and is typically used to identify
+    overbought or oversold conditions in a traded security.
 
-    Args:
-        ticker: Stock ticker symbol
-        start: Start date for historical data
-        end: End date for historical data
-        period: RSI calculation period (default: 14 days)
+    Trading signals based on RSI:
+    - RSI values of 70 or above indicate that a security may be **overbought** - potentially overvalued
+    - RSI values of 30 or below indicate that a security may be **oversold** - potentially undervalued
+    - Divergences between price and RSI can signal potential trend reversals
+    - The centerline (50) can act as support/resistance in trending markets
+
+    Parameters:
+    - **ticker**: Stock ticker symbol
+    - **start**: Start date for historical data (YYYY-MM-DD)
+    - **end**: End date for historical data (YYYY-MM-DD)
+    - **period**: RSI calculation period (default: 14 days)
 
     Returns:
-        DataFrame with date and RSI values
+    - **RSIResponse**: Object containing the time series of RSI values
+
+    Example response:
+    ```json
+    {
+        "values": [
+            {
+                "Date": "2023-01-01T00:00:00",
+                "RSI": 65.42
+            },
+            {
+                "Date": "2023-01-02T00:00:00",
+                "RSI": 68.31
+            }
+        ]
+    }
+    ```
+
+    Notes:
+    - This implementation uses Wilder's smoothing method for the RSI calculation,
+      which is the traditional approach used by most trading platforms
+    - The calculation requires at least (period + 1) data points to generate valid RSI values
+    - The endpoint automatically fetches additional historical data before the start date
+      to ensure accurate RSI calculation for the requested period
     """
     try:
         # Convert string dates to datetime objects
@@ -138,7 +168,8 @@ async def get_rsi(
         # Convert to records and explicitly reset index to avoid it being included in the output
         result_records = result.reset_index(drop=True).to_dict(orient='records')
 
-        return result_records
+        # Wrap in the values field for our Pydantic model
+        return {"values": result_records}
 
     except Exception as e:
         logger.error(f"Error calculating RSI for {ticker}: {str(e)}")
