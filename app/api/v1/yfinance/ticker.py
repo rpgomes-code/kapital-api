@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Query, Depends
+from fastapi import APIRouter, HTTPException, Query, Depends, Path
 import yfinance as yf
 from typing import List, Optional, Dict, Any, Union
 from datetime import datetime, timedelta
@@ -48,7 +48,7 @@ async def get_multi_ticker(symbols: str = Query(..., description="Comma-separate
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
 @clean_yfinance_data
-async def get_multiple_tickers_news(symbols: str = Query(..., description="Comma-separated list of ticker symbols")):
+async def get_multiple_tickers_news(symbols: str = Path(..., description="Comma-separated list of ticker symbols")):
     """
     Get news for multiple ticker symbols at once.
 
