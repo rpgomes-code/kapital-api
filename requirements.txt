@@ -1,6 +1,7 @@
 fastapi
 uvicorn
 yfinance
+yahooquery
 pandas
 python-dotenv
 pydantic

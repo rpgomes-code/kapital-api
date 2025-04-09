@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 import logging
 from app.utils.redis.redis_manager import redis_manager
-from app.utils.redis.cache_strategies import CACHE_STRATEGIES
+from app.utils.redis.cache_strategies import ALL_CACHE_STRATEGIES
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/cache", tags=["Cache"])
@@ -16,7 +16,7 @@ def get_cache_strategy():
     Returns recommended caching strategies for all endpoints based on the config.
     This can be used by a caching layer or proxy to set appropriate cache TTLs.
     """
-    return CACHE_STRATEGIES
+    return ALL_CACHE_STRATEGIES
 
 
 # Clear Redis cache
