@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, Query
-from yahooquery import Ticker, Tickers, search, get_trending
+from yahooquery import Ticker, search, get_trending
 import logging
 from typing import List, Optional, Dict, Any, Union
 
@@ -76,8 +76,8 @@ async def get_market_summary():
     Returns:
         Market summary data
     """
-    # Create a Tickers object with major indices
-    indices = Tickers([
+    # List of major indices
+    symbols = [
         "^GSPC",  # S&P 500
         "^DJI",  # Dow Jones Industrial Average
         "^IXIC",  # NASDAQ Composite
@@ -86,11 +86,13 @@ async def get_market_summary():
         "^N225",  # Nikkei 225
         "^HSI",  # Hang Seng Index
         "^GDAXI",  # DAX
-    ])
+    ]
+
+    # Use Ticker with a list of symbols instead of Tickers
+    indices = Ticker(symbols)
 
     # Get quotes for these indices
     return indices.quotes
-
 
 @router.get("/currencies")
 @handle_yq_request
@@ -123,7 +125,7 @@ async def get_currency_data(
     ]
 
     # Get quotes for these currency pairs
-    tickers = Tickers(pairs)
+    tickers = Ticker(pairs)
     return tickers.quotes
 
 
