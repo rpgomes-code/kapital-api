@@ -237,40 +237,6 @@ async def get_history(
         return ticker_obj.history(period=period, interval=interval)
 
 
-@router.get("/{ticker}/dividends")
-@handle_yq_request
-@redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
-@clean_yahooquery_data
-async def get_dividends(ticker: str):
-    """
-    Get dividend history for a ticker.
-
-    Args:
-        ticker: Stock ticker symbol
-
-    Returns:
-        Dividend history
-    """
-    return Ticker(ticker).dividends
-
-
-@router.get("/{ticker}/splits")
-@handle_yq_request
-@redis_cache(ttl="1 week", key_prefix="yahooquery:")
-@clean_yahooquery_data
-async def get_splits(ticker: str):
-    """
-    Get stock split history for a ticker.
-
-    Args:
-        ticker: Stock ticker symbol
-
-    Returns:
-        Stock split history
-    """
-    return Ticker(ticker).splits
-
-
 # Fundamental analysis endpoints
 @router.get("/{ticker}/calendar_events")
 @handle_yq_request
@@ -454,24 +420,6 @@ async def get_insider_transactions(ticker: str):
     """
     return Ticker(ticker).insider_transactions
 
-
-@router.get("/{ticker}/institutional_holders")
-@handle_yq_request
-@redis_cache(ttl="1 week", key_prefix="yahooquery:")
-@clean_yahooquery_data
-async def get_institutional_holders(ticker: str):
-    """
-    Get institutional holders for a ticker.
-
-    Args:
-        ticker: Stock ticker symbol
-
-    Returns:
-        Institutional holders information
-    """
-    return Ticker(ticker).institutional_holders
-
-
 @router.get("/{ticker}/major_holders")
 @handle_yq_request
 @redis_cache(ttl="1 week", key_prefix="yahooquery:")
@@ -487,24 +435,6 @@ async def get_major_holders(ticker: str):
         Major holders information
     """
     return Ticker(ticker).major_holders
-
-
-@router.get("/{ticker}/net_share_purchase_activity")
-@handle_yq_request
-@redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
-@clean_yahooquery_data
-async def get_net_share_purchase_activity(ticker: str):
-    """
-    Get net share purchase activity for a ticker.
-
-    Args:
-        ticker: Stock ticker symbol
-
-    Returns:
-        Net share purchase activity
-    """
-    return Ticker(ticker).net_share_purchase_activity
-
 
 @router.get("/{ticker}/recommendation_trend")
 @handle_yq_request
@@ -564,24 +494,6 @@ async def get_option_chain(ticker: str, date: Optional[str] = None):
         return ticker_obj.option_chain(date=date)
     else:
         return ticker_obj.option_chain
-
-
-@router.get("/{ticker}/option_expiration_dates")
-@handle_yq_request
-@redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
-@clean_yahooquery_data
-async def get_option_expiration_dates(ticker: str):
-    """
-    Get option expiration dates for a ticker.
-
-    Args:
-        ticker: Stock ticker symbol
-
-    Returns:
-        List of option expiration dates
-    """
-    return Ticker(ticker).option_expiration_dates
-
 
 # Fund-specific endpoints
 @router.get("/{ticker}/fund_profile")
@@ -670,24 +582,6 @@ async def get_news(ticker: str, count: int = Query(10, description="Number of ne
     """
     return Ticker(ticker).news(count=count)
 
-
-@router.get("/{ticker}/insights")
-@handle_yq_request
-@redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
-@clean_yahooquery_data
-async def get_insights(ticker: str):
-    """
-    Get insights for a ticker.
-
-    Args:
-        ticker: Stock ticker symbol
-
-    Returns:
-        Insights
-    """
-    return Ticker(ticker).insights
-
-
 # Other endpoints
 @router.get("/{ticker}/index_trend")
 @handle_yq_request
@@ -721,24 +615,6 @@ async def get_industry_trend(ticker: str):
         Industry trend information
     """
     return Ticker(ticker).industry_trend
-
-
-@router.get("/{ticker}/upgrades_downgrades")
-@handle_yq_request
-@redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
-@clean_yahooquery_data
-async def get_upgrades_downgrades(ticker: str):
-    """
-    Get upgrades and downgrades for a ticker.
-
-    Args:
-        ticker: Stock ticker symbol
-
-    Returns:
-        Upgrades and downgrades information
-    """
-    return Ticker(ticker).upgrades_downgrades
-
 
 @router.get("/{ticker}/sec_filings")
 @handle_yq_request

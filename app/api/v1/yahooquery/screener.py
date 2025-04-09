@@ -34,8 +34,7 @@ async def get_available_screeners():
 @clean_yahooquery_data
 async def get_screener(
         scrname: str,
-        count: int = Query(25, description="Number of results to return", ge=1, le=250),
-        offset: int = Query(0, description="Offset for pagination")
+        count: int = Query(25, description="Number of results to return", ge=1, le=250)
 ):
     """
     Get results for a predefined screener.
@@ -43,7 +42,6 @@ async def get_screener(
     Args:
         scrname: Name of the predefined screener
         count: Number of results to return (max 250)
-        offset: Offset for pagination
 
     Returns:
         Screener results
@@ -54,9 +52,8 @@ async def get_screener(
 
         # Get screener results
         return screener.get_screeners(
-            screeners=[scrname],
-            count=count,
-            offset=offset
+            screen_ids=[scrname],
+            count=count
         )
     except ValueError as e:
         # Handle specific error cases

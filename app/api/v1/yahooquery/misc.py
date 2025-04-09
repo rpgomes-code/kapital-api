@@ -20,27 +20,17 @@ logger = logging.getLogger(__name__)
 @clean_yahooquery_data
 async def search_tickers(
         query: str = Query(..., description="Search query string"),
-        count: int = Query(10, description="Number of results to return", ge=1, le=50),
         news_count: int = Query(0, description="Number of news items to return", ge=0, le=10),
         quotes_count: int = Query(5, description="Number of quotes to return", ge=0, le=20),
 ):
     """
     Search for ticker symbols, companies, etc.
-
-    Args:
-        query: Search query string
-        count: Number of results to return
-        news_count: Number of news items to include
-        quotes_count: Number of quotes to include
-
-    Returns:
-        Search results
     """
+    # Pass count as quotes_count or remove it entirely
     return search(
         query,
-        count=count,
         news_count=news_count,
-        quotes_count=quotes_count
+        quotes_count=quotes_count  # Use the quotes_count parameter
     )
 
 
@@ -50,19 +40,17 @@ async def search_tickers(
 @clean_yahooquery_data
 async def get_trending_tickers(
         country: str = Query("united states", description="Country for trending data"),
-        count: int = Query(20, description="Number of trending tickers to return", ge=1, le=50),
 ):
     """
     Get trending tickers for a specified country.
 
     Args:
         country: Country for trending data
-        count: Number of trending tickers to return
 
     Returns:
         Trending tickers
     """
-    return get_trending(country=country, count=count)
+    return get_trending(country=country)
 
 
 @router.get("/market-summary")
@@ -164,6 +152,6 @@ async def get_market_movers(
 
     # Get screener results
     return screener.get_screeners(
-        screeners=[category],
+        screen_ids=[category],
         count=count
     )
