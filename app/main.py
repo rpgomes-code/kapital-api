@@ -24,6 +24,7 @@ from app.api.v1.yahooquery.multi_ticker import router as yq_multi_ticker_router
 
 # Import kapital routers
 from app.api.v1.kapital.image import router as image_router
+from app.api.v1.kapital.indicators import router as indicators_router
 from app.api.v1.redis.cache import router as cache_router
 
 # Import Redis manager for startup check
@@ -83,5 +84,6 @@ app.include_router(yq_multi_ticker_router)
 
 # Include other routers
 app.include_router(image_router)
+app.include_router(indicators_router)  # Add the new indicators router
 app.include_router(cache_router)
 app.include_router(health_router)
