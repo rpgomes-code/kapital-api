@@ -28,6 +28,7 @@ from app.api.v1.kapital.indicators import router as indicators_router
 from app.api.v1.redis.cache import router as cache_router
 
 # Import Redis manager for startup check
+from app.models.kapital.root import RootResponse
 from app.utils.redis.redis_manager import redis_manager
 from app.api.v1.health.endpoints import router as health_router
 
@@ -56,14 +57,23 @@ async def startup_event():
         logger.warning("Redis connection failed - caching is disabled")
 
 # Root endpoint
-@app.get("/")
+@app.get("/", response_model=RootResponse, summary="API Welcome Endpoint", 
+        description="Basic information about the Kapital API")
 def read_root():
+    """
+    Root endpoint that provides basic information about the API.
+    
+    Returns:
+        - **message**: Welcome message
+        - **version**: Current API version
+        - **cache_status**: Redis connection status
+    """
     redis_status = "connected" if redis_manager.is_connected() else "disconnected"
-    return {
-        "message": "Welcome to Kapital API",
-        "version": "1.0.0",
-        "cache_status": redis_status
-    }
+    return RootResponse(
+        message="Welcome to Kapital API",
+        version="1.0.0",
+        cache_status=redis_status
+    )
 
 # Include all yfinance routers
 app.include_router(yf_ticker_router)
