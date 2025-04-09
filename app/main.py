@@ -20,6 +20,7 @@ from app.api.v1.yfinance.batch import router as yf_batch_router
 from app.api.v1.yahooquery.ticker import router as yq_ticker_router
 from app.api.v1.yahooquery.screener import router as yq_screener_router
 from app.api.v1.yahooquery.misc import router as yq_misc_router
+from app.api.v1.yahooquery.multi_ticker import router as yq_multi_ticker_router
 
 # Import kapital routers
 from app.api.v1.kapital.image import router as image_router
@@ -78,6 +79,7 @@ app.include_router(yf_batch_router)
 app.include_router(yq_ticker_router)
 app.include_router(yq_screener_router)
 app.include_router(yq_misc_router)
+app.include_router(yq_multi_ticker_router)
 
 # Include other routers
 app.include_router(image_router)

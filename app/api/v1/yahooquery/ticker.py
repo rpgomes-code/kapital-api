@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from fastapi import APIRouter, HTTPException, Query
 from yahooquery import Ticker
 import logging
@@ -661,3 +663,112 @@ async def get_all_modules(ticker: str):
     ]
 
     return Ticker(ticker).get_modules(modules)
+
+
+@router.get("/{ticker}/page_views")
+@handle_yq_request
+@redis_cache(ttl="30 minutes", key_prefix="yahooquery:")
+@clean_yahooquery_data
+async def get_page_views(ticker: str):
+    """
+    Get page views data for a ticker.
+
+    This includes short, mid, and long-term trend data regarding a stock's page views.
+
+    Args:
+        ticker: Stock ticker symbol
+
+    Returns:
+        Page views trend data
+    """
+    return Ticker(ticker).page_views
+
+
+@router.get("/{ticker}/corporate_events")
+@handle_yq_request
+@redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
+@clean_yahooquery_data
+async def get_corporate_events(ticker: str):
+    """
+    Get corporate events for a ticker.
+
+    This includes significant corporate events like acquisitions, management changes, etc.
+
+    Args:
+        ticker: Stock ticker symbol
+
+    Returns:
+        Corporate events data
+    """
+    return Ticker(ticker).corporate_events
+
+
+@router.get("/{ticker}/corporate_guidance")
+@handle_yq_request
+@redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
+@clean_yahooquery_data
+async def get_corporate_guidance(ticker: str):
+    """
+    Get corporate guidance for a ticker.
+
+    This includes forward-looking guidance from the company's management.
+
+    Args:
+        ticker: Stock ticker symbol
+
+    Returns:
+        Corporate guidance data
+    """
+    return Ticker(ticker).corporate_guidance
+
+
+@router.get("/{ticker}/valuation_measures")
+@handle_yq_request
+@redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
+@clean_yahooquery_data
+async def get_valuation_measures(ticker: str):
+    """
+    Get valuation measures for a ticker.
+
+    This includes PE ratio, PEG ratio, Price/Sales, Price/Book, etc.
+
+    Args:
+        ticker: Stock ticker symbol
+
+    Returns:
+        Valuation measures data
+    """
+
+    return Ticker(ticker).valuation_measures
+
+
+@router.get("/{ticker}/dividend_history")
+@handle_yq_request
+@redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
+@clean_yahooquery_data
+async def get_dividend_history(
+        ticker: str,
+        start: str = Query(..., description="Start date in YYYY-MM-DD format"),
+        end: Optional[str] = Query(None, description="End date in YYYY-MM-DD format (defaults to current date)")
+):
+    """
+    Get dividend history for a ticker.
+
+    Args:
+        ticker: Stock ticker symbol
+        start: Start date in YYYY-MM-DD format
+        end: End date in YYYY-MM-DD format (optional)
+
+    Returns:
+        Historical dividend data
+    """
+    # Validate date format
+    try:
+        datetime.strptime(start, "%Y-%m-%d")
+        if end:
+            datetime.strptime(end, "%Y-%m-%d")
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid date format. Use YYYY-MM-DD.")
+
+    ticker_obj = Ticker(ticker)
+    return ticker_obj.dividend_history(start=start, end=end)

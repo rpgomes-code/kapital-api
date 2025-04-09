@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, Query
-from yahooquery import Ticker, search, get_trending
+from yahooquery import Ticker, search, get_trending, get_exchanges
 import logging
+import pandas as pd
 from typing import List, Optional, Dict, Any, Union
 
 from app.utils.yahooquery.yahooquery_data_manager import clean_yahooquery_data
@@ -155,3 +156,40 @@ async def get_market_movers(
         screen_ids=[category],
         count=count
     )
+
+@router.get("/exchanges")
+@handle_yq_request
+@redis_cache(ttl="3 months", key_prefix="yahooquery:")
+async def get_available_exchanges():
+    """
+    Get a list of available exchanges and their suffixes.
+
+    This endpoint retrieves information about global stock exchanges, including
+    their names, country, delay, and symbol suffixes.
+
+    Returns:
+        List of exchanges with their details
+    """
+    try:
+        # Get exchanges dataframe
+        exchanges_df = get_exchanges()
+
+        # Convert the dataframe to a dictionary format
+        # First convert to records, then make sure values are serializable
+        exchanges_list = exchanges_df.to_dict(orient='records')
+
+        # For each exchange record, convert any non-serializable values to strings
+        for exchange in exchanges_list:
+            for key, value in exchange.items():
+                if pd.isna(value):
+                    exchange[key] = None
+                elif not isinstance(value, (str, int, float, bool, type(None))):
+                    exchange[key] = str(value)
+
+        return {
+            "exchanges": exchanges_list,
+            "count": len(exchanges_list)
+        }
+    except Exception as e:
+        logger.error(f"Error fetching exchanges: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to retrieve exchanges: {str(e)}")
