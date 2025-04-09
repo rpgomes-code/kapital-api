@@ -27,6 +27,7 @@ from app.api.v1.redis.cache import router as cache_router
 
 # Import Redis manager for startup check
 from app.utils.redis.redis_manager import redis_manager
+from app.api.v1.health.endpoints import router as health_router
 
 # Create FastAPI app
 app = FastAPI(
@@ -81,3 +82,4 @@ app.include_router(yq_misc_router)
 # Include other routers
 app.include_router(image_router)
 app.include_router(cache_router)
+app.include_router(health_router)
