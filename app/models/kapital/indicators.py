@@ -12,3 +12,14 @@ class RSIValue(BaseModel):
 class RSIResponse(BaseModel):
     """Response model for RSI indicator endpoint"""
     values: List[RSIValue] = Field(..., description="Time series of RSI values")
+
+# SMA - Simple Moving Average Models
+
+class SMAValue(BaseModel):
+    """Single data point for SMA calculation"""
+    Date: datetime = Field(..., description="The date of the SMA measurement")
+    SMA: float = Field(..., description="Simple Moving Average value")
+
+class SMAResponse(BaseModel):
+    """Response model for SMA indicator endpoint"""
+    values: List[SMAValue] = Field(..., description="Time series of SMA values")
