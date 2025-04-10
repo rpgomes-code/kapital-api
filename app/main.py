@@ -57,7 +57,7 @@ async def startup_event():
         logger.warning("Redis connection failed - caching is disabled")
 
 # Root endpoint
-@app.get("/", response_model=RootResponse, summary="API Welcome Endpoint",
+@app.get("/", response_model=RootResponse, summary="API Welcome Endpoint", tags=["Main"],
          description="Basic information about the Kapital API")
 def read_root():
     """
