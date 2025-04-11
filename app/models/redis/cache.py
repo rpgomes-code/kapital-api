@@ -1,6 +1,14 @@
-from typing import Dict, Any, Optional, List
-from pydantic import BaseModel, Field
-from enum import Enum
+from pydantic import (
+    BaseModel, 
+    Field
+)
+
+from typing import (
+    Dict, 
+    Any, 
+    Optional, 
+    List
+)    
 
 from app.utils.redis.cache_service import CacheStrategy
 

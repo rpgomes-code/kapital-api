@@ -1,7 +1,13 @@
-from fastapi import APIRouter, HTTPException, Query
 import logging
+
+from fastapi import APIRouter
+
 from app.utils.redis.redis_manager import redis_manager
-from app.models.health.health import HealthCheckResponse, ComponentStatus
+
+from app.models.health.health import (
+    HealthCheckResponse, 
+    ComponentStatus
+)
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/health", tags=["Health Check"])

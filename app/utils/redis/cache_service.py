@@ -1,14 +1,18 @@
-import logging
-import json
-from typing import Dict, Any, Optional, List, Tuple
-from enum import Enum
 import time
-from datetime import datetime
+import logging
+
+from enum import Enum
+
+from typing import (
+    Dict, 
+    Any, 
+    Optional, 
+    Tuple
+)
 
 from app.utils.redis.redis_manager import redis_manager
 
 logger = logging.getLogger(__name__)
-
 
 class CacheStrategy(str, Enum):
     """Cache strategy types"""
@@ -20,7 +24,6 @@ class CacheStrategy(str, Enum):
     WEEKLY = "weekly"  # 1 week
     MONTHLY = "monthly"  # 30 days
     QUARTERLY = "quarterly"  # 90 days
-
 
 class CacheService:
     """
@@ -262,7 +265,6 @@ class CacheService:
                 }
             }
         }
-
 
 # Create singleton instance
 cache_service = CacheService()

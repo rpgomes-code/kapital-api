@@ -1,15 +1,23 @@
-import functools
+import json
+import time
 import inspect
 import logging
-from typing import Optional, Callable, Dict, Any, Union
-import time
 import hashlib
-import json
-from datetime import datetime, timedelta
+import functools
+
+from typing import (
+    Optional, 
+    Callable, 
+    Union
+)
+
+from app.utils.redis.cache_service import (
+    cache_service, 
+    CacheStrategy
+)
 
 from app.utils.redis.redis_manager import redis_manager
-from app.utils.redis.cache_service import cache_service, CacheStrategy
-from app.utils.redis.circuit_breaker import CircuitBreaker, redis_circuit
+from app.utils.redis.circuit_breaker import redis_circuit
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +39,6 @@ CACHE_TTL_MAPPING = {
     "1 month": 30 * 24 * 60 * 60,
     "3 months": 90 * 24 * 60 * 60,
 }
-
 
 def redis_cache(
         ttl: Optional[Union[int, str, CacheStrategy]] = None,
@@ -193,7 +200,6 @@ def redis_cache(
         return wrapper
 
     return decorator
-
 
 # Context manager for temporary cache bypass
 class BypassCache:

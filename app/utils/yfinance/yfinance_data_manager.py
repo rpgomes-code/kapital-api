@@ -1,13 +1,12 @@
-import numpy as np
-import pandas as pd
-import datetime
-import json
 import math
 import logging
+import datetime
+import numpy as np
+import pandas as pd
+
 from functools import wraps
 
 logger = logging.getLogger(__name__)
-
 
 def _sanitize_for_json(obj, depth=0, max_depth=10):
     """
@@ -92,7 +91,6 @@ def _sanitize_for_json(obj, depth=0, max_depth=10):
         # Catch any other exceptions during serialization
         logger.debug(f"Error in _sanitize_for_json: {str(e)}")
         return str(obj)
-
 
 def clean_yfinance_data(func):
     @wraps(func)

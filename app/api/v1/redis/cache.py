@@ -1,13 +1,20 @@
-from fastapi import APIRouter, HTTPException, Depends, Query, Path, BackgroundTasks
-import logging
-from typing import Dict, Any, List, Optional
 import time
-from datetime import datetime
+import logging
+
+from fastapi import (
+    APIRouter, 
+    HTTPException, 
+    Depends, 
+    Query, 
+    Path, 
+    BackgroundTasks
+)
+
+from app.utils.auth.auth import verify_admin
 
 from app.utils.redis.redis_manager import redis_manager
-from app.utils.redis.cache_service import cache_service, CacheStrategy
+from app.utils.redis.cache_service import cache_service
 from app.models.redis.cache import (
-    CacheKeyInfo, 
     CacheInvalidateRequest, 
     CacheSetRequest, 
     CacheStatsResponse, 
@@ -23,13 +30,6 @@ logger = logging.getLogger(__name__)
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/cache", tags=["Cache Management"])
-
-# Dependency for admin authentication (placeholder - implement real auth)
-async def verify_admin():
-    # In a real implementation, this would check authentication
-    # For now, we'll just always allow access
-    return True
-
 
 # Get cache statistics
 @router.get("/stats", response_model=CacheStatsResponse, summary="Cache Statistics")

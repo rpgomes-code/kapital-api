@@ -1,19 +1,31 @@
-from fastapi import APIRouter, HTTPException, Query, Depends
-import yfinance as yf
-from typing import List, Optional, Dict, Any, Union
 import logging
-from pydantic import BaseModel, Field
+import yfinance as yf
 
-from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
+from typing import (
+    List, 
+    Any
+)
+
+from fastapi import (
+    APIRouter, 
+    HTTPException, 
+    Query
+)
+
+from pydantic import (
+    BaseModel, 
+    Field
+)
+
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yfinance.error_handler import handle_yf_request
+from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/yfinance/screener", tags=["YFinance Screener"])
 
 # Logger for this module
 logger = logging.getLogger(__name__)
-
 
 @router.get("/predefined-list")
 @handle_yf_request
@@ -49,7 +61,6 @@ async def get_predefined_screeners():
         }
     
     return result
-
 
 @router.get("/predefined/{screen_name}")
 @handle_yf_request
@@ -101,7 +112,6 @@ async def get_predefined_screen(
             raise HTTPException(status_code=400, detail="Yahoo limits query size to a maximum of 250 results")
         raise
 
-
 @router.get("/fields")
 @handle_yf_request
 @redis_cache(ttl="3 months")
@@ -122,7 +132,6 @@ async def get_screener_fields():
         "equity_fields": equity_fields,
         "fund_fields": fund_fields
     }
-
 
 @router.get("/values")
 @handle_yf_request
@@ -145,12 +154,10 @@ async def get_screener_values():
         "fund_values": fund_values
     }
 
-
 # Custom query model for the request body
 class ScreenerQueryOperation(BaseModel):
     operator: str = Field(..., description="Operator for the query (e.g., 'eq', 'gt', 'lt', 'btwn', 'is-in')")
     operands: List[Any] = Field(..., description="Operands for the query")
-
 
 @router.post("/custom/equity")
 @handle_yf_request
@@ -206,7 +213,6 @@ async def run_custom_equity_screener(
         if "Invalid field for EquityQuery" in str(e):
             raise HTTPException(status_code=400, detail=f"Invalid field in query: {str(e)}")
         raise
-
 
 @router.post("/custom/fund")
 @handle_yf_request
@@ -264,8 +270,6 @@ async def run_custom_fund_screener(
         raise
 
 
-# Helper functions
-
 def _build_equity_query(query_data):
     """
     Recursively build an EquityQuery from the provided query data.
@@ -299,7 +303,6 @@ def _build_equity_query(query_data):
     else:
         return yf.EquityQuery(operator, operands)
 
-
 def _build_fund_query(query_data):
     """
     Recursively build a FundQuery from the provided query data.
@@ -332,7 +335,6 @@ def _build_fund_query(query_data):
     # Handle comparison operators (eq, gt, lt, etc.)
     else:
         return yf.FundQuery(operator, operands)
-
 
 def _get_screener_description(screen_name):
     """

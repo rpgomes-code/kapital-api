@@ -1,19 +1,25 @@
-from fastapi import APIRouter, HTTPException, Query, Depends, Path
-import yfinance as yf
-from typing import List, Optional, Dict, Any, Union
-from datetime import datetime, timedelta
 import logging
+import yfinance as yf
 
-from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
+from typing import Optional
+from datetime import datetime
+
+from fastapi import (
+    APIRouter, 
+    HTTPException, 
+    Query, 
+    Path
+)
+
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yfinance.error_handler import handle_yf_request
+from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/yfinance/ticker", tags=["YFinance Ticker"])
 
 # Logger for this module
 logger = logging.getLogger(__name__)
-
 
 # Multi-ticker endpoint
 @router.get("/multi")
@@ -42,7 +48,6 @@ async def get_multi_ticker(symbols: str = Query(..., description="Comma-separate
             result[symbol] = {"error": f"Failed to retrieve info for {symbol}"}
 
     return result
-
 
 @router.get("/multi/{symbols}/news")
 @handle_yf_request
@@ -117,7 +122,6 @@ async def get_ticker_history(
 
     return hist
 
-
 @router.get("/{ticker}/option-chain")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -161,9 +165,6 @@ async def get_ticker_option_chain(
         }
     }
 
-
-# All the remaining ticker endpoints - now with Redis caching
-
 @router.get("/{ticker}/actions")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -179,7 +180,6 @@ async def get_ticker_actions(ticker: str):
         Corporate actions for the ticker
     """
     return yf.Ticker(ticker).actions
-
 
 @router.get("/{ticker}/analyst-price-targets")
 @handle_yf_request
@@ -197,7 +197,6 @@ async def get_ticker_analyst_price_targets(ticker: str):
     """
     return yf.Ticker(ticker).analyst_price_targets
 
-
 @router.get("/{ticker}/balance-sheet")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -213,7 +212,6 @@ async def get_ticker_balance_sheet(ticker: str):
         Annual balance sheet for the ticker
     """
     return yf.Ticker(ticker).balance_sheet
-
 
 @router.get("/{ticker}/balancesheet")
 @handle_yf_request
@@ -231,7 +229,6 @@ async def get_ticker_balancesheet(ticker: str):
     """
     return yf.Ticker(ticker).balancesheet
 
-
 @router.get("/{ticker}/basic-info")
 @handle_yf_request
 @redis_cache(ttl="3 months")
@@ -247,7 +244,6 @@ async def get_ticker_basic_info(ticker: str):
         Basic information for the ticker
     """
     return yf.Ticker(ticker).basic_info
-
 
 @router.get("/{ticker}/calendar")
 @handle_yf_request
@@ -265,7 +261,6 @@ async def get_ticker_calendar(ticker: str):
     """
     return yf.Ticker(ticker).calendar
 
-
 @router.get("/{ticker}/capital-gains")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -281,7 +276,6 @@ async def get_ticker_capital_gains(ticker: str):
         Capital gains for the ticker
     """
     return yf.Ticker(ticker).capital_gains
-
 
 @router.get("/{ticker}/cash-flow")
 @handle_yf_request
@@ -299,7 +293,6 @@ async def get_ticker_cash_flow(ticker: str):
     """
     return yf.Ticker(ticker).cash_flow
 
-
 @router.get("/{ticker}/cashflow")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -315,7 +308,6 @@ async def get_ticker_cashflow(ticker: str):
         Annual cash flow statement for the ticker
     """
     return yf.Ticker(ticker).cashflow
-
 
 @router.get("/{ticker}/dividends")
 @handle_yf_request
@@ -333,7 +325,6 @@ async def get_ticker_dividends(ticker: str):
     """
     return yf.Ticker(ticker).dividends
 
-
 @router.get("/{ticker}/earnings")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -349,7 +340,6 @@ async def get_ticker_earnings(ticker: str):
         Annual earnings data for the ticker
     """
     return yf.Ticker(ticker).earnings
-
 
 @router.get("/{ticker}/earnings-dates")
 @handle_yf_request
@@ -367,7 +357,6 @@ async def get_ticker_earnings_dates(ticker: str):
     """
     return yf.Ticker(ticker).earnings_dates
 
-
 @router.get("/{ticker}/earnings-estimate")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -383,7 +372,6 @@ async def get_ticker_earnings_estimate(ticker: str):
         Earnings estimates for the ticker
     """
     return yf.Ticker(ticker).earnings_estimate
-
 
 @router.get("/{ticker}/earnings-history")
 @handle_yf_request
@@ -401,7 +389,6 @@ async def get_ticker_earnings_history(ticker: str):
     """
     return yf.Ticker(ticker).earnings_history
 
-
 @router.get("/{ticker}/eps-revisions")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -417,7 +404,6 @@ async def get_ticker_eps_revisions(ticker: str):
         EPS revisions for the ticker
     """
     return yf.Ticker(ticker).eps_revisions
-
 
 @router.get("/{ticker}/eps-trend")
 @handle_yf_request
@@ -435,7 +421,6 @@ async def get_ticker_eps_trend(ticker: str):
     """
     return yf.Ticker(ticker).eps_trend
 
-
 @router.get("/{ticker}/fast-info")
 @handle_yf_request
 @redis_cache(ttl="3 months")
@@ -451,7 +436,6 @@ async def get_ticker_fast_info(ticker: str):
         Fast access information for the ticker
     """
     return yf.Ticker(ticker).fast_info
-
 
 @router.get("/{ticker}/financials")
 @handle_yf_request
@@ -469,7 +453,6 @@ async def get_ticker_financials(ticker: str):
     """
     return yf.Ticker(ticker).financials
 
-
 @router.get("/{ticker}/funds-data")
 @handle_yf_request
 @redis_cache(ttl="1 week")
@@ -485,7 +468,6 @@ async def get_ticker_funds_data(ticker: str):
         Fund-specific data for the ticker
     """
     return yf.Ticker(ticker).funds_data
-
 
 @router.get("/{ticker}/growth-estimates")
 @handle_yf_request
@@ -503,7 +485,6 @@ async def get_ticker_growth_estimates(ticker: str):
     """
     return yf.Ticker(ticker).growth_estimates
 
-
 @router.get("/{ticker}/history-metadata")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -519,7 +500,6 @@ async def get_ticker_history_metadata(ticker: str):
         History metadata for the ticker
     """
     return yf.Ticker(ticker).history_metadata
-
 
 @router.get("/{ticker}/income-stmt")
 @handle_yf_request
@@ -537,7 +517,6 @@ async def get_ticker_income_stmt(ticker: str):
     """
     return yf.Ticker(ticker).income_stmt
 
-
 @router.get("/{ticker}/incomestmt")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -553,7 +532,6 @@ async def get_ticker_incomestmt(ticker: str):
         Annual income statement for the ticker
     """
     return yf.Ticker(ticker).incomestmt
-
 
 @router.get("/{ticker}/info")
 @handle_yf_request
@@ -571,7 +549,6 @@ async def get_ticker_info(ticker: str):
     """
     return yf.Ticker(ticker).info
 
-
 @router.get("/{ticker}/insider-purchases")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -587,7 +564,6 @@ async def get_ticker_insider_purchases(ticker: str):
         Insider purchases for the ticker
     """
     return yf.Ticker(ticker).insider_purchases
-
 
 @router.get("/{ticker}/insider-roster-holders")
 @handle_yf_request
@@ -605,7 +581,6 @@ async def get_ticker_insider_roster_holders(ticker: str):
     """
     return yf.Ticker(ticker).insider_roster_holders
 
-
 @router.get("/{ticker}/insider-transactions")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -622,7 +597,6 @@ async def get_ticker_insider_transactions(ticker: str):
     """
     return yf.Ticker(ticker).insider_transactions
 
-
 @router.get("/{ticker}/institutional-holders")
 @handle_yf_request
 @redis_cache(ttl="1 week")
@@ -638,7 +612,6 @@ async def get_ticker_institutional_holders(ticker: str):
         Institutional holders for the ticker
     """
     return yf.Ticker(ticker).institutional_holders
-
 
 @router.get("/{ticker}/isin")
 @handle_yf_request
@@ -672,7 +645,6 @@ async def get_ticker_by_isin(isin: str):
     """
     return yf.utils.get_ticker_by_isin(isin)
 
-
 @router.get("/isin/{isin}/info")
 @handle_yf_request
 @redis_cache(ttl="3 months")
@@ -688,7 +660,6 @@ async def get_info_by_isin(isin: str):
         Basic information for the corresponding ticker
     """
     return yf.utils.get_info_by_isin(isin)
-
 
 @router.get("/isin/{isin}/news")
 @handle_yf_request
@@ -722,7 +693,6 @@ async def get_ticker_major_holders(ticker: str):
     """
     return yf.Ticker(ticker).major_holders
 
-
 @router.get("/{ticker}/mutualfund-holders")
 @handle_yf_request
 @redis_cache(ttl="1 week")
@@ -738,7 +708,6 @@ async def get_ticker_mutualfund_holders(ticker: str):
         Mutual fund holders for the ticker
     """
     return yf.Ticker(ticker).mutualfund_holders
-
 
 @router.get("/{ticker}/news")
 @handle_yf_request
@@ -756,7 +725,6 @@ async def get_ticker_news(ticker: str):
     """
     return yf.Ticker(ticker).news
 
-
 @router.get("/{ticker}/options")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -772,7 +740,6 @@ async def get_ticker_options(ticker: str):
         Available options expiration dates for the ticker
     """
     return yf.Ticker(ticker).options
-
 
 @router.get("/{ticker}/quarterly-balance-sheet")
 @handle_yf_request
@@ -790,7 +757,6 @@ async def get_ticker_quarterly_balance_sheet(ticker: str):
     """
     return yf.Ticker(ticker).quarterly_balance_sheet
 
-
 @router.get("/{ticker}/quarterly-balancesheet")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -806,7 +772,6 @@ async def get_ticker_quarterly_balancesheet(ticker: str):
         Quarterly balance sheet for the ticker
     """
     return yf.Ticker(ticker).quarterly_balancesheet
-
 
 @router.get("/{ticker}/quarterly-cash-flow")
 @handle_yf_request
@@ -824,7 +789,6 @@ async def get_ticker_quarterly_cash_flow(ticker: str):
     """
     return yf.Ticker(ticker).quarterly_cash_flow
 
-
 @router.get("/{ticker}/quarterly-cashflow")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -840,7 +804,6 @@ async def get_ticker_quarterly_cashflow(ticker: str):
         Quarterly cash flow statement for the ticker
     """
     return yf.Ticker(ticker).quarterly_cashflow
-
 
 @router.get("/{ticker}/quarterly-earnings")
 @handle_yf_request
@@ -858,7 +821,6 @@ async def get_ticker_quarterly_earnings(ticker: str):
     """
     return yf.Ticker(ticker).quarterly_earnings
 
-
 @router.get("/{ticker}/quarterly-financials")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -874,7 +836,6 @@ async def get_ticker_quarterly_financials(ticker: str):
         Quarterly financial statements for the ticker
     """
     return yf.Ticker(ticker).quarterly_financials
-
 
 @router.get("/{ticker}/quarterly-income-stmt")
 @handle_yf_request
@@ -892,7 +853,6 @@ async def get_ticker_quarterly_income_stmt(ticker: str):
     """
     return yf.Ticker(ticker).quarterly_income_stmt
 
-
 @router.get("/{ticker}/quarterly-incomestmt")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -908,7 +868,6 @@ async def get_ticker_quarterly_incomestmt(ticker: str):
         Quarterly income statement for the ticker
     """
     return yf.Ticker(ticker).quarterly_incomestmt
-
 
 @router.get("/{ticker}/recommendations")
 @handle_yf_request
@@ -926,7 +885,6 @@ async def get_ticker_recommendations(ticker: str):
     """
     return yf.Ticker(ticker).recommendations
 
-
 @router.get("/{ticker}/recommendations-summary")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -942,7 +900,6 @@ async def get_ticker_recommendations_summary(ticker: str):
         Summary of analyst recommendations for the ticker
     """
     return yf.Ticker(ticker).recommendations_summary
-
 
 @router.get("/{ticker}/revenue-estimate")
 @handle_yf_request
@@ -960,7 +917,6 @@ async def get_ticker_revenue_estimate(ticker: str):
     """
     return yf.Ticker(ticker).revenue_estimate
 
-
 @router.get("/{ticker}/sec-filings")
 @handle_yf_request
 @redis_cache(ttl="1 week")
@@ -976,7 +932,6 @@ async def get_ticker_sec_filings(ticker: str):
         SEC filings for the ticker
     """
     return yf.Ticker(ticker).sec_filings
-
 
 @router.get("/{ticker}/shares")
 @handle_yf_request
@@ -1039,7 +994,6 @@ async def get_ticker_splits(ticker: str):
     """
     return yf.Ticker(ticker).splits
 
-
 @router.get("/{ticker}/sustainability")
 @handle_yf_request
 @redis_cache(ttl="1 month")
@@ -1055,7 +1009,6 @@ async def get_ticker_sustainability(ticker: str):
         Sustainability and ESG scores for the ticker
     """
     return yf.Ticker(ticker).sustainability
-
 
 @router.get("/{ticker}/upgrades-downgrades")
 @handle_yf_request

@@ -1,6 +1,7 @@
-import functools
 import json
 import logging
+import functools
+
 from fastapi import HTTPException
 
 logger = logging.getLogger(__name__)

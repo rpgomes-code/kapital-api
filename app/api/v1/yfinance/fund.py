@@ -1,18 +1,20 @@
-from fastapi import APIRouter, HTTPException, Query, Depends
-import yfinance as yf
-from typing import List, Optional, Dict, Any, Union
 import logging
+import yfinance as yf
 
-from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
+from fastapi import (
+    APIRouter, 
+    HTTPException
+)
+
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yfinance.error_handler import handle_yf_request
+from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/yfinance/ticker", tags=["YFinance Fund / ETF"])
 
 # Logger for this module
 logger = logging.getLogger(__name__)
-
 
 @router.get("/{ticker}/fund/overview")
 @handle_yf_request
@@ -36,7 +38,6 @@ async def get_fund_overview(ticker: str):
         raise HTTPException(status_code=404, detail=f"Fund data not found for {ticker}")
     return fund_data.fund_overview
 
-
 @router.get("/{ticker}/fund/operations")
 @handle_yf_request
 @redis_cache(ttl="1 week")
@@ -58,7 +59,6 @@ async def get_fund_operations(ticker: str):
     if fund_data is None:
         raise HTTPException(status_code=404, detail=f"Fund data not found for {ticker}")
     return fund_data.fund_operations
-
 
 @router.get("/{ticker}/fund/top-holdings")
 @handle_yf_request
@@ -82,7 +82,6 @@ async def get_fund_top_holdings(ticker: str):
         raise HTTPException(status_code=404, detail=f"Fund data not found for {ticker}")
     return fund_data.top_holdings
 
-
 @router.get("/{ticker}/fund/asset-classes")
 @handle_yf_request
 @redis_cache(ttl="1 week")
@@ -104,7 +103,6 @@ async def get_fund_asset_classes(ticker: str):
     if fund_data is None:
         raise HTTPException(status_code=404, detail=f"Fund data not found for {ticker}")
     return fund_data.asset_classes
-
 
 @router.get("/{ticker}/fund/equity-holdings")
 @handle_yf_request
@@ -128,7 +126,6 @@ async def get_fund_equity_holdings(ticker: str):
         raise HTTPException(status_code=404, detail=f"Fund data not found for {ticker}")
     return fund_data.equity_holdings
 
-
 @router.get("/{ticker}/fund/bond-holdings")
 @handle_yf_request
 @redis_cache(ttl="1 week")
@@ -151,7 +148,6 @@ async def get_fund_bond_holdings(ticker: str):
         raise HTTPException(status_code=404, detail=f"Fund data not found for {ticker}")
     return fund_data.bond_holdings
 
-
 @router.get("/{ticker}/fund/bond-ratings")
 @handle_yf_request
 @redis_cache(ttl="1 week")
@@ -173,7 +169,6 @@ async def get_fund_bond_ratings(ticker: str):
     if fund_data is None:
         raise HTTPException(status_code=404, detail=f"Fund data not found for {ticker}")
     return fund_data.bond_ratings
-
 
 @router.get("/{ticker}/fund/sector-weightings")
 @handle_yf_request

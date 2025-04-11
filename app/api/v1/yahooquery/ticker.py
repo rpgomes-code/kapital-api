@@ -1,20 +1,24 @@
-from datetime import datetime
-
-from fastapi import APIRouter, HTTPException, Query
-from yahooquery import Ticker
 import logging
-from typing import Optional, List, Union
 
-from app.utils.yahooquery.yahooquery_data_manager import clean_yahooquery_data
+from typing import Optional
+from datetime import datetime
+from yahooquery import Ticker
+
+from fastapi import (
+    APIRouter, 
+    HTTPException, 
+    Query
+)
+
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yahooquery.error_handler import handle_yq_request
+from app.utils.yahooquery.yahooquery_data_manager import clean_yahooquery_data
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/yahooquery/ticker", tags=["YahooQuery Ticker"])
 
 # Logger for this module
 logger = logging.getLogger(__name__)
-
 
 # Basic information endpoints
 @router.get("/{ticker}/summary_profile")
@@ -35,7 +39,6 @@ async def get_summary_profile(ticker: str):
     """
     return Ticker(ticker).summary_profile
 
-
 @router.get("/{ticker}/asset_profile")
 @handle_yq_request
 @redis_cache(ttl="3 months", key_prefix="yahooquery:")
@@ -53,7 +56,6 @@ async def get_asset_profile(ticker: str):
         Asset profile information
     """
     return Ticker(ticker).asset_profile
-
 
 @router.get("/{ticker}/key_stats")
 @handle_yq_request
@@ -73,7 +75,6 @@ async def get_key_stats(ticker: str):
     """
     return Ticker(ticker).key_stats
 
-
 @router.get("/{ticker}/summary_detail")
 @handle_yq_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
@@ -91,7 +92,6 @@ async def get_summary_detail(ticker: str):
         Summary detail information
     """
     return Ticker(ticker).summary_detail
-
 
 @router.get("/{ticker}/price")
 @handle_yq_request
@@ -130,7 +130,6 @@ async def get_quote_type(ticker: str):
     """
     return Ticker(ticker).quote_type
 
-
 # Financial statements endpoints
 @router.get("/{ticker}/income_statement")
 @handle_yq_request
@@ -149,7 +148,6 @@ async def get_income_statement(ticker: str, frequency: str = Query("annual", des
     """
     return Ticker(ticker).income_statement(frequency=frequency)
 
-
 @router.get("/{ticker}/balance_sheet")
 @handle_yq_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
@@ -166,7 +164,6 @@ async def get_balance_sheet(ticker: str, frequency: str = Query("annual", descri
         Balance sheet data
     """
     return Ticker(ticker).balance_sheet(frequency=frequency)
-
 
 @router.get("/{ticker}/cash_flow")
 @handle_yq_request
@@ -185,7 +182,6 @@ async def get_cash_flow(ticker: str, frequency: str = Query("annual", descriptio
     """
     return Ticker(ticker).cash_flow(frequency=frequency)
 
-
 @router.get("/{ticker}/financial_data")
 @handle_yq_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
@@ -203,7 +199,6 @@ async def get_financial_data(ticker: str):
         Financial data
     """
     return Ticker(ticker).financial_data
-
 
 # Historical data endpoints
 @router.get("/{ticker}/history")
@@ -238,7 +233,6 @@ async def get_history(
     else:
         return ticker_obj.history(period=period, interval=interval)
 
-
 # Fundamental analysis endpoints
 @router.get("/{ticker}/calendar_events")
 @handle_yq_request
@@ -258,7 +252,6 @@ async def get_calendar_events(ticker: str):
     """
     return Ticker(ticker).calendar_events
 
-
 @router.get("/{ticker}/company_officers")
 @handle_yq_request
 @redis_cache(ttl="1 month", key_prefix="yahooquery:")
@@ -276,7 +269,6 @@ async def get_company_officers(ticker: str):
         Company officers information
     """
     return Ticker(ticker).company_officers
-
 
 @router.get("/{ticker}/earning_history")
 @handle_yq_request
@@ -296,7 +288,6 @@ async def get_earning_history(ticker: str):
     """
     return Ticker(ticker).earning_history
 
-
 @router.get("/{ticker}/earnings")
 @handle_yq_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
@@ -314,7 +305,6 @@ async def get_earnings(ticker: str):
         Earnings data
     """
     return Ticker(ticker).earnings
-
 
 @router.get("/{ticker}/earnings_trend")
 @handle_yq_request
@@ -334,7 +324,6 @@ async def get_earnings_trend(ticker: str):
     """
     return Ticker(ticker).earnings_trend
 
-
 @router.get("/{ticker}/esg_scores")
 @handle_yq_request
 @redis_cache(ttl="1 month", key_prefix="yahooquery:")
@@ -350,7 +339,6 @@ async def get_esg_scores(ticker: str):
         ESG scores
     """
     return Ticker(ticker).esg_scores
-
 
 # Holders and insider information endpoints
 @router.get("/{ticker}/fund_ownership")
@@ -371,7 +359,6 @@ async def get_fund_ownership(ticker: str):
     """
     return Ticker(ticker).fund_ownership
 
-
 @router.get("/{ticker}/grading_history")
 @handle_yq_request
 @redis_cache(ttl="1 week", key_prefix="yahooquery:")
@@ -388,7 +375,6 @@ async def get_grading_history(ticker: str):
     """
     return Ticker(ticker).grading_history
 
-
 @router.get("/{ticker}/insider_holders")
 @handle_yq_request
 @redis_cache(ttl="1 week", key_prefix="yahooquery:")
@@ -404,7 +390,6 @@ async def get_insider_holders(ticker: str):
         Insider holders information
     """
     return Ticker(ticker).insider_holders
-
 
 @router.get("/{ticker}/insider_transactions")
 @handle_yq_request
@@ -456,7 +441,6 @@ async def get_recommendation_trend(ticker: str):
     """
     return Ticker(ticker).recommendation_trend
 
-
 @router.get("/{ticker}/share_purchase_activity")
 @handle_yq_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
@@ -472,7 +456,6 @@ async def get_share_purchase_activity(ticker: str):
         Share purchase activity
     """
     return Ticker(ticker).share_purchase_activity
-
 
 # Options endpoints
 @router.get("/{ticker}/option_chain")
@@ -514,7 +497,6 @@ async def get_fund_profile(ticker: str):
     """
     return Ticker(ticker).fund_profile
 
-
 @router.get("/{ticker}/fund_performance")
 @handle_yq_request
 @redis_cache(ttl="1 week", key_prefix="yahooquery:")
@@ -530,7 +512,6 @@ async def get_fund_performance(ticker: str):
         Fund performance information
     """
     return Ticker(ticker).fund_performance
-
 
 @router.get("/{ticker}/fund_holding_info")
 @handle_yq_request
@@ -548,7 +529,6 @@ async def get_fund_holding_info(ticker: str):
     """
     return Ticker(ticker).fund_holding_info
 
-
 @router.get("/{ticker}/fund_sector_weightings")
 @handle_yq_request
 @redis_cache(ttl="1 week", key_prefix="yahooquery:")
@@ -564,7 +544,6 @@ async def get_fund_sector_weightings(ticker: str):
         Fund sector weightings
     """
     return Ticker(ticker).fund_sector_weightings
-
 
 # News and insights endpoints
 @router.get("/{ticker}/news")
@@ -601,7 +580,6 @@ async def get_index_trend(ticker: str):
     """
     return Ticker(ticker).index_trend
 
-
 @router.get("/{ticker}/industry_trend")
 @handle_yq_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
@@ -634,7 +612,6 @@ async def get_sec_filings(ticker: str):
     """
     return Ticker(ticker).sec_filings
 
-
 # All in one data retrieval endpoints
 @router.get("/{ticker}/all_modules")
 @handle_yq_request
@@ -664,7 +641,6 @@ async def get_all_modules(ticker: str):
 
     return Ticker(ticker).get_modules(modules)
 
-
 @router.get("/{ticker}/page_views")
 @handle_yq_request
 @redis_cache(ttl="30 minutes", key_prefix="yahooquery:")
@@ -682,7 +658,6 @@ async def get_page_views(ticker: str):
         Page views trend data
     """
     return Ticker(ticker).page_views
-
 
 @router.get("/{ticker}/corporate_events")
 @handle_yq_request
@@ -702,7 +677,6 @@ async def get_corporate_events(ticker: str):
     """
     return Ticker(ticker).corporate_events
 
-
 @router.get("/{ticker}/corporate_guidance")
 @handle_yq_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True, key_prefix="yahooquery:")
@@ -720,7 +694,6 @@ async def get_corporate_guidance(ticker: str):
         Corporate guidance data
     """
     return Ticker(ticker).corporate_guidance
-
 
 @router.get("/{ticker}/valuation_measures")
 @handle_yq_request
@@ -740,7 +713,6 @@ async def get_valuation_measures(ticker: str):
     """
 
     return Ticker(ticker).valuation_measures
-
 
 @router.get("/{ticker}/dividend_history")
 @handle_yq_request

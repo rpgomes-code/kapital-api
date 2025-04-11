@@ -1,5 +1,7 @@
-from pydantic import BaseModel, Field
-
+from pydantic import (
+    BaseModel, 
+    Field
+)
 
 class RootResponse(BaseModel):
     """Response model for the API root endpoint"""

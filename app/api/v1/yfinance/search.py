@@ -1,17 +1,16 @@
-from fastapi import APIRouter, HTTPException
-import yfinance as yf
 import logging
+import yfinance as yf
 
-from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
+from fastapi import APIRouter
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yfinance.error_handler import handle_yf_request
+from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/yfinance/search", tags=["YFinance Search"])
 
 # Logger for this module
 logger = logging.getLogger(__name__)
-
 
 @router.get("/{query}/all")
 @handle_yf_request
@@ -29,7 +28,6 @@ async def search_all(query: str):
     """
     return yf.Search(query).all
 
-
 @router.get("/{query}/lists")
 @handle_yf_request
 @redis_cache(ttl="30 minutes")
@@ -45,7 +43,6 @@ async def search_lists(query: str):
         List search results
     """
     return yf.Search(query).lists
-
 
 @router.get("/{query}/news")
 @handle_yf_request
@@ -63,7 +60,6 @@ async def search_news(query: str):
     """
     return yf.Search(query).news
 
-
 @router.get("/{query}/quotes")
 @handle_yf_request
 @redis_cache(ttl="30 minutes")
@@ -80,7 +76,6 @@ async def search_quotes(query: str):
     """
     return yf.Search(query).quotes
 
-
 @router.get("/{query}/research")
 @handle_yf_request
 @redis_cache(ttl="30 minutes")
@@ -96,7 +91,6 @@ async def search_research(query: str):
         Research search results
     """
     return yf.Search(query).research
-
 
 @router.get("/{query}/response")
 @handle_yf_request

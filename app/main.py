@@ -1,9 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import logging
 
 # Import settings
-from app.core.settings import API_PORT, API_HOST, logger
+from app.core.settings import logger
 
 # Import yfinance routers
 from app.api.v1.yfinance.ticker import router as yf_ticker_router
@@ -114,6 +113,6 @@ app.include_router(yq_multi_ticker_router)
 
 # Include other routers
 app.include_router(image_router)
-app.include_router(indicators_router)  # Add the new indicators router
+app.include_router(indicators_router)
 app.include_router(cache_router)
 app.include_router(health_router)

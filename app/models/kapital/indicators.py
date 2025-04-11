@@ -1,9 +1,16 @@
 from datetime import datetime
-from typing import List, Optional
-from pydantic import BaseModel, Field
+
+from typing import (
+    List, 
+    Optional
+)
+
+from pydantic import (
+    BaseModel, 
+    Field
+)
 
 # RSI - Relative Strength Index Models
-
 class RSIValue(BaseModel):
     """Single data point for RSI calculation"""
     Date: datetime = Field(..., description="The date of the RSI measurement")
@@ -14,7 +21,6 @@ class RSIResponse(BaseModel):
     values: List[RSIValue] = Field(..., description="Time series of RSI values")
 
 # SMA - Simple Moving Average Models
-
 class SMAValue(BaseModel):
     """Single data point for SMA calculation"""
     Date: datetime = Field(..., description="The date of the SMA measurement")
@@ -25,7 +31,6 @@ class SMAResponse(BaseModel):
     values: List[SMAValue] = Field(..., description="Time series of SMA values")
     
 # Fear and Greed Index Models
-
 class FearGreedValue(BaseModel):
     """Single data point for Fear & Greed Index calculation"""
     Date: datetime = Field(..., description="The date of the measurement")

@@ -1,17 +1,17 @@
-from fastapi import APIRouter, HTTPException
-import yfinance as yf
 import logging
+import yfinance as yf
 
-from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
+from fastapi import APIRouter
+
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yfinance.error_handler import handle_yf_request
+from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/yfinance/industry", tags=["YFinance Industry"])
 
 # Logger for this module
 logger = logging.getLogger(__name__)
-
 
 @router.get("/{industry}/key")
 @handle_yf_request
@@ -29,7 +29,6 @@ async def get_industry_key(industry: str):
     """
     return yf.Industry(industry).key
 
-
 @router.get("/{industry}/name")
 @handle_yf_request
 @redis_cache(ttl="3 months")
@@ -45,7 +44,6 @@ async def get_industry_name(industry: str):
         The industry's display name
     """
     return yf.Industry(industry).name
-
 
 @router.get("/{industry}/overview")
 @handle_yf_request
@@ -63,7 +61,6 @@ async def get_industry_overview(industry: str):
     """
     return yf.Industry(industry).overview
 
-
 @router.get("/{industry}/research-reports")
 @handle_yf_request
 @redis_cache(ttl="1 day", invalidate_at_midnight=True)
@@ -79,7 +76,6 @@ async def get_industry_research_reports(industry: str):
         Research reports for the industry
     """
     return yf.Industry(industry).research_reports
-
 
 @router.get("/{industry}/sector-key")
 @handle_yf_request
@@ -97,7 +93,6 @@ async def get_industry_sector_key(industry: str):
     """
     return yf.Industry(industry).sector_key
 
-
 @router.get("/{industry}/sector-name")
 @handle_yf_request
 @redis_cache(ttl="3 months")
@@ -113,7 +108,6 @@ async def get_industry_sector_name(industry: str):
         The parent sector's name
     """
     return yf.Industry(industry).sector_name
-
 
 @router.get("/{industry}/symbol")
 @handle_yf_request
@@ -131,7 +125,6 @@ async def get_industry_symbol(industry: str):
     """
     return yf.Industry(industry).symbol
 
-
 @router.get("/{industry}/ticker")
 @handle_yf_request
 @redis_cache(ttl="3 months")
@@ -147,7 +140,6 @@ async def get_industry_ticker(industry: str):
         The industry's ticker
     """
     return yf.Industry(industry).ticker
-
 
 @router.get("/{industry}/top-companies")
 @handle_yf_request
@@ -165,7 +157,6 @@ async def get_industry_top_companies(industry: str):
     """
     return yf.Industry(industry).top_companies
 
-
 @router.get("/{industry}/top-growth-companies")
 @handle_yf_request
 @redis_cache(ttl="1 week")
@@ -181,7 +172,6 @@ async def get_industry_top_growth_companies(industry: str):
         List of top growth companies in the industry, sorted by growth metrics
     """
     return yf.Industry(industry).top_growth_companies
-
 
 @router.get("/{industry}/top-performing-companies")
 @handle_yf_request

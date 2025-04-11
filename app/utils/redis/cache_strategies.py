@@ -184,13 +184,11 @@ YAHOOQUERY_CACHE_STRATEGIES = {
     }
 }
 
-
 # Combined cache strategies for the API
 ALL_CACHE_STRATEGIES = {
     "yfinance": CACHE_STRATEGIES,
     "yahooquery": YAHOOQUERY_CACHE_STRATEGIES
 }
-
 
 def get_cache_strategy(category, endpoint, provider="yfinance"):
     """

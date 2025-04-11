@@ -1,18 +1,22 @@
-from fastapi import APIRouter, HTTPException, Query
-from yahooquery import Screener
 import logging
-from typing import List, Optional, Dict, Any, Union
 
-from app.utils.yahooquery.yahooquery_data_manager import clean_yahooquery_data
+from yahooquery import Screener
+
+from fastapi import (
+    APIRouter, 
+    HTTPException, 
+    Query
+)
+
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yahooquery.error_handler import handle_yq_request
+from app.utils.yahooquery.yahooquery_data_manager import clean_yahooquery_data
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/yahooquery/screener", tags=["YahooQuery Screener"])
 
 # Logger for this module
 logger = logging.getLogger(__name__)
-
 
 @router.get("/available")
 @handle_yq_request
@@ -26,7 +30,6 @@ async def get_available_screeners():
         List of available screeners
     """
     return Screener().available_screeners
-
 
 @router.get("/{scrname}")
 @handle_yq_request

@@ -2,13 +2,20 @@ import os
 import redis
 import orjson
 import logging
-import time
 import backoff
-from typing import Any, Optional, Dict, Union
-from datetime import datetime, timedelta
+
+from typing import (
+    Any, 
+    Optional, 
+    Dict
+)
+
+from datetime import (
+    datetime, 
+    timedelta
+)
 
 logger = logging.getLogger(__name__)
-
 
 class RedisManager:
     """
@@ -238,7 +245,6 @@ class RedisManager:
                 "status": "error",
                 "error": str(e)
             }
-
 
 # Singleton instance
 redis_manager = RedisManager()

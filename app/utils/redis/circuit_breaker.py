@@ -1,18 +1,22 @@
 import time
 import logging
-from enum import Enum
-from typing import Callable, Any, Dict, Optional
 import functools
 
-logger = logging.getLogger(__name__)
+from enum import Enum
 
+from typing import (
+    Callable, 
+    Any, 
+    Dict
+)
+
+logger = logging.getLogger(__name__)
 
 class CircuitBreakerState(Enum):
     """States for the circuit breaker"""
     CLOSED = "closed"  # Normal operation, requests go through
     OPEN = "open"  # Failure threshold reached, requests fail fast
     HALF_OPEN = "half_open"  # Testing if service is back up
-
 
 class CircuitBreaker:
     """
@@ -156,7 +160,6 @@ class CircuitBreaker:
             "half_open_max_calls": self.half_open_max_calls
         }
 
-
 class CircuitBreakerError(Exception):
     """Exception raised when a circuit is open"""
 
@@ -164,7 +167,6 @@ class CircuitBreakerError(Exception):
         self.message = message
         self.time_remaining = time_remaining
         super().__init__(self.message)
-
 
 # Create a circuit breaker for Redis operations
 redis_circuit = CircuitBreaker(

@@ -1,19 +1,28 @@
-from fastapi import APIRouter, HTTPException, Query
-from yahooquery import Ticker, search, get_trending, get_exchanges
 import logging
 import pandas as pd
-from typing import List, Optional, Dict, Any, Union
 
-from app.utils.yahooquery.yahooquery_data_manager import clean_yahooquery_data
+from fastapi import (
+    APIRouter, 
+    HTTPException, 
+    Query
+)
+
+from yahooquery import (
+    Ticker, 
+    search, 
+    get_trending, 
+    get_exchanges
+)
+
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yahooquery.error_handler import handle_yq_request
+from app.utils.yahooquery.yahooquery_data_manager import clean_yahooquery_data
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/yahooquery", tags=["YahooQuery Miscellaneous"])
 
 # Logger for this module
 logger = logging.getLogger(__name__)
-
 
 @router.get("/search")
 @handle_yq_request
@@ -34,7 +43,6 @@ async def search_tickers(
         quotes_count=quotes_count  # Use the quotes_count parameter
     )
 
-
 @router.get("/trending")
 @handle_yq_request
 @redis_cache(ttl="30 minutes", key_prefix="yahooquery:")
@@ -52,7 +60,6 @@ async def get_trending_tickers(
         Trending tickers
     """
     return get_trending(country=country)
-
 
 @router.get("/market-summary")
 @handle_yq_request
@@ -116,7 +123,6 @@ async def get_currency_data(
     # Get quotes for these currency pairs
     tickers = Ticker(pairs)
     return tickers.quotes
-
 
 @router.get("/market-movers")
 @handle_yq_request

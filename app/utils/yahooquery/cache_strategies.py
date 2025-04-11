@@ -82,7 +82,6 @@ YAHOOQUERY_CACHE_STRATEGIES = {
     }
 }
 
-
 def get_yahooquery_cache_strategy(category, endpoint):
     """
     Get cache strategy for a specific yahooquery endpoint.

@@ -1,17 +1,17 @@
-from fastapi import APIRouter, HTTPException
-import yfinance as yf
 import logging
+import yfinance as yf
 
-from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
+from fastapi import APIRouter
+
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yfinance.error_handler import handle_yf_request
+from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/yfinance/market", tags=["YFinance Market"])
 
 # Logger for this module
 logger = logging.getLogger(__name__)
-
 
 @router.get("/{market}/status")
 @handle_yf_request
@@ -28,7 +28,6 @@ async def get_market_status(market: str):
         Market status information including whether it's open or closed
     """
     return yf.Market(market).status
-
 
 @router.get("/{market}/summary")
 @handle_yf_request

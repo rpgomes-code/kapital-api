@@ -1,22 +1,26 @@
-from fastapi import APIRouter, HTTPException, Query
-import yfinance as yf
-import pandas as pd
-from datetime import datetime
-from typing import List, Optional, Dict, Any
 import logging
 import asyncio
-import json
+import pandas as pd
+import yfinance as yf
 
-from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
+from typing import Optional
+from datetime import datetime
+
+from fastapi import (
+    APIRouter, 
+    HTTPException, 
+    Query
+)
+
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yfinance.error_handler import handle_yf_request
+from app.utils.yfinance.yfinance_data_manager import clean_yfinance_data
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/yfinance/ticker/batch", tags=["YFinance Batch Operations"])
 
 # Logger for this module
 logger = logging.getLogger(__name__)
-
 
 @router.get("/info")
 @handle_yf_request
@@ -70,7 +74,6 @@ async def get_batch_info(
             result[symbol] = {"error": f"Failed to retrieve info: {str(e)}"}
 
     return result
-
 
 @router.get("/history")
 @handle_yf_request
@@ -151,7 +154,6 @@ async def get_batch_history(
         return {"error": "No data found for the specified parameters"}
 
     return data
-
 
 @router.get("/fast-info")
 @handle_yf_request

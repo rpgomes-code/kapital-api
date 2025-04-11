@@ -1,18 +1,23 @@
-from fastapi import APIRouter, HTTPException, Query
-from yahooquery import Ticker
 import logging
-from typing import List, Optional, Dict, Any, Union
 
-from app.utils.yahooquery.yahooquery_data_manager import clean_yahooquery_data
+from typing import Optional
+from yahooquery import Ticker
+
+from fastapi import (
+    APIRouter, 
+    HTTPException, 
+    Query
+)
+
 from app.utils.redis.cache_decorator import redis_cache
 from app.utils.yahooquery.error_handler import handle_yq_request
+from app.utils.yahooquery.yahooquery_data_manager import clean_yahooquery_data
 
 # Create a router with a specific prefix and tag
 router = APIRouter(prefix="/v1/yahooquery/multi", tags=["YahooQuery Multi-Ticker"])
 
 # Logger for this module
 logger = logging.getLogger(__name__)
-
 
 @router.get("/quotes")
 @handle_yq_request
@@ -47,7 +52,6 @@ async def get_multi_quotes(
     # Get quotes for all symbols
     return ticker.quotes
 
-
 @router.get("/price")
 @handle_yq_request
 @redis_cache(ttl="30 minutes", key_prefix="yahooquery:")
@@ -78,7 +82,6 @@ async def get_multi_price(
 
     # Get price data for all symbols
     return ticker.price
-
 
 @router.get("/summary")
 @handle_yq_request
@@ -113,7 +116,6 @@ async def get_multi_summary(
     # Get modules for all symbols
     modules = ["summaryProfile", "summaryDetail", "quoteType"]
     return ticker.get_modules(modules)
-
 
 @router.get("/financials")
 @handle_yq_request
@@ -165,7 +167,6 @@ async def get_multi_financials(
 
     # Get modules for all symbols
     return ticker.get_modules(type_list)
-
 
 @router.get("/history")
 @handle_yq_request
