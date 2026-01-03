@@ -1,4 +1,5 @@
-﻿import { IsOptional, IsInt, Min, Max } from 'class-validator';
+﻿// src/common/dto/pagination.dto.ts
+import { IsOptional, IsInt, Min, Max } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export class PaginationDto {
@@ -14,4 +15,14 @@ export class PaginationDto {
   @Min(1)
   @Max(100)
   limit?: number = 20;
+}
+
+export interface PaginatedResult<T> {
+  data: T[];
+  meta: {
+    total: number;
+    page: number;
+    limit: number;
+    totalPages: number;
+  };
 }

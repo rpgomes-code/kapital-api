@@ -1,12 +1,11 @@
 // src/assets/assets.module.ts
 import { Module } from '@nestjs/common';
-import { AssetsService } from './assets.service';
 import { AssetsController } from './assets.controller';
-import { PrismaModule } from '../prisma/prisma.module';
-import { StonksModule } from '../stonks/stonks.module';
+import { AssetsService } from './assets.service';
+import { YahooFinanceModule } from '../yahoo-finance/yahoo-finance.module';
 
 @Module({
-  imports: [PrismaModule, StonksModule],
+  imports: [YahooFinanceModule],
   controllers: [AssetsController],
   providers: [AssetsService],
   exports: [AssetsService],

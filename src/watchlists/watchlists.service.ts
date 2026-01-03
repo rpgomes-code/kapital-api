@@ -1,32 +1,40 @@
+// src/watchlists/watchlists.service.ts
 import {
   Injectable,
   NotFoundException,
   ConflictException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import {
-  CreateWatchlistDto,
-  AddAssetToWatchlistDto,
-} from './dto/create-watchlist.dto';
+import { YahooFinanceService } from '../yahoo-finance/yahoo-finance.service';
+import { CreateWatchlistDto } from './dto/create-watchlist.dto';
 
 @Injectable()
 export class WatchlistsService {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    private yahooFinance: YahooFinanceService,
+  ) {}
 
-  async create(dto: CreateWatchlistDto) {
+  async create(userId: number, dto: CreateWatchlistDto) {
     return this.prisma.watchlist.create({
-      data: dto,
+      data: {
+        userId,
+        name: dto.name,
+      },
     });
   }
 
-  async findByUser(userId: number) {
+  async findAllByUser(userId: number) {
     return this.prisma.watchlist.findMany({
       where: { userId },
       include: {
         assets: {
-          include: { asset: true },
+          include: {
+            asset: true,
+          },
         },
       },
+      orderBy: { createdAt: 'desc' },
     });
   }
 
@@ -35,46 +43,99 @@ export class WatchlistsService {
       where: { id },
       include: {
         assets: {
-          include: { asset: true },
+          include: {
+            asset: {
+              include: {
+                sector: true,
+                industry: true,
+              },
+            },
+          },
         },
       },
     });
-    if (!watchlist) throw new NotFoundException('Watchlist not found');
+
+    if (!watchlist) {
+      throw new NotFoundException(`Watchlist with ID ${id} not found`);
+    }
+
     return watchlist;
   }
 
-  async addAsset(watchlistId: number, dto: AddAssetToWatchlistDto) {
-    await this.findOne(watchlistId);
+  async getWatchlistWithPrices(id: number) {
+    const watchlist = await this.findOne(id);
 
-    const existing = await this.prisma.watchlistAsset.findFirst({
-      where: { watchlistId, assetId: dto.assetId },
+    const symbols = watchlist.assets.map((wa) => wa.asset.yahooSymbol);
+    const quotes = await this.yahooFinance.getQuotes(symbols);
+
+    const assetsWithPrices = watchlist.assets.map((wa) => {
+      const quote = quotes.find((q) => q.symbol === wa.asset.yahooSymbol);
+      return {
+        ...wa.asset,
+        currentPrice: quote?.regularMarketPrice,
+        priceChange: quote?.regularMarketChange,
+        priceChangePercent: quote?.regularMarketChangePercent,
+        marketState: quote?.marketState,
+      };
     });
-    if (existing) throw new ConflictException('Asset already in watchlist');
+
+    return {
+      ...watchlist,
+      assets: assetsWithPrices,
+    };
+  }
+
+  async addAsset(watchlistId: number, assetId: number) {
+    // Check if already in watchlist
+    const existing = await this.prisma.watchlistAsset.findFirst({
+      where: {
+        watchlistId,
+        assetId,
+      },
+    });
+
+    if (existing) {
+      throw new ConflictException('Asset already in watchlist');
+    }
 
     return this.prisma.watchlistAsset.create({
       data: {
         watchlistId,
-        assetId: dto.assetId,
+        assetId,
       },
-      include: { asset: true },
+      include: {
+        asset: true,
+      },
     });
   }
 
   async removeAsset(watchlistId: number, assetId: number) {
-    const entry = await this.prisma.watchlistAsset.findFirst({
-      where: { watchlistId, assetId },
+    const existing = await this.prisma.watchlistAsset.findFirst({
+      where: {
+        watchlistId,
+        assetId,
+      },
     });
-    if (!entry) throw new NotFoundException('Asset not in watchlist');
+
+    if (!existing) {
+      throw new NotFoundException('Asset not in watchlist');
+    }
 
     return this.prisma.watchlistAsset.delete({
-      where: { id: entry.id },
+      where: { id: existing.id },
     });
   }
 
   async remove(id: number) {
     await this.findOne(id);
-    // Delete associated assets first
-    await this.prisma.watchlistAsset.deleteMany({ where: { watchlistId: id } });
-    return this.prisma.watchlist.delete({ where: { id } });
+
+    // Delete all watchlist assets first
+    await this.prisma.watchlistAsset.deleteMany({
+      where: { watchlistId: id },
+    });
+
+    return this.prisma.watchlist.delete({
+      where: { id },
+    });
   }
 }

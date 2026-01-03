@@ -1,12 +1,14 @@
-﻿import {
+﻿// src/transactions/dto/create-transaction.dto.ts
+import {
   IsInt,
   IsEnum,
   IsNumber,
   IsString,
   IsOptional,
   IsDateString,
+  Min,
 } from 'class-validator';
-import { TransactionType } from 'generated/prisma/enums';
+import { TransactionType } from 'generated/prisma/client';
 
 export class CreateTransactionDto {
   @IsInt()
@@ -19,9 +21,11 @@ export class CreateTransactionDto {
   type: TransactionType;
 
   @IsNumber()
+  @Min(0)
   quantity: number;
 
   @IsNumber()
+  @Min(0)
   price: number;
 
   @IsString()
@@ -29,10 +33,12 @@ export class CreateTransactionDto {
 
   @IsOptional()
   @IsNumber()
+  @Min(0)
   fee?: number;
 
   @IsOptional()
   @IsNumber()
+  @Min(0)
   tax?: number;
 
   @IsDateString()

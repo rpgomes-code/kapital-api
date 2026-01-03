@@ -1,90 +1,116 @@
 ﻿// prisma/seed.ts
-import {
-  PrismaClient
-} from 'generated/prisma/client';
+import { PrismaClient } from 'generated/prisma/client';
 
 const prisma = new PrismaClient();
 
 async function main() {
-  // Seed roles
+  // Create default roles
   const adminRole = await prisma.role.upsert({
     where: { name: 'admin' },
     update: {},
-    create: { name: 'admin', description: 'Administrator' },
+    create: {
+      name: 'admin',
+      description: 'Administrator with full access',
+    },
   });
 
   const userRole = await prisma.role.upsert({
     where: { name: 'user' },
     update: {},
-    create: { name: 'user', description: 'Standard User' },
+    create: {
+      name: 'user',
+      description: 'Regular user',
+    },
   });
 
-  // Seed permissions
+  // Create default permissions
   const permissions = [
-    'portfolio:read',
-    'portfolio:write',
-    'transactions:read',
-    'transactions:write',
-    'admin:users',
+    { name: 'portfolio:read', description: 'View portfolio' },
+    { name: 'portfolio:write', description: 'Modify portfolio' },
+    { name: 'transactions:read', description: 'View transactions' },
+    { name: 'transactions:write', description: 'Create/edit transactions' },
+    { name: 'users:read', description: 'View users' },
+    { name: 'users:write', description: 'Manage users' },
   ];
 
-  for (const name of permissions) {
+  for (const perm of permissions) {
     await prisma.permission.upsert({
-      where: { name },
+      where: { name: perm.name },
       update: {},
-      create: { name },
+      create: perm,
     });
   }
 
-  // Seed common brokers
+  // Create popular brokers
   const brokers = [
-    { acronym: 'IBKR', name: 'Interactive Brokers' },
-    { acronym: 'TD', name: 'TD Ameritrade' },
-    { acronym: 'DEGIRO', name: 'DEGIRO' },
-    { acronym: 'T212', name: 'Trading 212' },
-    { acronym: 'XTB', name: 'XTB' },
+    { name: 'Interactive Brokers', acronym: 'IBKR' },
+    { name: 'Trading 212', acronym: 'T212' },
+    { name: 'DEGIRO', acronym: 'DEGIRO' },
+    { name: 'eToro', acronym: 'ETORO' },
+    { name: 'XTB', acronym: 'XTB' },
+    { name: 'Revolut', acronym: 'REV' },
   ];
 
   for (const broker of brokers) {
     await prisma.broker.upsert({
-      where: { name: broker.name },
+      where: { publicId: broker.acronym.toLowerCase() },
       update: {},
-      create: broker,
+      create: {
+        name: broker.name,
+        acronym: broker.acronym,
+      },
     });
   }
 
-  // Seed common benchmarks
+  // Create common sectors
+  const sectors = [
+    'Technology',
+    'Healthcare',
+    'Financial Services',
+    'Consumer Cyclical',
+    'Consumer Defensive',
+    'Industrials',
+    'Energy',
+    'Utilities',
+    'Real Estate',
+    'Basic Materials',
+    'Communication Services',
+  ];
+
+  for (const sectorName of sectors) {
+    await prisma.sector.upsert({
+      where: { id: sectors.indexOf(sectorName) + 1 },
+      update: {},
+      create: { name: sectorName },
+    });
+  }
+
+  // Create common benchmarks
   const benchmarks = [
     { name: 'S&P 500', symbol: '^GSPC', currency: 'USD' },
-    { name: 'NASDAQ', symbol: '^IXIC', currency: 'USD' },
+    { name: 'NASDAQ Composite', symbol: '^IXIC', currency: 'USD' },
+    { name: 'Dow Jones Industrial Average', symbol: '^DJI', currency: 'USD' },
     { name: 'FTSE 100', symbol: '^FTSE', currency: 'GBP' },
     { name: 'DAX', symbol: '^GDAXI', currency: 'EUR' },
+    { name: 'Euro Stoxx 50', symbol: '^STOXX50E', currency: 'EUR' },
   ];
 
   for (const benchmark of benchmarks) {
     await prisma.benchmark.upsert({
-      where: { symbol: benchmark.symbol },
+      where: { publicId: benchmark.symbol },
       update: {},
       create: benchmark,
     });
   }
 
-  // Create a test user
-  await prisma.user.upsert({
-    where: { email: 'test@example.com' },
-    update: {},
-    create: {
-      email: 'test@example.com',
-      username: 'testuser',
-      name: 'Test User',
-      mainCurrency: 'USD',
-      roleId: userRole.id,
-    },
-  });
-
-  console.log('✅ Seed completed');
+  console.log('Seed completed successfully');
 }
 
 main()
-  .catch(console.error)
-  .finally(() => prisma.$disconnect());
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
