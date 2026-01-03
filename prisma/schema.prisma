@@ -1,0 +1,285 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ==========================
+// USERS & IDENTITY
+// ==========================
+
+model User {
+  id           Int      @id @default(autoincrement())
+  publicId     String   @unique @default(uuid()) @map("public_id")
+  username     String?
+  email        String   @unique
+  name         String?
+  photo        String?
+  country      String?
+  mainCurrency String   @default("USD") @map("main_currency")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  roleId      Int?         @map("role_id")
+  role        Role?        @relation(fields: [roleId], references: [id])
+  userBrokers UserBroker[]
+  watchlists  Watchlist[]
+  tags        Tag[]
+
+  @@map("users")
+}
+
+// ==========================
+// ROLES & PERMISSIONS
+// ==========================
+
+model Role {
+  id              Int              @id @default(autoincrement())
+  name            String           @unique
+  description     String?
+  users           User[]
+  rolePermissions RolePermission[]
+
+  @@map("roles")
+}
+
+model Permission {
+  id              Int              @id @default(autoincrement())
+  name            String           @unique
+  description     String?
+  rolePermissions RolePermission[]
+
+  @@map("permissions")
+}
+
+model RolePermission {
+  id           Int        @id @default(autoincrement())
+  roleId       Int        @map("role_id")
+  permissionId Int        @map("permission_id")
+  role         Role       @relation(fields: [roleId], references: [id])
+  permission   Permission @relation(fields: [permissionId], references: [id])
+
+  @@map("role_permissions")
+}
+
+// ==========================
+// BROKERS & ACCOUNTS
+// ==========================
+
+model Broker {
+  id          Int          @id @default(autoincrement())
+  publicId    String       @unique @default(uuid()) @map("public_id")
+  acronym     String?
+  name        String
+  logo        String?
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+  userBrokers UserBroker[]
+
+  @@map("brokers")
+}
+
+model UserBroker {
+  id        Int       @id @default(autoincrement())
+  userId    Int       @map("user_id")
+  brokerId  Int       @map("broker_id")
+  createdAt DateTime  @default(now()) @map("created_at")
+  user      User      @relation(fields: [userId], references: [id])
+  broker    Broker    @relation(fields: [brokerId], references: [id])
+  accounts  Account[]
+
+  @@map("user_brokers")
+}
+
+model Account {
+  id           Int           @id @default(autoincrement())
+  publicId     String        @unique @default(uuid()) @map("public_id")
+  userBrokerId Int           @map("user_broker_id")
+  name         String
+  currency     String        @default("USD")
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+  userBroker   UserBroker    @relation(fields: [userBrokerId], references: [id])
+  transactions Transaction[]
+
+  @@map("accounts")
+}
+
+// ==========================
+// ASSETS & CLASSIFICATION
+// ==========================
+
+model Sector {
+  id         Int        @id @default(autoincrement())
+  name       String
+  industries Industry[]
+  assets     Asset[]
+
+  @@map("sectors")
+}
+
+model Industry {
+  id       Int     @id @default(autoincrement())
+  sectorId Int     @map("sector_id")
+  name     String
+  sector   Sector  @relation(fields: [sectorId], references: [id])
+  assets   Asset[]
+
+  @@map("industries")
+}
+
+enum AssetType {
+  STOCK
+  ETF
+  CRYPTO
+  FUND
+}
+
+model Asset {
+  id          Int       @id @default(autoincrement())
+  publicId    String    @unique @default(uuid()) @map("public_id")
+  symbol      String
+  yahooSymbol String    @map("yahoo_symbol")
+  isin        String?
+  cusip       String?
+  name        String
+  assetType   AssetType @map("asset_type")
+  exchange    String?
+  currency    String
+
+  sectorId   Int?      @map("sector_id")
+  industryId Int?      @map("industry_id")
+  sector     Sector?   @relation(fields: [sectorId], references: [id])
+  industry   Industry? @relation(fields: [industryId], references: [id])
+
+  transactions     Transaction[]
+  assetPrices      AssetPrice[]
+  corporateActions CorporateAction[]
+  watchlistAssets  WatchlistAsset[]
+
+  @@map("assets")
+}
+
+// ==========================
+// TRANSACTIONS
+// ==========================
+
+enum TransactionType {
+  BUY
+  SELL
+  DIVIDEND
+  FEE
+  TAX
+}
+
+model Transaction {
+  id         Int             @id @default(autoincrement())
+  publicId   String          @unique @default(uuid()) @map("public_id")
+  accountId  Int             @map("account_id")
+  assetId    Int             @map("asset_id")
+  type       TransactionType
+  quantity   Decimal         @db.Decimal(18, 8)
+  price      Decimal         @db.Decimal(18, 8)
+  currency   String
+  fee        Decimal?        @default(0) @db.Decimal(18, 8)
+  tax        Decimal?        @default(0) @db.Decimal(18, 8)
+  executedAt DateTime        @map("executed_at")
+  createdAt  DateTime        @default(now()) @map("created_at")
+
+  account Account          @relation(fields: [accountId], references: [id])
+  asset   Asset            @relation(fields: [assetId], references: [id])
+  tags    TransactionTag[]
+
+  @@map("transactions")
+}
+
+// ==========================
+// MARKET DATA & EXTRAS
+// ==========================
+
+model AssetPrice {
+  id       Int      @id @default(autoincrement())
+  assetId  Int      @map("asset_id")
+  date     DateTime @db.Date
+  open     Decimal  @db.Decimal(18, 4)
+  close    Decimal  @db.Decimal(18, 4)
+  high     Decimal  @db.Decimal(18, 4)
+  low      Decimal  @db.Decimal(18, 4)
+  volume   BigInt
+  currency String
+  asset    Asset    @relation(fields: [assetId], references: [id])
+
+  @@map("asset_prices")
+}
+
+model CorporateAction {
+  id         Int      @id @default(autoincrement())
+  assetId    Int      @map("asset_id")
+  type       String
+  value      Decimal  @db.Decimal(18, 8)
+  executedAt DateTime @map("executed_at")
+  asset      Asset    @relation(fields: [assetId], references: [id])
+
+  @@map("corporate_actions")
+}
+
+model Watchlist {
+  id        Int              @id @default(autoincrement())
+  publicId  String           @unique @default(uuid()) @map("public_id")
+  userId    Int              @map("user_id")
+  name      String
+  createdAt DateTime         @default(now()) @map("created_at")
+  user      User             @relation(fields: [userId], references: [id])
+  assets    WatchlistAsset[]
+
+  @@map("watchlists")
+}
+
+model WatchlistAsset {
+  id          Int       @id @default(autoincrement())
+  watchlistId Int       @map("watchlist_id")
+  assetId     Int       @map("asset_id")
+  watchlist   Watchlist @relation(fields: [watchlistId], references: [id])
+  asset       Asset     @relation(fields: [assetId], references: [id])
+
+  @@map("watchlist_assets")
+}
+
+model Benchmark {
+  id       Int    @id @default(autoincrement())
+  publicId String @unique @default(uuid()) @map("public_id")
+  name     String
+  symbol   String
+  currency String
+
+  @@map("benchmarks")
+}
+
+model Tag {
+  id              Int              @id @default(autoincrement())
+  userId          Int              @map("user_id")
+  name            String
+  user            User             @relation(fields: [userId], references: [id])
+  transactionTags TransactionTag[]
+
+  @@map("tags")
+}
+
+model TransactionTag {
+  transactionId Int         @map("transaction_id")
+  tagId         Int         @map("tag_id")
+  transaction   Transaction @relation(fields: [transactionId], references: [id])
+  tag           Tag         @relation(fields: [tagId], references: [id])
+
+  @@id([transactionId, tagId])
+  @@map("transaction_tags")
+}
