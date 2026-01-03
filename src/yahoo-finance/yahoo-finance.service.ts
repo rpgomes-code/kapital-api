@@ -46,10 +46,10 @@ interface SearchResult {
 @Injectable()
 export class YahooFinanceService implements OnModuleInit {
   private readonly logger = new Logger(YahooFinanceService.name);
-  private yahooFinance: typeof YahooFinance;
+  private yahooFinance: InstanceType<typeof YahooFinance>;
 
   async onModuleInit() {
-    this.yahooFinance = YahooFinance;
+    this.yahooFinance = new YahooFinance();
     this.logger.log('Yahoo Finance service initialized');
   }
 
