@@ -4,6 +4,6 @@ import { PortfolioService } from './portfolio.service';
 
 @Module({
   controllers: [PortfolioController],
-  providers: [PortfolioService]
+  providers: [PortfolioService],
 })
 export class PortfolioModule {}

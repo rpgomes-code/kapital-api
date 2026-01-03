@@ -290,6 +290,7 @@ export type AssetPriceOrderByWithRelationInput = {
 
 export type AssetPriceWhereUniqueInput = Prisma.AtLeast<{
   id?: number
+  assetId_date?: Prisma.AssetPriceAssetIdDateCompoundUniqueInput
   AND?: Prisma.AssetPriceWhereInput | Prisma.AssetPriceWhereInput[]
   OR?: Prisma.AssetPriceWhereInput[]
   NOT?: Prisma.AssetPriceWhereInput | Prisma.AssetPriceWhereInput[]
@@ -302,7 +303,7 @@ export type AssetPriceWhereUniqueInput = Prisma.AtLeast<{
   volume?: Prisma.BigIntFilter<"AssetPrice"> | bigint | number
   currency?: Prisma.StringFilter<"AssetPrice"> | string
   asset?: Prisma.XOR<Prisma.AssetScalarRelationFilter, Prisma.AssetWhereInput>
-}, "id">
+}, "id" | "assetId_date">
 
 export type AssetPriceOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -424,6 +425,11 @@ export type AssetPriceListRelationFilter = {
 
 export type AssetPriceOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type AssetPriceAssetIdDateCompoundUniqueInput = {
+  assetId: number
+  date: Date | string
 }
 
 export type AssetPriceCountOrderByAggregateInput = {

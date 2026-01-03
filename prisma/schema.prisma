@@ -218,6 +218,7 @@ model AssetPrice {
   currency String
   asset    Asset    @relation(fields: [assetId], references: [id])
 
+  @@unique([assetId, date])
   @@map("asset_prices")
 }
 

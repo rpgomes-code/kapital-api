@@ -1,0 +1,24 @@
+﻿services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: kapital_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER:-kapital}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE:-kapitaldb}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - kapital-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-kapital} -d ${DB_DATABASE:-kapitaldb}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+volumes:
+    postgres_data:
+networks:
+  kapital-network:
+    driver: bridge
