@@ -5,7 +5,7 @@ import { YahooFinanceService } from '../yahoo-finance/yahoo-finance.service';
 import { TransactionType } from 'generated/prisma/client';
 import { Decimal } from '../../generated/prisma/internal/prismaNamespace';
 
-interface Holding {
+export interface Holding {
   assetId: number;
   asset: {
     id: number;
@@ -28,7 +28,7 @@ interface Holding {
   allocation?: number;
 }
 
-interface PortfolioSummary {
+export interface PortfolioSummary {
   totalValue: number;
   totalCostBasis: number;
   totalUnrealizedGain: number;
@@ -42,7 +42,7 @@ interface PortfolioSummary {
   lastUpdated: Date;
 }
 
-interface PerformanceMetrics {
+export interface PerformanceMetrics {
   totalReturn: number;
   totalReturnPercent: number;
   annualizedReturn: number;

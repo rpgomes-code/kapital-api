@@ -15,13 +15,17 @@ export class WatchlistsService {
     private yahooFinance: YahooFinanceService,
   ) {}
 
-  async create(userId: number, dto: CreateWatchlistDto) {
+  async create(dto: CreateWatchlistDto) {
     return this.prisma.watchlist.create({
       data: {
-        userId,
+        userId: dto.userId,
         name: dto.name,
       },
     });
+  }
+
+  async findByUser(userId: number) {
+    return this.findAllByUser(userId);
   }
 
   async findAllByUser(userId: number) {
@@ -85,12 +89,12 @@ export class WatchlistsService {
     };
   }
 
-  async addAsset(watchlistId: number, assetId: number) {
+  async addAsset(watchlistId: number, dto: { assetId: number }) {
     // Check if already in watchlist
     const existing = await this.prisma.watchlistAsset.findFirst({
       where: {
         watchlistId,
-        assetId,
+        assetId: dto.assetId,
       },
     });
 
@@ -101,7 +105,7 @@ export class WatchlistsService {
     return this.prisma.watchlistAsset.create({
       data: {
         watchlistId,
-        assetId,
+        assetId: dto.assetId,
       },
       include: {
         asset: true,

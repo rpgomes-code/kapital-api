@@ -70,6 +70,56 @@ export class TransactionsService {
     });
   }
 
+  async findByUser(userId: number, pagination: { page?: number; limit?: number }) {
+    const { skip, take } = getPaginationParams(pagination);
+
+    const where = {
+      account: {
+        userBroker: {
+          userId,
+        },
+      },
+    };
+
+    const [transactions, total] = await Promise.all([
+      this.prisma.transaction.findMany({
+        where,
+        skip,
+        take,
+        include: {
+          account: true,
+          asset: true,
+        },
+        orderBy: { executedAt: 'desc' },
+      }),
+      this.prisma.transaction.count({ where }),
+    ]);
+
+    return paginate(transactions, total, pagination);
+  }
+
+  async findByAccount(accountId: number, pagination: { page?: number; limit?: number }) {
+    const { skip, take } = getPaginationParams(pagination);
+
+    const where = { accountId };
+
+    const [transactions, total] = await Promise.all([
+      this.prisma.transaction.findMany({
+        where,
+        skip,
+        take,
+        include: {
+          account: true,
+          asset: true,
+        },
+        orderBy: { executedAt: 'desc' },
+      }),
+      this.prisma.transaction.count({ where }),
+    ]);
+
+    return paginate(transactions, total, pagination);
+  }
+
   async findAll(userId: number, filters: FilterTransactionsDto) {
     const where: Prisma.TransactionWhereInput = {
       account: {

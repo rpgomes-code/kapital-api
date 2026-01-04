@@ -63,4 +63,38 @@ export class BrokersService {
       where: { id },
     });
   }
+
+  async linkToUser(userId: number, brokerId: number) {
+    // Check if broker exists
+    await this.findOne(brokerId);
+
+    // Check if already linked
+    const existing = await this.prisma.userBroker.findFirst({
+      where: { userId, brokerId },
+    });
+
+    if (existing) {
+      throw new ConflictException('User is already linked to this broker');
+    }
+
+    return this.prisma.userBroker.create({
+      data: {
+        userId,
+        brokerId,
+      },
+      include: {
+        broker: true,
+      },
+    });
+  }
+
+  async getUserBrokers(userId: number) {
+    return this.prisma.userBroker.findMany({
+      where: { userId },
+      include: {
+        broker: true,
+        accounts: true,
+      },
+    });
+  }
 }

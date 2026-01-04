@@ -2,7 +2,7 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import YahooFinance from 'yahoo-finance2';
 
-interface QuoteResult {
+export interface QuoteResult {
   symbol: string;
   shortName?: string;
   longName?: string;
@@ -23,7 +23,7 @@ interface QuoteResult {
   marketState?: string;
 }
 
-interface HistoricalDataPoint {
+export interface HistoricalDataPoint {
   date: Date;
   open: number;
   high: number;
@@ -33,7 +33,7 @@ interface HistoricalDataPoint {
   adjClose?: number;
 }
 
-interface SearchResult {
+export interface SearchResult {
   symbol: string;
   shortname?: string;
   longname?: string;
