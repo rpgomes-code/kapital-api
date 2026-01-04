@@ -9,7 +9,7 @@ import { YahooFinanceService } from '../yahoo-finance/yahoo-finance.service';
 import { CreateAssetDto } from './dto/create-asset.dto';
 import { UpdateAssetDto } from './dto/update-asset.dto';
 import { SearchAssetDto } from './dto/search-asset.dto';
-import { AssetType, Prisma } from 'generated/prisma/client';
+import { AssetType, Prisma } from '../generated/prisma/client';
 
 @Injectable()
 export class AssetsService {

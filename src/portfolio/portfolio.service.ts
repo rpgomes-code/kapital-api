@@ -2,8 +2,8 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { YahooFinanceService } from '../yahoo-finance/yahoo-finance.service';
-import { TransactionType } from 'generated/prisma/client';
-import { Decimal } from '../../generated/prisma/internal/prismaNamespace';
+import { TransactionType } from '../generated/prisma/client';
+import { Decimal } from '../generated/prisma/internal/prismaNamespace';
 
 export interface Holding {
   assetId: number;

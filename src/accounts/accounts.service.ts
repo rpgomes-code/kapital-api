@@ -3,7 +3,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateAccountDto } from './dto/create-account.dto';
 import { UpdateAccountDto } from './dto/update-account.dto';
-import { Decimal } from '../../generated/prisma/internal/prismaNamespace';
+import { Decimal } from '../generated/prisma/internal/prismaNamespace';
 
 @Injectable()
 export class AccountsService {

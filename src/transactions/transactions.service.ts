@@ -8,9 +8,9 @@ import { PrismaService } from '../prisma/prisma.service';
 import { CreateTransactionDto } from './dto/create-transaction.dto';
 import { UpdateTransactionDto } from './dto/update-transaction.dto';
 import { FilterTransactionsDto } from './dto/filter-transactions.dto';
-import { Prisma, TransactionType } from 'generated/prisma/client';
+import { Prisma, TransactionType } from '../generated/prisma/client';
 import { getPaginationParams, paginate } from '../common/utils/pagination.util';
-import { Decimal } from '../../generated/prisma/internal/prismaNamespace';
+import { Decimal } from '../generated/prisma/internal/prismaNamespace';
 
 @Injectable()
 export class TransactionsService {

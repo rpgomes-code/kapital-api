@@ -1,7 +1,7 @@
 ﻿// src/transactions/dto/filter-transactions.dto.ts
 import { IsOptional, IsInt, IsEnum, IsDateString } from 'class-validator';
 import { Type } from 'class-transformer';
-import { TransactionType } from 'generated/prisma/client';
+import { TransactionType } from '../../generated/prisma/client';
 import { PaginationDto } from '../../common/dto/pagination.dto';
 
 export class FilterTransactionsDto extends PaginationDto {
