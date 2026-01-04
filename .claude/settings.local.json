@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npx prisma generate:*)",
+      "Bash(npm install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nRefactor services to use centralized YahooFinanceService and fix build errors\n\n- Refactored StonksService to use YahooFinanceService instead of direct yahoo-finance2 imports\n- Added missing methods to BrokersService \\(linkToUser, getUserBrokers\\)\n- Added missing methods to TransactionsService \\(findByUser, findByAccount\\)\n- Fixed WatchlistsService method signatures to match controller expectations\n- Exported interfaces from YahooFinanceService and PortfolioService for type visibility\n- Updated Prisma configuration for v7 with PostgreSQL adapter pattern\n- Added @prisma/adapter-pg and pg dependencies for database connectivity\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)",
+      "Bash(npm show:*)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebSearch",
+      "Bash(cat:*)",
+      "Bash(if exist generated rd /s /q generated)",
+      "Bash(git commit:*)",
+      "Bash(npm run start:dev:*)"
+    ]
+  }
+}

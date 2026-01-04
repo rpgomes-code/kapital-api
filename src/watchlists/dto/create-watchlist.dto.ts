@@ -5,15 +5,19 @@ import {
   IsArray,
   IsInt,
 } from 'class-validator';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class CreateWatchlistDto {
+  @ApiProperty({ example: 1, description: 'User ID' })
   @IsInt()
   userId: number;
 
+  @ApiProperty({ example: 'Tech Stocks', description: 'Watchlist name', maxLength: 100 })
   @IsString()
   @MaxLength(100)
   name: string;
 
+  @ApiPropertyOptional({ example: [1, 2, 3], description: 'Initial asset IDs to add', type: [Number] })
   @IsOptional()
   @IsArray()
   @IsInt({ each: true })
@@ -21,6 +25,7 @@ export class CreateWatchlistDto {
 }
 
 export class AddAssetToWatchlistDto {
+  @ApiProperty({ example: 1, description: 'Asset ID to add to watchlist' })
   @IsInt()
   assetId: number;
 }
