@@ -31,7 +31,9 @@
       "Bash(npm test)",
       "WebFetch(domain:jsr.io)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(npm test:*)"
+      "Bash(npm test:*)",
+      "Bash(del /f \"C:\\\\Users\\\\user\\\\Documents\\\\Projects\\\\NestJs\\\\kapital-api\\\\nul\")",
+      "Bash(cd:*)"
     ]
   }
 }

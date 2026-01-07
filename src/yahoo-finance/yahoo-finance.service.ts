@@ -1,5 +1,7 @@
 // src/yahoo-finance/yahoo-finance.service.ts
-import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
+import { Injectable, Logger, OnModuleInit, Inject, Optional } from '@nestjs/common';
+import { CACHE_MANAGER } from '@nestjs/cache-manager';
+import type { Cache } from 'cache-manager';
 import YahooFinance from 'yahoo-finance2';
 
 export interface QuoteResult {
@@ -181,9 +183,30 @@ export class YahooFinanceService implements OnModuleInit {
   private readonly maxRetries = 3;
   private readonly baseDelay = 1000; // 1 second
 
+  // Cache TTL settings in milliseconds
+  private readonly cacheTTL = {
+    quote: 30 * 1000, // 30 seconds
+    quotes: 30 * 1000, // 30 seconds
+    chart: 5 * 60 * 1000, // 5 minutes
+    recommendations: 60 * 60 * 1000, // 1 hour
+    quoteSummary: 30 * 60 * 1000, // 30 minutes
+    trending: 5 * 60 * 1000, // 5 minutes
+    insights: 30 * 60 * 1000, // 30 minutes
+    screener: 10 * 60 * 1000, // 10 minutes
+  };
+
+  constructor(
+    @Optional() @Inject(CACHE_MANAGER) private cacheManager?: Cache,
+  ) {}
+
   async onModuleInit() {
     this.yahooFinance = new YahooFinance();
     this.logger.log('Yahoo Finance service initialized');
+    if (this.cacheManager) {
+      this.logger.log('Redis caching enabled for Yahoo Finance');
+    } else {
+      this.logger.log('Running without cache - set up Redis for better performance');
+    }
   }
 
   private async withRetry<T>(
@@ -251,11 +274,28 @@ export class YahooFinanceService implements OnModuleInit {
   }
 
   async getQuote(symbol: string): Promise<QuoteResult | null> {
+    const cacheKey = `yf:quote:${symbol.toUpperCase()}`;
+
+    // Check cache first
+    if (this.cacheManager) {
+      const cached = await this.cacheManager.get<QuoteResult>(cacheKey);
+      if (cached) {
+        this.logger.debug(`Cache hit for quote: ${symbol}`);
+        return cached;
+      }
+    }
+
     try {
       const result = await this.withRetry(
         () => this.yahooFinance.quote(symbol),
         `quote(${symbol})`,
       );
+
+      // Cache the result
+      if (this.cacheManager && result) {
+        await this.cacheManager.set(cacheKey, result, this.cacheTTL.quote);
+      }
+
       return result as QuoteResult;
     } catch (error) {
       this.logger.error(`Failed to get quote for ${symbol}:`, error);
@@ -266,22 +306,51 @@ export class YahooFinanceService implements OnModuleInit {
   async getQuotes(symbols: string[]): Promise<QuoteResult[]> {
     if (symbols.length === 0) return [];
 
-    try {
-      const results = await Promise.allSettled(
-        symbols.map((s) =>
-          this.withRetry(() => this.yahooFinance.quote(s), `quote(${s})`),
-        ),
-      );
+    const results: QuoteResult[] = [];
+    const uncachedSymbols: string[] = [];
 
-      return results
-        .filter(
-          (r): r is PromiseFulfilledResult<any> => r.status === 'fulfilled',
-        )
-        .map((r) => r.value as QuoteResult);
-    } catch (error) {
-      this.logger.error(`Failed to get quotes:`, error);
-      return [];
+    // Check cache for each symbol
+    if (this.cacheManager) {
+      for (const symbol of symbols) {
+        const cacheKey = `yf:quote:${symbol.toUpperCase()}`;
+        const cached = await this.cacheManager.get<QuoteResult>(cacheKey);
+        if (cached) {
+          results.push(cached);
+        } else {
+          uncachedSymbols.push(symbol);
+        }
+      }
+    } else {
+      uncachedSymbols.push(...symbols);
     }
+
+    // Fetch uncached symbols
+    if (uncachedSymbols.length > 0) {
+      try {
+        const fetched = await Promise.allSettled(
+          uncachedSymbols.map((s) =>
+            this.withRetry(() => this.yahooFinance.quote(s), `quote(${s})`),
+          ),
+        );
+
+        for (let i = 0; i < fetched.length; i++) {
+          if (fetched[i].status === 'fulfilled') {
+            const quote = (fetched[i] as PromiseFulfilledResult<any>).value as QuoteResult;
+            results.push(quote);
+
+            // Cache each quote
+            if (this.cacheManager && quote) {
+              const cacheKey = `yf:quote:${uncachedSymbols[i].toUpperCase()}`;
+              await this.cacheManager.set(cacheKey, quote, this.cacheTTL.quotes);
+            }
+          }
+        }
+      } catch (error) {
+        this.logger.error(`Failed to get quotes:`, error);
+      }
+    }
+
+    return results;
   }
 
   async getHistoricalData(
@@ -420,13 +489,24 @@ export class YahooFinanceService implements OnModuleInit {
   async getRecommendations(
     symbol: string,
   ): Promise<RecommendationResult | null> {
+    const cacheKey = `yf:recommendations:${symbol.toUpperCase()}`;
+
+    // Check cache first
+    if (this.cacheManager) {
+      const cached = await this.cacheManager.get<RecommendationResult>(cacheKey);
+      if (cached) {
+        this.logger.debug(`Cache hit for recommendations: ${symbol}`);
+        return cached;
+      }
+    }
+
     try {
       const result = await this.withRetry(
         () => this.yahooFinance.recommendationsBySymbol(symbol),
         `recommendations(${symbol})`,
       );
 
-      return {
+      const recommendations = {
         symbol: result.symbol,
         score: (result as any).score || 0,
         recommendedSymbols: (result.recommendedSymbols || []).map((r: any) => ({
@@ -434,6 +514,13 @@ export class YahooFinanceService implements OnModuleInit {
           score: r.score || 0,
         })),
       };
+
+      // Cache the result
+      if (this.cacheManager) {
+        await this.cacheManager.set(cacheKey, recommendations, this.cacheTTL.recommendations);
+      }
+
+      return recommendations;
     } catch (error) {
       this.logger.error(`Failed to get recommendations for ${symbol}:`, error);
       return null;
@@ -444,6 +531,17 @@ export class YahooFinanceService implements OnModuleInit {
     region: string = 'US',
     count: number = 20,
   ): Promise<TrendingSymbol[]> {
+    const cacheKey = `yf:trending:${region}:${count}`;
+
+    // Check cache first
+    if (this.cacheManager) {
+      const cached = await this.cacheManager.get<TrendingSymbol[]>(cacheKey);
+      if (cached) {
+        this.logger.debug(`Cache hit for trending: ${region}`);
+        return cached;
+      }
+    }
+
     try {
       const result = await this.withRetry(
         () => this.yahooFinance.trendingSymbols(region, { count }),
@@ -456,7 +554,7 @@ export class YahooFinanceService implements OnModuleInit {
       // Get quotes for trending symbols
       const quotes = await this.getQuotes(symbols);
 
-      return quotes.map((q) => ({
+      const trending = quotes.map((q) => ({
         symbol: q.symbol,
         shortName: q.shortName,
         longName: q.longName,
@@ -464,6 +562,13 @@ export class YahooFinanceService implements OnModuleInit {
         regularMarketChange: q.regularMarketChange,
         regularMarketChangePercent: q.regularMarketChangePercent,
       }));
+
+      // Cache the result
+      if (this.cacheManager) {
+        await this.cacheManager.set(cacheKey, trending, this.cacheTTL.trending);
+      }
+
+      return trending;
     } catch (error) {
       this.logger.error(`Failed to get trending symbols for ${region}:`, error);
       return [];
@@ -499,13 +604,24 @@ export class YahooFinanceService implements OnModuleInit {
   }
 
   async getInsights(symbol: string): Promise<InsightsResult | null> {
+    const cacheKey = `yf:insights:${symbol.toUpperCase()}`;
+
+    // Check cache first
+    if (this.cacheManager) {
+      const cached = await this.cacheManager.get<InsightsResult>(cacheKey);
+      if (cached) {
+        this.logger.debug(`Cache hit for insights: ${symbol}`);
+        return cached;
+      }
+    }
+
     try {
       const result = await this.withRetry(
         () => this.yahooFinance.insights(symbol),
         `insights(${symbol})`,
       );
 
-      return {
+      const insights = {
         symbol: result.symbol,
         instrumentInfo: result.instrumentInfo,
         companySnapshot: result.companySnapshot,
@@ -516,6 +632,13 @@ export class YahooFinanceService implements OnModuleInit {
         secReports: result.secReports,
         upsell: result.upsell,
       };
+
+      // Cache the result
+      if (this.cacheManager) {
+        await this.cacheManager.set(cacheKey, insights, this.cacheTTL.insights);
+      }
+
+      return insights;
     } catch (error) {
       this.logger.error(`Failed to get insights for ${symbol}:`, error);
       return null;

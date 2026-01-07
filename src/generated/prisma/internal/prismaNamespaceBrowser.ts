@@ -74,7 +74,10 @@ export const ModelName = {
   TransactionTag: 'TransactionTag',
   PortfolioSnapshot: 'PortfolioSnapshot',
   HoldingSnapshot: 'HoldingSnapshot',
-  PriceAlert: 'PriceAlert'
+  PriceAlert: 'PriceAlert',
+  PriceCache: 'PriceCache',
+  AssetEnrichmentLog: 'AssetEnrichmentLog',
+  JobRun: 'JobRun'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -291,7 +294,14 @@ export const CorporateActionScalarFieldEnum = {
   assetId: 'assetId',
   type: 'type',
   value: 'value',
-  executedAt: 'executedAt'
+  executedAt: 'executedAt',
+  recordDate: 'recordDate',
+  exDate: 'exDate',
+  paymentDate: 'paymentDate',
+  description: 'description',
+  isProcessed: 'isProcessed',
+  processedAt: 'processedAt',
+  createdAt: 'createdAt'
 } as const
 
 export type CorporateActionScalarFieldEnum = (typeof CorporateActionScalarFieldEnum)[keyof typeof CorporateActionScalarFieldEnum]
@@ -386,12 +396,62 @@ export const PriceAlertScalarFieldEnum = {
 export type PriceAlertScalarFieldEnum = (typeof PriceAlertScalarFieldEnum)[keyof typeof PriceAlertScalarFieldEnum]
 
 
+export const PriceCacheScalarFieldEnum = {
+  id: 'id',
+  symbol: 'symbol',
+  date: 'date',
+  open: 'open',
+  high: 'high',
+  low: 'low',
+  close: 'close',
+  adjClose: 'adjClose',
+  volume: 'volume',
+  createdAt: 'createdAt'
+} as const
+
+export type PriceCacheScalarFieldEnum = (typeof PriceCacheScalarFieldEnum)[keyof typeof PriceCacheScalarFieldEnum]
+
+
+export const AssetEnrichmentLogScalarFieldEnum = {
+  id: 'id',
+  assetId: 'assetId',
+  lastEnriched: 'lastEnriched',
+  status: 'status',
+  errorMessage: 'errorMessage',
+  retryCount: 'retryCount'
+} as const
+
+export type AssetEnrichmentLogScalarFieldEnum = (typeof AssetEnrichmentLogScalarFieldEnum)[keyof typeof AssetEnrichmentLogScalarFieldEnum]
+
+
+export const JobRunScalarFieldEnum = {
+  id: 'id',
+  jobName: 'jobName',
+  status: 'status',
+  startedAt: 'startedAt',
+  completedAt: 'completedAt',
+  itemsProcessed: 'itemsProcessed',
+  errorMessage: 'errorMessage',
+  metadata: 'metadata'
+} as const
+
+export type JobRunScalarFieldEnum = (typeof JobRunScalarFieldEnum)[keyof typeof JobRunScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullableJsonNullValueInput = {
+  DbNull: 'DbNull',
+  JsonNull: 'JsonNull'
+} as const
+
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
 export const QueryMode = {
@@ -408,4 +468,13 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: 'DbNull',
+  JsonNull: 'JsonNull',
+  AnyNull: 'AnyNull'
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 

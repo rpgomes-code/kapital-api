@@ -407,7 +407,10 @@ export const ModelName = {
   TransactionTag: 'TransactionTag',
   PortfolioSnapshot: 'PortfolioSnapshot',
   HoldingSnapshot: 'HoldingSnapshot',
-  PriceAlert: 'PriceAlert'
+  PriceAlert: 'PriceAlert',
+  PriceCache: 'PriceCache',
+  AssetEnrichmentLog: 'AssetEnrichmentLog',
+  JobRun: 'JobRun'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -423,7 +426,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "authAccount" | "verification" | "role" | "permission" | "rolePermission" | "broker" | "userBroker" | "account" | "sector" | "industry" | "asset" | "transaction" | "assetPrice" | "corporateAction" | "watchlist" | "watchlistAsset" | "benchmark" | "tag" | "transactionTag" | "portfolioSnapshot" | "holdingSnapshot" | "priceAlert"
+    modelProps: "user" | "session" | "authAccount" | "verification" | "role" | "permission" | "rolePermission" | "broker" | "userBroker" | "account" | "sector" | "industry" | "asset" | "transaction" | "assetPrice" | "corporateAction" | "watchlist" | "watchlistAsset" | "benchmark" | "tag" | "transactionTag" | "portfolioSnapshot" | "holdingSnapshot" | "priceAlert" | "priceCache" | "assetEnrichmentLog" | "jobRun"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2203,6 +2206,228 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    PriceCache: {
+      payload: Prisma.$PriceCachePayload<ExtArgs>
+      fields: Prisma.PriceCacheFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PriceCacheFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PriceCachePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PriceCacheFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PriceCachePayload>
+        }
+        findFirst: {
+          args: Prisma.PriceCacheFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PriceCachePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PriceCacheFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PriceCachePayload>
+        }
+        findMany: {
+          args: Prisma.PriceCacheFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PriceCachePayload>[]
+        }
+        create: {
+          args: Prisma.PriceCacheCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PriceCachePayload>
+        }
+        createMany: {
+          args: Prisma.PriceCacheCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PriceCacheCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PriceCachePayload>[]
+        }
+        delete: {
+          args: Prisma.PriceCacheDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PriceCachePayload>
+        }
+        update: {
+          args: Prisma.PriceCacheUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PriceCachePayload>
+        }
+        deleteMany: {
+          args: Prisma.PriceCacheDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PriceCacheUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PriceCacheUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PriceCachePayload>[]
+        }
+        upsert: {
+          args: Prisma.PriceCacheUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PriceCachePayload>
+        }
+        aggregate: {
+          args: Prisma.PriceCacheAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePriceCache>
+        }
+        groupBy: {
+          args: Prisma.PriceCacheGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PriceCacheGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PriceCacheCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PriceCacheCountAggregateOutputType> | number
+        }
+      }
+    }
+    AssetEnrichmentLog: {
+      payload: Prisma.$AssetEnrichmentLogPayload<ExtArgs>
+      fields: Prisma.AssetEnrichmentLogFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AssetEnrichmentLogFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssetEnrichmentLogPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AssetEnrichmentLogFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssetEnrichmentLogPayload>
+        }
+        findFirst: {
+          args: Prisma.AssetEnrichmentLogFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssetEnrichmentLogPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AssetEnrichmentLogFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssetEnrichmentLogPayload>
+        }
+        findMany: {
+          args: Prisma.AssetEnrichmentLogFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssetEnrichmentLogPayload>[]
+        }
+        create: {
+          args: Prisma.AssetEnrichmentLogCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssetEnrichmentLogPayload>
+        }
+        createMany: {
+          args: Prisma.AssetEnrichmentLogCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AssetEnrichmentLogCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssetEnrichmentLogPayload>[]
+        }
+        delete: {
+          args: Prisma.AssetEnrichmentLogDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssetEnrichmentLogPayload>
+        }
+        update: {
+          args: Prisma.AssetEnrichmentLogUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssetEnrichmentLogPayload>
+        }
+        deleteMany: {
+          args: Prisma.AssetEnrichmentLogDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AssetEnrichmentLogUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AssetEnrichmentLogUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssetEnrichmentLogPayload>[]
+        }
+        upsert: {
+          args: Prisma.AssetEnrichmentLogUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssetEnrichmentLogPayload>
+        }
+        aggregate: {
+          args: Prisma.AssetEnrichmentLogAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAssetEnrichmentLog>
+        }
+        groupBy: {
+          args: Prisma.AssetEnrichmentLogGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AssetEnrichmentLogGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AssetEnrichmentLogCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AssetEnrichmentLogCountAggregateOutputType> | number
+        }
+      }
+    }
+    JobRun: {
+      payload: Prisma.$JobRunPayload<ExtArgs>
+      fields: Prisma.JobRunFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.JobRunFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$JobRunPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.JobRunFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$JobRunPayload>
+        }
+        findFirst: {
+          args: Prisma.JobRunFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$JobRunPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.JobRunFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$JobRunPayload>
+        }
+        findMany: {
+          args: Prisma.JobRunFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$JobRunPayload>[]
+        }
+        create: {
+          args: Prisma.JobRunCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$JobRunPayload>
+        }
+        createMany: {
+          args: Prisma.JobRunCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.JobRunCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$JobRunPayload>[]
+        }
+        delete: {
+          args: Prisma.JobRunDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$JobRunPayload>
+        }
+        update: {
+          args: Prisma.JobRunUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$JobRunPayload>
+        }
+        deleteMany: {
+          args: Prisma.JobRunDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.JobRunUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.JobRunUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$JobRunPayload>[]
+        }
+        upsert: {
+          args: Prisma.JobRunUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$JobRunPayload>
+        }
+        aggregate: {
+          args: Prisma.JobRunAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateJobRun>
+        }
+        groupBy: {
+          args: Prisma.JobRunGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.JobRunGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.JobRunCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.JobRunCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -2440,7 +2665,14 @@ export const CorporateActionScalarFieldEnum = {
   assetId: 'assetId',
   type: 'type',
   value: 'value',
-  executedAt: 'executedAt'
+  executedAt: 'executedAt',
+  recordDate: 'recordDate',
+  exDate: 'exDate',
+  paymentDate: 'paymentDate',
+  description: 'description',
+  isProcessed: 'isProcessed',
+  processedAt: 'processedAt',
+  createdAt: 'createdAt'
 } as const
 
 export type CorporateActionScalarFieldEnum = (typeof CorporateActionScalarFieldEnum)[keyof typeof CorporateActionScalarFieldEnum]
@@ -2535,12 +2767,62 @@ export const PriceAlertScalarFieldEnum = {
 export type PriceAlertScalarFieldEnum = (typeof PriceAlertScalarFieldEnum)[keyof typeof PriceAlertScalarFieldEnum]
 
 
+export const PriceCacheScalarFieldEnum = {
+  id: 'id',
+  symbol: 'symbol',
+  date: 'date',
+  open: 'open',
+  high: 'high',
+  low: 'low',
+  close: 'close',
+  adjClose: 'adjClose',
+  volume: 'volume',
+  createdAt: 'createdAt'
+} as const
+
+export type PriceCacheScalarFieldEnum = (typeof PriceCacheScalarFieldEnum)[keyof typeof PriceCacheScalarFieldEnum]
+
+
+export const AssetEnrichmentLogScalarFieldEnum = {
+  id: 'id',
+  assetId: 'assetId',
+  lastEnriched: 'lastEnriched',
+  status: 'status',
+  errorMessage: 'errorMessage',
+  retryCount: 'retryCount'
+} as const
+
+export type AssetEnrichmentLogScalarFieldEnum = (typeof AssetEnrichmentLogScalarFieldEnum)[keyof typeof AssetEnrichmentLogScalarFieldEnum]
+
+
+export const JobRunScalarFieldEnum = {
+  id: 'id',
+  jobName: 'jobName',
+  status: 'status',
+  startedAt: 'startedAt',
+  completedAt: 'completedAt',
+  itemsProcessed: 'itemsProcessed',
+  errorMessage: 'errorMessage',
+  metadata: 'metadata'
+} as const
+
+export type JobRunScalarFieldEnum = (typeof JobRunScalarFieldEnum)[keyof typeof JobRunScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullableJsonNullValueInput = {
+  DbNull: DbNull,
+  JsonNull: JsonNull
+} as const
+
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
 export const QueryMode = {
@@ -2557,6 +2839,15 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
 
@@ -2671,6 +2962,20 @@ export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaMod
 
 
 /**
+ * Reference to a field of type 'CorporateActionType'
+ */
+export type EnumCorporateActionTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CorporateActionType'>
+    
+
+
+/**
+ * Reference to a field of type 'CorporateActionType[]'
+ */
+export type ListEnumCorporateActionTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CorporateActionType[]'>
+    
+
+
+/**
  * Reference to a field of type 'AlertType'
  */
 export type EnumAlertTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AlertType'>
@@ -2681,6 +2986,48 @@ export type EnumAlertTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$Prisma
  * Reference to a field of type 'AlertType[]'
  */
 export type ListEnumAlertTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AlertType[]'>
+    
+
+
+/**
+ * Reference to a field of type 'EnrichmentStatus'
+ */
+export type EnumEnrichmentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EnrichmentStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'EnrichmentStatus[]'
+ */
+export type ListEnumEnrichmentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EnrichmentStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'JobStatus'
+ */
+export type EnumJobStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'JobStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'JobStatus[]'
+ */
+export type ListEnumJobStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'JobStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Json'
+ */
+export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+/**
+ * Reference to a field of type 'QueryMode'
+ */
+export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
     
 
 
@@ -2816,6 +3163,9 @@ export type GlobalOmitConfig = {
   portfolioSnapshot?: Prisma.PortfolioSnapshotOmit
   holdingSnapshot?: Prisma.HoldingSnapshotOmit
   priceAlert?: Prisma.PriceAlertOmit
+  priceCache?: Prisma.PriceCacheOmit
+  assetEnrichmentLog?: Prisma.AssetEnrichmentLogOmit
+  jobRun?: Prisma.JobRunOmit
 }
 
 /* Types for Logging */

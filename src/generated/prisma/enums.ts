@@ -30,6 +30,19 @@ export const TransactionType = {
 export type TransactionType = (typeof TransactionType)[keyof typeof TransactionType]
 
 
+export const CorporateActionType = {
+  SPLIT: 'SPLIT',
+  REVERSE_SPLIT: 'REVERSE_SPLIT',
+  DIVIDEND: 'DIVIDEND',
+  SPECIAL_DIVIDEND: 'SPECIAL_DIVIDEND',
+  SPINOFF: 'SPINOFF',
+  MERGER: 'MERGER',
+  SYMBOL_CHANGE: 'SYMBOL_CHANGE'
+} as const
+
+export type CorporateActionType = (typeof CorporateActionType)[keyof typeof CorporateActionType]
+
+
 export const AlertType = {
   PRICE_ABOVE: 'PRICE_ABOVE',
   PRICE_BELOW: 'PRICE_BELOW',
@@ -39,3 +52,22 @@ export const AlertType = {
 } as const
 
 export type AlertType = (typeof AlertType)[keyof typeof AlertType]
+
+
+export const EnrichmentStatus = {
+  PENDING: 'PENDING',
+  SUCCESS: 'SUCCESS',
+  FAILED: 'FAILED',
+  DELISTED: 'DELISTED'
+} as const
+
+export type EnrichmentStatus = (typeof EnrichmentStatus)[keyof typeof EnrichmentStatus]
+
+
+export const JobStatus = {
+  RUNNING: 'RUNNING',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED'
+} as const
+
+export type JobStatus = (typeof JobStatus)[keyof typeof JobStatus]

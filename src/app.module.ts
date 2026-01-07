@@ -13,6 +13,11 @@ import { TransactionsModule } from './transactions/transactions.module';
 import { WatchlistsModule } from './watchlists/watchlists.module';
 import { PortfolioModule } from './portfolio/portfolio.module';
 import { YahooFinanceModule } from './yahoo-finance/yahoo-finance.module';
+import { CacheModule } from './cache/cache.module';
+import { PriceCacheModule } from './price-cache/price-cache.module';
+import { SchedulerModule } from './scheduler/scheduler.module';
+import { CorporateActionsModule } from './corporate-actions/corporate-actions.module';
+import { AssetEnrichmentModule } from './asset-enrichment/asset-enrichment.module';
 import { auth } from './auth/auth';
 
 @Module({
@@ -38,6 +43,8 @@ import { auth } from './auth/auth';
         next();
       },
     }),
+    // Global caching with Redis
+    CacheModule,
     PrismaModule,
     UsersModule,
     BrokersModule,
@@ -47,6 +54,11 @@ import { auth } from './auth/auth';
     WatchlistsModule,
     PortfolioModule,
     YahooFinanceModule,
+    // Phase 4: Data Management & Caching
+    PriceCacheModule,
+    CorporateActionsModule,
+    AssetEnrichmentModule,
+    SchedulerModule,
   ],
   providers: [
     {

@@ -41,17 +41,31 @@ export type CorporateActionSumAggregateOutputType = {
 export type CorporateActionMinAggregateOutputType = {
   id: number | null
   assetId: number | null
-  type: string | null
+  type: $Enums.CorporateActionType | null
   value: runtime.Decimal | null
   executedAt: Date | null
+  recordDate: Date | null
+  exDate: Date | null
+  paymentDate: Date | null
+  description: string | null
+  isProcessed: boolean | null
+  processedAt: Date | null
+  createdAt: Date | null
 }
 
 export type CorporateActionMaxAggregateOutputType = {
   id: number | null
   assetId: number | null
-  type: string | null
+  type: $Enums.CorporateActionType | null
   value: runtime.Decimal | null
   executedAt: Date | null
+  recordDate: Date | null
+  exDate: Date | null
+  paymentDate: Date | null
+  description: string | null
+  isProcessed: boolean | null
+  processedAt: Date | null
+  createdAt: Date | null
 }
 
 export type CorporateActionCountAggregateOutputType = {
@@ -60,6 +74,13 @@ export type CorporateActionCountAggregateOutputType = {
   type: number
   value: number
   executedAt: number
+  recordDate: number
+  exDate: number
+  paymentDate: number
+  description: number
+  isProcessed: number
+  processedAt: number
+  createdAt: number
   _all: number
 }
 
@@ -82,6 +103,13 @@ export type CorporateActionMinAggregateInputType = {
   type?: true
   value?: true
   executedAt?: true
+  recordDate?: true
+  exDate?: true
+  paymentDate?: true
+  description?: true
+  isProcessed?: true
+  processedAt?: true
+  createdAt?: true
 }
 
 export type CorporateActionMaxAggregateInputType = {
@@ -90,6 +118,13 @@ export type CorporateActionMaxAggregateInputType = {
   type?: true
   value?: true
   executedAt?: true
+  recordDate?: true
+  exDate?: true
+  paymentDate?: true
+  description?: true
+  isProcessed?: true
+  processedAt?: true
+  createdAt?: true
 }
 
 export type CorporateActionCountAggregateInputType = {
@@ -98,6 +133,13 @@ export type CorporateActionCountAggregateInputType = {
   type?: true
   value?: true
   executedAt?: true
+  recordDate?: true
+  exDate?: true
+  paymentDate?: true
+  description?: true
+  isProcessed?: true
+  processedAt?: true
+  createdAt?: true
   _all?: true
 }
 
@@ -190,9 +232,16 @@ export type CorporateActionGroupByArgs<ExtArgs extends runtime.Types.Extensions.
 export type CorporateActionGroupByOutputType = {
   id: number
   assetId: number
-  type: string
+  type: $Enums.CorporateActionType
   value: runtime.Decimal
   executedAt: Date
+  recordDate: Date | null
+  exDate: Date | null
+  paymentDate: Date | null
+  description: string | null
+  isProcessed: boolean
+  processedAt: Date | null
+  createdAt: Date
   _count: CorporateActionCountAggregateOutputType | null
   _avg: CorporateActionAvgAggregateOutputType | null
   _sum: CorporateActionSumAggregateOutputType | null
@@ -221,9 +270,16 @@ export type CorporateActionWhereInput = {
   NOT?: Prisma.CorporateActionWhereInput | Prisma.CorporateActionWhereInput[]
   id?: Prisma.IntFilter<"CorporateAction"> | number
   assetId?: Prisma.IntFilter<"CorporateAction"> | number
-  type?: Prisma.StringFilter<"CorporateAction"> | string
+  type?: Prisma.EnumCorporateActionTypeFilter<"CorporateAction"> | $Enums.CorporateActionType
   value?: Prisma.DecimalFilter<"CorporateAction"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt?: Prisma.DateTimeFilter<"CorporateAction"> | Date | string
+  recordDate?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  exDate?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  paymentDate?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  description?: Prisma.StringNullableFilter<"CorporateAction"> | string | null
+  isProcessed?: Prisma.BoolFilter<"CorporateAction"> | boolean
+  processedAt?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  createdAt?: Prisma.DateTimeFilter<"CorporateAction"> | Date | string
   asset?: Prisma.XOR<Prisma.AssetScalarRelationFilter, Prisma.AssetWhereInput>
 }
 
@@ -233,6 +289,13 @@ export type CorporateActionOrderByWithRelationInput = {
   type?: Prisma.SortOrder
   value?: Prisma.SortOrder
   executedAt?: Prisma.SortOrder
+  recordDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  exDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  paymentDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  description?: Prisma.SortOrderInput | Prisma.SortOrder
+  isProcessed?: Prisma.SortOrder
+  processedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
   asset?: Prisma.AssetOrderByWithRelationInput
 }
 
@@ -242,9 +305,16 @@ export type CorporateActionWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.CorporateActionWhereInput[]
   NOT?: Prisma.CorporateActionWhereInput | Prisma.CorporateActionWhereInput[]
   assetId?: Prisma.IntFilter<"CorporateAction"> | number
-  type?: Prisma.StringFilter<"CorporateAction"> | string
+  type?: Prisma.EnumCorporateActionTypeFilter<"CorporateAction"> | $Enums.CorporateActionType
   value?: Prisma.DecimalFilter<"CorporateAction"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt?: Prisma.DateTimeFilter<"CorporateAction"> | Date | string
+  recordDate?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  exDate?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  paymentDate?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  description?: Prisma.StringNullableFilter<"CorporateAction"> | string | null
+  isProcessed?: Prisma.BoolFilter<"CorporateAction"> | boolean
+  processedAt?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  createdAt?: Prisma.DateTimeFilter<"CorporateAction"> | Date | string
   asset?: Prisma.XOR<Prisma.AssetScalarRelationFilter, Prisma.AssetWhereInput>
 }, "id">
 
@@ -254,6 +324,13 @@ export type CorporateActionOrderByWithAggregationInput = {
   type?: Prisma.SortOrder
   value?: Prisma.SortOrder
   executedAt?: Prisma.SortOrder
+  recordDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  exDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  paymentDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  description?: Prisma.SortOrderInput | Prisma.SortOrder
+  isProcessed?: Prisma.SortOrder
+  processedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
   _count?: Prisma.CorporateActionCountOrderByAggregateInput
   _avg?: Prisma.CorporateActionAvgOrderByAggregateInput
   _max?: Prisma.CorporateActionMaxOrderByAggregateInput
@@ -267,61 +344,117 @@ export type CorporateActionScalarWhereWithAggregatesInput = {
   NOT?: Prisma.CorporateActionScalarWhereWithAggregatesInput | Prisma.CorporateActionScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"CorporateAction"> | number
   assetId?: Prisma.IntWithAggregatesFilter<"CorporateAction"> | number
-  type?: Prisma.StringWithAggregatesFilter<"CorporateAction"> | string
+  type?: Prisma.EnumCorporateActionTypeWithAggregatesFilter<"CorporateAction"> | $Enums.CorporateActionType
   value?: Prisma.DecimalWithAggregatesFilter<"CorporateAction"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt?: Prisma.DateTimeWithAggregatesFilter<"CorporateAction"> | Date | string
+  recordDate?: Prisma.DateTimeNullableWithAggregatesFilter<"CorporateAction"> | Date | string | null
+  exDate?: Prisma.DateTimeNullableWithAggregatesFilter<"CorporateAction"> | Date | string | null
+  paymentDate?: Prisma.DateTimeNullableWithAggregatesFilter<"CorporateAction"> | Date | string | null
+  description?: Prisma.StringNullableWithAggregatesFilter<"CorporateAction"> | string | null
+  isProcessed?: Prisma.BoolWithAggregatesFilter<"CorporateAction"> | boolean
+  processedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"CorporateAction"> | Date | string | null
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"CorporateAction"> | Date | string
 }
 
 export type CorporateActionCreateInput = {
-  type: string
+  type: $Enums.CorporateActionType
   value: runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt: Date | string
+  recordDate?: Date | string | null
+  exDate?: Date | string | null
+  paymentDate?: Date | string | null
+  description?: string | null
+  isProcessed?: boolean
+  processedAt?: Date | string | null
+  createdAt?: Date | string
   asset: Prisma.AssetCreateNestedOneWithoutCorporateActionsInput
 }
 
 export type CorporateActionUncheckedCreateInput = {
   id?: number
   assetId: number
-  type: string
+  type: $Enums.CorporateActionType
   value: runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt: Date | string
+  recordDate?: Date | string | null
+  exDate?: Date | string | null
+  paymentDate?: Date | string | null
+  description?: string | null
+  isProcessed?: boolean
+  processedAt?: Date | string | null
+  createdAt?: Date | string
 }
 
 export type CorporateActionUpdateInput = {
-  type?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumCorporateActionTypeFieldUpdateOperationsInput | $Enums.CorporateActionType
   value?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  recordDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  exDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  paymentDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isProcessed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  processedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   asset?: Prisma.AssetUpdateOneRequiredWithoutCorporateActionsNestedInput
 }
 
 export type CorporateActionUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   assetId?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumCorporateActionTypeFieldUpdateOperationsInput | $Enums.CorporateActionType
   value?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  recordDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  exDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  paymentDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isProcessed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  processedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type CorporateActionCreateManyInput = {
   id?: number
   assetId: number
-  type: string
+  type: $Enums.CorporateActionType
   value: runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt: Date | string
+  recordDate?: Date | string | null
+  exDate?: Date | string | null
+  paymentDate?: Date | string | null
+  description?: string | null
+  isProcessed?: boolean
+  processedAt?: Date | string | null
+  createdAt?: Date | string
 }
 
 export type CorporateActionUpdateManyMutationInput = {
-  type?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumCorporateActionTypeFieldUpdateOperationsInput | $Enums.CorporateActionType
   value?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  recordDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  exDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  paymentDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isProcessed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  processedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type CorporateActionUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   assetId?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumCorporateActionTypeFieldUpdateOperationsInput | $Enums.CorporateActionType
   value?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  recordDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  exDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  paymentDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isProcessed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  processedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type CorporateActionListRelationFilter = {
@@ -340,6 +473,13 @@ export type CorporateActionCountOrderByAggregateInput = {
   type?: Prisma.SortOrder
   value?: Prisma.SortOrder
   executedAt?: Prisma.SortOrder
+  recordDate?: Prisma.SortOrder
+  exDate?: Prisma.SortOrder
+  paymentDate?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  isProcessed?: Prisma.SortOrder
+  processedAt?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
 }
 
 export type CorporateActionAvgOrderByAggregateInput = {
@@ -354,6 +494,13 @@ export type CorporateActionMaxOrderByAggregateInput = {
   type?: Prisma.SortOrder
   value?: Prisma.SortOrder
   executedAt?: Prisma.SortOrder
+  recordDate?: Prisma.SortOrder
+  exDate?: Prisma.SortOrder
+  paymentDate?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  isProcessed?: Prisma.SortOrder
+  processedAt?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
 }
 
 export type CorporateActionMinOrderByAggregateInput = {
@@ -362,6 +509,13 @@ export type CorporateActionMinOrderByAggregateInput = {
   type?: Prisma.SortOrder
   value?: Prisma.SortOrder
   executedAt?: Prisma.SortOrder
+  recordDate?: Prisma.SortOrder
+  exDate?: Prisma.SortOrder
+  paymentDate?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  isProcessed?: Prisma.SortOrder
+  processedAt?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
 }
 
 export type CorporateActionSumOrderByAggregateInput = {
@@ -412,17 +566,35 @@ export type CorporateActionUncheckedUpdateManyWithoutAssetNestedInput = {
   deleteMany?: Prisma.CorporateActionScalarWhereInput | Prisma.CorporateActionScalarWhereInput[]
 }
 
+export type EnumCorporateActionTypeFieldUpdateOperationsInput = {
+  set?: $Enums.CorporateActionType
+}
+
 export type CorporateActionCreateWithoutAssetInput = {
-  type: string
+  type: $Enums.CorporateActionType
   value: runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt: Date | string
+  recordDate?: Date | string | null
+  exDate?: Date | string | null
+  paymentDate?: Date | string | null
+  description?: string | null
+  isProcessed?: boolean
+  processedAt?: Date | string | null
+  createdAt?: Date | string
 }
 
 export type CorporateActionUncheckedCreateWithoutAssetInput = {
   id?: number
-  type: string
+  type: $Enums.CorporateActionType
   value: runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt: Date | string
+  recordDate?: Date | string | null
+  exDate?: Date | string | null
+  paymentDate?: Date | string | null
+  description?: string | null
+  isProcessed?: boolean
+  processedAt?: Date | string | null
+  createdAt?: Date | string
 }
 
 export type CorporateActionCreateOrConnectWithoutAssetInput = {
@@ -457,36 +629,71 @@ export type CorporateActionScalarWhereInput = {
   NOT?: Prisma.CorporateActionScalarWhereInput | Prisma.CorporateActionScalarWhereInput[]
   id?: Prisma.IntFilter<"CorporateAction"> | number
   assetId?: Prisma.IntFilter<"CorporateAction"> | number
-  type?: Prisma.StringFilter<"CorporateAction"> | string
+  type?: Prisma.EnumCorporateActionTypeFilter<"CorporateAction"> | $Enums.CorporateActionType
   value?: Prisma.DecimalFilter<"CorporateAction"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt?: Prisma.DateTimeFilter<"CorporateAction"> | Date | string
+  recordDate?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  exDate?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  paymentDate?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  description?: Prisma.StringNullableFilter<"CorporateAction"> | string | null
+  isProcessed?: Prisma.BoolFilter<"CorporateAction"> | boolean
+  processedAt?: Prisma.DateTimeNullableFilter<"CorporateAction"> | Date | string | null
+  createdAt?: Prisma.DateTimeFilter<"CorporateAction"> | Date | string
 }
 
 export type CorporateActionCreateManyAssetInput = {
   id?: number
-  type: string
+  type: $Enums.CorporateActionType
   value: runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt: Date | string
+  recordDate?: Date | string | null
+  exDate?: Date | string | null
+  paymentDate?: Date | string | null
+  description?: string | null
+  isProcessed?: boolean
+  processedAt?: Date | string | null
+  createdAt?: Date | string
 }
 
 export type CorporateActionUpdateWithoutAssetInput = {
-  type?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumCorporateActionTypeFieldUpdateOperationsInput | $Enums.CorporateActionType
   value?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  recordDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  exDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  paymentDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isProcessed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  processedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type CorporateActionUncheckedUpdateWithoutAssetInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumCorporateActionTypeFieldUpdateOperationsInput | $Enums.CorporateActionType
   value?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  recordDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  exDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  paymentDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isProcessed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  processedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type CorporateActionUncheckedUpdateManyWithoutAssetInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumCorporateActionTypeFieldUpdateOperationsInput | $Enums.CorporateActionType
   value?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   executedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  recordDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  exDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  paymentDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isProcessed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  processedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -497,6 +704,13 @@ export type CorporateActionSelect<ExtArgs extends runtime.Types.Extensions.Inter
   type?: boolean
   value?: boolean
   executedAt?: boolean
+  recordDate?: boolean
+  exDate?: boolean
+  paymentDate?: boolean
+  description?: boolean
+  isProcessed?: boolean
+  processedAt?: boolean
+  createdAt?: boolean
   asset?: boolean | Prisma.AssetDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["corporateAction"]>
 
@@ -506,6 +720,13 @@ export type CorporateActionSelectCreateManyAndReturn<ExtArgs extends runtime.Typ
   type?: boolean
   value?: boolean
   executedAt?: boolean
+  recordDate?: boolean
+  exDate?: boolean
+  paymentDate?: boolean
+  description?: boolean
+  isProcessed?: boolean
+  processedAt?: boolean
+  createdAt?: boolean
   asset?: boolean | Prisma.AssetDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["corporateAction"]>
 
@@ -515,6 +736,13 @@ export type CorporateActionSelectUpdateManyAndReturn<ExtArgs extends runtime.Typ
   type?: boolean
   value?: boolean
   executedAt?: boolean
+  recordDate?: boolean
+  exDate?: boolean
+  paymentDate?: boolean
+  description?: boolean
+  isProcessed?: boolean
+  processedAt?: boolean
+  createdAt?: boolean
   asset?: boolean | Prisma.AssetDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["corporateAction"]>
 
@@ -524,9 +752,16 @@ export type CorporateActionSelectScalar = {
   type?: boolean
   value?: boolean
   executedAt?: boolean
+  recordDate?: boolean
+  exDate?: boolean
+  paymentDate?: boolean
+  description?: boolean
+  isProcessed?: boolean
+  processedAt?: boolean
+  createdAt?: boolean
 }
 
-export type CorporateActionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "assetId" | "type" | "value" | "executedAt", ExtArgs["result"]["corporateAction"]>
+export type CorporateActionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "assetId" | "type" | "value" | "executedAt" | "recordDate" | "exDate" | "paymentDate" | "description" | "isProcessed" | "processedAt" | "createdAt", ExtArgs["result"]["corporateAction"]>
 export type CorporateActionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   asset?: boolean | Prisma.AssetDefaultArgs<ExtArgs>
 }
@@ -545,9 +780,16 @@ export type $CorporateActionPayload<ExtArgs extends runtime.Types.Extensions.Int
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     assetId: number
-    type: string
+    type: $Enums.CorporateActionType
     value: runtime.Decimal
     executedAt: Date
+    recordDate: Date | null
+    exDate: Date | null
+    paymentDate: Date | null
+    description: string | null
+    isProcessed: boolean
+    processedAt: Date | null
+    createdAt: Date
   }, ExtArgs["result"]["corporateAction"]>
   composites: {}
 }
@@ -974,9 +1216,16 @@ export interface Prisma__CorporateActionClient<T, Null = never, ExtArgs extends 
 export interface CorporateActionFieldRefs {
   readonly id: Prisma.FieldRef<"CorporateAction", 'Int'>
   readonly assetId: Prisma.FieldRef<"CorporateAction", 'Int'>
-  readonly type: Prisma.FieldRef<"CorporateAction", 'String'>
+  readonly type: Prisma.FieldRef<"CorporateAction", 'CorporateActionType'>
   readonly value: Prisma.FieldRef<"CorporateAction", 'Decimal'>
   readonly executedAt: Prisma.FieldRef<"CorporateAction", 'DateTime'>
+  readonly recordDate: Prisma.FieldRef<"CorporateAction", 'DateTime'>
+  readonly exDate: Prisma.FieldRef<"CorporateAction", 'DateTime'>
+  readonly paymentDate: Prisma.FieldRef<"CorporateAction", 'DateTime'>
+  readonly description: Prisma.FieldRef<"CorporateAction", 'String'>
+  readonly isProcessed: Prisma.FieldRef<"CorporateAction", 'Boolean'>
+  readonly processedAt: Prisma.FieldRef<"CorporateAction", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"CorporateAction", 'DateTime'>
 }
     
 

@@ -600,11 +600,12 @@ GET /api/v1/portfolio/summary
 
 ---
 
-### Phase 4: Data Management & Caching
+### Phase 4: Data Management & Caching ✅ COMPLETE
 **Estimated Duration**: 1-2 weeks
 **Priority**: 🟠 High
+**Status**: ✅ Completed (January 2026)
 
-#### 4.1 Historical Price Caching
+#### 4.1 Historical Price Caching ✅
 
 **Schema Addition**:
 ```prisma
@@ -619,7 +620,7 @@ model PriceCache {
   adjClose  Decimal  @map("adj_close") @db.Decimal(18, 4)
   volume    BigInt
   createdAt DateTime @default(now()) @map("created_at")
-  
+
   @@unique([symbol, date])
   @@index([symbol])
   @@map("price_cache")
@@ -628,50 +629,66 @@ model PriceCache {
 
 **Features**:
 ```
-□ Cache historical prices on first request
-□ Incremental updates for new dates
-□ Fallback to Yahoo on cache miss
-□ Cache invalidation strategy
-□ Storage optimization (older data compression)
+✅ Cache historical prices on first request
+✅ Incremental updates for new dates
+✅ Fallback to Yahoo on cache miss
+✅ Cache invalidation strategy
+□ Storage optimization (older data compression) - future enhancement
 ```
 
-#### 4.2 Asset Data Enrichment
+#### 4.2 Asset Data Enrichment ✅
 
 ```typescript
 // Background job to enrich assets
-□ Auto-fetch sector/industry from Yahoo
-□ Update asset names and metadata
-□ Sync exchange information
-□ Handle symbol changes
-□ Track delisted securities
+✅ Auto-fetch sector/industry from Yahoo
+✅ Update asset names and metadata
+✅ Sync exchange information
+✅ Handle symbol changes
+✅ Track delisted securities
 ```
 
-#### 4.3 Corporate Actions Processing
+#### 4.3 Corporate Actions Processing ✅
 
 ```typescript
 // New Endpoints
-GET /api/v1/assets/:id/corporate-actions
+GET /api/v1/corporate-actions
+GET /api/v1/corporate-actions/:id
 GET /api/v1/corporate-actions/upcoming
+GET /api/v1/corporate-actions/unprocessed
+GET /api/v1/corporate-actions/asset/:assetId
+POST /api/v1/corporate-actions
+POST /api/v1/corporate-actions/:id/process
 
-// Types to handle:
-□ Stock splits (adjust historical quantities)
-□ Reverse splits
-□ Dividends (auto-create transactions)
-□ Spin-offs
-□ Mergers/Acquisitions
-□ Symbol changes
+// Types handled:
+✅ Stock splits (adjust historical quantities)
+✅ Reverse splits
+✅ Dividends (auto-create transactions)
+□ Spin-offs - manual handling required
+□ Mergers/Acquisitions - manual handling required
+✅ Symbol changes
 ```
 
-#### 4.4 Scheduled Jobs System
+#### 4.4 Scheduled Jobs System ✅
 
 ```typescript
-// Using @nestjs/schedule
-□ Daily portfolio snapshot (end of day)
-□ Price cache update (after market close)
-□ Dividend detection and recording
-□ Corporate action processing
-□ Asset data refresh
-□ Alert checking
+// Using @nestjs/schedule - All jobs run at US Eastern timezone
+✅ Daily portfolio snapshot (6:00 PM ET Mon-Fri)
+✅ Price cache update (6:30 PM ET Mon-Fri)
+✅ Dividend detection and recording (7:00 PM ET Mon-Fri)
+✅ Asset enrichment (8:00 PM ET Mon-Fri)
+✅ Corporate action processing (9:00 PM ET Mon-Fri)
+□ Alert checking - Phase 5 feature
+```
+
+#### 4.5 Redis Caching for Real-time Data ✅
+
+```typescript
+// Redis caching layer added to YahooFinanceService
+✅ getQuote() - 30 second TTL
+✅ getQuotes() - 30 second TTL (per symbol)
+✅ getRecommendations() - 1 hour TTL
+✅ getTrendingSymbols() - 5 minute TTL
+✅ getInsights() - 30 minute TTL
 ```
 
 ---
@@ -1150,6 +1167,38 @@ npm install class-validator class-transformer
   - `GET /api/v1/yahoo-finance/summary/:symbol/calendar` - Calendar events
   - `GET /api/v1/yahoo-finance/summary/:symbol/sec-filings` - SEC filings
 
+- **Phase 4 Data Management & Caching** (January 2026):
+  - Added PriceCache model for historical price caching (symbol-based)
+  - Added AssetEnrichmentLog model to track asset enrichment status
+  - Added JobRun model to track scheduled job executions
+  - Enhanced CorporateAction model with processing fields
+  - Implemented Redis caching layer for YahooFinanceService (quotes, recommendations, trending, insights)
+  - Created 5 scheduled background jobs (all run Mon-Fri US Eastern time):
+    - Portfolio Snapshot (6:00 PM ET)
+    - Price Cache Update (6:30 PM ET)
+    - Dividend Detection (7:00 PM ET)
+    - Asset Enrichment (8:00 PM ET)
+    - Corporate Action Processing (9:00 PM ET)
+  - New modules created: CacheModule, PriceCacheModule, SchedulerModule, CorporateActionsModule, AssetEnrichmentModule
+
+- **New Price Cache Endpoints (Phase 4)**:
+  - `GET /api/v1/price-cache/stats` - Cache statistics
+  - `GET /api/v1/price-cache/symbols` - Get all cached symbols
+  - `GET /api/v1/price-cache/:symbol` - Get cached historical prices
+  - `GET /api/v1/price-cache/:symbol/info` - Get cache info for a symbol
+  - `POST /api/v1/price-cache/:symbol/refresh` - Refresh cache for a symbol
+  - `POST /api/v1/price-cache/bulk-refresh` - Refresh cache for multiple symbols
+  - `DELETE /api/v1/price-cache/:symbol` - Clear cache for a symbol
+
+- **New Corporate Actions Endpoints (Phase 4)**:
+  - `GET /api/v1/corporate-actions` - Get all corporate actions
+  - `GET /api/v1/corporate-actions/:id` - Get a corporate action by ID
+  - `GET /api/v1/corporate-actions/upcoming` - Get upcoming corporate actions (30 days)
+  - `GET /api/v1/corporate-actions/unprocessed` - Get unprocessed corporate actions
+  - `GET /api/v1/corporate-actions/asset/:assetId` - Get corporate actions for an asset
+  - `POST /api/v1/corporate-actions` - Create a new corporate action
+  - `POST /api/v1/corporate-actions/:id/process` - Process a corporate action
+
 ---
 
 ## 📝 Notes
@@ -1179,4 +1228,4 @@ For NextJS + Expo:
 ---
 
 *Last Updated: January 7, 2026*
-*Version: 1.4 - Phase 3 Advanced Portfolio Analytics Complete*
+*Version: 1.5 - Phase 4 Data Management & Caching Complete*

@@ -157,3 +157,18 @@ export type HoldingSnapshot = Prisma.HoldingSnapshotModel
  * 
  */
 export type PriceAlert = Prisma.PriceAlertModel
+/**
+ * Model PriceCache
+ * 
+ */
+export type PriceCache = Prisma.PriceCacheModel
+/**
+ * Model AssetEnrichmentLog
+ * 
+ */
+export type AssetEnrichmentLog = Prisma.AssetEnrichmentLogModel
+/**
+ * Model JobRun
+ * 
+ */
+export type JobRun = Prisma.JobRunModel
