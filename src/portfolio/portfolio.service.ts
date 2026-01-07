@@ -59,7 +59,7 @@ export class PortfolioService {
     private yahooFinance: YahooFinanceService,
   ) {}
 
-  async getPortfolioSummary(userId: number): Promise<PortfolioSummary> {
+  async getPortfolioSummary(userId: string): Promise<PortfolioSummary> {
     // Get all transactions for user
     const transactions = await this.prisma.transaction.findMany({
       where: {
@@ -230,7 +230,7 @@ export class PortfolioService {
   }
 
   async getPerformanceMetrics(
-    userId: number,
+    userId: string,
     startDate?: Date,
     endDate?: Date,
   ): Promise<PerformanceMetrics> {
@@ -333,7 +333,7 @@ export class PortfolioService {
     };
   }
 
-  async getAllocationByType(userId: number) {
+  async getAllocationByType(userId: string) {
     const summary = await this.getPortfolioSummary(userId);
 
     const allocation = summary.holdings.reduce(
@@ -357,24 +357,48 @@ export class PortfolioService {
     return allocation;
   }
 
-  async getAllocationBySector(userId: number) {
-    const transactions = await this.prisma.transaction.findMany({
-      where: {
-        account: {
-          userBroker: { userId },
-        },
-        type: { in: [TransactionType.BUY, TransactionType.SELL] },
-      },
-      include: {
-        asset: {
-          include: { sector: true },
-        },
-      },
+  async getAllocationBySector(userId: string) {
+    const summary = await this.getPortfolioSummary(userId);
+
+    // Get sector info for each holding
+    const assetIds = summary.holdings.map((h) => h.assetId);
+    const assets = await this.prisma.asset.findMany({
+      where: { id: { in: assetIds } },
+      include: { sector: true },
     });
 
-    // Similar logic to portfolio summary but group by sector
-    // ... implementation similar to getPortfolioSummary but grouped by sector
+    const assetSectorMap = new Map(
+      assets.map((a) => [a.id, a.sector?.name || 'Uncategorized']),
+    );
 
-    return {}; // Placeholder - implement sector allocation logic
+    // Group holdings by sector
+    const sectorAllocation: Record<
+      string,
+      { value: number; percentage: number; holdings: number }
+    > = {};
+
+    for (const holding of summary.holdings) {
+      const sectorName = assetSectorMap.get(holding.assetId) || 'Uncategorized';
+
+      if (!sectorAllocation[sectorName]) {
+        sectorAllocation[sectorName] = { value: 0, percentage: 0, holdings: 0 };
+      }
+
+      sectorAllocation[sectorName].value += holding.currentValue || 0;
+      sectorAllocation[sectorName].holdings += 1;
+    }
+
+    // Calculate percentages
+    for (const sector in sectorAllocation) {
+      sectorAllocation[sector].percentage =
+        summary.totalValue > 0
+          ? (sectorAllocation[sector].value / summary.totalValue) * 100
+          : 0;
+    }
+
+    return {
+      totalValue: summary.totalValue,
+      sectors: sectorAllocation,
+    };
   }
 }
