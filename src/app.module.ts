@@ -18,6 +18,8 @@ import { PriceCacheModule } from './price-cache/price-cache.module';
 import { SchedulerModule } from './scheduler/scheduler.module';
 import { CorporateActionsModule } from './corporate-actions/corporate-actions.module';
 import { AssetEnrichmentModule } from './asset-enrichment/asset-enrichment.module';
+import { AlertsModule } from './alerts/alerts.module';
+import { RealtimeModule } from './realtime/realtime.module';
 import { auth } from './auth/auth';
 
 @Module({
@@ -59,6 +61,9 @@ import { auth } from './auth/auth';
     CorporateActionsModule,
     AssetEnrichmentModule,
     SchedulerModule,
+    // Phase 5: Real-time Features
+    AlertsModule,
+    RealtimeModule,
   ],
   providers: [
     {

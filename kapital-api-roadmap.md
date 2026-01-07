@@ -693,53 +693,48 @@ POST /api/v1/corporate-actions/:id/process
 
 ---
 
-### Phase 5: Real-time Features
+### Phase 5: Real-time Features ✅ COMPLETE
 **Estimated Duration**: 1-2 weeks
 **Priority**: 🟡 Medium
+**Status**: ✅ Completed (January 2026)
 
-#### 5.1 WebSocket Gateway
+#### 5.1 WebSocket Gateway ✅
 
 ```typescript
-// WebSocket Events
-@WebSocketGateway()
-export class MarketGateway {
-  // Client subscribes to symbols
-  @SubscribeMessage('subscribe')
-  handleSubscribe(symbols: string[])
-  
-  // Server pushes updates
-  emitQuoteUpdate(symbol: string, quote: Quote)
-  emitPortfolioUpdate(userId: number, summary: PortfolioSummary)
-  emitAlert(userId: number, alert: Alert)
-}
+// WebSocket Events - Implemented in RealtimeGateway
+✅ subscribe:quotes - Subscribe to real-time quotes
+✅ unsubscribe:quotes - Unsubscribe from quotes
+✅ subscribe:portfolio - Subscribe to portfolio updates
+✅ unsubscribe:portfolio - Unsubscribe from portfolio
+✅ quote:update - Server pushes quote updates
+✅ portfolio:update - Server pushes portfolio updates
+✅ alert:triggered - Server pushes alert notifications
 ```
 
 **Features**:
 ```
-□ Real-time quote streaming
-□ Portfolio value updates
-□ Price alert notifications
-□ Connection management
-□ Subscription management
-□ Heartbeat/reconnection handling
+✅ Real-time quote streaming (10s polling interval)
+✅ Portfolio value updates
+✅ Price alert notifications (via EventEmitter)
+✅ Connection management (session-based auth)
+✅ Subscription management (room-based)
+□ Heartbeat/reconnection handling - handled by Socket.IO
 ```
 
-#### 5.2 Price Alerts System
+#### 5.2 Price Alerts System ✅
 
-**Schema Addition**:
+**Schema** (already in schema.prisma):
 ```prisma
 model PriceAlert {
-  id          Int         @id @default(autoincrement())
-  userId      Int         @map("user_id")
-  assetId     Int         @map("asset_id")
-  type        AlertType   // ABOVE, BELOW, PERCENT_CHANGE
-  targetValue Decimal     @map("target_value") @db.Decimal(18, 4)
-  isActive    Boolean     @default(true) @map("is_active")
-  triggeredAt DateTime?   @map("triggered_at")
-  createdAt   DateTime    @default(now()) @map("created_at")
-  user        User        @relation(fields: [userId], references: [id])
-  asset       Asset       @relation(fields: [assetId], references: [id])
-  
+  id          Int       @id @default(autoincrement())
+  userId      String    @map("user_id")
+  assetId     Int       @map("asset_id")
+  type        AlertType
+  targetValue Decimal   @map("target_value") @db.Decimal(18, 4)
+  isActive    Boolean   @default(true) @map("is_active")
+  triggeredAt DateTime? @map("triggered_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+
   @@map("price_alerts")
 }
 
@@ -753,12 +748,22 @@ enum AlertType {
 ```
 
 ```typescript
-// New Endpoints
-POST /api/v1/alerts
-GET /api/v1/alerts
-GET /api/v1/alerts/:id
-DELETE /api/v1/alerts/:id
-PATCH /api/v1/alerts/:id/toggle
+// Implemented Endpoints
+✅ POST /api/v1/alerts - Create new alert
+✅ GET /api/v1/alerts - List user's alerts (paginated)
+✅ GET /api/v1/alerts/:id - Get alert by ID
+✅ DELETE /api/v1/alerts/:id - Delete alert
+✅ PATCH /api/v1/alerts/:id/toggle - Toggle active state
+```
+
+#### 5.3 Alert Check Job ✅
+
+```
+✅ Runs every 2 minutes during market hours (9:30 AM - 4:00 PM ET, Mon-Fri)
+✅ Batch fetches prices for assets with active alerts
+✅ Checks all alert types (price above/below, percent change, volume spike)
+✅ Marks triggered alerts and emits events for WebSocket notifications
+✅ Job tracking via JobRun table
 ```
 
 ---
@@ -1199,6 +1204,31 @@ npm install class-validator class-transformer
   - `POST /api/v1/corporate-actions` - Create a new corporate action
   - `POST /api/v1/corporate-actions/:id/process` - Process a corporate action
 
+- **Phase 5 Real-time Features** (January 2026):
+  - Installed WebSocket dependencies (@nestjs/websockets, @nestjs/platform-socket.io, socket.io, @nestjs/event-emitter)
+  - Created AlertsModule with full CRUD for price alerts
+  - Implemented AlertCheckJob running every 2 minutes during market hours (9:30 AM - 4:00 PM ET)
+  - Created RealtimeModule with WebSocket gateway for real-time updates
+  - Session-based WebSocket authentication
+  - Event-driven alert notifications via EventEmitter2
+  - New modules created: AlertsModule, RealtimeModule
+
+- **New Alerts Endpoints (Phase 5)**:
+  - `POST /api/v1/alerts` - Create new price alert
+  - `GET /api/v1/alerts` - List user's alerts (paginated, filterable)
+  - `GET /api/v1/alerts/:id` - Get alert by ID
+  - `DELETE /api/v1/alerts/:id` - Delete alert
+  - `PATCH /api/v1/alerts/:id/toggle` - Toggle alert active state
+
+- **New WebSocket Events (Phase 5)**:
+  - `subscribe:quotes` - Subscribe to real-time quote updates
+  - `unsubscribe:quotes` - Unsubscribe from quote updates
+  - `subscribe:portfolio` - Subscribe to portfolio value updates
+  - `unsubscribe:portfolio` - Unsubscribe from portfolio updates
+  - `quote:update` - Receive real-time quote updates (10s interval)
+  - `portfolio:update` - Receive portfolio value updates
+  - `alert:triggered` - Receive alert trigger notifications
+
 ---
 
 ## 📝 Notes
@@ -1228,4 +1258,4 @@ For NextJS + Expo:
 ---
 
 *Last Updated: January 7, 2026*
-*Version: 1.5 - Phase 4 Data Management & Caching Complete*
+*Version: 1.6 - Phase 5 Real-time Features Complete*
