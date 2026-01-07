@@ -114,6 +114,56 @@ export interface HistoricalDataPoint {
   adjClose?: number;
 }
 
+export type FundamentalsModule = 'financials' | 'balance-sheet' | 'cash-flow' | 'all';
+export type FundamentalsType = 'quarterly' | 'annual' | 'trailing';
+
+export interface FundamentalsTimeSeriesOptions {
+  period1: Date;
+  period2?: Date;
+  type?: FundamentalsType;
+  module: FundamentalsModule;
+}
+
+export interface FundamentalsResult {
+  date: Date;
+  periodType: '3M' | '12M';
+  [key: string]: any;
+}
+
+export interface OptionsContract {
+  contractSymbol: string;
+  strike: number;
+  currency?: string;
+  lastPrice: number;
+  change: number;
+  percentChange?: number;
+  volume?: number;
+  openInterest?: number;
+  bid?: number;
+  ask?: number;
+  contractSize: string;
+  expiration: Date;
+  lastTradeDate: Date;
+  impliedVolatility: number;
+  inTheMoney: boolean;
+}
+
+export interface OptionsChain {
+  expirationDate: Date;
+  hasMiniOptions: boolean;
+  calls: OptionsContract[];
+  puts: OptionsContract[];
+}
+
+export interface OptionsResult {
+  underlyingSymbol: string;
+  expirationDates: Date[];
+  strikes: number[];
+  hasMiniOptions: boolean;
+  quote: QuoteResult;
+  options: OptionsChain[];
+}
+
 export interface SearchResult {
   symbol: string;
   shortname?: string;
@@ -494,6 +544,123 @@ export class YahooFinanceService implements OnModuleInit {
       return quotes as QuoteResult[];
     } catch (error) {
       this.logger.error(`Failed to run screener ${predefined}:`, error);
+      return [];
+    }
+  }
+
+  async getFundamentalsTimeSeries(
+    symbol: string,
+    options: FundamentalsTimeSeriesOptions,
+  ): Promise<FundamentalsResult[]> {
+    try {
+      const result = await this.withRetry(
+        () =>
+          this.yahooFinance.fundamentalsTimeSeries(symbol, {
+            period1: options.period1,
+            period2: options.period2 || new Date(),
+            type: options.type || 'annual',
+            module: options.module,
+          }),
+        `fundamentalsTimeSeries(${symbol})`,
+      );
+
+      return (result || []).map((item: any) => ({
+        date: item.date,
+        periodType: item.periodType,
+        ...item,
+      }));
+    } catch (error) {
+      this.logger.error(
+        `Failed to get fundamentals time series for ${symbol}:`,
+        error,
+      );
+      return [];
+    }
+  }
+
+  async getOptions(
+    symbol: string,
+    date?: Date,
+  ): Promise<OptionsResult | null> {
+    try {
+      const queryOptions: any = {
+        formatted: false,
+        lang: 'en-US',
+        region: 'US',
+      };
+
+      if (date) {
+        queryOptions.date = date;
+      }
+
+      const result = await this.withRetry(
+        () => this.yahooFinance.options(symbol, queryOptions),
+        `options(${symbol})`,
+      );
+
+      return {
+        underlyingSymbol: result.underlyingSymbol,
+        expirationDates: result.expirationDates || [],
+        strikes: result.strikes || [],
+        hasMiniOptions: result.hasMiniOptions || false,
+        quote: result.quote as QuoteResult,
+        options: (result.options || []).map((opt: any) => ({
+          expirationDate: opt.expirationDate,
+          hasMiniOptions: opt.hasMiniOptions || false,
+          calls: (opt.calls || []).map((c: any) => ({
+            contractSymbol: c.contractSymbol,
+            strike: c.strike,
+            currency: c.currency,
+            lastPrice: c.lastPrice,
+            change: c.change,
+            percentChange: c.percentChange,
+            volume: c.volume,
+            openInterest: c.openInterest,
+            bid: c.bid,
+            ask: c.ask,
+            contractSize: c.contractSize,
+            expiration: c.expiration,
+            lastTradeDate: c.lastTradeDate,
+            impliedVolatility: c.impliedVolatility,
+            inTheMoney: c.inTheMoney,
+          })),
+          puts: (opt.puts || []).map((p: any) => ({
+            contractSymbol: p.contractSymbol,
+            strike: p.strike,
+            currency: p.currency,
+            lastPrice: p.lastPrice,
+            change: p.change,
+            percentChange: p.percentChange,
+            volume: p.volume,
+            openInterest: p.openInterest,
+            bid: p.bid,
+            ask: p.ask,
+            contractSize: p.contractSize,
+            expiration: p.expiration,
+            lastTradeDate: p.lastTradeDate,
+            impliedVolatility: p.impliedVolatility,
+            inTheMoney: p.inTheMoney,
+          })),
+        })),
+      };
+    } catch (error) {
+      this.logger.error(`Failed to get options for ${symbol}:`, error);
+      return null;
+    }
+  }
+
+  async getOptionsExpirations(symbol: string): Promise<Date[]> {
+    try {
+      const result = await this.withRetry(
+        () => this.yahooFinance.options(symbol, { formatted: false }),
+        `options-expirations(${symbol})`,
+      );
+      return result.expirationDates || [];
+    } catch (error) {
+      this.logger.error(
+        `Failed to get options expirations for ${symbol}:`,
+        error,
+      );
       return [];
     }
   }

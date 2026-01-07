@@ -9,7 +9,12 @@ import {
 } from '@nestjs/swagger';
 import { AllowAnonymous } from '@thallesp/nestjs-better-auth';
 import { YahooFinanceService } from './yahoo-finance.service';
-import type { ChartInterval, ChartRange } from './yahoo-finance.service';
+import type {
+  ChartInterval,
+  ChartRange,
+  FundamentalsModule,
+  FundamentalsType,
+} from './yahoo-finance.service';
 
 @ApiTags('yahoo-finance')
 @Controller('yahoo-finance')
@@ -84,6 +89,80 @@ export class YahooFinanceController {
       ? modules.split(',').map((m) => m.trim())
       : ['price', 'summaryDetail'];
     return this.yahooFinanceService.getQuoteSummary(symbol, moduleList);
+  }
+
+  @Get('summary/:symbol/profile')
+  @ApiOperation({ summary: 'Get company profile (assetProfile + summaryProfile)' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiResponse({ status: 200, description: 'Company profile including info, officers, and description' })
+  getProfile(@Param('symbol') symbol: string) {
+    return this.yahooFinanceService.getQuoteSummary(symbol, [
+      'assetProfile',
+      'summaryProfile',
+    ]);
+  }
+
+  @Get('summary/:symbol/financials')
+  @ApiOperation({ summary: 'Get financial metrics (financialData + defaultKeyStatistics)' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiResponse({ status: 200, description: 'Financial health metrics and key statistics' })
+  getFinancials(@Param('symbol') symbol: string) {
+    return this.yahooFinanceService.getQuoteSummary(symbol, [
+      'financialData',
+      'defaultKeyStatistics',
+    ]);
+  }
+
+  @Get('summary/:symbol/earnings')
+  @ApiOperation({ summary: 'Get earnings data (earnings + earningsHistory + earningsTrend)' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiResponse({ status: 200, description: 'Quarterly earnings, historical surprises, and analyst estimates' })
+  getEarnings(@Param('symbol') symbol: string) {
+    return this.yahooFinanceService.getQuoteSummary(symbol, [
+      'earnings',
+      'earningsHistory',
+      'earningsTrend',
+    ]);
+  }
+
+  @Get('summary/:symbol/holders')
+  @ApiOperation({ summary: 'Get institutional and insider holders data' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiResponse({ status: 200, description: 'Institutional ownership, fund ownership, and insider holdings' })
+  getHolders(@Param('symbol') symbol: string) {
+    return this.yahooFinanceService.getQuoteSummary(symbol, [
+      'institutionOwnership',
+      'fundOwnership',
+      'insiderHolders',
+      'majorHoldersBreakdown',
+    ]);
+  }
+
+  @Get('summary/:symbol/analysis')
+  @ApiOperation({ summary: 'Get analyst recommendations and rating changes' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiResponse({ status: 200, description: 'Recommendation trends and upgrade/downgrade history' })
+  getAnalysis(@Param('symbol') symbol: string) {
+    return this.yahooFinanceService.getQuoteSummary(symbol, [
+      'recommendationTrend',
+      'upgradeDowngradeHistory',
+    ]);
+  }
+
+  @Get('summary/:symbol/calendar')
+  @ApiOperation({ summary: 'Get calendar events (earnings dates, dividends, splits)' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiResponse({ status: 200, description: 'Upcoming earnings dates, dividend dates, and split dates' })
+  getCalendar(@Param('symbol') symbol: string) {
+    return this.yahooFinanceService.getQuoteSummary(symbol, ['calendarEvents']);
+  }
+
+  @Get('summary/:symbol/sec-filings')
+  @ApiOperation({ summary: 'Get SEC filings list' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiResponse({ status: 200, description: 'List of SEC filings' })
+  getSecFilings(@Param('symbol') symbol: string) {
+    return this.yahooFinanceService.getQuoteSummary(symbol, ['secFilings']);
   }
 
   @Get('chart/:symbol')
@@ -213,5 +292,251 @@ export class YahooFinanceController {
     return this.yahooFinanceService.getScreener(preset, {
       count: count || 25,
     });
+  }
+
+  @Get('fundamentals/:symbol')
+  @ApiOperation({ summary: 'Get historical fundamental financial data (income statement, balance sheet, cash flow)' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiQuery({
+    name: 'module',
+    required: true,
+    enum: ['financials', 'balance-sheet', 'cash-flow', 'all'],
+    description: 'Type of financial statement to retrieve',
+  })
+  @ApiQuery({
+    name: 'type',
+    required: false,
+    enum: ['quarterly', 'annual', 'trailing'],
+    description: 'Reporting period type (default: annual)',
+  })
+  @ApiQuery({
+    name: 'start',
+    required: true,
+    description: 'Start date (ISO format)',
+  })
+  @ApiQuery({
+    name: 'end',
+    required: false,
+    description: 'End date (ISO format, default: today)',
+  })
+  @ApiResponse({ status: 200, description: 'Historical financial data time series' })
+  getFundamentalsTimeSeries(
+    @Param('symbol') symbol: string,
+    @Query('module') module: FundamentalsModule,
+    @Query('start') start: string,
+    @Query('type') type?: FundamentalsType,
+    @Query('end') end?: string,
+  ) {
+    return this.yahooFinanceService.getFundamentalsTimeSeries(symbol, {
+      period1: new Date(start),
+      period2: end ? new Date(end) : undefined,
+      type: type || 'annual',
+      module,
+    });
+  }
+
+  @Get('fundamentals/:symbol/income')
+  @ApiOperation({ summary: 'Get income statement time series (convenience endpoint)' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiQuery({
+    name: 'type',
+    required: false,
+    enum: ['quarterly', 'annual', 'trailing'],
+    description: 'Reporting period type (default: annual)',
+  })
+  @ApiQuery({
+    name: 'start',
+    required: true,
+    description: 'Start date (ISO format)',
+  })
+  @ApiQuery({
+    name: 'end',
+    required: false,
+    description: 'End date (ISO format, default: today)',
+  })
+  @ApiResponse({ status: 200, description: 'Income statement data' })
+  getIncomeStatement(
+    @Param('symbol') symbol: string,
+    @Query('start') start: string,
+    @Query('type') type?: FundamentalsType,
+    @Query('end') end?: string,
+  ) {
+    return this.yahooFinanceService.getFundamentalsTimeSeries(symbol, {
+      period1: new Date(start),
+      period2: end ? new Date(end) : undefined,
+      type: type || 'annual',
+      module: 'financials',
+    });
+  }
+
+  @Get('fundamentals/:symbol/balance-sheet')
+  @ApiOperation({ summary: 'Get balance sheet time series (convenience endpoint)' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiQuery({
+    name: 'type',
+    required: false,
+    enum: ['quarterly', 'annual', 'trailing'],
+    description: 'Reporting period type (default: annual)',
+  })
+  @ApiQuery({
+    name: 'start',
+    required: true,
+    description: 'Start date (ISO format)',
+  })
+  @ApiQuery({
+    name: 'end',
+    required: false,
+    description: 'End date (ISO format, default: today)',
+  })
+  @ApiResponse({ status: 200, description: 'Balance sheet data' })
+  getBalanceSheet(
+    @Param('symbol') symbol: string,
+    @Query('start') start: string,
+    @Query('type') type?: FundamentalsType,
+    @Query('end') end?: string,
+  ) {
+    return this.yahooFinanceService.getFundamentalsTimeSeries(symbol, {
+      period1: new Date(start),
+      period2: end ? new Date(end) : undefined,
+      type: type || 'annual',
+      module: 'balance-sheet',
+    });
+  }
+
+  @Get('fundamentals/:symbol/cash-flow')
+  @ApiOperation({ summary: 'Get cash flow statement time series (convenience endpoint)' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiQuery({
+    name: 'type',
+    required: false,
+    enum: ['quarterly', 'annual', 'trailing'],
+    description: 'Reporting period type (default: annual)',
+  })
+  @ApiQuery({
+    name: 'start',
+    required: true,
+    description: 'Start date (ISO format)',
+  })
+  @ApiQuery({
+    name: 'end',
+    required: false,
+    description: 'End date (ISO format, default: today)',
+  })
+  @ApiResponse({ status: 200, description: 'Cash flow statement data' })
+  getCashFlow(
+    @Param('symbol') symbol: string,
+    @Query('start') start: string,
+    @Query('type') type?: FundamentalsType,
+    @Query('end') end?: string,
+  ) {
+    return this.yahooFinanceService.getFundamentalsTimeSeries(symbol, {
+      period1: new Date(start),
+      period2: end ? new Date(end) : undefined,
+      type: type || 'annual',
+      module: 'cash-flow',
+    });
+  }
+
+  @Get('options/:symbol')
+  @ApiOperation({ summary: 'Get options chain data for a symbol' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiQuery({
+    name: 'date',
+    required: false,
+    description: 'Expiration date to filter by (ISO format)',
+  })
+  @ApiResponse({ status: 200, description: 'Options chain with calls and puts' })
+  getOptions(
+    @Param('symbol') symbol: string,
+    @Query('date') date?: string,
+  ) {
+    return this.yahooFinanceService.getOptions(
+      symbol,
+      date ? new Date(date) : undefined,
+    );
+  }
+
+  @Get('options/:symbol/expirations')
+  @ApiOperation({ summary: 'Get available options expiration dates for a symbol' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiResponse({ status: 200, description: 'List of available expiration dates' })
+  getOptionsExpirations(@Param('symbol') symbol: string) {
+    return this.yahooFinanceService.getOptionsExpirations(symbol);
+  }
+
+  @Get('options/:symbol/chain')
+  @ApiOperation({ summary: 'Get filtered options chain for a symbol' })
+  @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
+  @ApiQuery({
+    name: 'date',
+    required: false,
+    description: 'Expiration date to filter by (ISO format)',
+  })
+  @ApiQuery({
+    name: 'type',
+    required: false,
+    enum: ['calls', 'puts', 'all'],
+    description: 'Filter by option type (default: all)',
+  })
+  @ApiQuery({
+    name: 'strikeMin',
+    required: false,
+    description: 'Minimum strike price',
+  })
+  @ApiQuery({
+    name: 'strikeMax',
+    required: false,
+    description: 'Maximum strike price',
+  })
+  @ApiResponse({ status: 200, description: 'Filtered options chain' })
+  async getOptionsChain(
+    @Param('symbol') symbol: string,
+    @Query('date') date?: string,
+    @Query('type') type?: 'calls' | 'puts' | 'all',
+    @Query('strikeMin') strikeMin?: number,
+    @Query('strikeMax') strikeMax?: number,
+  ) {
+    const options = await this.yahooFinanceService.getOptions(
+      symbol,
+      date ? new Date(date) : undefined,
+    );
+
+    if (!options) {
+      return null;
+    }
+
+    // Filter the options chain
+    const filteredOptions = options.options.map((opt) => {
+      let calls = opt.calls;
+      let puts = opt.puts;
+
+      // Filter by strike price
+      if (strikeMin !== undefined) {
+        calls = calls.filter((c) => c.strike >= strikeMin);
+        puts = puts.filter((p) => p.strike >= strikeMin);
+      }
+      if (strikeMax !== undefined) {
+        calls = calls.filter((c) => c.strike <= strikeMax);
+        puts = puts.filter((p) => p.strike <= strikeMax);
+      }
+
+      // Filter by type
+      if (type === 'calls') {
+        puts = [];
+      } else if (type === 'puts') {
+        calls = [];
+      }
+
+      return {
+        ...opt,
+        calls,
+        puts,
+      };
+    });
+
+    return {
+      ...options,
+      options: filteredOptions,
+    };
   }
 }

@@ -53,9 +53,9 @@
 | `historical` | ✅ | ✅ | - |
 | `quoteSummary` | ✅ | ✅ | - |
 | `chart` | ✅ | ✅ | - |
-| `fundamentalsTimeSeries` | ✅ | ❌ | High |
+| `fundamentalsTimeSeries` | ✅ | ✅ | - |
 | `insights` | ✅ | ✅ | - |
-| `options` | ✅ | ❌ | Medium |
+| `options` | ✅ | ✅ | - |
 | `recommendationsBySymbol` | ✅ | ✅ | - |
 | `screener` | ✅ | ✅ | - |
 | `trendingSymbols` | ✅ | ✅ | - |
@@ -1094,6 +1094,27 @@ npm install class-validator class-transformer
   - `GET /api/v1/yahoo-finance/market/losers` - Top daily losers
   - `GET /api/v1/yahoo-finance/screener/:preset` - Predefined stock screeners
 
+- **Phase 2 Yahoo Finance Completion** (January 2026)
+  - Added fundamentalsTimeSeries endpoint for historical financial statements
+  - Added options chain endpoints with full Greeks and filtering support
+  - Added QuoteSummary convenience endpoints (profile, financials, earnings, holders, analysis, calendar, sec-filings)
+
+- **New Yahoo Finance Endpoints (Phase 2)**:
+  - `GET /api/v1/yahoo-finance/fundamentals/:symbol` - Historical financial data (income, balance sheet, cash flow)
+  - `GET /api/v1/yahoo-finance/fundamentals/:symbol/income` - Income statement time series
+  - `GET /api/v1/yahoo-finance/fundamentals/:symbol/balance-sheet` - Balance sheet time series
+  - `GET /api/v1/yahoo-finance/fundamentals/:symbol/cash-flow` - Cash flow statement time series
+  - `GET /api/v1/yahoo-finance/options/:symbol` - Full options chain
+  - `GET /api/v1/yahoo-finance/options/:symbol/expirations` - Available expiration dates
+  - `GET /api/v1/yahoo-finance/options/:symbol/chain` - Filtered options chain (by type, strike range)
+  - `GET /api/v1/yahoo-finance/summary/:symbol/profile` - Company profile
+  - `GET /api/v1/yahoo-finance/summary/:symbol/financials` - Financial metrics
+  - `GET /api/v1/yahoo-finance/summary/:symbol/earnings` - Earnings data
+  - `GET /api/v1/yahoo-finance/summary/:symbol/holders` - Institutional/insider holdings
+  - `GET /api/v1/yahoo-finance/summary/:symbol/analysis` - Analyst recommendations
+  - `GET /api/v1/yahoo-finance/summary/:symbol/calendar` - Calendar events
+  - `GET /api/v1/yahoo-finance/summary/:symbol/sec-filings` - SEC filings
+
 ---
 
 ## 📝 Notes
@@ -1123,4 +1144,4 @@ For NextJS + Expo:
 ---
 
 *Last Updated: January 7, 2026*
-*Version: 1.2 - Yahoo Finance Module Expansion Complete*
+*Version: 1.3 - Phase 2 Yahoo Finance Integration Complete*
