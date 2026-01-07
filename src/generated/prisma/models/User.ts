@@ -270,6 +270,8 @@ export type UserWhereInput = {
   tags?: Prisma.TagListRelationFilter
   sessions?: Prisma.SessionListRelationFilter
   accounts?: Prisma.AuthAccountListRelationFilter
+  portfolioSnapshots?: Prisma.PortfolioSnapshotListRelationFilter
+  priceAlerts?: Prisma.PriceAlertListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -290,6 +292,8 @@ export type UserOrderByWithRelationInput = {
   tags?: Prisma.TagOrderByRelationAggregateInput
   sessions?: Prisma.SessionOrderByRelationAggregateInput
   accounts?: Prisma.AuthAccountOrderByRelationAggregateInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotOrderByRelationAggregateInput
+  priceAlerts?: Prisma.PriceAlertOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -313,6 +317,8 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   tags?: Prisma.TagListRelationFilter
   sessions?: Prisma.SessionListRelationFilter
   accounts?: Prisma.AuthAccountListRelationFilter
+  portfolioSnapshots?: Prisma.PortfolioSnapshotListRelationFilter
+  priceAlerts?: Prisma.PriceAlertListRelationFilter
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -368,6 +374,8 @@ export type UserCreateInput = {
   tags?: Prisma.TagCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -387,6 +395,8 @@ export type UserUncheckedCreateInput = {
   tags?: Prisma.TagUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountUncheckedCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -406,6 +416,8 @@ export type UserUpdateInput = {
   tags?: Prisma.TagUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -425,6 +437,8 @@ export type UserUncheckedUpdateInput = {
   tags?: Prisma.TagUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUncheckedUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -669,6 +683,34 @@ export type UserUpdateOneRequiredWithoutTagsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTagsInput, Prisma.UserUpdateWithoutTagsInput>, Prisma.UserUncheckedUpdateWithoutTagsInput>
 }
 
+export type UserCreateNestedOneWithoutPortfolioSnapshotsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPortfolioSnapshotsInput, Prisma.UserUncheckedCreateWithoutPortfolioSnapshotsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPortfolioSnapshotsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutPortfolioSnapshotsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPortfolioSnapshotsInput, Prisma.UserUncheckedCreateWithoutPortfolioSnapshotsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPortfolioSnapshotsInput
+  upsert?: Prisma.UserUpsertWithoutPortfolioSnapshotsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPortfolioSnapshotsInput, Prisma.UserUpdateWithoutPortfolioSnapshotsInput>, Prisma.UserUncheckedUpdateWithoutPortfolioSnapshotsInput>
+}
+
+export type UserCreateNestedOneWithoutPriceAlertsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPriceAlertsInput, Prisma.UserUncheckedCreateWithoutPriceAlertsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPriceAlertsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutPriceAlertsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPriceAlertsInput, Prisma.UserUncheckedCreateWithoutPriceAlertsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPriceAlertsInput
+  upsert?: Prisma.UserUpsertWithoutPriceAlertsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPriceAlertsInput, Prisma.UserUpdateWithoutPriceAlertsInput>, Prisma.UserUncheckedUpdateWithoutPriceAlertsInput>
+}
+
 export type UserCreateWithoutSessionsInput = {
   id?: string
   username?: string | null
@@ -685,6 +727,8 @@ export type UserCreateWithoutSessionsInput = {
   watchlists?: Prisma.WatchlistCreateNestedManyWithoutUserInput
   tags?: Prisma.TagCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -703,6 +747,8 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   watchlists?: Prisma.WatchlistUncheckedCreateNestedManyWithoutUserInput
   tags?: Prisma.TagUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountUncheckedCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -737,6 +783,8 @@ export type UserUpdateWithoutSessionsInput = {
   watchlists?: Prisma.WatchlistUpdateManyWithoutUserNestedInput
   tags?: Prisma.TagUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -755,6 +803,8 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   watchlists?: Prisma.WatchlistUncheckedUpdateManyWithoutUserNestedInput
   tags?: Prisma.TagUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUncheckedUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutAccountsInput = {
@@ -773,6 +823,8 @@ export type UserCreateWithoutAccountsInput = {
   watchlists?: Prisma.WatchlistCreateNestedManyWithoutUserInput
   tags?: Prisma.TagCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutAccountsInput = {
@@ -791,6 +843,8 @@ export type UserUncheckedCreateWithoutAccountsInput = {
   watchlists?: Prisma.WatchlistUncheckedCreateNestedManyWithoutUserInput
   tags?: Prisma.TagUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutAccountsInput = {
@@ -825,6 +879,8 @@ export type UserUpdateWithoutAccountsInput = {
   watchlists?: Prisma.WatchlistUpdateManyWithoutUserNestedInput
   tags?: Prisma.TagUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -843,6 +899,8 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
   watchlists?: Prisma.WatchlistUncheckedUpdateManyWithoutUserNestedInput
   tags?: Prisma.TagUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutRoleInput = {
@@ -861,6 +919,8 @@ export type UserCreateWithoutRoleInput = {
   tags?: Prisma.TagCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutRoleInput = {
@@ -879,6 +939,8 @@ export type UserUncheckedCreateWithoutRoleInput = {
   tags?: Prisma.TagUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountUncheckedCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutRoleInput = {
@@ -940,6 +1002,8 @@ export type UserCreateWithoutUserBrokersInput = {
   tags?: Prisma.TagCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutUserBrokersInput = {
@@ -958,6 +1022,8 @@ export type UserUncheckedCreateWithoutUserBrokersInput = {
   tags?: Prisma.TagUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountUncheckedCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutUserBrokersInput = {
@@ -992,6 +1058,8 @@ export type UserUpdateWithoutUserBrokersInput = {
   tags?: Prisma.TagUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutUserBrokersInput = {
@@ -1010,6 +1078,8 @@ export type UserUncheckedUpdateWithoutUserBrokersInput = {
   tags?: Prisma.TagUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUncheckedUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutWatchlistsInput = {
@@ -1028,6 +1098,8 @@ export type UserCreateWithoutWatchlistsInput = {
   tags?: Prisma.TagCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutWatchlistsInput = {
@@ -1046,6 +1118,8 @@ export type UserUncheckedCreateWithoutWatchlistsInput = {
   tags?: Prisma.TagUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountUncheckedCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutWatchlistsInput = {
@@ -1080,6 +1154,8 @@ export type UserUpdateWithoutWatchlistsInput = {
   tags?: Prisma.TagUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWatchlistsInput = {
@@ -1098,6 +1174,8 @@ export type UserUncheckedUpdateWithoutWatchlistsInput = {
   tags?: Prisma.TagUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUncheckedUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutTagsInput = {
@@ -1116,6 +1194,8 @@ export type UserCreateWithoutTagsInput = {
   watchlists?: Prisma.WatchlistCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutTagsInput = {
@@ -1134,6 +1214,8 @@ export type UserUncheckedCreateWithoutTagsInput = {
   watchlists?: Prisma.WatchlistUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AuthAccountUncheckedCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutTagsInput = {
@@ -1168,6 +1250,8 @@ export type UserUpdateWithoutTagsInput = {
   watchlists?: Prisma.WatchlistUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTagsInput = {
@@ -1186,6 +1270,200 @@ export type UserUncheckedUpdateWithoutTagsInput = {
   watchlists?: Prisma.WatchlistUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUncheckedUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutPortfolioSnapshotsInput = {
+  id?: string
+  username?: string | null
+  email: string
+  name?: string | null
+  image?: string | null
+  country?: string | null
+  mainCurrency?: string
+  emailVerified?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  role?: Prisma.RoleCreateNestedOneWithoutUsersInput
+  userBrokers?: Prisma.UserBrokerCreateNestedManyWithoutUserInput
+  watchlists?: Prisma.WatchlistCreateNestedManyWithoutUserInput
+  tags?: Prisma.TagCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AuthAccountCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutPortfolioSnapshotsInput = {
+  id?: string
+  username?: string | null
+  email: string
+  name?: string | null
+  image?: string | null
+  country?: string | null
+  mainCurrency?: string
+  emailVerified?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  roleId?: number | null
+  userBrokers?: Prisma.UserBrokerUncheckedCreateNestedManyWithoutUserInput
+  watchlists?: Prisma.WatchlistUncheckedCreateNestedManyWithoutUserInput
+  tags?: Prisma.TagUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AuthAccountUncheckedCreateNestedManyWithoutUserInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutPortfolioSnapshotsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPortfolioSnapshotsInput, Prisma.UserUncheckedCreateWithoutPortfolioSnapshotsInput>
+}
+
+export type UserUpsertWithoutPortfolioSnapshotsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPortfolioSnapshotsInput, Prisma.UserUncheckedUpdateWithoutPortfolioSnapshotsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPortfolioSnapshotsInput, Prisma.UserUncheckedCreateWithoutPortfolioSnapshotsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPortfolioSnapshotsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPortfolioSnapshotsInput, Prisma.UserUncheckedUpdateWithoutPortfolioSnapshotsInput>
+}
+
+export type UserUpdateWithoutPortfolioSnapshotsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainCurrency?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  role?: Prisma.RoleUpdateOneWithoutUsersNestedInput
+  userBrokers?: Prisma.UserBrokerUpdateManyWithoutUserNestedInput
+  watchlists?: Prisma.WatchlistUpdateManyWithoutUserNestedInput
+  tags?: Prisma.TagUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AuthAccountUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPortfolioSnapshotsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainCurrency?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  roleId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  userBrokers?: Prisma.UserBrokerUncheckedUpdateManyWithoutUserNestedInput
+  watchlists?: Prisma.WatchlistUncheckedUpdateManyWithoutUserNestedInput
+  tags?: Prisma.TagUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AuthAccountUncheckedUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutPriceAlertsInput = {
+  id?: string
+  username?: string | null
+  email: string
+  name?: string | null
+  image?: string | null
+  country?: string | null
+  mainCurrency?: string
+  emailVerified?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  role?: Prisma.RoleCreateNestedOneWithoutUsersInput
+  userBrokers?: Prisma.UserBrokerCreateNestedManyWithoutUserInput
+  watchlists?: Prisma.WatchlistCreateNestedManyWithoutUserInput
+  tags?: Prisma.TagCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AuthAccountCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutPriceAlertsInput = {
+  id?: string
+  username?: string | null
+  email: string
+  name?: string | null
+  image?: string | null
+  country?: string | null
+  mainCurrency?: string
+  emailVerified?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  roleId?: number | null
+  userBrokers?: Prisma.UserBrokerUncheckedCreateNestedManyWithoutUserInput
+  watchlists?: Prisma.WatchlistUncheckedCreateNestedManyWithoutUserInput
+  tags?: Prisma.TagUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AuthAccountUncheckedCreateNestedManyWithoutUserInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutPriceAlertsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPriceAlertsInput, Prisma.UserUncheckedCreateWithoutPriceAlertsInput>
+}
+
+export type UserUpsertWithoutPriceAlertsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPriceAlertsInput, Prisma.UserUncheckedUpdateWithoutPriceAlertsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPriceAlertsInput, Prisma.UserUncheckedCreateWithoutPriceAlertsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPriceAlertsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPriceAlertsInput, Prisma.UserUncheckedUpdateWithoutPriceAlertsInput>
+}
+
+export type UserUpdateWithoutPriceAlertsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainCurrency?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  role?: Prisma.RoleUpdateOneWithoutUsersNestedInput
+  userBrokers?: Prisma.UserBrokerUpdateManyWithoutUserNestedInput
+  watchlists?: Prisma.WatchlistUpdateManyWithoutUserNestedInput
+  tags?: Prisma.TagUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AuthAccountUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPriceAlertsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainCurrency?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  roleId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  userBrokers?: Prisma.UserBrokerUncheckedUpdateManyWithoutUserNestedInput
+  watchlists?: Prisma.WatchlistUncheckedUpdateManyWithoutUserNestedInput
+  tags?: Prisma.TagUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AuthAccountUncheckedUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyRoleInput = {
@@ -1217,6 +1495,8 @@ export type UserUpdateWithoutRoleInput = {
   tags?: Prisma.TagUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRoleInput = {
@@ -1235,6 +1515,8 @@ export type UserUncheckedUpdateWithoutRoleInput = {
   tags?: Prisma.TagUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AuthAccountUncheckedUpdateManyWithoutUserNestedInput
+  portfolioSnapshots?: Prisma.PortfolioSnapshotUncheckedUpdateManyWithoutUserNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateManyWithoutRoleInput = {
@@ -1261,6 +1543,8 @@ export type UserCountOutputType = {
   tags: number
   sessions: number
   accounts: number
+  portfolioSnapshots: number
+  priceAlerts: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1269,6 +1553,8 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   tags?: boolean | UserCountOutputTypeCountTagsArgs
   sessions?: boolean | UserCountOutputTypeCountSessionsArgs
   accounts?: boolean | UserCountOutputTypeCountAccountsArgs
+  portfolioSnapshots?: boolean | UserCountOutputTypeCountPortfolioSnapshotsArgs
+  priceAlerts?: boolean | UserCountOutputTypeCountPriceAlertsArgs
 }
 
 /**
@@ -1316,6 +1602,20 @@ export type UserCountOutputTypeCountAccountsArgs<ExtArgs extends runtime.Types.E
   where?: Prisma.AuthAccountWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPortfolioSnapshotsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PortfolioSnapshotWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPriceAlertsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PriceAlertWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1335,6 +1635,8 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   tags?: boolean | Prisma.User$tagsArgs<ExtArgs>
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
+  portfolioSnapshots?: boolean | Prisma.User$portfolioSnapshotsArgs<ExtArgs>
+  priceAlerts?: boolean | Prisma.User$priceAlertsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -1390,6 +1692,8 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   tags?: boolean | Prisma.User$tagsArgs<ExtArgs>
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
+  portfolioSnapshots?: boolean | Prisma.User$portfolioSnapshotsArgs<ExtArgs>
+  priceAlerts?: boolean | Prisma.User$priceAlertsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1408,6 +1712,8 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     tags: Prisma.$TagPayload<ExtArgs>[]
     sessions: Prisma.$SessionPayload<ExtArgs>[]
     accounts: Prisma.$AuthAccountPayload<ExtArgs>[]
+    portfolioSnapshots: Prisma.$PortfolioSnapshotPayload<ExtArgs>[]
+    priceAlerts: Prisma.$PriceAlertPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1821,6 +2127,8 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   tags<T extends Prisma.User$tagsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$tagsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TagPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   sessions<T extends Prisma.User$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   accounts<T extends Prisma.User$accountsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$accountsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AuthAccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  portfolioSnapshots<T extends Prisma.User$portfolioSnapshotsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$portfolioSnapshotsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PortfolioSnapshotPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  priceAlerts<T extends Prisma.User$priceAlertsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$priceAlertsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PriceAlertPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2393,6 +2701,54 @@ export type User$accountsArgs<ExtArgs extends runtime.Types.Extensions.InternalA
   take?: number
   skip?: number
   distinct?: Prisma.AuthAccountScalarFieldEnum | Prisma.AuthAccountScalarFieldEnum[]
+}
+
+/**
+ * User.portfolioSnapshots
+ */
+export type User$portfolioSnapshotsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PortfolioSnapshot
+   */
+  select?: Prisma.PortfolioSnapshotSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PortfolioSnapshot
+   */
+  omit?: Prisma.PortfolioSnapshotOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PortfolioSnapshotInclude<ExtArgs> | null
+  where?: Prisma.PortfolioSnapshotWhereInput
+  orderBy?: Prisma.PortfolioSnapshotOrderByWithRelationInput | Prisma.PortfolioSnapshotOrderByWithRelationInput[]
+  cursor?: Prisma.PortfolioSnapshotWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PortfolioSnapshotScalarFieldEnum | Prisma.PortfolioSnapshotScalarFieldEnum[]
+}
+
+/**
+ * User.priceAlerts
+ */
+export type User$priceAlertsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PriceAlert
+   */
+  select?: Prisma.PriceAlertSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PriceAlert
+   */
+  omit?: Prisma.PriceAlertOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PriceAlertInclude<ExtArgs> | null
+  where?: Prisma.PriceAlertWhereInput
+  orderBy?: Prisma.PriceAlertOrderByWithRelationInput | Prisma.PriceAlertOrderByWithRelationInput[]
+  cursor?: Prisma.PriceAlertWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PriceAlertScalarFieldEnum | Prisma.PriceAlertScalarFieldEnum[]
 }
 
 /**

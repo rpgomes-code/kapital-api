@@ -286,6 +286,8 @@ export type AssetWhereInput = {
   assetPrices?: Prisma.AssetPriceListRelationFilter
   corporateActions?: Prisma.CorporateActionListRelationFilter
   watchlistAssets?: Prisma.WatchlistAssetListRelationFilter
+  holdingSnapshots?: Prisma.HoldingSnapshotListRelationFilter
+  priceAlerts?: Prisma.PriceAlertListRelationFilter
 }
 
 export type AssetOrderByWithRelationInput = {
@@ -307,6 +309,8 @@ export type AssetOrderByWithRelationInput = {
   assetPrices?: Prisma.AssetPriceOrderByRelationAggregateInput
   corporateActions?: Prisma.CorporateActionOrderByRelationAggregateInput
   watchlistAssets?: Prisma.WatchlistAssetOrderByRelationAggregateInput
+  holdingSnapshots?: Prisma.HoldingSnapshotOrderByRelationAggregateInput
+  priceAlerts?: Prisma.PriceAlertOrderByRelationAggregateInput
 }
 
 export type AssetWhereUniqueInput = Prisma.AtLeast<{
@@ -331,6 +335,8 @@ export type AssetWhereUniqueInput = Prisma.AtLeast<{
   assetPrices?: Prisma.AssetPriceListRelationFilter
   corporateActions?: Prisma.CorporateActionListRelationFilter
   watchlistAssets?: Prisma.WatchlistAssetListRelationFilter
+  holdingSnapshots?: Prisma.HoldingSnapshotListRelationFilter
+  priceAlerts?: Prisma.PriceAlertListRelationFilter
 }, "id" | "publicId">
 
 export type AssetOrderByWithAggregationInput = {
@@ -387,6 +393,8 @@ export type AssetCreateInput = {
   assetPrices?: Prisma.AssetPriceCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutAssetInput
 }
 
 export type AssetUncheckedCreateInput = {
@@ -406,6 +414,8 @@ export type AssetUncheckedCreateInput = {
   assetPrices?: Prisma.AssetPriceUncheckedCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionUncheckedCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutAssetInput
 }
 
 export type AssetUpdateInput = {
@@ -424,6 +434,8 @@ export type AssetUpdateInput = {
   assetPrices?: Prisma.AssetPriceUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetUncheckedUpdateInput = {
@@ -443,6 +455,8 @@ export type AssetUncheckedUpdateInput = {
   assetPrices?: Prisma.AssetPriceUncheckedUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUncheckedUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetCreateManyInput = {
@@ -703,6 +717,34 @@ export type AssetUpdateOneRequiredWithoutWatchlistAssetsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.AssetUpdateToOneWithWhereWithoutWatchlistAssetsInput, Prisma.AssetUpdateWithoutWatchlistAssetsInput>, Prisma.AssetUncheckedUpdateWithoutWatchlistAssetsInput>
 }
 
+export type AssetCreateNestedOneWithoutHoldingSnapshotsInput = {
+  create?: Prisma.XOR<Prisma.AssetCreateWithoutHoldingSnapshotsInput, Prisma.AssetUncheckedCreateWithoutHoldingSnapshotsInput>
+  connectOrCreate?: Prisma.AssetCreateOrConnectWithoutHoldingSnapshotsInput
+  connect?: Prisma.AssetWhereUniqueInput
+}
+
+export type AssetUpdateOneRequiredWithoutHoldingSnapshotsNestedInput = {
+  create?: Prisma.XOR<Prisma.AssetCreateWithoutHoldingSnapshotsInput, Prisma.AssetUncheckedCreateWithoutHoldingSnapshotsInput>
+  connectOrCreate?: Prisma.AssetCreateOrConnectWithoutHoldingSnapshotsInput
+  upsert?: Prisma.AssetUpsertWithoutHoldingSnapshotsInput
+  connect?: Prisma.AssetWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AssetUpdateToOneWithWhereWithoutHoldingSnapshotsInput, Prisma.AssetUpdateWithoutHoldingSnapshotsInput>, Prisma.AssetUncheckedUpdateWithoutHoldingSnapshotsInput>
+}
+
+export type AssetCreateNestedOneWithoutPriceAlertsInput = {
+  create?: Prisma.XOR<Prisma.AssetCreateWithoutPriceAlertsInput, Prisma.AssetUncheckedCreateWithoutPriceAlertsInput>
+  connectOrCreate?: Prisma.AssetCreateOrConnectWithoutPriceAlertsInput
+  connect?: Prisma.AssetWhereUniqueInput
+}
+
+export type AssetUpdateOneRequiredWithoutPriceAlertsNestedInput = {
+  create?: Prisma.XOR<Prisma.AssetCreateWithoutPriceAlertsInput, Prisma.AssetUncheckedCreateWithoutPriceAlertsInput>
+  connectOrCreate?: Prisma.AssetCreateOrConnectWithoutPriceAlertsInput
+  upsert?: Prisma.AssetUpsertWithoutPriceAlertsInput
+  connect?: Prisma.AssetWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AssetUpdateToOneWithWhereWithoutPriceAlertsInput, Prisma.AssetUpdateWithoutPriceAlertsInput>, Prisma.AssetUncheckedUpdateWithoutPriceAlertsInput>
+}
+
 export type AssetCreateWithoutSectorInput = {
   publicId?: string
   symbol: string
@@ -718,6 +760,8 @@ export type AssetCreateWithoutSectorInput = {
   assetPrices?: Prisma.AssetPriceCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutAssetInput
 }
 
 export type AssetUncheckedCreateWithoutSectorInput = {
@@ -736,6 +780,8 @@ export type AssetUncheckedCreateWithoutSectorInput = {
   assetPrices?: Prisma.AssetPriceUncheckedCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionUncheckedCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutAssetInput
 }
 
 export type AssetCreateOrConnectWithoutSectorInput = {
@@ -797,6 +843,8 @@ export type AssetCreateWithoutIndustryInput = {
   assetPrices?: Prisma.AssetPriceCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutAssetInput
 }
 
 export type AssetUncheckedCreateWithoutIndustryInput = {
@@ -815,6 +863,8 @@ export type AssetUncheckedCreateWithoutIndustryInput = {
   assetPrices?: Prisma.AssetPriceUncheckedCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionUncheckedCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutAssetInput
 }
 
 export type AssetCreateOrConnectWithoutIndustryInput = {
@@ -858,6 +908,8 @@ export type AssetCreateWithoutTransactionsInput = {
   assetPrices?: Prisma.AssetPriceCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutAssetInput
 }
 
 export type AssetUncheckedCreateWithoutTransactionsInput = {
@@ -876,6 +928,8 @@ export type AssetUncheckedCreateWithoutTransactionsInput = {
   assetPrices?: Prisma.AssetPriceUncheckedCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionUncheckedCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutAssetInput
 }
 
 export type AssetCreateOrConnectWithoutTransactionsInput = {
@@ -909,6 +963,8 @@ export type AssetUpdateWithoutTransactionsInput = {
   assetPrices?: Prisma.AssetPriceUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetUncheckedUpdateWithoutTransactionsInput = {
@@ -927,6 +983,8 @@ export type AssetUncheckedUpdateWithoutTransactionsInput = {
   assetPrices?: Prisma.AssetPriceUncheckedUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUncheckedUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetCreateWithoutAssetPricesInput = {
@@ -944,6 +1002,8 @@ export type AssetCreateWithoutAssetPricesInput = {
   transactions?: Prisma.TransactionCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutAssetInput
 }
 
 export type AssetUncheckedCreateWithoutAssetPricesInput = {
@@ -962,6 +1022,8 @@ export type AssetUncheckedCreateWithoutAssetPricesInput = {
   transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionUncheckedCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutAssetInput
 }
 
 export type AssetCreateOrConnectWithoutAssetPricesInput = {
@@ -995,6 +1057,8 @@ export type AssetUpdateWithoutAssetPricesInput = {
   transactions?: Prisma.TransactionUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetUncheckedUpdateWithoutAssetPricesInput = {
@@ -1013,6 +1077,8 @@ export type AssetUncheckedUpdateWithoutAssetPricesInput = {
   transactions?: Prisma.TransactionUncheckedUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUncheckedUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetCreateWithoutCorporateActionsInput = {
@@ -1030,6 +1096,8 @@ export type AssetCreateWithoutCorporateActionsInput = {
   transactions?: Prisma.TransactionCreateNestedManyWithoutAssetInput
   assetPrices?: Prisma.AssetPriceCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutAssetInput
 }
 
 export type AssetUncheckedCreateWithoutCorporateActionsInput = {
@@ -1048,6 +1116,8 @@ export type AssetUncheckedCreateWithoutCorporateActionsInput = {
   transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutAssetInput
   assetPrices?: Prisma.AssetPriceUncheckedCreateNestedManyWithoutAssetInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutAssetInput
 }
 
 export type AssetCreateOrConnectWithoutCorporateActionsInput = {
@@ -1081,6 +1151,8 @@ export type AssetUpdateWithoutCorporateActionsInput = {
   transactions?: Prisma.TransactionUpdateManyWithoutAssetNestedInput
   assetPrices?: Prisma.AssetPriceUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetUncheckedUpdateWithoutCorporateActionsInput = {
@@ -1099,6 +1171,8 @@ export type AssetUncheckedUpdateWithoutCorporateActionsInput = {
   transactions?: Prisma.TransactionUncheckedUpdateManyWithoutAssetNestedInput
   assetPrices?: Prisma.AssetPriceUncheckedUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetCreateWithoutWatchlistAssetsInput = {
@@ -1116,6 +1190,8 @@ export type AssetCreateWithoutWatchlistAssetsInput = {
   transactions?: Prisma.TransactionCreateNestedManyWithoutAssetInput
   assetPrices?: Prisma.AssetPriceCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutAssetInput
 }
 
 export type AssetUncheckedCreateWithoutWatchlistAssetsInput = {
@@ -1134,6 +1210,8 @@ export type AssetUncheckedCreateWithoutWatchlistAssetsInput = {
   transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutAssetInput
   assetPrices?: Prisma.AssetPriceUncheckedCreateNestedManyWithoutAssetInput
   corporateActions?: Prisma.CorporateActionUncheckedCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutAssetInput
 }
 
 export type AssetCreateOrConnectWithoutWatchlistAssetsInput = {
@@ -1167,6 +1245,8 @@ export type AssetUpdateWithoutWatchlistAssetsInput = {
   transactions?: Prisma.TransactionUpdateManyWithoutAssetNestedInput
   assetPrices?: Prisma.AssetPriceUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetUncheckedUpdateWithoutWatchlistAssetsInput = {
@@ -1185,6 +1265,196 @@ export type AssetUncheckedUpdateWithoutWatchlistAssetsInput = {
   transactions?: Prisma.TransactionUncheckedUpdateManyWithoutAssetNestedInput
   assetPrices?: Prisma.AssetPriceUncheckedUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUncheckedUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutAssetNestedInput
+}
+
+export type AssetCreateWithoutHoldingSnapshotsInput = {
+  publicId?: string
+  symbol: string
+  yahooSymbol: string
+  isin?: string | null
+  cusip?: string | null
+  name: string
+  assetType: $Enums.AssetType
+  exchange?: string | null
+  currency: string
+  sector?: Prisma.SectorCreateNestedOneWithoutAssetsInput
+  industry?: Prisma.IndustryCreateNestedOneWithoutAssetsInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutAssetInput
+  assetPrices?: Prisma.AssetPriceCreateNestedManyWithoutAssetInput
+  corporateActions?: Prisma.CorporateActionCreateNestedManyWithoutAssetInput
+  watchlistAssets?: Prisma.WatchlistAssetCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertCreateNestedManyWithoutAssetInput
+}
+
+export type AssetUncheckedCreateWithoutHoldingSnapshotsInput = {
+  id?: number
+  publicId?: string
+  symbol: string
+  yahooSymbol: string
+  isin?: string | null
+  cusip?: string | null
+  name: string
+  assetType: $Enums.AssetType
+  exchange?: string | null
+  currency: string
+  sectorId?: number | null
+  industryId?: number | null
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutAssetInput
+  assetPrices?: Prisma.AssetPriceUncheckedCreateNestedManyWithoutAssetInput
+  corporateActions?: Prisma.CorporateActionUncheckedCreateNestedManyWithoutAssetInput
+  watchlistAssets?: Prisma.WatchlistAssetUncheckedCreateNestedManyWithoutAssetInput
+  priceAlerts?: Prisma.PriceAlertUncheckedCreateNestedManyWithoutAssetInput
+}
+
+export type AssetCreateOrConnectWithoutHoldingSnapshotsInput = {
+  where: Prisma.AssetWhereUniqueInput
+  create: Prisma.XOR<Prisma.AssetCreateWithoutHoldingSnapshotsInput, Prisma.AssetUncheckedCreateWithoutHoldingSnapshotsInput>
+}
+
+export type AssetUpsertWithoutHoldingSnapshotsInput = {
+  update: Prisma.XOR<Prisma.AssetUpdateWithoutHoldingSnapshotsInput, Prisma.AssetUncheckedUpdateWithoutHoldingSnapshotsInput>
+  create: Prisma.XOR<Prisma.AssetCreateWithoutHoldingSnapshotsInput, Prisma.AssetUncheckedCreateWithoutHoldingSnapshotsInput>
+  where?: Prisma.AssetWhereInput
+}
+
+export type AssetUpdateToOneWithWhereWithoutHoldingSnapshotsInput = {
+  where?: Prisma.AssetWhereInput
+  data: Prisma.XOR<Prisma.AssetUpdateWithoutHoldingSnapshotsInput, Prisma.AssetUncheckedUpdateWithoutHoldingSnapshotsInput>
+}
+
+export type AssetUpdateWithoutHoldingSnapshotsInput = {
+  publicId?: Prisma.StringFieldUpdateOperationsInput | string
+  symbol?: Prisma.StringFieldUpdateOperationsInput | string
+  yahooSymbol?: Prisma.StringFieldUpdateOperationsInput | string
+  isin?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cusip?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  assetType?: Prisma.EnumAssetTypeFieldUpdateOperationsInput | $Enums.AssetType
+  exchange?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
+  sector?: Prisma.SectorUpdateOneWithoutAssetsNestedInput
+  industry?: Prisma.IndustryUpdateOneWithoutAssetsNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutAssetNestedInput
+  assetPrices?: Prisma.AssetPriceUpdateManyWithoutAssetNestedInput
+  corporateActions?: Prisma.CorporateActionUpdateManyWithoutAssetNestedInput
+  watchlistAssets?: Prisma.WatchlistAssetUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutAssetNestedInput
+}
+
+export type AssetUncheckedUpdateWithoutHoldingSnapshotsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  publicId?: Prisma.StringFieldUpdateOperationsInput | string
+  symbol?: Prisma.StringFieldUpdateOperationsInput | string
+  yahooSymbol?: Prisma.StringFieldUpdateOperationsInput | string
+  isin?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cusip?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  assetType?: Prisma.EnumAssetTypeFieldUpdateOperationsInput | $Enums.AssetType
+  exchange?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
+  sectorId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  industryId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutAssetNestedInput
+  assetPrices?: Prisma.AssetPriceUncheckedUpdateManyWithoutAssetNestedInput
+  corporateActions?: Prisma.CorporateActionUncheckedUpdateManyWithoutAssetNestedInput
+  watchlistAssets?: Prisma.WatchlistAssetUncheckedUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutAssetNestedInput
+}
+
+export type AssetCreateWithoutPriceAlertsInput = {
+  publicId?: string
+  symbol: string
+  yahooSymbol: string
+  isin?: string | null
+  cusip?: string | null
+  name: string
+  assetType: $Enums.AssetType
+  exchange?: string | null
+  currency: string
+  sector?: Prisma.SectorCreateNestedOneWithoutAssetsInput
+  industry?: Prisma.IndustryCreateNestedOneWithoutAssetsInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutAssetInput
+  assetPrices?: Prisma.AssetPriceCreateNestedManyWithoutAssetInput
+  corporateActions?: Prisma.CorporateActionCreateNestedManyWithoutAssetInput
+  watchlistAssets?: Prisma.WatchlistAssetCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotCreateNestedManyWithoutAssetInput
+}
+
+export type AssetUncheckedCreateWithoutPriceAlertsInput = {
+  id?: number
+  publicId?: string
+  symbol: string
+  yahooSymbol: string
+  isin?: string | null
+  cusip?: string | null
+  name: string
+  assetType: $Enums.AssetType
+  exchange?: string | null
+  currency: string
+  sectorId?: number | null
+  industryId?: number | null
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutAssetInput
+  assetPrices?: Prisma.AssetPriceUncheckedCreateNestedManyWithoutAssetInput
+  corporateActions?: Prisma.CorporateActionUncheckedCreateNestedManyWithoutAssetInput
+  watchlistAssets?: Prisma.WatchlistAssetUncheckedCreateNestedManyWithoutAssetInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedCreateNestedManyWithoutAssetInput
+}
+
+export type AssetCreateOrConnectWithoutPriceAlertsInput = {
+  where: Prisma.AssetWhereUniqueInput
+  create: Prisma.XOR<Prisma.AssetCreateWithoutPriceAlertsInput, Prisma.AssetUncheckedCreateWithoutPriceAlertsInput>
+}
+
+export type AssetUpsertWithoutPriceAlertsInput = {
+  update: Prisma.XOR<Prisma.AssetUpdateWithoutPriceAlertsInput, Prisma.AssetUncheckedUpdateWithoutPriceAlertsInput>
+  create: Prisma.XOR<Prisma.AssetCreateWithoutPriceAlertsInput, Prisma.AssetUncheckedCreateWithoutPriceAlertsInput>
+  where?: Prisma.AssetWhereInput
+}
+
+export type AssetUpdateToOneWithWhereWithoutPriceAlertsInput = {
+  where?: Prisma.AssetWhereInput
+  data: Prisma.XOR<Prisma.AssetUpdateWithoutPriceAlertsInput, Prisma.AssetUncheckedUpdateWithoutPriceAlertsInput>
+}
+
+export type AssetUpdateWithoutPriceAlertsInput = {
+  publicId?: Prisma.StringFieldUpdateOperationsInput | string
+  symbol?: Prisma.StringFieldUpdateOperationsInput | string
+  yahooSymbol?: Prisma.StringFieldUpdateOperationsInput | string
+  isin?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cusip?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  assetType?: Prisma.EnumAssetTypeFieldUpdateOperationsInput | $Enums.AssetType
+  exchange?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
+  sector?: Prisma.SectorUpdateOneWithoutAssetsNestedInput
+  industry?: Prisma.IndustryUpdateOneWithoutAssetsNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutAssetNestedInput
+  assetPrices?: Prisma.AssetPriceUpdateManyWithoutAssetNestedInput
+  corporateActions?: Prisma.CorporateActionUpdateManyWithoutAssetNestedInput
+  watchlistAssets?: Prisma.WatchlistAssetUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUpdateManyWithoutAssetNestedInput
+}
+
+export type AssetUncheckedUpdateWithoutPriceAlertsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  publicId?: Prisma.StringFieldUpdateOperationsInput | string
+  symbol?: Prisma.StringFieldUpdateOperationsInput | string
+  yahooSymbol?: Prisma.StringFieldUpdateOperationsInput | string
+  isin?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cusip?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  assetType?: Prisma.EnumAssetTypeFieldUpdateOperationsInput | $Enums.AssetType
+  exchange?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
+  sectorId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  industryId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutAssetNestedInput
+  assetPrices?: Prisma.AssetPriceUncheckedUpdateManyWithoutAssetNestedInput
+  corporateActions?: Prisma.CorporateActionUncheckedUpdateManyWithoutAssetNestedInput
+  watchlistAssets?: Prisma.WatchlistAssetUncheckedUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetCreateManySectorInput = {
@@ -1216,6 +1486,8 @@ export type AssetUpdateWithoutSectorInput = {
   assetPrices?: Prisma.AssetPriceUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetUncheckedUpdateWithoutSectorInput = {
@@ -1234,6 +1506,8 @@ export type AssetUncheckedUpdateWithoutSectorInput = {
   assetPrices?: Prisma.AssetPriceUncheckedUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUncheckedUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetUncheckedUpdateManyWithoutSectorInput = {
@@ -1279,6 +1553,8 @@ export type AssetUpdateWithoutIndustryInput = {
   assetPrices?: Prisma.AssetPriceUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetUncheckedUpdateWithoutIndustryInput = {
@@ -1297,6 +1573,8 @@ export type AssetUncheckedUpdateWithoutIndustryInput = {
   assetPrices?: Prisma.AssetPriceUncheckedUpdateManyWithoutAssetNestedInput
   corporateActions?: Prisma.CorporateActionUncheckedUpdateManyWithoutAssetNestedInput
   watchlistAssets?: Prisma.WatchlistAssetUncheckedUpdateManyWithoutAssetNestedInput
+  holdingSnapshots?: Prisma.HoldingSnapshotUncheckedUpdateManyWithoutAssetNestedInput
+  priceAlerts?: Prisma.PriceAlertUncheckedUpdateManyWithoutAssetNestedInput
 }
 
 export type AssetUncheckedUpdateManyWithoutIndustryInput = {
@@ -1323,6 +1601,8 @@ export type AssetCountOutputType = {
   assetPrices: number
   corporateActions: number
   watchlistAssets: number
+  holdingSnapshots: number
+  priceAlerts: number
 }
 
 export type AssetCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1330,6 +1610,8 @@ export type AssetCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.
   assetPrices?: boolean | AssetCountOutputTypeCountAssetPricesArgs
   corporateActions?: boolean | AssetCountOutputTypeCountCorporateActionsArgs
   watchlistAssets?: boolean | AssetCountOutputTypeCountWatchlistAssetsArgs
+  holdingSnapshots?: boolean | AssetCountOutputTypeCountHoldingSnapshotsArgs
+  priceAlerts?: boolean | AssetCountOutputTypeCountPriceAlertsArgs
 }
 
 /**
@@ -1370,6 +1652,20 @@ export type AssetCountOutputTypeCountWatchlistAssetsArgs<ExtArgs extends runtime
   where?: Prisma.WatchlistAssetWhereInput
 }
 
+/**
+ * AssetCountOutputType without action
+ */
+export type AssetCountOutputTypeCountHoldingSnapshotsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.HoldingSnapshotWhereInput
+}
+
+/**
+ * AssetCountOutputType without action
+ */
+export type AssetCountOutputTypeCountPriceAlertsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PriceAlertWhereInput
+}
+
 
 export type AssetSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1390,6 +1686,8 @@ export type AssetSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   assetPrices?: boolean | Prisma.Asset$assetPricesArgs<ExtArgs>
   corporateActions?: boolean | Prisma.Asset$corporateActionsArgs<ExtArgs>
   watchlistAssets?: boolean | Prisma.Asset$watchlistAssetsArgs<ExtArgs>
+  holdingSnapshots?: boolean | Prisma.Asset$holdingSnapshotsArgs<ExtArgs>
+  priceAlerts?: boolean | Prisma.Asset$priceAlertsArgs<ExtArgs>
   _count?: boolean | Prisma.AssetCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["asset"]>
 
@@ -1450,6 +1748,8 @@ export type AssetInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   assetPrices?: boolean | Prisma.Asset$assetPricesArgs<ExtArgs>
   corporateActions?: boolean | Prisma.Asset$corporateActionsArgs<ExtArgs>
   watchlistAssets?: boolean | Prisma.Asset$watchlistAssetsArgs<ExtArgs>
+  holdingSnapshots?: boolean | Prisma.Asset$holdingSnapshotsArgs<ExtArgs>
+  priceAlerts?: boolean | Prisma.Asset$priceAlertsArgs<ExtArgs>
   _count?: boolean | Prisma.AssetCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type AssetIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1470,6 +1770,8 @@ export type $AssetPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     assetPrices: Prisma.$AssetPricePayload<ExtArgs>[]
     corporateActions: Prisma.$CorporateActionPayload<ExtArgs>[]
     watchlistAssets: Prisma.$WatchlistAssetPayload<ExtArgs>[]
+    holdingSnapshots: Prisma.$HoldingSnapshotPayload<ExtArgs>[]
+    priceAlerts: Prisma.$PriceAlertPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1884,6 +2186,8 @@ export interface Prisma__AssetClient<T, Null = never, ExtArgs extends runtime.Ty
   assetPrices<T extends Prisma.Asset$assetPricesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Asset$assetPricesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AssetPricePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   corporateActions<T extends Prisma.Asset$corporateActionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Asset$corporateActionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CorporateActionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   watchlistAssets<T extends Prisma.Asset$watchlistAssetsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Asset$watchlistAssetsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WatchlistAssetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  holdingSnapshots<T extends Prisma.Asset$holdingSnapshotsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Asset$holdingSnapshotsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$HoldingSnapshotPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  priceAlerts<T extends Prisma.Asset$priceAlertsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Asset$priceAlertsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PriceAlertPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2452,6 +2756,54 @@ export type Asset$watchlistAssetsArgs<ExtArgs extends runtime.Types.Extensions.I
   take?: number
   skip?: number
   distinct?: Prisma.WatchlistAssetScalarFieldEnum | Prisma.WatchlistAssetScalarFieldEnum[]
+}
+
+/**
+ * Asset.holdingSnapshots
+ */
+export type Asset$holdingSnapshotsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the HoldingSnapshot
+   */
+  select?: Prisma.HoldingSnapshotSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the HoldingSnapshot
+   */
+  omit?: Prisma.HoldingSnapshotOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.HoldingSnapshotInclude<ExtArgs> | null
+  where?: Prisma.HoldingSnapshotWhereInput
+  orderBy?: Prisma.HoldingSnapshotOrderByWithRelationInput | Prisma.HoldingSnapshotOrderByWithRelationInput[]
+  cursor?: Prisma.HoldingSnapshotWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.HoldingSnapshotScalarFieldEnum | Prisma.HoldingSnapshotScalarFieldEnum[]
+}
+
+/**
+ * Asset.priceAlerts
+ */
+export type Asset$priceAlertsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PriceAlert
+   */
+  select?: Prisma.PriceAlertSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PriceAlert
+   */
+  omit?: Prisma.PriceAlertOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PriceAlertInclude<ExtArgs> | null
+  where?: Prisma.PriceAlertWhereInput
+  orderBy?: Prisma.PriceAlertOrderByWithRelationInput | Prisma.PriceAlertOrderByWithRelationInput[]
+  cursor?: Prisma.PriceAlertWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PriceAlertScalarFieldEnum | Prisma.PriceAlertScalarFieldEnum[]
 }
 
 /**

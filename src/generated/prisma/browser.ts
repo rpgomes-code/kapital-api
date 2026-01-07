@@ -122,3 +122,18 @@ export type Tag = Prisma.TagModel
  * 
  */
 export type TransactionTag = Prisma.TransactionTagModel
+/**
+ * Model PortfolioSnapshot
+ * 
+ */
+export type PortfolioSnapshot = Prisma.PortfolioSnapshotModel
+/**
+ * Model HoldingSnapshot
+ * 
+ */
+export type HoldingSnapshot = Prisma.HoldingSnapshotModel
+/**
+ * Model PriceAlert
+ * 
+ */
+export type PriceAlert = Prisma.PriceAlertModel

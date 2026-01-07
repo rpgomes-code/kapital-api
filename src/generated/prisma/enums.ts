@@ -28,3 +28,14 @@ export const TransactionType = {
 } as const
 
 export type TransactionType = (typeof TransactionType)[keyof typeof TransactionType]
+
+
+export const AlertType = {
+  PRICE_ABOVE: 'PRICE_ABOVE',
+  PRICE_BELOW: 'PRICE_BELOW',
+  PERCENT_UP: 'PERCENT_UP',
+  PERCENT_DOWN: 'PERCENT_DOWN',
+  VOLUME_SPIKE: 'VOLUME_SPIKE'
+} as const
+
+export type AlertType = (typeof AlertType)[keyof typeof AlertType]

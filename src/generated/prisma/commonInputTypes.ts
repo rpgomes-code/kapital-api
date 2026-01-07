@@ -317,6 +317,23 @@ export type BigIntWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedBigIntFilter<$PrismaModel>
 }
 
+export type EnumAlertTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AlertType | Prisma.EnumAlertTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AlertType[] | Prisma.ListEnumAlertTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AlertType[] | Prisma.ListEnumAlertTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAlertTypeFilter<$PrismaModel> | $Enums.AlertType
+}
+
+export type EnumAlertTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AlertType | Prisma.EnumAlertTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AlertType[] | Prisma.ListEnumAlertTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AlertType[] | Prisma.ListEnumAlertTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAlertTypeWithAggregatesFilter<$PrismaModel> | $Enums.AlertType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAlertTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAlertTypeFilter<$PrismaModel>
+}
+
 export type NestedStringFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -631,6 +648,23 @@ export type NestedBigIntWithAggregatesFilter<$PrismaModel = never> = {
   _sum?: Prisma.NestedBigIntFilter<$PrismaModel>
   _min?: Prisma.NestedBigIntFilter<$PrismaModel>
   _max?: Prisma.NestedBigIntFilter<$PrismaModel>
+}
+
+export type NestedEnumAlertTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.AlertType | Prisma.EnumAlertTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AlertType[] | Prisma.ListEnumAlertTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AlertType[] | Prisma.ListEnumAlertTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAlertTypeFilter<$PrismaModel> | $Enums.AlertType
+}
+
+export type NestedEnumAlertTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.AlertType | Prisma.EnumAlertTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.AlertType[] | Prisma.ListEnumAlertTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.AlertType[] | Prisma.ListEnumAlertTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumAlertTypeWithAggregatesFilter<$PrismaModel> | $Enums.AlertType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumAlertTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumAlertTypeFilter<$PrismaModel>
 }
 
 

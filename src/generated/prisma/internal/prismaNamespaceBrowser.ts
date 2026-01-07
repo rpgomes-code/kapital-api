@@ -71,7 +71,10 @@ export const ModelName = {
   WatchlistAsset: 'WatchlistAsset',
   Benchmark: 'Benchmark',
   Tag: 'Tag',
-  TransactionTag: 'TransactionTag'
+  TransactionTag: 'TransactionTag',
+  PortfolioSnapshot: 'PortfolioSnapshot',
+  HoldingSnapshot: 'HoldingSnapshot',
+  PriceAlert: 'PriceAlert'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -340,6 +343,47 @@ export const TransactionTagScalarFieldEnum = {
 } as const
 
 export type TransactionTagScalarFieldEnum = (typeof TransactionTagScalarFieldEnum)[keyof typeof TransactionTagScalarFieldEnum]
+
+
+export const PortfolioSnapshotScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  date: 'date',
+  totalValue: 'totalValue',
+  totalCost: 'totalCost',
+  dayChange: 'dayChange',
+  cashBalance: 'cashBalance',
+  createdAt: 'createdAt'
+} as const
+
+export type PortfolioSnapshotScalarFieldEnum = (typeof PortfolioSnapshotScalarFieldEnum)[keyof typeof PortfolioSnapshotScalarFieldEnum]
+
+
+export const HoldingSnapshotScalarFieldEnum = {
+  id: 'id',
+  snapshotId: 'snapshotId',
+  assetId: 'assetId',
+  quantity: 'quantity',
+  price: 'price',
+  value: 'value',
+  costBasis: 'costBasis'
+} as const
+
+export type HoldingSnapshotScalarFieldEnum = (typeof HoldingSnapshotScalarFieldEnum)[keyof typeof HoldingSnapshotScalarFieldEnum]
+
+
+export const PriceAlertScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  assetId: 'assetId',
+  type: 'type',
+  targetValue: 'targetValue',
+  isActive: 'isActive',
+  triggeredAt: 'triggeredAt',
+  createdAt: 'createdAt'
+} as const
+
+export type PriceAlertScalarFieldEnum = (typeof PriceAlertScalarFieldEnum)[keyof typeof PriceAlertScalarFieldEnum]
 
 
 export const SortOrder = {

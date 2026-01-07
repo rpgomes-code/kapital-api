@@ -38,6 +38,10 @@ model User {
   sessions    Session[]
   accounts    AuthAccount[]
 
+  // Portfolio Analytics
+  portfolioSnapshots PortfolioSnapshot[]
+  priceAlerts        PriceAlert[]
+
   @@map("users")
 }
 
@@ -219,6 +223,10 @@ model Asset {
   corporateActions CorporateAction[]
   watchlistAssets  WatchlistAsset[]
 
+  // Portfolio Analytics
+  holdingSnapshots HoldingSnapshot[]
+  priceAlerts      PriceAlert[]
+
   @@map("assets")
 }
 
@@ -336,4 +344,69 @@ model TransactionTag {
 
   @@id([transactionId, tagId])
   @@map("transaction_tags")
+}
+
+// ==========================
+// PORTFOLIO ANALYTICS
+// ==========================
+
+model PortfolioSnapshot {
+  id          Int               @id @default(autoincrement())
+  userId      String            @map("user_id")
+  date        DateTime          @db.Date
+  totalValue  Decimal           @map("total_value") @db.Decimal(18, 2)
+  totalCost   Decimal           @map("total_cost") @db.Decimal(18, 2)
+  dayChange   Decimal           @map("day_change") @db.Decimal(18, 2)
+  cashBalance Decimal           @default(0) @map("cash_balance") @db.Decimal(18, 2)
+  createdAt   DateTime          @default(now()) @map("created_at")
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  holdings    HoldingSnapshot[]
+
+  @@unique([userId, date])
+  @@index([userId])
+  @@map("portfolio_snapshots")
+}
+
+model HoldingSnapshot {
+  id         Int               @id @default(autoincrement())
+  snapshotId Int               @map("snapshot_id")
+  assetId    Int               @map("asset_id")
+  quantity   Decimal           @db.Decimal(18, 8)
+  price      Decimal           @db.Decimal(18, 4)
+  value      Decimal           @db.Decimal(18, 2)
+  costBasis  Decimal           @map("cost_basis") @db.Decimal(18, 2)
+  snapshot   PortfolioSnapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+  asset      Asset             @relation(fields: [assetId], references: [id])
+
+  @@index([snapshotId])
+  @@map("holding_snapshots")
+}
+
+// ==========================
+// PRICE ALERTS
+// ==========================
+
+enum AlertType {
+  PRICE_ABOVE
+  PRICE_BELOW
+  PERCENT_UP
+  PERCENT_DOWN
+  VOLUME_SPIKE
+}
+
+model PriceAlert {
+  id          Int       @id @default(autoincrement())
+  userId      String    @map("user_id")
+  assetId     Int       @map("asset_id")
+  type        AlertType
+  targetValue Decimal   @map("target_value") @db.Decimal(18, 4)
+  isActive    Boolean   @default(true) @map("is_active")
+  triggeredAt DateTime? @map("triggered_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  asset       Asset     @relation(fields: [assetId], references: [id])
+
+  @@index([userId])
+  @@index([assetId])
+  @@map("price_alerts")
 }

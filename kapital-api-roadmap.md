@@ -423,9 +423,10 @@ GET /api/v1/yahoo-finance/options/:symbol/chain
 
 ---
 
-### Phase 3: Advanced Portfolio Analytics
+### Phase 3: Advanced Portfolio Analytics ✅ COMPLETE
 **Estimated Duration**: 2-3 weeks
 **Priority**: 🟠 High
+**Status**: ✅ Completed (January 2026)
 
 #### 3.1 Enhanced Portfolio Calculations
 
@@ -1099,6 +1100,40 @@ npm install class-validator class-transformer
   - Added options chain endpoints with full Greeks and filtering support
   - Added QuoteSummary convenience endpoints (profile, financials, earnings, holders, analysis, calendar, sec-filings)
 
+- **Phase 3 Advanced Portfolio Analytics** (January 2026)
+  - Added PortfolioSnapshot and HoldingSnapshot models for historical tracking
+  - Implemented enhanced performance metrics (TWR, MWR/IRR, Sharpe ratio, Sortino ratio)
+  - Added benchmark comparison with Beta, Alpha, correlation, and tracking error
+  - Implemented dividend analysis with summary, history, breakdown, calendar, and projections
+  - Added tax lot management with FIFO tracking, realized gains, and tax-loss harvesting
+  - Implemented multi-currency support with FX conversion and gain/loss tracking
+  - Created comprehensive DTOs for all new endpoints
+  - Added 5 new service modules: Analytics, Snapshot, Dividend, TaxLot, Currency
+
+- **New Portfolio Endpoints (Phase 3)**:
+  - `GET /api/v1/portfolio/performance/enhanced` - Enhanced metrics (TWR, Sharpe, Sortino, etc.)
+  - `GET /api/v1/portfolio/vs-benchmark` - Benchmark comparison with alpha/beta
+  - `GET /api/v1/portfolio/history` - Historical portfolio value tracking
+  - `GET /api/v1/portfolio/snapshot/latest` - Get or create latest snapshot
+  - `GET /api/v1/portfolio/snapshot/:date` - Get snapshot for specific date
+  - `POST /api/v1/portfolio/snapshot` - Create daily snapshot
+  - `POST /api/v1/portfolio/snapshot/backfill` - Backfill historical snapshots
+  - `GET /api/v1/portfolio/dividends/summary` - Dividend summary
+  - `GET /api/v1/portfolio/dividends/history` - Dividend payment history
+  - `GET /api/v1/portfolio/dividends/breakdown` - Monthly/holding/sector breakdown
+  - `GET /api/v1/portfolio/dividends/calendar` - Upcoming dividend calendar
+  - `GET /api/v1/portfolio/dividends/projection` - Projected dividend income
+  - `GET /api/v1/portfolio/tax-lots` - All tax lots for portfolio
+  - `GET /api/v1/portfolio/tax-lots/:assetId` - Tax lots for specific asset
+  - `GET /api/v1/portfolio/realized-gains` - Realized gains/losses for tax reporting
+  - `GET /api/v1/portfolio/tax-loss-harvest` - Tax-loss harvesting opportunities
+  - `GET /api/v1/portfolio/allocation/currency` - Currency allocation
+  - `GET /api/v1/portfolio/currencies/rates` - Exchange rates
+  - `GET /api/v1/portfolio/currencies/rate` - Single exchange rate
+  - `GET /api/v1/portfolio/currencies/convert` - Currency conversion
+  - `GET /api/v1/portfolio/multi-currency` - Multi-currency portfolio breakdown
+  - `GET /api/v1/portfolio/fx-gains` - FX gain/loss details
+
 - **New Yahoo Finance Endpoints (Phase 2)**:
   - `GET /api/v1/yahoo-finance/fundamentals/:symbol` - Historical financial data (income, balance sheet, cash flow)
   - `GET /api/v1/yahoo-finance/fundamentals/:symbol/income` - Income statement time series
@@ -1144,4 +1179,4 @@ For NextJS + Expo:
 ---
 
 *Last Updated: January 7, 2026*
-*Version: 1.3 - Phase 2 Yahoo Finance Integration Complete*
+*Version: 1.4 - Phase 3 Advanced Portfolio Analytics Complete*
