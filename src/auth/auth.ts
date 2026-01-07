@@ -1,3 +1,4 @@
+import 'dotenv/config'; // Ensure env vars are loaded before module initialization
 import { betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 import { PrismaClient } from '../generated/prisma/client';
@@ -8,6 +9,10 @@ import { Pool } from 'pg';
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
+
+if (!process.env.DATABASE_URL) {
+  throw new Error('DATABASE_URL environment variable is not set');
+}
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
@@ -22,33 +27,10 @@ export const auth = betterAuth({
     'http://localhost:3000',
     'http://localhost:3001',
   ],
-  // Configure ID generation to use serial for user (existing schema uses autoincrement)
-  // but UUID for other auth tables
-  advanced: {
-    database: {
-      generateId: (options) => {
-        // Let database handle User IDs (autoincrement)
-        if (options.model === 'user') {
-          return false;
-        }
-        // Use UUID for other models (session, account, verification)
-        return crypto.randomUUID();
-      },
-    },
-  },
+  // Prisma handles column mapping via @@map directives, so no field mappings needed
   user: {
-    modelName: 'users', // Maps to our @@map("users")
-    fields: {
-      emailVerified: 'email_verified',
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
-    },
+    modelName: 'user', // Prisma model accessor name (prisma.user)
     additionalFields: {
-      publicId: {
-        type: 'string',
-        required: false,
-        input: false, // Not provided by user, auto-generated
-      },
       username: {
         type: 'string',
         required: false,
@@ -60,46 +42,20 @@ export const auth = betterAuth({
       mainCurrency: {
         type: 'string',
         required: false,
-        fieldName: 'main_currency',
         defaultValue: 'USD',
       },
     },
   },
   session: {
-    modelName: 'sessions',
-    fields: {
-      expiresAt: 'expires_at',
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
-      ipAddress: 'ip_address',
-      userAgent: 'user_agent',
-      userId: 'user_id',
-    },
+    modelName: 'session', // Prisma model accessor name (prisma.session)
     expiresIn: 60 * 60 * 24 * 7, // 7 days
     updateAge: 60 * 60 * 24, // Update session every 24 hours
   },
   account: {
-    modelName: 'auth_accounts',
-    fields: {
-      accountId: 'account_id',
-      providerId: 'provider_id',
-      userId: 'user_id',
-      accessToken: 'access_token',
-      refreshToken: 'refresh_token',
-      idToken: 'id_token',
-      accessTokenExpiresAt: 'access_token_expires_at',
-      refreshTokenExpiresAt: 'refresh_token_expires_at',
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
-    },
+    modelName: 'authAccount', // Prisma model accessor name (prisma.authAccount)
   },
   verification: {
-    modelName: 'verifications',
-    fields: {
-      expiresAt: 'expires_at',
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
-    },
+    modelName: 'verification', // Prisma model accessor name (prisma.verification)
   },
   emailAndPassword: {
     enabled: true,

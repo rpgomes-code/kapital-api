@@ -19,24 +19,76 @@ datasource db {
 // ==========================
 
 model User {
-  id           Int      @id @default(autoincrement())
-  publicId     String   @unique @default(uuid()) @map("public_id")
-  username     String?
-  email        String   @unique
-  name         String?
-  photo        String?
-  country      String?
-  mainCurrency String   @default("USD") @map("main_currency")
-  createdAt    DateTime @default(now()) @map("created_at")
-  updatedAt    DateTime @updatedAt @map("updated_at")
+  id            String    @id @default(uuid())
+  username      String?
+  email         String    @unique
+  name          String?
+  image         String?   // Used by Better Auth for profile picture
+  country       String?
+  mainCurrency  String    @default("USD") @map("main_currency")
+  emailVerified Boolean   @default(false) @map("email_verified")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
 
-  roleId      Int?         @map("role_id")
-  role        Role?        @relation(fields: [roleId], references: [id])
+  roleId      Int?          @map("role_id")
+  role        Role?         @relation(fields: [roleId], references: [id])
   userBrokers UserBroker[]
   watchlists  Watchlist[]
   tags        Tag[]
+  sessions    Session[]
+  accounts    AuthAccount[]
 
   @@map("users")
+}
+
+// ==========================
+// AUTHENTICATION (Better Auth)
+// ==========================
+
+model Session {
+  id        String   @id @default(uuid())
+  expiresAt DateTime @map("expires_at")
+  token     String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  ipAddress String?  @map("ip_address")
+  userAgent String?  @map("user_agent")
+
+  userId String @map("user_id")
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model AuthAccount {
+  id                    String    @id @default(uuid())
+  accountId             String    @map("account_id")
+  providerId            String    @map("provider_id")
+  accessToken           String?   @map("access_token")
+  refreshToken          String?   @map("refresh_token")
+  idToken               String?   @map("id_token")
+  accessTokenExpiresAt  DateTime? @map("access_token_expires_at")
+  refreshTokenExpiresAt DateTime? @map("refresh_token_expires_at")
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now()) @map("created_at")
+  updatedAt             DateTime  @updatedAt @map("updated_at")
+
+  userId String @map("user_id")
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("auth_accounts")
+}
+
+model Verification {
+  id         String    @id @default(uuid())
+  identifier String
+  value      String
+  expiresAt  DateTime  @map("expires_at")
+  createdAt  DateTime? @default(now()) @map("created_at")
+  updatedAt  DateTime? @updatedAt @map("updated_at")
+
+  @@map("verifications")
 }
 
 // ==========================
@@ -91,7 +143,7 @@ model Broker {
 
 model UserBroker {
   id        Int       @id @default(autoincrement())
-  userId    Int       @map("user_id")
+  userId    String    @map("user_id")
   brokerId  Int       @map("broker_id")
   createdAt DateTime  @default(now()) @map("created_at")
   user      User      @relation(fields: [userId], references: [id])
@@ -237,7 +289,7 @@ model CorporateAction {
 model Watchlist {
   id        Int              @id @default(autoincrement())
   publicId  String           @unique @default(uuid()) @map("public_id")
-  userId    Int              @map("user_id")
+  userId    String           @map("user_id")
   name      String
   createdAt DateTime         @default(now()) @map("created_at")
   user      User             @relation(fields: [userId], references: [id])
@@ -268,7 +320,7 @@ model Benchmark {
 
 model Tag {
   id              Int              @id @default(autoincrement())
-  userId          Int              @map("user_id")
+  userId          String           @map("user_id")
   name            String
   user            User             @relation(fields: [userId], references: [id])
   transactionTags TransactionTag[]

@@ -28,23 +28,21 @@ export type AggregateTag = {
 
 export type TagAvgAggregateOutputType = {
   id: number | null
-  userId: number | null
 }
 
 export type TagSumAggregateOutputType = {
   id: number | null
-  userId: number | null
 }
 
 export type TagMinAggregateOutputType = {
   id: number | null
-  userId: number | null
+  userId: string | null
   name: string | null
 }
 
 export type TagMaxAggregateOutputType = {
   id: number | null
-  userId: number | null
+  userId: string | null
   name: string | null
 }
 
@@ -58,12 +56,10 @@ export type TagCountAggregateOutputType = {
 
 export type TagAvgAggregateInputType = {
   id?: true
-  userId?: true
 }
 
 export type TagSumAggregateInputType = {
   id?: true
-  userId?: true
 }
 
 export type TagMinAggregateInputType = {
@@ -173,7 +169,7 @@ export type TagGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs
 
 export type TagGroupByOutputType = {
   id: number
-  userId: number
+  userId: string
   name: string
   _count: TagCountAggregateOutputType | null
   _avg: TagAvgAggregateOutputType | null
@@ -202,7 +198,7 @@ export type TagWhereInput = {
   OR?: Prisma.TagWhereInput[]
   NOT?: Prisma.TagWhereInput | Prisma.TagWhereInput[]
   id?: Prisma.IntFilter<"Tag"> | number
-  userId?: Prisma.IntFilter<"Tag"> | number
+  userId?: Prisma.StringFilter<"Tag"> | string
   name?: Prisma.StringFilter<"Tag"> | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   transactionTags?: Prisma.TransactionTagListRelationFilter
@@ -221,7 +217,7 @@ export type TagWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.TagWhereInput | Prisma.TagWhereInput[]
   OR?: Prisma.TagWhereInput[]
   NOT?: Prisma.TagWhereInput | Prisma.TagWhereInput[]
-  userId?: Prisma.IntFilter<"Tag"> | number
+  userId?: Prisma.StringFilter<"Tag"> | string
   name?: Prisma.StringFilter<"Tag"> | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   transactionTags?: Prisma.TransactionTagListRelationFilter
@@ -243,7 +239,7 @@ export type TagScalarWhereWithAggregatesInput = {
   OR?: Prisma.TagScalarWhereWithAggregatesInput[]
   NOT?: Prisma.TagScalarWhereWithAggregatesInput | Prisma.TagScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Tag"> | number
-  userId?: Prisma.IntWithAggregatesFilter<"Tag"> | number
+  userId?: Prisma.StringWithAggregatesFilter<"Tag"> | string
   name?: Prisma.StringWithAggregatesFilter<"Tag"> | string
 }
 
@@ -255,7 +251,7 @@ export type TagCreateInput = {
 
 export type TagUncheckedCreateInput = {
   id?: number
-  userId: number
+  userId: string
   name: string
   transactionTags?: Prisma.TransactionTagUncheckedCreateNestedManyWithoutTagInput
 }
@@ -268,14 +264,14 @@ export type TagUpdateInput = {
 
 export type TagUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  userId?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   transactionTags?: Prisma.TransactionTagUncheckedUpdateManyWithoutTagNestedInput
 }
 
 export type TagCreateManyInput = {
   id?: number
-  userId: number
+  userId: string
   name: string
 }
 
@@ -285,7 +281,7 @@ export type TagUpdateManyMutationInput = {
 
 export type TagUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  userId?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
@@ -307,7 +303,6 @@ export type TagCountOrderByAggregateInput = {
 
 export type TagAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  userId?: Prisma.SortOrder
 }
 
 export type TagMaxOrderByAggregateInput = {
@@ -324,7 +319,6 @@ export type TagMinOrderByAggregateInput = {
 
 export type TagSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  userId?: Prisma.SortOrder
 }
 
 export type TagScalarRelationFilter = {
@@ -430,7 +424,7 @@ export type TagScalarWhereInput = {
   OR?: Prisma.TagScalarWhereInput[]
   NOT?: Prisma.TagScalarWhereInput | Prisma.TagScalarWhereInput[]
   id?: Prisma.IntFilter<"Tag"> | number
-  userId?: Prisma.IntFilter<"Tag"> | number
+  userId?: Prisma.StringFilter<"Tag"> | string
   name?: Prisma.StringFilter<"Tag"> | string
 }
 
@@ -441,7 +435,7 @@ export type TagCreateWithoutTransactionTagsInput = {
 
 export type TagUncheckedCreateWithoutTransactionTagsInput = {
   id?: number
-  userId: number
+  userId: string
   name: string
 }
 
@@ -468,7 +462,7 @@ export type TagUpdateWithoutTransactionTagsInput = {
 
 export type TagUncheckedUpdateWithoutTransactionTagsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  userId?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
@@ -574,7 +568,7 @@ export type $TagPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    userId: number
+    userId: string
     name: string
   }, ExtArgs["result"]["tag"]>
   composites: {}
@@ -1002,7 +996,7 @@ export interface Prisma__TagClient<T, Null = never, ExtArgs extends runtime.Type
  */
 export interface TagFieldRefs {
   readonly id: Prisma.FieldRef<"Tag", 'Int'>
-  readonly userId: Prisma.FieldRef<"Tag", 'Int'>
+  readonly userId: Prisma.FieldRef<"Tag", 'String'>
   readonly name: Prisma.FieldRef<"Tag", 'String'>
 }
     

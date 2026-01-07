@@ -30,7 +30,7 @@ export class HolderService {
   }
 
   // 2. Get Portfolio (Simplified view)
-  async getPortfolio(userId: number) {
+  async getPortfolio(userId: string) {
     // This is where the complex "Snowball Analytics" logic will eventually go
     // For now, let's just fetch accounts and their transactions
     return this.prisma.userBroker.findMany({

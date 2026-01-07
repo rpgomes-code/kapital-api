@@ -15,7 +15,7 @@ export class WatchlistsService {
     private yahooFinance: YahooFinanceService,
   ) {}
 
-  async create(dto: CreateWatchlistDto) {
+  async create(dto: CreateWatchlistDto & { userId: string }) {
     return this.prisma.watchlist.create({
       data: {
         userId: dto.userId,
@@ -24,11 +24,11 @@ export class WatchlistsService {
     });
   }
 
-  async findByUser(userId: number) {
+  async findByUser(userId: string) {
     return this.findAllByUser(userId);
   }
 
-  async findAllByUser(userId: number) {
+  async findAllByUser(userId: string) {
     return this.prisma.watchlist.findMany({
       where: { userId },
       include: {

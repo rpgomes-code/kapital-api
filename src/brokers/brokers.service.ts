@@ -64,7 +64,7 @@ export class BrokersService {
     });
   }
 
-  async linkToUser(userId: number, brokerId: number) {
+  async linkToUser(userId: string, brokerId: number) {
     // Check if broker exists
     await this.findOne(brokerId);
 
@@ -88,7 +88,7 @@ export class BrokersService {
     });
   }
 
-  async getUserBrokers(userId: number) {
+  async getUserBrokers(userId: string) {
     return this.prisma.userBroker.findMany({
       where: { userId },
       include: {

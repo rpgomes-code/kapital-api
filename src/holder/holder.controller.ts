@@ -8,7 +8,7 @@ export class HolderController {
   // Temporary: We pass UserID in params because we have no Auth yet
   @Get('portfolio/:userId')
   async getPortfolio(@Param('userId') userId: string) {
-    return this.holderService.getPortfolio(Number(userId));
+    return this.holderService.getPortfolio(userId);
   }
 
   @Post('transaction')

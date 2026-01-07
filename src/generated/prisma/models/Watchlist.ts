@@ -28,18 +28,16 @@ export type AggregateWatchlist = {
 
 export type WatchlistAvgAggregateOutputType = {
   id: number | null
-  userId: number | null
 }
 
 export type WatchlistSumAggregateOutputType = {
   id: number | null
-  userId: number | null
 }
 
 export type WatchlistMinAggregateOutputType = {
   id: number | null
   publicId: string | null
-  userId: number | null
+  userId: string | null
   name: string | null
   createdAt: Date | null
 }
@@ -47,7 +45,7 @@ export type WatchlistMinAggregateOutputType = {
 export type WatchlistMaxAggregateOutputType = {
   id: number | null
   publicId: string | null
-  userId: number | null
+  userId: string | null
   name: string | null
   createdAt: Date | null
 }
@@ -64,12 +62,10 @@ export type WatchlistCountAggregateOutputType = {
 
 export type WatchlistAvgAggregateInputType = {
   id?: true
-  userId?: true
 }
 
 export type WatchlistSumAggregateInputType = {
   id?: true
-  userId?: true
 }
 
 export type WatchlistMinAggregateInputType = {
@@ -186,7 +182,7 @@ export type WatchlistGroupByArgs<ExtArgs extends runtime.Types.Extensions.Intern
 export type WatchlistGroupByOutputType = {
   id: number
   publicId: string
-  userId: number
+  userId: string
   name: string
   createdAt: Date
   _count: WatchlistCountAggregateOutputType | null
@@ -217,7 +213,7 @@ export type WatchlistWhereInput = {
   NOT?: Prisma.WatchlistWhereInput | Prisma.WatchlistWhereInput[]
   id?: Prisma.IntFilter<"Watchlist"> | number
   publicId?: Prisma.StringFilter<"Watchlist"> | string
-  userId?: Prisma.IntFilter<"Watchlist"> | number
+  userId?: Prisma.StringFilter<"Watchlist"> | string
   name?: Prisma.StringFilter<"Watchlist"> | string
   createdAt?: Prisma.DateTimeFilter<"Watchlist"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -240,7 +236,7 @@ export type WatchlistWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.WatchlistWhereInput | Prisma.WatchlistWhereInput[]
   OR?: Prisma.WatchlistWhereInput[]
   NOT?: Prisma.WatchlistWhereInput | Prisma.WatchlistWhereInput[]
-  userId?: Prisma.IntFilter<"Watchlist"> | number
+  userId?: Prisma.StringFilter<"Watchlist"> | string
   name?: Prisma.StringFilter<"Watchlist"> | string
   createdAt?: Prisma.DateTimeFilter<"Watchlist"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -266,7 +262,7 @@ export type WatchlistScalarWhereWithAggregatesInput = {
   NOT?: Prisma.WatchlistScalarWhereWithAggregatesInput | Prisma.WatchlistScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Watchlist"> | number
   publicId?: Prisma.StringWithAggregatesFilter<"Watchlist"> | string
-  userId?: Prisma.IntWithAggregatesFilter<"Watchlist"> | number
+  userId?: Prisma.StringWithAggregatesFilter<"Watchlist"> | string
   name?: Prisma.StringWithAggregatesFilter<"Watchlist"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Watchlist"> | Date | string
 }
@@ -282,7 +278,7 @@ export type WatchlistCreateInput = {
 export type WatchlistUncheckedCreateInput = {
   id?: number
   publicId?: string
-  userId: number
+  userId: string
   name: string
   createdAt?: Date | string
   assets?: Prisma.WatchlistAssetUncheckedCreateNestedManyWithoutWatchlistInput
@@ -299,7 +295,7 @@ export type WatchlistUpdateInput = {
 export type WatchlistUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   publicId?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   assets?: Prisma.WatchlistAssetUncheckedUpdateManyWithoutWatchlistNestedInput
@@ -308,7 +304,7 @@ export type WatchlistUncheckedUpdateInput = {
 export type WatchlistCreateManyInput = {
   id?: number
   publicId?: string
-  userId: number
+  userId: string
   name: string
   createdAt?: Date | string
 }
@@ -322,7 +318,7 @@ export type WatchlistUpdateManyMutationInput = {
 export type WatchlistUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   publicId?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -347,7 +343,6 @@ export type WatchlistCountOrderByAggregateInput = {
 
 export type WatchlistAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  userId?: Prisma.SortOrder
 }
 
 export type WatchlistMaxOrderByAggregateInput = {
@@ -368,7 +363,6 @@ export type WatchlistMinOrderByAggregateInput = {
 
 export type WatchlistSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  userId?: Prisma.SortOrder
 }
 
 export type WatchlistScalarRelationFilter = {
@@ -479,7 +473,7 @@ export type WatchlistScalarWhereInput = {
   NOT?: Prisma.WatchlistScalarWhereInput | Prisma.WatchlistScalarWhereInput[]
   id?: Prisma.IntFilter<"Watchlist"> | number
   publicId?: Prisma.StringFilter<"Watchlist"> | string
-  userId?: Prisma.IntFilter<"Watchlist"> | number
+  userId?: Prisma.StringFilter<"Watchlist"> | string
   name?: Prisma.StringFilter<"Watchlist"> | string
   createdAt?: Prisma.DateTimeFilter<"Watchlist"> | Date | string
 }
@@ -494,7 +488,7 @@ export type WatchlistCreateWithoutAssetsInput = {
 export type WatchlistUncheckedCreateWithoutAssetsInput = {
   id?: number
   publicId?: string
-  userId: number
+  userId: string
   name: string
   createdAt?: Date | string
 }
@@ -525,7 +519,7 @@ export type WatchlistUpdateWithoutAssetsInput = {
 export type WatchlistUncheckedUpdateWithoutAssetsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   publicId?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -649,7 +643,7 @@ export type $WatchlistPayload<ExtArgs extends runtime.Types.Extensions.InternalA
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     publicId: string
-    userId: number
+    userId: string
     name: string
     createdAt: Date
   }, ExtArgs["result"]["watchlist"]>
@@ -1079,7 +1073,7 @@ export interface Prisma__WatchlistClient<T, Null = never, ExtArgs extends runtim
 export interface WatchlistFieldRefs {
   readonly id: Prisma.FieldRef<"Watchlist", 'Int'>
   readonly publicId: Prisma.FieldRef<"Watchlist", 'String'>
-  readonly userId: Prisma.FieldRef<"Watchlist", 'Int'>
+  readonly userId: Prisma.FieldRef<"Watchlist", 'String'>
   readonly name: Prisma.FieldRef<"Watchlist", 'String'>
   readonly createdAt: Prisma.FieldRef<"Watchlist", 'DateTime'>
 }

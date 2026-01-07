@@ -28,26 +28,24 @@ export type AggregateUserBroker = {
 
 export type UserBrokerAvgAggregateOutputType = {
   id: number | null
-  userId: number | null
   brokerId: number | null
 }
 
 export type UserBrokerSumAggregateOutputType = {
   id: number | null
-  userId: number | null
   brokerId: number | null
 }
 
 export type UserBrokerMinAggregateOutputType = {
   id: number | null
-  userId: number | null
+  userId: string | null
   brokerId: number | null
   createdAt: Date | null
 }
 
 export type UserBrokerMaxAggregateOutputType = {
   id: number | null
-  userId: number | null
+  userId: string | null
   brokerId: number | null
   createdAt: Date | null
 }
@@ -63,13 +61,11 @@ export type UserBrokerCountAggregateOutputType = {
 
 export type UserBrokerAvgAggregateInputType = {
   id?: true
-  userId?: true
   brokerId?: true
 }
 
 export type UserBrokerSumAggregateInputType = {
   id?: true
-  userId?: true
   brokerId?: true
 }
 
@@ -183,7 +179,7 @@ export type UserBrokerGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inter
 
 export type UserBrokerGroupByOutputType = {
   id: number
-  userId: number
+  userId: string
   brokerId: number
   createdAt: Date
   _count: UserBrokerCountAggregateOutputType | null
@@ -213,7 +209,7 @@ export type UserBrokerWhereInput = {
   OR?: Prisma.UserBrokerWhereInput[]
   NOT?: Prisma.UserBrokerWhereInput | Prisma.UserBrokerWhereInput[]
   id?: Prisma.IntFilter<"UserBroker"> | number
-  userId?: Prisma.IntFilter<"UserBroker"> | number
+  userId?: Prisma.StringFilter<"UserBroker"> | string
   brokerId?: Prisma.IntFilter<"UserBroker"> | number
   createdAt?: Prisma.DateTimeFilter<"UserBroker"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -236,7 +232,7 @@ export type UserBrokerWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.UserBrokerWhereInput | Prisma.UserBrokerWhereInput[]
   OR?: Prisma.UserBrokerWhereInput[]
   NOT?: Prisma.UserBrokerWhereInput | Prisma.UserBrokerWhereInput[]
-  userId?: Prisma.IntFilter<"UserBroker"> | number
+  userId?: Prisma.StringFilter<"UserBroker"> | string
   brokerId?: Prisma.IntFilter<"UserBroker"> | number
   createdAt?: Prisma.DateTimeFilter<"UserBroker"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -261,7 +257,7 @@ export type UserBrokerScalarWhereWithAggregatesInput = {
   OR?: Prisma.UserBrokerScalarWhereWithAggregatesInput[]
   NOT?: Prisma.UserBrokerScalarWhereWithAggregatesInput | Prisma.UserBrokerScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"UserBroker"> | number
-  userId?: Prisma.IntWithAggregatesFilter<"UserBroker"> | number
+  userId?: Prisma.StringWithAggregatesFilter<"UserBroker"> | string
   brokerId?: Prisma.IntWithAggregatesFilter<"UserBroker"> | number
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"UserBroker"> | Date | string
 }
@@ -275,7 +271,7 @@ export type UserBrokerCreateInput = {
 
 export type UserBrokerUncheckedCreateInput = {
   id?: number
-  userId: number
+  userId: string
   brokerId: number
   createdAt?: Date | string
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserBrokerInput
@@ -290,7 +286,7 @@ export type UserBrokerUpdateInput = {
 
 export type UserBrokerUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  userId?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   brokerId?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserBrokerNestedInput
@@ -298,7 +294,7 @@ export type UserBrokerUncheckedUpdateInput = {
 
 export type UserBrokerCreateManyInput = {
   id?: number
-  userId: number
+  userId: string
   brokerId: number
   createdAt?: Date | string
 }
@@ -309,7 +305,7 @@ export type UserBrokerUpdateManyMutationInput = {
 
 export type UserBrokerUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  userId?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   brokerId?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -333,7 +329,6 @@ export type UserBrokerCountOrderByAggregateInput = {
 
 export type UserBrokerAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  userId?: Prisma.SortOrder
   brokerId?: Prisma.SortOrder
 }
 
@@ -353,7 +348,6 @@ export type UserBrokerMinOrderByAggregateInput = {
 
 export type UserBrokerSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  userId?: Prisma.SortOrder
   brokerId?: Prisma.SortOrder
 }
 
@@ -504,7 +498,7 @@ export type UserBrokerScalarWhereInput = {
   OR?: Prisma.UserBrokerScalarWhereInput[]
   NOT?: Prisma.UserBrokerScalarWhereInput | Prisma.UserBrokerScalarWhereInput[]
   id?: Prisma.IntFilter<"UserBroker"> | number
-  userId?: Prisma.IntFilter<"UserBroker"> | number
+  userId?: Prisma.StringFilter<"UserBroker"> | string
   brokerId?: Prisma.IntFilter<"UserBroker"> | number
   createdAt?: Prisma.DateTimeFilter<"UserBroker"> | Date | string
 }
@@ -517,7 +511,7 @@ export type UserBrokerCreateWithoutBrokerInput = {
 
 export type UserBrokerUncheckedCreateWithoutBrokerInput = {
   id?: number
-  userId: number
+  userId: string
   createdAt?: Date | string
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserBrokerInput
 }
@@ -556,7 +550,7 @@ export type UserBrokerCreateWithoutAccountsInput = {
 
 export type UserBrokerUncheckedCreateWithoutAccountsInput = {
   id?: number
-  userId: number
+  userId: string
   brokerId: number
   createdAt?: Date | string
 }
@@ -585,7 +579,7 @@ export type UserBrokerUpdateWithoutAccountsInput = {
 
 export type UserBrokerUncheckedUpdateWithoutAccountsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  userId?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   brokerId?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -617,7 +611,7 @@ export type UserBrokerUncheckedUpdateManyWithoutUserInput = {
 
 export type UserBrokerCreateManyBrokerInput = {
   id?: number
-  userId: number
+  userId: string
   createdAt?: Date | string
 }
 
@@ -629,14 +623,14 @@ export type UserBrokerUpdateWithoutBrokerInput = {
 
 export type UserBrokerUncheckedUpdateWithoutBrokerInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  userId?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserBrokerNestedInput
 }
 
 export type UserBrokerUncheckedUpdateManyWithoutBrokerInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  userId?: Prisma.IntFieldUpdateOperationsInput | number
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -732,7 +726,7 @@ export type $UserBrokerPayload<ExtArgs extends runtime.Types.Extensions.Internal
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    userId: number
+    userId: string
     brokerId: number
     createdAt: Date
   }, ExtArgs["result"]["userBroker"]>
@@ -1162,7 +1156,7 @@ export interface Prisma__UserBrokerClient<T, Null = never, ExtArgs extends runti
  */
 export interface UserBrokerFieldRefs {
   readonly id: Prisma.FieldRef<"UserBroker", 'Int'>
-  readonly userId: Prisma.FieldRef<"UserBroker", 'Int'>
+  readonly userId: Prisma.FieldRef<"UserBroker", 'String'>
   readonly brokerId: Prisma.FieldRef<"UserBroker", 'Int'>
   readonly createdAt: Prisma.FieldRef<"UserBroker", 'DateTime'>
 }

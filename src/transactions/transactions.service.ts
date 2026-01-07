@@ -70,7 +70,7 @@ export class TransactionsService {
     });
   }
 
-  async findByUser(userId: number, pagination: { page?: number; limit?: number }) {
+  async findByUser(userId: string, pagination: { page?: number; limit?: number }) {
     const { skip, take } = getPaginationParams(pagination);
 
     const where = {
@@ -120,7 +120,7 @@ export class TransactionsService {
     return paginate(transactions, total, pagination);
   }
 
-  async findAll(userId: number, filters: FilterTransactionsDto) {
+  async findAll(userId: string, filters: FilterTransactionsDto) {
     const where: Prisma.TransactionWhereInput = {
       account: {
         userBroker: {

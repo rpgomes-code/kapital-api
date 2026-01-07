@@ -22,7 +22,7 @@ export class AccountsService {
     });
   }
 
-  async findAllByUser(userId: number) {
+  async findAllByUser(userId: string) {
     return this.prisma.account.findMany({
       where: {
         userBroker: {
@@ -49,7 +49,6 @@ export class AccountsService {
             user: {
               select: {
                 id: true,
-                publicId: true,
                 name: true,
               },
             },

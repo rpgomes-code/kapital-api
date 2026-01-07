@@ -10,7 +10,8 @@ import {
   Query,
   ParseIntPipe,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiQuery } from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiQuery, ApiBearerAuth } from '@nestjs/swagger';
+import { AllowAnonymous } from '@thallesp/nestjs-better-auth';
 import { AssetsService } from './assets.service';
 import { CreateAssetDto } from './dto/create-asset.dto';
 import { UpdateAssetDto } from './dto/update-asset.dto';
@@ -22,15 +23,18 @@ export class AssetsController {
   constructor(private readonly assetsService: AssetsService) {}
 
   @Post()
+  @ApiBearerAuth('bearer-auth')
   @ApiOperation({ summary: 'Create a new asset' })
   @ApiResponse({ status: 201, description: 'Asset created successfully' })
   @ApiResponse({ status: 400, description: 'Invalid input data' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 409, description: 'Asset with symbol already exists' })
   create(@Body() createAssetDto: CreateAssetDto) {
     return this.assetsService.create(createAssetDto);
   }
 
   @Get()
+  @AllowAnonymous() // Public: Search assets catalog
   @ApiOperation({ summary: 'Search and list assets' })
   @ApiQuery({ name: 'query', required: false, description: 'Search by symbol, name, or ISIN' })
   @ApiQuery({ name: 'assetType', required: false, description: 'Filter by asset type' })
@@ -42,6 +46,7 @@ export class AssetsController {
   }
 
   @Get('symbol/:symbol')
+  @AllowAnonymous() // Public: View asset by symbol
   @ApiOperation({ summary: 'Get asset by symbol' })
   @ApiParam({ name: 'symbol', description: 'Asset symbol (e.g., AAPL, MSFT)' })
   @ApiResponse({ status: 200, description: 'Asset found' })
@@ -51,6 +56,7 @@ export class AssetsController {
   }
 
   @Get('symbol/:symbol/find-or-create')
+  @AllowAnonymous() // Public: Find or create from Yahoo Finance
   @ApiOperation({ summary: 'Find or create asset by symbol from Yahoo Finance' })
   @ApiParam({ name: 'symbol', description: 'Yahoo Finance symbol' })
   @ApiResponse({ status: 200, description: 'Asset found or created' })
@@ -60,6 +66,7 @@ export class AssetsController {
   }
 
   @Get(':id')
+  @AllowAnonymous() // Public: View asset details
   @ApiOperation({ summary: 'Get asset by ID' })
   @ApiParam({ name: 'id', description: 'Asset ID' })
   @ApiResponse({ status: 200, description: 'Asset found' })
@@ -69,6 +76,7 @@ export class AssetsController {
   }
 
   @Get(':id/price')
+  @AllowAnonymous() // Public: View asset with current price
   @ApiOperation({ summary: 'Get asset with current market price' })
   @ApiParam({ name: 'id', description: 'Asset ID' })
   @ApiResponse({ status: 200, description: 'Asset with current price data' })
@@ -78,9 +86,11 @@ export class AssetsController {
   }
 
   @Patch(':id')
+  @ApiBearerAuth('bearer-auth')
   @ApiOperation({ summary: 'Update asset' })
   @ApiParam({ name: 'id', description: 'Asset ID' })
   @ApiResponse({ status: 200, description: 'Asset updated successfully' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 404, description: 'Asset not found' })
   update(
     @Param('id', ParseIntPipe) id: number,
@@ -90,9 +100,11 @@ export class AssetsController {
   }
 
   @Delete(':id')
+  @ApiBearerAuth('bearer-auth')
   @ApiOperation({ summary: 'Delete asset' })
   @ApiParam({ name: 'id', description: 'Asset ID' })
   @ApiResponse({ status: 200, description: 'Asset deleted successfully' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 404, description: 'Asset not found' })
   @ApiResponse({ status: 409, description: 'Cannot delete asset with transactions' })
   remove(@Param('id', ParseIntPipe) id: number) {

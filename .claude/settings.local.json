@@ -13,7 +13,25 @@
       "Bash(cat:*)",
       "Bash(if exist generated rd /s /q generated)",
       "Bash(git commit:*)",
-      "Bash(npm run start:dev:*)"
+      "Bash(npm run start:dev:*)",
+      "WebFetch(domain:www.better-auth.com)",
+      "WebFetch(domain:www.prisma.io)",
+      "Bash(npx prisma db push)",
+      "Bash(timeout /t 10 /nobreak)",
+      "Bash(taskkill:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm ls:*)",
+      "Bash(tasklist:*)",
+      "Bash(timeout /t 15 /nobreak)",
+      "Bash(npx prisma db push:*)",
+      "Bash(kill:*)",
+      "Bash(npm test)",
+      "WebFetch(domain:jsr.io)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npm test:*)"
     ]
   }
 }

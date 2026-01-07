@@ -8,10 +8,6 @@ import {
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class CreateWatchlistDto {
-  @ApiProperty({ example: 1, description: 'User ID' })
-  @IsInt()
-  userId: number;
-
   @ApiProperty({ example: 'Tech Stocks', description: 'Watchlist name', maxLength: 100 })
   @IsString()
   @MaxLength(100)
@@ -22,6 +18,9 @@ export class CreateWatchlistDto {
   @IsArray()
   @IsInt({ each: true })
   assetIds?: number[];
+
+  // userId is set internally from session, not from request body
+  userId?: string;
 }
 
 export class AddAssetToWatchlistDto {

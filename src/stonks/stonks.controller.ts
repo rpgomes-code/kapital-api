@@ -1,9 +1,11 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiQuery } from '@nestjs/swagger';
+import { AllowAnonymous } from '@thallesp/nestjs-better-auth';
 import { StonksService } from './stonks.service';
 
 @ApiTags('stonks')
 @Controller('stonks')
+@AllowAnonymous() // All stonks endpoints are public (market data)
 export class StonksController {
   constructor(private readonly stonksService: StonksService) {}
 

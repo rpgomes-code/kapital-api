@@ -33,7 +33,7 @@ export class UsersService {
     });
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     const user = await this.prisma.user.findUnique({
       where: { id },
       select: this.getUserSelectFields(),
@@ -46,19 +46,6 @@ export class UsersService {
     return user;
   }
 
-  async findByPublicId(publicId: string) {
-    const user = await this.prisma.user.findUnique({
-      where: { publicId },
-      select: this.getUserSelectFields(),
-    });
-
-    if (!user) {
-      throw new NotFoundException(`User not found`);
-    }
-
-    return user;
-  }
-
   async findByEmail(email: string) {
     return this.prisma.user.findUnique({
       where: { email },
@@ -66,7 +53,7 @@ export class UsersService {
     });
   }
 
-  async update(id: number, updateUserDto: UpdateUserDto) {
+  async update(id: string, updateUserDto: UpdateUserDto) {
     await this.findOne(id); // Throws if not found
 
     return this.prisma.user.update({
@@ -76,7 +63,7 @@ export class UsersService {
     });
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     await this.findOne(id);
     return this.prisma.user.delete({
       where: { id },
@@ -86,13 +73,13 @@ export class UsersService {
   private getUserSelectFields() {
     return {
       id: true,
-      publicId: true,
       email: true,
       username: true,
       name: true,
-      photo: true,
+      image: true,
       country: true,
       mainCurrency: true,
+      emailVerified: true,
       createdAt: true,
       updatedAt: true,
       role: {

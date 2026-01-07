@@ -7,7 +7,9 @@ import { AllExceptionsFilter } from './common/filters/http-exception.filter';
 import { TransformInterceptor } from './common/interceptors/transform.interceptor';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    bodyParser: false, // Required for Better Auth to handle raw request body
+  });
 
   // Global prefix for all routes
   app.setGlobalPrefix('api/v1');
@@ -33,6 +35,18 @@ async function bootstrap() {
     .setTitle('Kapital API')
     .setDescription('Investment portfolio tracking and management API')
     .setVersion('1.0')
+    .addBearerAuth(
+      {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+        name: 'Authorization',
+        description: 'Enter your Bearer token',
+        in: 'header',
+      },
+      'bearer-auth',
+    )
+    .addTag('auth', 'Authentication endpoints')
     .addTag('users', 'User management endpoints')
     .addTag('brokers', 'Broker management endpoints')
     .addTag('accounts', 'Account management endpoints')
